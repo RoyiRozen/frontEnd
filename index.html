@@ -1,7 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" hrÇef="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
 
+    <link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/fonts/lato/extended/Lato-Regular-bd03a2cc27.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/fonts/lato/extended/Lato-Bold-cccb897485.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/fonts/lato/extended/Lato-Italic-4eb103b4d1.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/no_variables/bundles/fonts-6ee09b0b2f.css" media="screen" />
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/e67af36f5565992c0c7fce5060801003/variables-7dd4b80918af0e0218ec0229e4bd5873.css" media="all" />
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/common-60e5c6cfef.css" media="all" />
     
+    <link rel="apple-touch-icon" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/apple-touch-icon-585e5d997d.png" />
+    <link rel="icon" type="image/x-icon" href="https://instructure-uploads.s3.amazonaws.com/account_97130000000000001/attachments/29724/cornellfac.ico" />
+  
+  
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <script src="./script.js"></script> 
+    <script src="./filter.js"></script> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <div id="app">
+        <header>
+            <div class="header-content">
+                <hgroup class="top-bar">
+                    <h1 class="title" button id="title" onclick="window.location.href='./basic.html'">Royi Rozen</button></h1>
+                    <h1 class="about" button id="about" onclick="window.location.href='./pages.html'">Résumé</button></h1>
+                    <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.location.href='https://www.linkedin.com/in/royi-rozen/'" style=" scale: 2.5;"></i>
+                </hgroup>
+                <img src="./image.jpg" alt="profilePic" class="image">
+                <div class="text-content">
+                    <p><em>Royi Rozen</em> | XR Designer & Prototyper in New York City. Currently pursuing MS in Computer and Information Sciences at <a href="https://www.cornell.edu/cornell-tech/">Cornell Tech</a>. His work focuses on creating immersive digital experiences that merge cutting-edge technology with innovative design, positioning him as a forward-thinking leader in the field of extended reality. Royi is leading <a href="https://www.aroundu.io/">ARoundU,</a> an XR studio dedicated to creating transformative digital experiences, and he's open to exciting opportunities throughout the summer.
+                    </p>
+                </div>
+            </div>
+        </header>
+        <nav class="filters">
+            <button class="filter-button" id="All">#All</button>
+            <button class="filter-button" id="AR">#AR</button>
+            <button class="filter-button" id="VR">#VR</button>
+            <button class="filter-button" id="AI">#AI</button>
+            <button class="filter-button" id="3D">#3D</button>
+            <button class="filter-button" id="2D">#2D</button>
+            <button class="filter-button" id="UI/UX">#UI/UX</button>
+            <button class="filter-button" id="Development">#Development</button>
+            <button class="filter-button" id="Research">#Research</button>
+            <button class="filter-button" id="VFX">#VFX</button>
+            <button class="filter-button" id="Video">#Video</button>
+            <button class="filter-button" id="Software">#Software</button>
+            <button class="filter-button" id="Events">#Talks</button>
+        </nav>
+        <main>
+            <div class="grid-item" id="item1" data-filters="AR VR 3D">
+                <img src="./image1.png" alt="Item 1">
+                <p>BestMap NYC</p>
+            </div>
+            <div class="grid-item" id="item2" data-filters="AI Development">
+                <img src="./image2.png" alt="Item 2">
+                <p>Timmy AI</p>
+            </div>
+            <div class="grid-item" id="item3" data-filters="VR">
+                <img src="./image3.jpg" alt="Item 3">
+                <p>Reactions</p>
+            </div>
+            <div class="grid-item" id="item4" data-filters="VR">
+                <img src="./image4.jpg" alt="Item 4">
+                <p>ARTour</p>
+            </div>
+            <div class="grid-item" id="item5" data-filters="AR 2D Software">
+                <img src="./image5.jpg" alt="Item 5">
+                <p>ClimateXR</p>
+            </div>
+            <div class="grid-item" id="item6" data-filters="VR">
+                <img src="./image6.jpg" alt="Item 6">
+                <p>The Both of Us</p>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
+            <nav class="social-icons">
+                <i class="fa-brands fa-facebook" style="scale: 2;"></i>
+                <i class="fa-brands fa-instagram" style="scale: 2;"></i>
+                <i class="fa-brands fa-twitter" style="scale: 2;"></i>
+            </nav>
+        </div>
+    </footer>    <!-- <script src="./script2.js"></script> -->
+</body>
+</html>
