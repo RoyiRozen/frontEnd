@@ -1,0 +1,290 @@
+body {
+    background-color: #ffffff;
+}
+
+
+#app {
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr;  /* Changed to single column for main container */
+    grid-gap: 10px;
+    padding: 10px;
+    max-width: 100%;
+    color: #000000;
+}
+
+
+.header-content {
+    display: grid;
+    grid-template-columns: 250px 2fr;  /* Set up two columns: image and text */
+    color: #000000;
+    grid-gap: 30px;
+    align-items: start;  
+    box-shadow: 0 0 1 0 rgba(0, 0, 0, 1);
+    /* Align items to top */
+}
+.image {
+    grid-column: 1;  /* Image in first column */
+    width: clamp(200px, 30vw, 400px);
+    height: auto;
+    filter: grayscale(100%);
+    object-fit: cover;
+    border-radius: 10%;
+    padding: 20px;
+    transition: filter 0.3s ease;
+    margin-top: 120px;  /* Add margin to push image down */
+}
+
+.image:hover {
+    filter: grayscale(0%); /* Remove grayscale on hover */
+}
+em {
+    font-family: 'Assistant', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    color: #000000;
+    font-style: normal;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Add this new style for the bottom border */
+.top-bar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;  /* Adjust thickness as needed */
+    background-color: #000000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);  /* Optional: adds subtle shadow */
+}
+
+.about {
+    position: absolute;
+    right: 86px;
+    top: 45px;
+    grid-column: 3fr 1fr;
+    font-family: 'Assistant', sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    color: rgb(59, 59, 59);
+    position: right; 
+}
+.about:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+
+#linkedin {
+    position: absolute;
+    right: 10px;
+    top: 89px;
+    width: 30px;
+    height: 48px;
+    grid-column: 3fr 1fr;
+}
+#linkedin:hover {
+    scale: 1.1;
+    transition: all 0.3s ease;
+    color: #1e00b3;
+}
+.title {
+    margin: 0;
+    font-family: 'Assistant', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    color: #000000;
+    padding-left: 20px; 
+    margin-top: 20px;  /* Add margin to push image down */ /* Add left padding to title */
+}
+
+.text-content {
+    grid-column: 2;
+    margin-left: 20px;
+    margin-right: 2px ;
+    margin-top: 120px;  /* Add margin to push text down */
+    max-width: 100%;
+    padding: 0 20px;
+}
+
+.text-content p {
+    font-size: clamp(14px, 2vw, 68px);
+    line-height: 1.5;
+    margin: 20px 0;
+    text-align: justify;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+
+}
+.filters {
+    grid-column: 1 / -1;  /* Makes filters span full width */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;  /* Added to handle overflow */
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #f9f9f9;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+.filter-button {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff;
+    &:hover {
+        transition: all 0.3s ease;
+        background-color: #ffffff;
+        color: #000000;
+        border: 1px solid #616161;
+    }
+}
+/* .filter-button.selected {
+    background-color: #007bff;
+    color: white;
+} */
+i {
+    display: flex;
+    align-items: center;
+    justify-content: right;    
+}
+footer em {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    color: #000000;
+    font-style: normal;
+    text-decoration: underline;
+}
+footer i {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    color: #000000;
+    align-items: right;
+    font-style: normal;
+    
+}
+.social-icons {
+    display: flex;
+    gap: 20px; /* Space between icons */
+    margin-left: 20px; /* Space from the copyright text */
+}
+
+.social-icons i {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.social-icons i:hover {
+    color: #1e00b3;
+}
+
+h1 {
+    margin-left: 0;
+    margin-top: 0;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Creates 3 equal columns */
+    gap: 20px; /* Space between grid items */
+    padding: 20px;
+}
+
+.grid-item {
+    aspect-ratio: 3/2;
+    overflow: hidden;
+    border-radius: 10px;
+    filter: grayscale(100%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.grid-item p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    pointer-events: none;
+}
+
+.grid-item:hover {
+    filter: grayscale(0%);
+}
+
+.grid-item:hover p {
+    opacity: 1;
+}
+
+.grid-item:hover img {
+    transform: scale(1.05);
+}
+
+h6 {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 100;
+    color: #000000;
+    font-style: regular;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
