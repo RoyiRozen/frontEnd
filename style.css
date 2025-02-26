@@ -230,8 +230,9 @@ h1 {
 }
 
 main {
-    display: grid;
-    gap: 20px; /* Space between grid items */
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Increased gap between sections */
     padding: 20px;
 }
 .grid-container {
@@ -239,6 +240,7 @@ main {
     grid-template-columns: 1fr 1fr 1fr; /* Creates 3 equal columns */
     gap: 20px; /* Space between grid items */
     padding: 20px;
+    margin-bottom: 40px; /* Add margin after grid container */
 }
 
 .grid-item {
@@ -304,11 +306,14 @@ h6 {
 /* Name for the entire video section */
 .video-container {
     position: relative;
-    margin:  0;
-    padding: 10px;
+    height: auto; /* Allow height to adjust naturally */
+    min-height: 500px; /* Minimum height on larger screens */
+    width: 100%;
+    margin: 40px 0 80px 0; /* Increased bottom margin */
     display: flex;
-    overflow: hidden;
+    overflow: visible;
     justify-content: space-between;
+    z-index: 1; /* Ensure proper stacking context */
 }
 
 .video-text {
@@ -429,28 +434,32 @@ h5 {
     .video-container {
         flex-direction: column;
         height: auto;
+        min-height: 650px; /* Taller on mobile to accommodate content */
+        margin-bottom: 100px; /* Even more space after video on mobile */
     }
     
     .video-text, .video-content {
         width: 100%;
+        max-width: 100%;
     }
     
-    /* .video-content {
-        height: 800px;
-        width: 100%;
-        
-    } */
-        /* .video-slider-container {
-        width: 20%;
-        height: 60%;
-        top: 20%;
-        left: 15%;
-    } */
+    .video-text {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
     
+    .video-content {
+        height: 350px; /* Fixed height on mobile */
+    }
+    
+    .dog-container {
+        margin-top: 100px; /* Additional spacing on mobile */
+    }
 }
 
 .footer-content {
     display: flex;
+    z-index: 5;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
@@ -458,11 +467,14 @@ h5 {
 
 /* Dog API Section Styling */
 .dog-container {
-    margin: 50px 0;
+    position: relative;
+    margin: 80px 0; /* Increased margins */
     padding: 30px;
     background-color: #f9f9f9;
     border-radius: 15px;
     text-align: center;
+    z-index: 4; /* Ensure this is on top but doesn't overlap inappropriately */
+    clear: both; /* Ensure it starts after previous elements */
 }
 
 .dog-content h3 {
@@ -490,6 +502,7 @@ h5 {
 }
 
 .dog-image-container {
+    position: relative;
     margin-top: 20px;
     min-height: 200px;
     display: flex;

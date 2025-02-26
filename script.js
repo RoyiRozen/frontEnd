@@ -1,18 +1,5 @@
 "use strict";
 
-let button = document.querySelector('button');
-
-button.addEventListener('click', () => {
-    alert('Button clicked');
-    let counter = 1;
-    counter++;
-    alert( 2 * counter );
-});
-
-let counter = 1;
-alert( 2 * counter );
-counter++;
-alert( 2 * counter );
 
 let gridItems = document.querySelectorAll('.grid-item');
 gridItems.forEach(item => {
