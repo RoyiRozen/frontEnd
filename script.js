@@ -1,6 +1,4 @@
 "use strict";
-import { prompt } from 'prompt-sync';
-
 
 let gridItems = document.querySelectorAll('.grid-item');
 gridItems.forEach(item => {
