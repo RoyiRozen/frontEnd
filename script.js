@@ -1,5 +1,4 @@
 "use strict";
-import net from 'net';
 import { prompt } from 'prompt-sync';
 
 
