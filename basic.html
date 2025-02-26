@@ -21,8 +21,9 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <script src="./script.js"></script> 
-    <script src="./filter.js"></script> 
+    <script type="module" src="./script.js"></script> 
+    <script type="module" src="./slider.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <div id="app">
         <header>
@@ -55,6 +56,7 @@
             <button class="filter-button" id="Events">#Talks</button>
         </nav>
         <main>
+            <section class="grid-container">
             <div class="grid-item" id="item1" data-filters="AR VR 3D">
                 <img src="./image1.png" alt="Item 1">
                 <p>BestMap NYC</p>
@@ -79,6 +81,60 @@
                 <img src="./image6.jpg" alt="Item 6">
                 <p>The Both of Us</p>
             </div>
+            </section>
+            <section class="video-container">
+                <div class="video-text">
+                    <h5>I believe Augmented Reality (AR) can transforms public spaces into dynamic canvases that reveal hidden layers of history, culture, and emotion. In our increasingly digital world, genuine human connection can often be lost, and AR offers a way to bring us closer to our environment by overlaying meaningful digital narratives onto physical spaces. By blending past and present, art and technology, AR can create interactive spaces where creativity and community flourish. I'm passionate about exploring new ways to reimagine overlooked stories and foster deeper social bonds.</h5>
+                </div>
+                
+                <div class="video-content">
+                    <div class="video-frame-wrapper">
+                        <div class="video-slider-container">
+                            <div class="video-slider">
+                                <div class="video-slide">
+                                    <video src="./video1.mp4" autoplay muted loop></video>
+                                </div>
+                                <div class="video-slide">
+                                    <video src="./video2.mp4" autoplay muted loop></video>
+                                </div>
+                                <div class="video-slide">
+                                    <video src="./video3.mp4" autoplay muted loop></video>
+                                </div>
+                                <div class="video-slide">
+                                    <video src="./video4.mp4" autoplay muted loop></video>
+                                </div>
+                                <div class="video-slide">
+                                    <video src="./video5.mp4" autoplay muted loop></video>
+                                </div>
+                                <div class="video-slide">
+                                    <video src="./video6.mp4" autoplay muted loop></video>
+                                </div>
+                            </div>
+                        </div>
+<!--                         
+                        <div class="video-background">
+                            <img src="./image7.png" alt="Video Background">
+                        </div> -->
+                        
+                        <div class="slider-arrow prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="slider-arrow next">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section class="dog-container">
+                <div class="dog-content">
+                    <h3>Also love dogs? Get a random dog image!</h3>
+                    <button id="fetch-dog-button" class="dog-button">Fetch Dog!</button>
+                    <div id="dog-image-container" class="dog-image-container">
+                        <!-- Dog images will appear here -->
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
     <footer>
@@ -90,6 +146,6 @@
                 <i class="fa-brands fa-twitter" style="scale: 2;"></i>
             </nav>
         </div>
-    </footer>    <!-- <script src="./script2.js"></script> -->
+    </footer>   
 </body>
 </html>
