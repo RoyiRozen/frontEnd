@@ -1,6 +1,5 @@
 "use strict";
-import net from 'net';
-import { prompt } from 'prompt-sync';
+
 
 
 let gridItems = document.querySelectorAll('.grid-item');
