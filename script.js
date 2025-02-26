@@ -50,9 +50,11 @@ function storeInput(value) {
 }
 
 let linkedinIcon = document.querySelector('.fa-linkedin');
-linkedinIcon.addEventListener('click', () => {
-    window.open('https://www.linkedin.com/in/royi-rozen/', '_blank');
-});
+if (linkedinIcon) {
+    linkedinIcon.addEventListener('click', () => {
+        window.open('https://www.linkedin.com/in/royi-rozen/', '_blank');
+    });
+}
 
 // Function to fetch and display random dog image
 function fetchRandomDogImage() {
