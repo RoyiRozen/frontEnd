@@ -1,5 +1,4 @@
 "use strict";
-import net from 'net';
 
 let gridItems = document.querySelectorAll('.grid-item');
 gridItems.forEach(item => {
