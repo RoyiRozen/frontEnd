@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BestMap NYC | Royi Rozen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/no_variables/bundles/fonts-6ee09b0b2f.css" media="screen" />
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/e67af36f5565992c0c7fce5060801003/variables-7dd4b80918af0e0218ec0229e4bd5873.css" media="all" />
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/common-60e5c6cfef.css" media="all" />
+    
+    <link rel="apple-touch-icon" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/apple-touch-icon-585e5d997d.png" />
+    <link rel="icon" type="image/x-icon" href="https://instructure-uploads.s3.amazonaws.com/account_97130000000000001/attachments/29724/cornellfac.ico" />
+  
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <script type="module" src="../script.js"></script>
+    <script type="module" src="../contact.js"></script>
+
+    <div id="app">
+        <header>
+            <div class="header-content">
+                <hgroup class="top-bar">
+                    <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
+                    <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
+                    <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
+                    <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.location.href='https://www.linkedin.com/in/royi-rozen/'"></i>
+                </hgroup>
+            </div>
+        </header>
+
+        <main class="project-page" style="padding-top: 120px;">
+            <h1 class="animate-on-scroll">BestMap NYC</h1>
+            
+            <img src="../image1.png" alt="BestMap NYC" style="width: 100%; max-width: 800px; display: block; margin: 0 auto 40px auto;" class="animate-on-scroll">
+            
+            <h2 class="animate-on-scroll">Project Overview</h2>
+            <p class="animate-on-scroll">
+                BestMap NYC is an augmented reality application that transforms how tourists and locals navigate New York City. Utilizing spatial mapping and computer vision technologies, the app overlays relevant information, historical context, and personalized recommendations onto the physical landscape of the city.
+            </p>
+            
+            <h2 class="animate-on-scroll">The Challenge</h2>
+            <p class="animate-on-scroll">
+                Traditional maps and navigation apps often lack context and personalization, reducing cities to simple grid systems. This creates a disconnect between the rich cultural history of urban spaces and how people experience them. BestMap NYC was designed to bridge this gap by creating a more immersive and contextualized navigation experience.
+            </p>
+            
+            <h2 class="animate-on-scroll">Solution</h2>
+            <p class="animate-on-scroll">
+                By combining AR, machine learning, and user-generated content, BestMap NYC allows users to:
+            </p>
+            <ul style="margin-bottom: 30px; line-height: 1.6;" class="animate-on-scroll">
+                <li>See historical overlays showing how neighborhoods have changed over time</li>
+                <li>Discover hidden gems and local recommendations based on their interests</li>
+                <li>Navigate using visual AR cues rather than traditional map interfaces</li>
+                <li>Learn about architectural features and historical significance of buildings</li>
+                <li>Access crowd-sourced stories and memories associated with specific locations</li>
+            </ul>
+            
+            <h2 class="animate-on-scroll">Technology Stack</h2>
+            <p class="animate-on-scroll">
+                BestMap NYC was built using:
+            </p>
+            <ul style="margin-bottom: 30px; line-height: 1.6;" class="animate-on-scroll">
+                <li>Unity for AR development</li>
+                <li>ARKit and ARCore for spatial mapping</li>
+                <li>Custom computer vision algorithms for landmark recognition</li>
+                <li>Firebase for backend services and user-generated content</li>
+                <li>Historical GIS data integration from NYC archives</li>
+            </ul>
+            
+            <div class="nav-buttons">
+                <button onclick="window.location.href='../basic.html'" style="padding: 10px 20px; background: #000; color: white; border: none; border-radius: 5px; cursor: pointer;">Back to Portfolio</button>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="footer-content">
+                <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
+                <nav class="social-icons">
+                    <i class="fa-brands fa-linkedin" style="scale: 2;"></i>
+                </nav>
+            </div>
+        </footer>
+        
+        <!-- Contact Button and Popup -->
+        <div class="contact-button" id="contact-button">
+            <i class="fas fa-comment"></i>
+        </div>
+        
+        <div class="contact-popup" id="contact-popup">
+            <div class="popup-header">
+                <h3>Get in Touch</h3>
+                <button class="popup-close" id="popup-close">&times;</button>
+            </div>
+            <div class="popup-content">
+                <img src="../image.jpg" alt="Royi Rozen" class="popup-image">
+                <div class="popup-text">
+                    <p>Send me a message</p>
+                </div>
+            </div>
+            <form class="contact-form" id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Type your message..." required></textarea>
+                <div class="form-divider"></div>
+                <button type="submit" class="send-button">Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html> 
