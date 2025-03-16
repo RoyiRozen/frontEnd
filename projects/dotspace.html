@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dot Space AI - Royi Rozen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/no_variables/bundles/fonts-6ee09b0b2f.css" media="screen" />
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/e67af36f5565992c0c7fce5060801003/variables-7dd4b80918af0e0218ec0229e4bd5873.css" media="all" />
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/common-60e5c6cfef.css" media="all" />
+    
+    <link rel="apple-touch-icon" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/apple-touch-icon-585e5d997d.png" />
+    <link rel="icon" type="image/x-icon" href="https://instructure-uploads.s3.amazonaws.com/account_97130000000000001/attachments/29724/cornellfac.ico" />
+    
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .figma-container {
+            width: 100%;
+            margin: 40px 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .figma-embed {
+            width: 100%;
+            height: 650px;
+            border: none;
+        }
+        
+        .prototype-instructions {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #333;
+        }
+        
+        .prototype-instructions h3 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+        
+        .project-content {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        @media (max-width: 768px) {
+            .figma-embed {
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script type="module" src="../script.js"></script>
+    <script type="module" src="../contact.js"></script>
+    
+    <div id="app">
+        <header>
+            <div class="header-content">
+                <hgroup class="top-bar">
+                    <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
+                    <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
+                    <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
+                    <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.location.href='https://www.linkedin.com/in/royi-rozen/'"></i>
+                </hgroup>
+            </div>
+        </header>
+        
+        <main class="project-page">
+            <div class="project-header">
+                <h1>Dot Space AI</h1>
+                <div class="project-meta">
+                    <div class="project-year">2022</div>
+                    <div class="project-tags">
+                        <span class="project-tag">AI</span>
+                        <span class="project-tag">Leadership</span>
+                        <span class="project-tag">UI/UX</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-content">
+                <h2>Project Overview</h2>
+                <p>
+                    Dot Space AI redefines collaborative interior design by leveraging generative artificial intelligence 
+                    to transform the way professionals and clients work together on spatial planning projects. The platform 
+                    uses AI to generate contextually relevant design options based on user preferences, space constraints, 
+                    and style requirements, significantly reducing the iteration time between concept and implementation.
+                </p>
+                
+                <div class="prototype-instructions">
+                    <h3>Interactive Prototype</h3>
+                    <p>Below is an interactive prototype of the Dot Space AI platform. You can click through the interface to experience the user flow:</p>
+                    <ul>
+                        <li>Navigate through the onboarding process</li>
+                        <li>Explore different AI-generated design options</li>
+                        <li>Interact with the visualization tools</li>
+                        <li>Experience the collaboration features</li>
+                    </ul>
+                </div>
+                
+                <div class="figma-container">
+                    <iframe class="figma-embed" 
+                            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FI8KPgKGkUG6qYnSl8OfMgl%2FDot-Prototype%3Fnode-id%3D2-146%26starting-point-node-id%3D2%253A98%26t%3DPXgYBI7rex4JticQ-1" 
+                            allowfullscreen></iframe>
+                </div>
+                
+                <h2>Technical Details</h2>
+                <p>
+                    The project leverages several advanced technologies to deliver a seamless design experience:
+                </p>
+                <ul>
+                    <li>Machine learning models trained on thousands of interior designs and spatial arrangements</li>
+                    <li>Real-time 3D visualization using WebGL for immediate feedback on design changes</li>
+                    <li>Multi-user collaboration infrastructure with conflict resolution</li>
+                    <li>Style transfer algorithms to adapt designs to specific aesthetic preferences</li>
+                    <li>Integration with furniture and material databases for realistic rendering and procurement</li>
+                </ul>
+                
+                <h2>Implementation</h2>
+                <p>
+                    Leading the development of Dot Space AI involved coordinating cross-functional teams of designers, 
+                    engineers, and AI specialists. We implemented an agile methodology with two-week sprints, focusing on 
+                    continuous user testing and iterative improvements. The platform was built as a progressive web application, 
+                    ensuring accessibility across devices while maintaining the performance necessary for complex visualizations.
+                </p>
+                <p>
+                    A significant challenge was creating AI models that could generate designs that were both innovative and 
+                    practical. This required extensive training on both successful designs and practical constraints such as 
+                    building codes, traffic patterns, and material limitations. We developed a proprietary feedback loop system 
+                    that allowed the AI to learn from designer corrections, continuously improving its suggestions.
+                </p>
+                
+                <h2>Outcomes</h2>
+                <p>
+                    Dot Space AI has achieved remarkable market traction since its launch:
+                </p>
+                <ul>
+                    <li>60% reduction in time from concept to client approval compared to traditional methods</li>
+                    <li>85% increase in client satisfaction ratings due to increased involvement in the design process</li>
+                    <li>Adoption by over 200 design firms within the first year</li>
+                    <li>$3.2M in venture funding secured for expansion to commercial and hospitality design sectors</li>
+                    <li>Featured in Architectural Digest and Interior Design Magazine as a "transformative technology"</li>
+                </ul>
+                <p>
+                    The platform continues to evolve, with ongoing development focused on expanding AI capabilities to include 
+                    lighting simulation, acoustics, and sustainability metrics, further enhancing the comprehensive nature of 
+                    the design experience.
+                </p>
+            </div>
+            
+            <div class="nav-buttons">
+                <button onclick="window.location.href='../basic.html'" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Back to Portfolio
+                </button>
+            </div>
+        </main>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
+            <nav class="social-icons">
+                <i class="fa-brands fa-linkedin" style="scale: 2;"></i>
+            </nav>
+        </div>
+    </footer>
+    
+    <!-- Contact Button and Popup -->
+    <div class="contact-button" id="contact-button">
+        <i class="fas fa-comment"></i>
+    </div>
+    
+    <div class="contact-popup" id="contact-popup">
+        <div class="popup-header">
+            <h3>Get in Touch</h3>
+            <button class="popup-close" id="popup-close">&times;</button>
+        </div>
+        <div class="popup-content">
+            <img src="../image.jpg" alt="Royi Rozen" class="popup-image">
+            <div class="popup-text">
+                <p>Send me a message</p>
+            </div>
+        </div>
+        <form class="contact-form" id="contact-form">
+            <div class="form-fields">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Type your message..." required></textarea>
+            </div>
+            <div class="form-divider"></div>
+            <div class="form-actions">
+                <button type="submit" class="send-button">Send</button>
+                <div style="clear: both;"></div> <!-- Clear the float -->
+            </div>
+            <input type="hidden" name="recipient" value="rr789@cornell.edu">
+        </form>
+    </div>
+</body>
+</html> 

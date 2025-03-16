@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemoriAR - Royi Rozen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/no_variables/bundles/fonts-6ee09b0b2f.css" media="screen" />
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/e67af36f5565992c0c7fce5060801003/variables-7dd4b80918af0e0218ec0229e4bd5873.css" media="all" />
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/common-60e5c6cfef.css" media="all" />
+    
+    <link rel="apple-touch-icon" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/apple-touch-icon-585e5d997d.png" />
+    <link rel="icon" type="image/x-icon" href="https://instructure-uploads.s3.amazonaws.com/account_97130000000000001/attachments/29724/cornellfac.ico" />
+    
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .video-container {
+            width: 100%;
+            margin: 40px 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+        }
+        
+        .video-embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .memorial-badge {
+            display: inline-block;
+            background-color: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-left: 10px;
+            font-size: 0.8em;
+            vertical-align: middle;
+        }
+        
+        .memorial-highlight {
+            background-color: #f8f9fa;
+            border-left: 4px solid #7030a0;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .project-section {
+            margin: 30px 0;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .tech-item {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .tech-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        @media (max-width: 768px) {
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <script type="module" src="../script.js"></script>
+    <script type="module" src="../contact.js"></script>
+    
+    <div id="app">
+        <header>
+            <div class="header-content">
+                <hgroup class="top-bar">
+                    <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
+                    <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
+                    <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
+                    <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.location.href='https://www.linkedin.com/in/royi-rozen/'"></i>
+                </hgroup>
+            </div>
+        </header>
+        
+        <main class="project-page">
+            <div class="project-header">
+                <h1>MemoriAR <span class="memorial-badge">Memorial Platform</span></h1>
+                <div class="project-meta">
+                    <div class="project-year">2023</div>
+                    <div class="project-tags">
+                        <span class="project-tag">AR</span>
+                        <span class="project-tag">Creative</span>
+                        <span class="project-tag">Unity</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-content">
+                <div class="project-section">
+                    <h2>Project Overview</h2>
+                    <p>
+                        MemoriAR is a response to the Hamas attack on Israel on October 7th, 2023. In the face of tragedy, 
+                        we harnessed our technical expertise to create something meaningful—a memorial platform that enables 
+                        family members to cherish and preserve the memories of their loved ones through augmented reality.
+                    </p>
+                    
+                    <div class="memorial-highlight">
+                        <p>
+                            <strong>A New Way to Keep Memories Alive:</strong> MemoriAR represents a profound reimagining of how we 
+                            preserve and honor memories, allowing families to create persistent, location-based augmented reality 
+                            memorials that can be visited and experienced by anyone with a mobile device.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="video-container">
+                    <iframe class="video-embed" 
+                            src="https://www.youtube.com/embed/pjVrcV7dmxI?si=E-h8ms9M_r2Wvx-0" 
+                            title="MemoriAR - AR Memorial Platform" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen></iframe>
+                </div>
+                
+                <div class="project-section">
+                    <h2>Technical Implementation</h2>
+                    <p>
+                        The MemoriAR platform was built using Unity as our primary development environment. To create 
+                        compelling and respectful memorial experiences, we combined several technologies:
+                    </p>
+                    
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <i class="fab fa-unity tech-icon"></i>
+                            <span>Unity</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-cube tech-icon"></i>
+                            <span>Blender</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-map-marker-alt tech-icon"></i>
+                            <span>ARCore</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-globe tech-icon"></i>
+                            <span>Geospatial API</span>
+                        </div>
+                    </div>
+                    
+                    <p>
+                        We used Blender for creating 3D assets and animations that represented memories in a tasteful and 
+                        meaningful way. These assets were then integrated into Unity to create the augmented reality experience. 
+                        The Google Geospatial API enabled us to accurately place memorials in specific locations, allowing 
+                        visitors to experience them exactly where they were intended to be.
+                    </p>
+                    <p>
+                        This proof of concept demonstrates how AR can be used not just for entertainment or commercial 
+                        purposes, but as a powerful medium for remembrance and healing.
+                    </p>
+                </div>
+                
+                <div class="project-section">
+                    <h2>Features</h2>
+                    <ul>
+                        <li><strong>Location-Based Memorials:</strong> Place digital memorials at meaningful physical locations</li>
+                        <li><strong>Memory Artifacts:</strong> Upload photos, videos, and 3D objects that represent the person's life</li>
+                        <li><strong>Personal Stories:</strong> Record and share stories and memories that visitors can experience</li>
+                        <li><strong>Collective Remembrance:</strong> Allow visitors to leave messages or tokens of remembrance</li>
+                        <li><strong>Persistent Experience:</strong> Memorials remain accessible indefinitely, creating a lasting tribute</li>
+                    </ul>
+                </div>
+                
+                <div class="project-section">
+                    <h2>Impact & Recognition</h2>
+                    <p>
+                        MemoriAR was presented at the Google Geospatial Creator Hackathon, where it was recognized for 
+                        its innovative approach to memory preservation and its sensitive response to a real-world tragedy. 
+                        The project received significant interest from community organizations and memorial foundations.
+                    </p>
+                    <p>
+                        While initially conceived as a response to the October 7th attacks, the platform has the potential 
+                        to serve as a universal tool for remembrance, applicable to various contexts where preserving 
+                        personal and collective memory is important.
+                    </p>
+                </div>
+                
+                <div class="project-section">
+                    <h2>Future Development</h2>
+                    <p>
+                        Moving forward, we are exploring partnerships with memorial institutions and community organizations 
+                        to expand the reach and impact of MemoriAR. Key areas of development include:
+                    </p>
+                    <ul>
+                        <li>Enhanced content creation tools for families with limited technical expertise</li>
+                        <li>Integration with historical archives and databases</li>
+                        <li>Multilingual support to serve diverse communities</li>
+                        <li>Accessibility features to ensure everyone can experience the memorials</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="nav-buttons">
+                <button onclick="window.location.href='../basic.html'" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Back to Portfolio
+                </button>
+            </div>
+        </main>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
+            <nav class="social-icons">
+                <i class="fa-brands fa-linkedin" style="scale: 2;"></i>
+            </nav>
+        </div>
+    </footer>
+    
+    <!-- Contact Button and Popup -->
+    <div class="contact-button" id="contact-button">
+        <i class="fas fa-comment"></i>
+    </div>
+    
+    <div class="contact-popup" id="contact-popup">
+        <div class="popup-header">
+            <h3>Get in Touch</h3>
+            <button class="popup-close" id="popup-close">&times;</button>
+        </div>
+        <div class="popup-content">
+            <img src="../image.jpg" alt="Royi Rozen" class="popup-image">
+            <div class="popup-text">
+                <p>Send me a message</p>
+            </div>
+        </div>
+        <form class="contact-form" id="contact-form">
+            <div class="form-fields">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Type your message..." required></textarea>
+            </div>
+            <div class="form-divider"></div>
+            <div class="form-actions">
+                <button type="submit" class="send-button">Send</button>
+                <div style="clear: both;"></div> <!-- Clear the float -->
+            </div>
+            <input type="hidden" name="recipient" value="rr789@cornell.edu">
+        </form>
+    </div>
+</body>
+</html> 

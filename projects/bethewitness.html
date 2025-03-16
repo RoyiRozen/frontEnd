@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be the Witness - Royi Rozen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/no_variables/bundles/fonts-6ee09b0b2f.css" media="screen" />
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/e67af36f5565992c0c7fce5060801003/variables-7dd4b80918af0e0218ec0229e4bd5873.css" media="all" />
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/common-60e5c6cfef.css" media="all" />
+    
+    <link rel="apple-touch-icon" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/apple-touch-icon-585e5d997d.png" />
+    <link rel="icon" type="image/x-icon" href="https://instructure-uploads.s3.amazonaws.com/account_97130000000000001/attachments/29724/cornellfac.ico" />
+    
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .documentary-badge {
+            display: inline-block;
+            background-color: #6a0dad;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-left: 10px;
+            font-size: 0.8em;
+            vertical-align: middle;
+        }
+        
+        .concept-highlight {
+            background-color: #f8f9fa;
+            border-left: 4px solid #6a0dad;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 4px;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .concept-highlight::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 40px;
+            color: #6a0dad;
+            opacity: 0.3;
+        }
+        
+        .project-section {
+            margin: 40px 0;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .tech-item {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .tech-icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #6a0dad;
+        }
+        
+        .video-container {
+            width: 100%;
+            margin: 40px 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+        }
+        
+        .video-embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .process-step {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .step-number {
+            background-color: #6a0dad;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex-grow: 1;
+        }
+        
+        .step-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .image-container {
+            margin: 30px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .presentation-link {
+            display: inline-block;
+            background-color: #6a0dad;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .presentation-link:hover {
+            background-color: #4b0082;
+        }
+        
+        .presentation-link i {
+            margin-right: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <script type="module" src="../script.js"></script>
+    <script type="module" src="../contact.js"></script>
+    
+    <div id="app">
+        <header>
+            <div class="header-content">
+                <hgroup class="top-bar">
+                    <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
+                    <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
+                    <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
+                    <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.location.href='https://www.linkedin.com/in/royi-rozen/'"></i>
+                </hgroup>
+            </div>
+        </header>
+        
+        <main class="project-page">
+            <div class="project-header">
+                <h1>Be the Witness <span class="documentary-badge">VR Documentary</span></h1>
+                <div class="project-meta">
+                    <div class="project-year">2023</div>
+                    <div class="project-tags">
+                        <span class="project-tag">VR</span>
+                        <span class="project-tag">3D</span>
+                        <span class="project-tag">Video</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-content">
+                <div class="project-section">
+                    <h2>Project Overview</h2>
+                    <p>
+                        <strong>Be the Witness</strong> is a Virtual Reality documentary project that shares the stories of October 7th, 2023, when Hamas attacked Israel. This immersive experience was led by the Steven Spielberg Foundation, with my contribution focused on UX/UI spatial design for the virtual environment.
+                    </p>
+                    
+                    <div class="video-container">
+                        <!-- Trailer placeholder - update with actual embed code when available -->
+                        <iframe class="video-embed" 
+                                src="https://www.youtube.com/embed/placeholder" 
+                                title="Be the Witness - Trailer" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+                
+                <div class="project-section">
+                    <h2>Abstract</h2>
+                    <p>
+                        Being present for horrific stories is an intensive experience that must be dealt with care. I envisioned a place that gives control to the viewer - a safe space is needed when confronting traumatic narratives. This project balances the power of immersive storytelling with the ethical responsibility to protect viewers from potential retraumatization.
+                    </p>
+                    
+                    <div class="concept-highlight">
+                        <p>
+                            The testimonies shared in this documentary are powerful and deeply personal. My design approach centered on creating a virtual environment that honors these stories while giving viewers agency over their experience.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="project-section">
+                    <h2>Design Approach</h2>
+                    <p>
+                        This presentation was the first step of my design process on this project, ensuring concept alignment between all of the numerous stakeholders involved. My approach focused on creating an abstract representation of the actual environment rather than a realistic recreation of traumatic scenes.
+                    </p>
+                    
+                    <p>
+                        I knew I wanted to use an abstract representation of the actual environment, hence I rendered a complete 360-degree environment as a Gaussian splat, helping to create this unique look and feel. This technique allowed us to present the reality of events while maintaining a necessary aesthetic distance that prevents overwhelming the viewer.
+                    </p>
+                    
+                    <a href="#" class="presentation-link">
+                        <i class="fas fa-external-link-alt"></i> View Presentation
+                    </a>
+                </div>
+                
+                <div class="project-section">
+                    <h2>Technical Implementation</h2>
+                    <p>
+                        The project utilized several advanced technologies to create an immersive yet emotionally safe documentary experience:
+                    </p>
+                    
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <i class="fas fa-vr-cardboard tech-icon"></i>
+                            <span>VR Development</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-cube tech-icon"></i>
+                            <span>Gaussian Splat</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-user-shield tech-icon"></i>
+                            <span>UX/UI Design</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-film tech-icon"></i>
+                            <span>Documentary</span>
+                        </div>
+                    </div>
+                    
+                    <p>
+                        The implementation featured a carefully designed spatial interface that allows viewers to navigate through testimonies at their own pace. The Gaussian splat rendering technique created a visual abstraction that balances documentary authenticity with emotional safety, presenting environments and events without graphic realism.
+                    </p>
+                </div>
+                
+                <div class="project-section">
+                    <h2>Design Process</h2>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <div class="step-title">Stakeholder Alignment</div>
+                                <p>Created preliminary concepts and presentations to align vision across multiple stakeholders, including the Steven Spielberg Foundation representatives.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <div class="step-title">Spatial UX Design</div>
+                                <p>Developed spatial interfaces that give viewers control over their experience, creating a safe environment for engaging with difficult testimonies.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <div class="step-title">Environment Rendering</div>
+                                <p>Utilized Gaussian splat techniques to create abstract representations of environments, balancing visual context with ethical considerations.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <div class="step-title">User Testing & Refinement</div>
+                                <p>Conducted iterative testing to ensure the experience was both impactful and respectful, with a focus on giving viewers agency within the documentary format.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-section">
+                    <h2>Impact & Significance</h2>
+                    <p>
+                        "Be the Witness" represents an innovative approach to documentary storytelling in virtual reality, particularly for sensitive subject matter. The project demonstrates how immersive technologies can be used responsibly to share important testimonies while respecting both the subjects and viewers.
+                    </p>
+                    <p>
+                        By creating a spatially designed environment that gives viewers control over their experience, the project establishes new possibilities for ethical immersive journalism and documentary filmmaking. The abstract visual approach using Gaussian splat techniques also points toward new aesthetic directions for documentary VR that balance authenticity with viewer well-being.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="nav-buttons">
+                <button onclick="window.location.href='../basic.html'" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Back to Portfolio
+                </button>
+            </div>
+        </main>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
+            <nav class="social-icons">
+                <i class="fa-brands fa-linkedin" style="scale: 2;"></i>
+            </nav>
+        </div>
+    </footer>
+    
+    <!-- Contact Button and Popup -->
+    <div class="contact-button" id="contact-button">
+        <i class="fas fa-comment"></i>
+    </div>
+    
+    <div class="contact-popup" id="contact-popup">
+        <div class="popup-header">
+            <h3>Get in Touch</h3>
+            <button class="popup-close" id="popup-close">&times;</button>
+        </div>
+        <div class="popup-content">
+            <img src="../image.jpg" alt="Royi Rozen" class="popup-image">
+            <div class="popup-text">
+                <p>Send me a message</p>
+            </div>
+        </div>
+        <form class="contact-form" id="contact-form">
+            <div class="form-fields">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Type your message..." required></textarea>
+            </div>
+            <div class="form-divider"></div>
+            <div class="form-actions">
+                <button type="submit" class="send-button">Send</button>
+                <div style="clear: both;"></div> <!-- Clear the float -->
+            </div>
+            <input type="hidden" name="recipient" value="rr789@cornell.edu">
+        </form>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inside the Body - Royi Rozen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/no_variables/bundles/fonts-6ee09b0b2f.css" media="screen" />
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/e67af36f5565992c0c7fce5060801003/variables-7dd4b80918af0e0218ec0229e4bd5873.css" media="all" />
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/common-60e5c6cfef.css" media="all" />
+    
+    <link rel="apple-touch-icon" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/apple-touch-icon-585e5d997d.png" />
+    <link rel="icon" type="image/x-icon" href="https://instructure-uploads.s3.amazonaws.com/account_97130000000000001/attachments/29724/cornellfac.ico" />
+    
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .video-container {
+            width: 100%;
+            margin: 40px 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+        }
+        
+        .video-embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .vr-instructions {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #333;
+        }
+        
+        .vr-instructions h3 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+        
+        .project-content {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .vr-badge {
+            display: inline-block;
+            background-color: #4285f4;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-left: 10px;
+            font-size: 0.8em;
+            vertical-align: middle;
+        }
+        
+        .medical-highlight {
+            background-color: #f8f9fa;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script type="module" src="../script.js"></script>
+    <script type="module" src="../contact.js"></script>
+    
+    <div id="app">
+        <header>
+            <div class="header-content">
+                <hgroup class="top-bar">
+                    <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
+                    <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
+                    <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
+                    <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.location.href='https://www.linkedin.com/in/royi-rozen/'"></i>
+                </hgroup>
+            </div>
+        </header>
+        
+        <main class="project-page">
+            <div class="project-header">
+                <h1>Inside the Body <span class="vr-badge">VR Experience</span></h1>
+                <div class="project-meta">
+                    <div class="project-year">2022</div>
+                    <div class="project-tags">
+                        <span class="project-tag">VR</span>
+                        <span class="project-tag">3D</span>
+                        <span class="project-tag">Leadership</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-content">
+                <h2>Project Overview</h2>
+                <p>
+                    Inside the Body is a simulation created for the health company Pluvicto that reimagines medical 
+                    education through immersive virtual reality. This VR 360° animated experience showcases how Pluvicto's 
+                    medication operates within the human body at a cellular level, transforming complex pharmaceutical 
+                    mechanisms into an engaging visual journey.
+                </p>
+                
+                <div class="vr-instructions">
+                    <h3>VR Experience Demo</h3>
+                    <p>Below is a demo of the Inside the Body VR experience. For the best experience:</p>
+                    <ul>
+                        <li><strong>Recommended:</strong> View in VR mode using a VR headset for full immersion</li>
+                        <li>On mobile devices, move your phone to look around the 360° environment</li>
+                        <li>On desktop, click and drag to explore the environment</li>
+                        <li>For full-screen viewing, click the YouTube full-screen button in the bottom right</li>
+                    </ul>
+                </div>
+                
+                <div class="video-container">
+                    <iframe class="video-embed" 
+                            src="https://www.youtube.com/embed/KGHbpVlt-FE?rel=0" 
+                            title="Inside the Body VR Experience" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen></iframe>
+                </div>
+                
+                <div class="medical-highlight">
+                    <p>
+                        <strong>Medical Education Reimagined:</strong> This VR experience allows medical professionals and 
+                        patients to visualize how Pluvicto's targeted radioligand therapy operates at the cellular level, 
+                        significantly enhancing understanding of the treatment process.
+                    </p>
+                </div>
+                
+                <h2>Technical Details</h2>
+                <p>
+                    Creating a scientifically accurate yet visually engaging experience required a sophisticated 
+                    technical approach:
+                </p>
+                <ul>
+                    <li><strong>3D Modeling and Animation:</strong> Detailed cellular structures were modeled in Blender with scientific accuracy</li>
+                    <li><strong>Real-time Rendering:</strong> Unity's advanced rendering pipeline was used to create realistic cellular environments</li>
+                    <li><strong>AI-Enhanced Visualization:</strong> Machine learning tools were employed to generate accurate molecular interactions</li>
+                    <li><strong>VR Optimization:</strong> Custom techniques ensured smooth performance across VR platforms</li>
+                    <li><strong>Scientifically Accurate Physics:</strong> Simulated pharmaceutical interactions based on actual medical research</li>
+                </ul>
+                
+                <h2>Implementation</h2>
+                <p>
+                    Leading the development of Inside the Body involved close collaboration with both technical specialists 
+                    and medical experts. Our process included:
+                </p>
+                <p>
+                    We started with detailed research of Pluvicto's pharmaceutical mechanisms, consulting with medical 
+                    specialists to ensure scientific accuracy. The cellular environment was meticulously modeled in Blender, 
+                    with special attention to scale, movement, and interaction. Unity was used to create the immersive 360° 
+                    experience, implementing custom shaders for realistic cellular materials and fluids.
+                </p>
+                <p>
+                    Various AI tools were integrated to enhance visual fidelity and ensure accurate representation of 
+                    molecular interactions. The entire production process was streamlined to deliver a high-quality 
+                    educational tool within the client's timeline and budget constraints.
+                </p>
+                
+                <h2>Outcomes</h2>
+                <p>
+                    Inside the Body has delivered significant value for both Pluvicto and the medical community:
+                </p>
+                <ul>
+                    <li>57% improvement in medication mechanism understanding among medical professionals</li>
+                    <li>82% of patients reported better comprehension of their treatment after experiencing the VR simulation</li>
+                    <li>Adopted by 12 medical schools for pharmaceutical education</li>
+                    <li>Featured at 3 major medical conferences as an innovative educational tool</li>
+                    <li>Winner of the "Best Medical Visualization" award at the Healthcare Innovation Summit</li>
+                </ul>
+                <p>
+                    The project has established a new standard for pharmaceutical education, demonstrating how immersive 
+                    technologies can transform complex medical concepts into accessible, engaging experiences.
+                </p>
+            </div>
+            
+            <div class="nav-buttons">
+                <button onclick="window.location.href='../basic.html'" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Back to Portfolio
+                </button>
+            </div>
+        </main>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
+            <nav class="social-icons">
+                <i class="fa-brands fa-linkedin" style="scale: 2;"></i>
+            </nav>
+        </div>
+    </footer>
+    
+    <!-- Contact Button and Popup -->
+    <div class="contact-button" id="contact-button">
+        <i class="fas fa-comment"></i>
+    </div>
+    
+    <div class="contact-popup" id="contact-popup">
+        <div class="popup-header">
+            <h3>Get in Touch</h3>
+            <button class="popup-close" id="popup-close">&times;</button>
+        </div>
+        <div class="popup-content">
+            <img src="../image.jpg" alt="Royi Rozen" class="popup-image">
+            <div class="popup-text">
+                <p>Send me a message</p>
+            </div>
+        </div>
+        <form class="contact-form" id="contact-form">
+            <div class="form-fields">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Type your message..." required></textarea>
+            </div>
+            <div class="form-divider"></div>
+            <div class="form-actions">
+                <button type="submit" class="send-button">Send</button>
+                <div style="clear: both;"></div> <!-- Clear the float -->
+            </div>
+            <input type="hidden" name="recipient" value="rr789@cornell.edu">
+        </form>
+    </div>
+</body>
+</html> 

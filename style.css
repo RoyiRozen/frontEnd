@@ -725,8 +725,17 @@ h5 {
 }
 
 .timeline-description {
-    margin-bottom: 15px;
-    font-size: 16px;
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+}
+
+/* Style for the second description in timeline entries */
+.timeline-description + .timeline-description {
+    font-size: 0.85rem;
+    color: #777;
+    font-weight: 400;
+    margin-top: 2px;
 }
 
 .timeline-divider-vertical {
