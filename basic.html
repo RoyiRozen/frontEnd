@@ -44,28 +44,28 @@
             <div class="timeline-container animate-on-scroll">
                 <div class="timeline-item">
                     <div class="timeline-entry">
-                        <div class="timeline-date">2023 - Present</div>
+                        <div class="timeline-date">2024 - Present</div>
                         <div class="timeline-description">Cornell Tech</div>
                     </div>
                     
                     <div class="timeline-divider-vertical"></div>
                     
                     <div class="timeline-entry">
-                        <div class="timeline-date">2021 - 2023</div>
+                        <div class="timeline-date">2022 - Present</div>
                         <div class="timeline-description">ARoundU</div>
                     </div>
                     
                     <div class="timeline-divider-vertical"></div>
                     
                     <div class="timeline-entry">
-                        <div class="timeline-date">2019 - 2021</div>
+                        <div class="timeline-date">2022 - 2023</div>
                         <div class="timeline-description">Segal Brain Institution</div>
                     </div>
                     
                     <div class="timeline-divider-vertical"></div>
                     
                     <div class="timeline-entry">
-                        <div class="timeline-date">2015 - 2019</div>
+                        <div class="timeline-date">2018 - 2023</div>
                         <div class="timeline-description">Tel Aviv University</div>
                     </div>
                 </div>
@@ -80,210 +80,480 @@
             <button class="filter-button" id="2D">#2D</button>
             <button class="filter-button" id="UI/UX">#UI/UX</button>
             <button class="filter-button" id="Development">#Development</button>
-            <button class="filter-button" id="Research">#Research</button>
-            <button class="filter-button" id="VFX">#VFX</button>
+            <button class="filter-button" id="Creative">#Creative</button>
             <button class="filter-button" id="Video">#Video</button>
             <button class="filter-button" id="Software">#Software</button>
-            <button class="filter-button" id="Events">#Talks</button>
+            <button class="filter-button" id="Leadership">#Leadership</button>
+            <button class="filter-button" id="CV">#CV</button>
+            
+            <div class="view-toggle">
+                <span>View:</span>
+                <button id="two-column" class="view-button active">2 Columns</button>
+                <button id="three-column" class="view-button">3 Columns</button>
+            </div>
         </nav>
         <main>
-            <section class="grid-container">
-                <!-- Project 1 -->
-                <div class="grid-item animate-on-scroll color-animate" id="bestmap" data-filters="AR VR 3D">
-                    <div class="grid-item-image-container">
-                        <img src="./image1.png" alt="BestMap NYC">
-                    </div>
-                    <div class="grid-item-details">
-                        <div class="grid-item-title">BestMap NYC</div>
-                        <div class="grid-item-description">AR navigation system for exploring NYC's hidden stories</div>
-                        <div class="grid-item-year">2023</div>
-                        <div class="grid-item-filters">
-                            <span class="grid-item-filter">AR</span>
-                            <span class="grid-item-filter">VR</span>
-                            <span class="grid-item-filter">3D</span>
+            <section class="grid-container-wrapper">
+                <div class="layout-toggle">
+                    <button id="two-column-btn" class="layout-button active">
+                        <div class="layout-icon two-col-icon"></div>
+                    </button>
+                    <div class="layout-divider"></div>
+                    <button id="three-column-btn" class="layout-button">
+                        <div class="layout-icon three-col-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
+                </div>
+                
+                <section class="grid-container">
+                    <!-- Project 1 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="bestmap" data-filters="AR VR 3D">
+                        <div class="grid-item-image-container">
+                            <img src="./image1.png" alt="BestMap NYC">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">BestMap NYC</div>
+                            <div class="grid-item-description">AR navigation system for exploring NYC's hidden stories</div>
+                            <div class="grid-item-year">2023</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">AR</span>
+                                <span class="grid-item-filter">VR</span>
+                                <span class="grid-item-filter">3D</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Project 2 -->
-                <div class="grid-item animate-on-scroll color-animate" id="timmy" data-filters="AI Development">
-                    <div class="grid-item-image-container">
-                        <img src="./image2.png" alt="Timmy AI">
-                    </div>
-                    <div class="grid-item-details">
-                        <div class="grid-item-title">Timmy AI</div>
-                        <div class="grid-item-description">Conversational AI assistant for creative workflows</div>
-                        <div class="grid-item-year">2022</div>
-                        <div class="grid-item-filters">
-                            <span class="grid-item-filter">AI</span>
-                            <span class="grid-item-filter">Development</span>
+                    <!-- Project 2 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="timmy" data-filters="AI Development">
+                        <div class="grid-item-image-container">
+                            <img src="./image2.png" alt="Timmy AI">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">Timmy AI</div>
+                            <div class="grid-item-description">Conversational AI assistant for creative workflows</div>
+                            <div class="grid-item-year">2022</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">AI</span>
+                                <span class="grid-item-filter">Development</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Project 3 -->
-                <div class="grid-item animate-on-scroll color-animate" id="reactions" data-filters="VR">
-                    <div class="grid-item-image-container">
-                        <img src="./image3.jpg" alt="Reactions">
-                    </div>
-                    <div class="grid-item-details">
-                        <div class="grid-item-title">Reactions</div>
-                        <div class="grid-item-description">VR experience for chemistry education and visualization</div>
-                        <div class="grid-item-year">2022</div>
-                        <div class="grid-item-filters">
-                            <span class="grid-item-filter">VR</span>
+                    <!-- Project 3 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="reactions" data-filters="VR">
+                        <div class="grid-item-image-container">
+                            <img src="./image3.jpg" alt="Reactions">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">Reactions</div>
+                            <div class="grid-item-description">VR experience for chemistry education and visualization</div>
+                            <div class="grid-item-year">2022</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">VR</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Project 4 -->
-                <div class="grid-item animate-on-scroll color-animate" id="artour" data-filters="VR">
-                    <div class="grid-item-image-container">
-                        <img src="./image4.jpg" alt="ARTour">
-                    </div>
-                    <div class="grid-item-details">
-                        <div class="grid-item-title">ARTour</div>
-                        <div class="grid-item-description">Virtual tour experience for museums and galleries</div>
-                        <div class="grid-item-year">2021</div>
-                        <div class="grid-item-filters">
-                            <span class="grid-item-filter">VR</span>
+                    <!-- Project 4 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="artour" data-filters="VR">
+                        <div class="grid-item-image-container">
+                            <img src="./image4.jpg" alt="ARTour">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">ARTour</div>
+                            <div class="grid-item-description">Virtual tour experience for museums and galleries</div>
+                            <div class="grid-item-year">2021</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">VR</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Project 5 -->
-                <div class="grid-item animate-on-scroll color-animate" id="climate" data-filters="AR 2D Software">
-                    <div class="grid-item-image-container">
-                        <img src="./image5.jpg" alt="ClimateXR">
-                    </div>
-                    <div class="grid-item-details">
-                        <div class="grid-item-title">ClimateXR</div>
-                        <div class="grid-item-description">AR visualization of climate data and future scenarios</div>
-                        <div class="grid-item-year">2021</div>
-                        <div class="grid-item-filters">
-                            <span class="grid-item-filter">AR</span>
-                            <span class="grid-item-filter">2D</span>
-                            <span class="grid-item-filter">Software</span>
+                    <!-- Project 5 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="climate" data-filters="AR 2D Software">
+                        <div class="grid-item-image-container">
+                            <img src="./image5.jpg" alt="ClimateXR">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">ClimateXR</div>
+                            <div class="grid-item-description">AR visualization of climate data and future scenarios</div>
+                            <div class="grid-item-year">2021</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">AR</span>
+                                <span class="grid-item-filter">2D</span>
+                                <span class="grid-item-filter">Software</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Project 6 -->
-                <div class="grid-item animate-on-scroll color-animate" id="bothofus" data-filters="VR">
-                    <div class="grid-item-image-container">
-                        <img src="./image6.jpg" alt="The Both of Us">
-                    </div>
-                    <div class="grid-item-details">
-                        <div class="grid-item-title">The Both of Us</div>
-                        <div class="grid-item-description">Interactive VR narrative exploring human connection</div>
-                        <div class="grid-item-year">2020</div>
-                        <div class="grid-item-filters">
-                            <span class="grid-item-filter">VR</span>
+                    <!-- Project 6 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="bothofus" data-filters="VR">
+                        <div class="grid-item-image-container">
+                            <img src="./image6.jpg" alt="The Both of Us">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">The Both of Us</div>
+                            <div class="grid-item-description">Interactive VR narrative exploring human connection</div>
+                            <div class="grid-item-year">2020</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">VR</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Project 7 -->
-                <div class="grid-item animate-on-scroll color-animate" id="immersive" data-filters="AR VR UI/UX">
-                    <div class="grid-item-image-container">
-                        <img src="placeholder.jpg" alt="Immersive Interface">
-                    </div>
-                    <div class="grid-item-details">
-                        <div class="grid-item-title">Immersive Interface</div>
-                        <div class="grid-item-description">Spatial UI framework for enterprise AR applications</div>
-                        <div class="grid-item-year">2023</div>
-                        <div class="grid-item-filters">
-                            <span class="grid-item-filter">AR</span>
-                            <span class="grid-item-filter">VR</span>
-                            <span class="grid-item-filter">UI/UX</span>
+                    <!-- Project 7 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="elephant" data-filters="AR 3D Creative">
+                        <div class="grid-item-image-container">
+                            <img src="placeholder.jpg" alt="The Great Elephant Migration">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">The Great Elephant Migration</div>
+                            <div class="grid-item-description">AR art exhibition in the public space</div>
+                            <div class="grid-item-year">2024</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">AR</span>
+                                <span class="grid-item-filter">3D</span>
+                                <span class="grid-item-filter">Creative</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Project 8 -->
-                <div class="grid-item animate-on-scroll color-animate" id="spatial" data-filters="AR 3D Research">
-                    <div class="grid-item-image-container">
-                        <img src="placeholder.jpg" alt="Spatial Computing">
-                    </div>
-                    <div class="grid-item-details">
-                        <div class="grid-item-title">Cornell Research Project</div>
-                        <div class="grid-item-description">Spatial computing research at Cornell Tech's XR Lab</div>
-                        <div class="grid-item-year">2022</div>
-                        <div class="grid-item-filters">
-                            <span class="grid-item-filter">AR</span>
-                            <span class="grid-item-filter">3D</span>
-                            <span class="grid-item-filter">Research</span>
+                    <!-- Project 8 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="graymatters" data-filters="UI/UX Unity 2D">
+                        <div class="grid-item-image-container">
+                            <img src="placeholder.jpg" alt="Gray Matters Health">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">Gray Matters Health</div>
+                            <div class="grid-item-description">Designing a brain-computer interface experience for PTSD</div>
+                            <div class="grid-item-year">2023</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">UI/UX</span>
+                                <span class="grid-item-filter">Unity</span>
+                                <span class="grid-item-filter">2D</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Project 9 -->
-                <div class="grid-item animate-on-scroll color-animate" id="digital" data-filters="AI 2D Development">
-                    <div class="grid-item-image-container">
-                        <img src="placeholder.jpg" alt="Digital Twin Project">
-                    </div>
-                    <div class="grid-item-details">
-                        <div class="grid-item-title">Smart City Planner</div>
-                        <div class="grid-item-description">Digital twin solutions for urban development and planning</div>
-                        <div class="grid-item-year">2021</div>
-                        <div class="grid-item-filters">
-                            <span class="grid-item-filter">AI</span>
-                            <span class="grid-item-filter">2D</span>
-                            <span class="grid-item-filter">Development</span>
+                    <!-- Project 9 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="dotspace" data-filters="AI Leadership UI/UX">
+                        <div class="grid-item-image-container">
+                            <img src="placeholder.jpg" alt="Dot Space AI">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">Dot Space AI</div>
+                            <div class="grid-item-description">Generative AI product visualizing for collaborative interior design</div>
+                            <div class="grid-item-year">2022</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">AI</span>
+                                <span class="grid-item-filter">Leadership</span>
+                                <span class="grid-item-filter">UI/UX</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Project 10 -->
-                <div class="grid-item animate-on-scroll color-animate" id="medical" data-filters="VR 3D Research">
-                    <div class="grid-item-image-container">
-                        <img src="placeholder.jpg" alt="Medical VR Training">
-                    </div>
-                    <div class="grid-item-details">
-                        <div class="grid-item-title">Segal Brain Institute</div>
-                        <div class="grid-item-description">VR training platform for neurosurgical procedures</div>
-                        <div class="grid-item-year">2020</div>
-                        <div class="grid-item-filters">
-                            <span class="grid-item-filter">VR</span>
-                            <span class="grid-item-filter">3D</span>
-                            <span class="grid-item-filter">Research</span>
+                    <!-- Project 10 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="insidebody" data-filters="VR 3D Leadership">
+                        <div class="grid-item-image-container">
+                            <img src="placeholder.jpg" alt="Inside the Body">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">Inside the Body</div>
+                            <div class="grid-item-description">Immersive medical education experience in virtual reality</div>
+                            <div class="grid-item-year">2022</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">VR</span>
+                                <span class="grid-item-filter">3D</span>
+                                <span class="grid-item-filter">Leadership</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Project 11 -->
-                <div class="grid-item animate-on-scroll color-animate" id="gesture" data-filters="AI Development Software">
-                    <div class="grid-item-image-container">
-                        <img src="placeholder.jpg" alt="Gesture Recognition">
-                    </div>
-                    <div class="grid-item-details">
-                        <div class="grid-item-title">Cognitive Systems Lab</div>
-                        <div class="grid-item-description">Computer vision system for hand gesture recognition</div>
-                        <div class="grid-item-year">2019</div>
-                        <div class="grid-item-filters">
-                            <span class="grid-item-filter">AI</span>
-                            <span class="grid-item-filter">Development</span>
-                            <span class="grid-item-filter">Software</span>
+                    <!-- Project 11 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="cardgames" data-filters="AR Unity Creative">
+                        <div class="grid-item-image-container">
+                            <img src="placeholder.jpg" alt="Card Games AR">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">Card Games AR</div>
+                            <div class="grid-item-description">Augmented reality experience for traditional card games</div>
+                            <div class="grid-item-year">2021</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">AR</span>
+                                <span class="grid-item-filter">Unity</span>
+                                <span class="grid-item-filter">Creative</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Project 12 -->
-                <div class="grid-item animate-on-scroll color-animate" id="heritage" data-filters="AR VFX Video">
-                    <div class="grid-item-image-container">
-                        <img src="placeholder.jpg" alt="Cultural Heritage AR">
-                    </div>
-                    <div class="grid-item-details">
-                        <div class="grid-item-title">Tel Aviv Archives</div>
-                        <div class="grid-item-description">AR preservation of cultural heritage in Tel Aviv</div>
-                        <div class="grid-item-year">2018</div>
-                        <div class="grid-item-filters">
-                            <span class="grid-item-filter">AR</span>
-                            <span class="grid-item-filter">VFX</span>
-                            <span class="grid-item-filter">Video</span>
+                    <!-- Project 12 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="heritage" data-filters="AR Creative Video">
+                        <div class="grid-item-image-container">
+                            <img src="placeholder.jpg" alt="Cultural Heritage AR">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">Tel Aviv Archives</div>
+                            <div class="grid-item-description">AR preservation of cultural heritage in Tel Aviv</div>
+                            <div class="grid-item-year">2020</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">AR</span>
+                                <span class="grid-item-filter">Creative</span>
+                                <span class="grid-item-filter">Video</span>
+                            </div>
                         </div>
                     </div>
-                </div>
+
+                    <!-- Project 13 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="kibbutz" data-filters="AR 3D Creative">
+                        <div class="grid-item-image-container">
+                            <img src="placeholder.jpg" alt="Kibbutz AR Tour">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">Kibbutz AR Tour</div>
+                            <div class="grid-item-description">Interactive augmented reality experience for kibbutz visitors</div>
+                            <div class="grid-item-year">2023</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">AR</span>
+                                <span class="grid-item-filter">3D</span>
+                                <span class="grid-item-filter">Creative</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 14 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="democracy" data-filters="AR Creative">
+                        <div class="grid-item-image-container">
+                            <img src="placeholder.jpg" alt="Democracy AR">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">Democracy AR</div>
+                            <div class="grid-item-description">Augmented reality experience promoting civic engagement</div>
+                            <div class="grid-item-year">2022</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">AR</span>
+                                <span class="grid-item-filter">Creative</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 15 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="realestate" data-filters="3D Development">
+                        <div class="grid-item-image-container">
+                            <img src="placeholder.jpg" alt="Real Estate Viz">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">Real Estate Viz</div>
+                            <div class="grid-item-description">3D visualization platform for real estate development</div>
+                            <div class="grid-item-year">2022</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">3D</span>
+                                <span class="grid-item-filter">Development</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 16 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="meditation" data-filters="VR Leadership">
+                        <div class="grid-item-image-container">
+                            <img src="placeholder.jpg" alt="Meditation VR">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">Meditation VR</div>
+                            <div class="grid-item-description">Virtual reality experiences for mindfulness and wellness</div>
+                            <div class="grid-item-year">2021</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">VR</span>
+                                <span class="grid-item-filter">Leadership</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 17 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="caeserstone" data-filters="AR 3D Development">
+                        <div class="grid-item-image-container">
+                            <img src="placeholder.jpg" alt="Caeserstone">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">Caeserstone</div>
+                            <div class="grid-item-description">Augmented reality visualization for surface design</div>
+                            <div class="grid-item-year">2021</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">AR</span>
+                                <span class="grid-item-filter">3D</span>
+                                <span class="grid-item-filter">Development</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 18 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="beestory" data-filters="Creative Video">
+                        <div class="grid-item-image-container">
+                            <img src="placeholder.jpg" alt="Bee Story">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">Bee Story</div>
+                            <div class="grid-item-description">Interactive narrative about bees and environmental conservation</div>
+                            <div class="grid-item-year">2020</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">Creative</span>
+                                <span class="grid-item-filter">Video</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 19 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="designtool" data-filters="Development UI/UX Software">
+                        <div class="grid-item-image-container">
+                            <img src="placeholder.jpg" alt="Unity Design Tool">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">Unity Design Tool</div>
+                            <div class="grid-item-description">Custom design toolkit for Unity developers</div>
+                            <div class="grid-item-year">2020</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">Development</span>
+                                <span class="grid-item-filter">UI/UX</span>
+                                <span class="grid-item-filter">Software</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 20 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="oldnyc" data-filters="UI/UX 2D Development">
+                        <div class="grid-item-image-container">
+                            <img src="placeholder.jpg" alt="OldNYC Cross Platform Design">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">OldNYC Cross Platform Design</div>
+                            <div class="grid-item-description">Historical archive visualization across mobile, web, and AR</div>
+                            <div class="grid-item-year">2019</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">UI/UX</span>
+                                <span class="grid-item-filter">2D</span>
+                                <span class="grid-item-filter">Development</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 21 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="theboss" data-filters="Leadership Development AI">
+                        <div class="grid-item-image-container">
+                            <img src="placeholder.jpg" alt="The Boss">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">The Boss</div>
+                            <div class="grid-item-description">Management simulation with AI-driven characters</div>
+                            <div class="grid-item-year">2019</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">Leadership</span>
+                                <span class="grid-item-filter">Development</span>
+                                <span class="grid-item-filter">AI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 22 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="pausevr" data-filters="VR Creative">
+                        <div class="grid-item-image-container">
+                            <img src="placeholder.jpg" alt="Pause VR">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">Pause VR</div>
+                            <div class="grid-item-description">Virtual reality experience focused on mindfulness</div>
+                            <div class="grid-item-year">2018</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">VR</span>
+                                <span class="grid-item-filter">Creative</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 23 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="bethewitness" data-filters="VR 3D Video">
+                        <div class="grid-item-image-container">
+                            <img src="placeholder.jpg" alt="Be the Witness">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">Be the Witness</div>
+                            <div class="grid-item-description">Immersive documentary experience in virtual reality</div>
+                            <div class="grid-item-year">2018</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">VR</span>
+                                <span class="grid-item-filter">3D</span>
+                                <span class="grid-item-filter">Video</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 24 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="memoriar" data-filters="AR Creative">
+                        <div class="grid-item-image-container">
+                            <img src="placeholder.jpg" alt="MemoriAR">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">MemoriAR</div>
+                            <div class="grid-item-description">AR platform for preserving personal and historical memories</div>
+                            <div class="grid-item-year">2017</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">AR</span>
+                                <span class="grid-item-filter">Creative</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 25 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="panorama" data-filters="3D Video Creative">
+                        <div class="grid-item-image-container">
+                            <img src="placeholder.jpg" alt="Panorama">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">Panorama</div>
+                            <div class="grid-item-description">360° video experience with interactive elements</div>
+                            <div class="grid-item-year">2017</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">3D</span>
+                                <span class="grid-item-filter">Video</span>
+                                <span class="grid-item-filter">Creative</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 26 -->
+                    <div class="grid-item animate-on-scroll color-animate" id="hybridimage" data-filters="2D Creative">
+                        <div class="grid-item-image-container">
+                            <img src="placeholder.jpg" alt="Hybrid Image">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">Hybrid Image</div>
+                            <div class="grid-item-description">Visual perception experiments with dual-interpretation images</div>
+                            <div class="grid-item-year">2016</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">2D</span>
+                                <span class="grid-item-filter">Creative</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 27 - Feature Detection -->
+                    <div class="grid-item animate-on-scroll color-animate" id="featuredetection" data-filters="AI CV Development">
+                        <div class="grid-item-image-container">
+                            <img src="placeholder.jpg" alt="Feature Detection">
+                        </div>
+                        <div class="grid-item-details">
+                            <div class="grid-item-title">Feature Detection</div>
+                            <div class="grid-item-description">Computer vision system for real-time object and feature detection</div>
+                            <div class="grid-item-year">2019</div>
+                            <div class="grid-item-filters">
+                                <span class="grid-item-filter">AI</span>
+                                <span class="grid-item-filter">CV</span>
+                                <span class="grid-item-filter">Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </section>
             <section class="video-container">
                 <div class="video-text animate-on-scroll">

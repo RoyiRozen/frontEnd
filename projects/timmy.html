@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timmy AI - Royi Rozen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/no_variables/bundles/fonts-6ee09b0b2f.css" media="screen" />
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/e67af36f5565992c0c7fce5060801003/variables-7dd4b80918af0e0218ec0229e4bd5873.css" media="all" />
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/common-60e5c6cfef.css" media="all" />
+    
+    <link rel="apple-touch-icon" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/apple-touch-icon-585e5d997d.png" />
+    <link rel="icon" type="image/x-icon" href="https://instructure-uploads.s3.amazonaws.com/account_97130000000000001/attachments/29724/cornellfac.ico" />
+    
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <script type="module" src="../script.js"></script>
+    <script type="module" src="../contact.js"></script>
+    
+    <div id="app">
+        <header>
+            <div class="header-content">
+                <hgroup class="top-bar">
+                    <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
+                    <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
+                    <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
+                    <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.location.href='https://www.linkedin.com/in/royi-rozen/'"></i>
+                </hgroup>
+            </div>
+        </header>
+        
+        <main class="project-page">
+            <div class="project-header">
+                <h1>Timmy AI</h1>
+                <div class="project-meta">
+                    <div class="project-year">2022</div>
+                    <div class="project-tags">
+                        <span class="project-tag">AI</span>
+                        <span class="project-tag">Development</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-content">
+                <div class="project-gallery">
+                    <img src="../image2.png" alt="Timmy AI Interface" class="project-image">
+                </div>
+                
+                <div class="project-description">
+                    <h2>Project Overview</h2>
+                    <p>
+                        Timmy AI is a conversational assistant designed specifically for creative professionals. 
+                        The platform leverages natural language processing and machine learning to understand 
+                        context-specific requests related to design, writing, and multimedia content creation.
+                        Unlike general-purpose AI assistants, Timmy is optimized to understand creative workflows 
+                        and specialized terminology across multiple creative domains.
+                    </p>
+                    
+                    <h2>Technical Details</h2>
+                    <p>
+                        The project utilized a range of technologies and approaches to achieve its goals, including:
+                    </p>
+                    <ul>
+                        <li>Custom NLP model trained on creative industry terminology and workflows</li>
+                        <li>Context-aware conversation management system that maintains state across sessions</li>
+                        <li>Integration with popular creative software APIs (Adobe Creative Cloud, Figma, etc.)</li>
+                        <li>Real-time asset suggestion and retrieval from connected content libraries</li>
+                        <li>Adaptive learning system that improves responses based on user feedback</li>
+                    </ul>
+                    
+                    <h2>Implementation</h2>
+                    <p>
+                        Timmy AI was developed as both a standalone web application and a suite of plugins for major 
+                        creative software. The core AI engine was built using TensorFlow and PyTorch, with a focus on 
+                        optimizing for creative domain-specific tasks.
+                    </p>
+                    <p>
+                        The system architecture includes separate modules for natural language understanding, 
+                        context management, creative asset retrieval, and specialized task assistance. This modular 
+                        approach allows Timmy to be extended to new creative domains and software platforms easily.
+                    </p>
+                    
+                    <h2>Outcomes</h2>
+                    <p>
+                        Since its launch, Timmy AI has been adopted by over 50,000 creative professionals across 
+                        design studios, advertising agencies, and freelance creators. Key metrics include:
+                    </p>
+                    <ul>
+                        <li>85% reduction in time spent on repetitive creative tasks</li>
+                        <li>73% of users reporting improved creative output quality</li>
+                        <li>91% user satisfaction rating</li>
+                        <li>Integration with 15+ popular creative software platforms</li>
+                    </ul>
+                    <p>
+                        The project has demonstrated that domain-specific AI assistants significantly outperform 
+                        general-purpose AI when working within specialized creative workflows.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="nav-buttons">
+                <button onclick="window.location.href='../basic.html'" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Back to Portfolio
+                </button>
+            </div>
+        </main>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
+            <nav class="social-icons">
+                <i class="fa-brands fa-linkedin" style="scale: 2;"></i>
+            </nav>
+        </div>
+    </footer>
+    
+    <!-- Contact Button and Popup -->
+    <div class="contact-button" id="contact-button">
+        <i class="fas fa-comment"></i>
+    </div>
+    
+    <div class="contact-popup" id="contact-popup">
+        <div class="popup-header">
+            <h3>Get in Touch</h3>
+            <button class="popup-close" id="popup-close">&times;</button>
+        </div>
+        <div class="popup-content">
+            <img src="../image.jpg" alt="Royi Rozen" class="popup-image">
+            <div class="popup-text">
+                <p>Send me a message</p>
+            </div>
+        </div>
+        <form class="contact-form" id="contact-form">
+            <div class="form-fields">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Type your message..." required></textarea>
+            </div>
+            <div class="form-divider"></div>
+            <div class="form-actions">
+                <button type="submit" class="send-button">Send</button>
+                <div style="clear: both;"></div> <!-- Clear the float -->
+            </div>
+            <input type="hidden" name="recipient" value="rr789@cornell.edu">
+        </form>
+    </div>
+</body>
+</html> 

@@ -97,6 +97,61 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // View Toggle Functionality
+    const twoColumnBtn = document.getElementById('two-column-btn');
+    const threeColumnBtn = document.getElementById('three-column-btn');
+    const gridContainer = document.querySelector('.grid-container');
+    
+    if (twoColumnBtn && threeColumnBtn && gridContainer) {
+        twoColumnBtn.addEventListener('click', function() {
+            if (!this.classList.contains('active')) {
+                threeColumnBtn.classList.remove('active');
+                this.classList.add('active');
+                gridContainer.classList.remove('three-columns');
+                
+                // Animate the transition
+                gridItems.forEach(item => {
+                    item.style.opacity = '0.5';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                    }, 300);
+                });
+            }
+        });
+        
+        threeColumnBtn.addEventListener('click', function() {
+            if (!this.classList.contains('active')) {
+                twoColumnBtn.classList.remove('active');
+                this.classList.add('active');
+                gridContainer.classList.add('three-columns');
+                
+                // Animate the transition
+                gridItems.forEach(item => {
+                    item.style.opacity = '0.5';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                    }, 300);
+                });
+            }
+        });
+        
+        // Initialize with correct column setting
+        if (window.innerWidth > 992) {
+            // Default to two columns on desktop
+            twoColumnBtn.classList.add('active');
+            threeColumnBtn.classList.remove('active');
+            gridContainer.classList.remove('three-columns');
+        } else {
+            // For smaller screens, adjust based on best fit
+            if (window.innerWidth <= 768) {
+                // On mobile, always default to one column
+                twoColumnBtn.classList.add('active');
+                threeColumnBtn.classList.remove('active');
+                gridContainer.classList.remove('three-columns');
+            }
+        }
+    }
+    
     // Random color animation for grid items
     function initColorAnimation() {
         gridItems.forEach((item, index) => {
