@@ -16,9 +16,9 @@
     
     <link rel="stylesheet" href="../style.css">
     <style>
-        .cinematic-badge {
+        .cinema-badge {
             display: inline-block;
-            background-color: #c0392b;
+            background-color: #9b59b6;
             color: white;
             padding: 5px 10px;
             border-radius: 4px;
@@ -28,9 +28,9 @@
             vertical-align: middle;
         }
         
-        .cinematic-quote {
-            background-color: #f9f4f4;
-            border-left: 4px solid #c0392b;
+        .cinema-quote {
+            background-color: #f8f9fa;
+            border-left: 4px solid #9b59b6;
             padding: 20px;
             margin: 30px 0;
             border-radius: 4px;
@@ -38,18 +38,38 @@
             position: relative;
         }
         
-        .cinematic-quote::before {
+        .cinema-quote::before {
             content: '"';
             position: absolute;
             top: 10px;
             left: 15px;
             font-size: 40px;
-            color: #c0392b;
+            color: #9b59b6;
             opacity: 0.3;
         }
         
         .project-section {
             margin: 40px 0;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            margin: 30px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .video-embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: none;
         }
         
         .tech-grid {
@@ -74,7 +94,7 @@
         .tech-icon {
             font-size: 28px;
             margin-bottom: 10px;
-            color: #c0392b;
+            color: #9b59b6;
         }
         
         .image-container {
@@ -90,115 +110,59 @@
             display: block;
         }
         
-        .video-container {
-            width: 100%;
-            margin: 40px 0;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-        }
-        
-        .video-embed {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            margin: 30px 0;
-        }
-        
-        .feature-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-icon {
-            font-size: 32px;
-            color: #c0392b;
-            margin-bottom: 15px;
-        }
-        
-        .feature-title {
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        
-        .feature-desc {
-            color: #666;
-        }
-        
-        .process-grid {
+        .workflow-steps {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             margin: 30px 0;
         }
         
-        .process-card {
-            background-color: #f9f4f4;
-            border-radius: 8px;
+        .workflow-step {
+            background-color: #f5f5f5;
+            border-radius: 10px;
             padding: 20px;
             text-align: center;
             box-shadow: 0 3px 6px rgba(0,0,0,0.1);
             position: relative;
         }
         
-        .process-number {
+        .workflow-step::after {
+            content: "→";
             position: absolute;
-            top: -15px;
-            left: -15px;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: #9b59b6;
+        }
+        
+        .workflow-step:last-child::after {
+            display: none;
+        }
+        
+        .step-number {
+            display: inline-block;
             width: 40px;
             height: 40px;
-            background-color: #c0392b;
+            background-color: #9b59b6;
             color: white;
-            font-weight: bold;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-        }
-        
-        .process-title {
+            line-height: 40px;
+            margin-bottom: 15px;
             font-weight: bold;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        
-        .process-desc {
-            color: #666;
-            font-size: 0.9rem;
         }
         
         @media (max-width: 768px) {
-            .feature-grid {
+            .workflow-steps {
                 grid-template-columns: 1fr;
             }
             
-            .process-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .tech-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .workflow-step::after {
+                content: "↓";
+                right: 50%;
+                top: auto;
+                bottom: -20px;
+                transform: translateX(50%);
             }
         }
     </style>
@@ -221,13 +185,13 @@
         
         <main class="project-page">
             <div class="project-header">
-                <h1>The Boss <span class="cinematic-badge">Unity Cinematics</span></h1>
+                <h1>The Boss <span class="cinema-badge">3D Cinematic</span></h1>
                 <div class="project-meta">
-                    <div class="project-year">2019</div>
+                    <div class="project-year">2018</div>
                     <div class="project-tags">
-                        <span class="project-tag">Unity</span>
-                        <span class="project-tag">Animation</span>
-                        <span class="project-tag">Cinematics</span>
+                        <span class="project-tag">Creative</span>
+                        <span class="project-tag">3D</span>
+                        <span class="project-tag">Spatial Design</span>
                     </div>
                 </div>
             </div>
@@ -236,221 +200,123 @@
                 <div class="project-section">
                     <h2>Project Overview</h2>
                     <p>
-                        <strong>The Boss</strong> is a cinematic project focused on exploring Unity's powerful tools for creating compelling short film clips. This experimental project demonstrates how Unity's animation system, timeline, and camera tools can be leveraged to create engaging cinematic sequences outside of traditional game contexts.
+                        <strong>The Boss</strong> is an experimental cinematic project created in Unity3D, exploring the intersection of game development tools and filmmaking techniques. By leveraging Unity's powerful 3D engine and cinematic tools, this project demonstrates how game engines can be repurposed for creating compelling visual narratives and cinematics.
                     </p>
                     
                     <div class="video-container">
-                        <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="The Boss - Cinematic Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe class="video-embed" src="https://www.youtube.com/embed/cEU-aXnQUSU" title="The Boss Cinematic" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     
-                    <div class="cinematic-quote">
+                    <div class="image-container">
+                        <img src="../boss.jpg" alt="The Boss Project Visual" class="project-image">
+                    </div>
+                </div>
+                
+                <div class="project-section">
+                    <h2>Experimenting with Cinematics in Unity3D</h2>
+                    <p>
+                        This project was born from a desire to explore Unity's capabilities beyond traditional game development. By experimenting with Unity's Timeline, Cinemachine, and post-processing features, I created a cinematic sequence that demonstrates how game engines can be powerful tools for digital filmmaking and visual storytelling.
+                    </p>
+                    
+                    <div class="cinema-quote">
                         <p>
-                            Game engines are no longer just for games. As real-time rendering technology evolves, the line between traditional film production and game development continues to blur, opening new possibilities for digital storytelling.
+                            Game engines are becoming increasingly important tools for filmmakers, blurring the line between interactive media and traditional cinema. Unity3D provides a versatile platform for experimenting with new forms of visual storytelling.
                         </p>
                     </div>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Technical Focus</h2>
-                    <p>
-                        This project was designed to push my understanding of Unity's cinematic capabilities in several specific areas:
-                    </p>
                     
-                    <div class="feature-grid">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-film"></i>
-                            </div>
-                            <div class="feature-title">Timeline System</div>
-                            <div class="feature-desc">
-                                Orchestrating complex sequences of animation, camera movement, and effects using Unity's Timeline tool to create a coherent narrative flow.
-                            </div>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-running"></i>
-                            </div>
-                            <div class="feature-title">Animation Rigging</div>
-                            <div class="feature-desc">
-                                Creating natural character movement through advanced rigging techniques and blending between animation states for seamless performance.
-                            </div>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-camera"></i>
-                            </div>
-                            <div class="feature-title">Cinemachine</div>
-                            <div class="feature-desc">
-                                Using Unity's Cinemachine package to create dynamic virtual cameras with sophisticated behaviors like dolly tracks, follow targets, and lens effects.
-                            </div>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <div class="feature-title">Lighting & VFX</div>
-                            <div class="feature-desc">
-                                Implementing dramatic lighting setups and post-processing effects to establish mood and enhance visual storytelling.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Production Process</h2>
                     <p>
-                        Creating "The Boss" involved a structured workflow that borrowed techniques from both game development and traditional filmmaking:
+                        The project focused on creating a short, atmospheric scene that showcases character animation, dynamic camera movement, lighting techniques, and environmental storytelling - all created within the Unity3D engine.
                     </p>
-                    
-                    <div class="process-grid">
-                        <div class="process-card">
-                            <div class="process-number">1</div>
-                            <div class="process-title">Storyboarding</div>
-                            <div class="process-desc">
-                                Planning the visual narrative sequence by sequence, establishing camera angles, character positions, and key moments.
-                            </div>
-                        </div>
-                        
-                        <div class="process-card">
-                            <div class="process-number">2</div>
-                            <div class="process-title">Environment Setup</div>
-                            <div class="process-desc">
-                                Creating the 3D scene with appropriate lighting, materials, and props optimized for cinematic rendering.
-                            </div>
-                        </div>
-                        
-                        <div class="process-card">
-                            <div class="process-number">3</div>
-                            <div class="process-title">Character Preparation</div>
-                            <div class="process-desc">
-                                Rigging characters with advanced animation controls and preparing them for cinematic performance.
-                            </div>
-                        </div>
-                        
-                        <div class="process-card">
-                            <div class="process-number">4</div>
-                            <div class="process-title">Camera Choreography</div>
-                            <div class="process-desc">
-                                Setting up virtual cameras with complex movement paths and focus behaviors using Cinemachine.
-                            </div>
-                        </div>
-                        
-                        <div class="process-card">
-                            <div class="process-number">5</div>
-                            <div class="process-title">Animation Sequencing</div>
-                            <div class="process-desc">
-                                Creating character animations and coordinating them with environment elements through Timeline.
-                            </div>
-                        </div>
-                        
-                        <div class="process-card">
-                            <div class="process-number">6</div>
-                            <div class="process-title">Post-Processing</div>
-                            <div class="process-desc">
-                                Applying visual effects, color grading, and audio design to enhance the cinematic quality.
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 
                 <div class="project-section">
                     <h2>Technical Implementation</h2>
                     <p>
-                        The project utilized several key Unity features and packages:
+                        Creating this cinematic required utilizing several of Unity's advanced features:
                     </p>
                     
                     <div class="tech-grid">
                         <div class="tech-item">
-                            <i class="fas fa-clock tech-icon"></i>
+                            <i class="fas fa-film tech-icon"></i>
                             <span>Timeline</span>
                         </div>
                         <div class="tech-item">
-                            <i class="fas fa-video tech-icon"></i>
+                            <i class="fas fa-camera tech-icon"></i>
                             <span>Cinemachine</span>
                         </div>
                         <div class="tech-item">
-                            <i class="fas fa-bone tech-icon"></i>
-                            <span>Animation Rigging</span>
+                            <i class="fas fa-adjust tech-icon"></i>
+                            <span>Post-Processing</span>
                         </div>
                         <div class="tech-item">
-                            <i class="fas fa-sliders-h tech-icon"></i>
-                            <span>Post Processing</span>
+                            <i class="fas fa-lightbulb tech-icon"></i>
+                            <span>Dynamic Lighting</span>
                         </div>
                     </div>
                     
                     <p>
-                        For character animation, I combined pre-made animation assets with custom procedural animations created using Unity's Animation Rigging package. This allowed for precise control over character movements and interactions with the environment.
-                    </p>
-                    
-                    <p>
-                        The camera work was implemented using Cinemachine's virtual camera system, which allowed me to create sophisticated camera behaviors such as:
-                    </p>
-                    <ul>
-                        <li>Smooth camera transitions between different shots</li>
-                        <li>Dynamic dolly movements following predefined paths</li>
-                        <li>Automated framing adjustments to maintain composition</li>
-                        <li>Realistic handheld camera effects for select sequences</li>
-                    </ul>
-                    
-                    <p>
-                        Timeline was the central tool for orchestrating all elements, allowing precise synchronization of animation events, camera cuts, lighting changes, and audio cues. This created a director-like control over the entire sequence.
+                        Unity's Timeline provided the foundation for creating the sequence, allowing for precise control over animations, camera cuts, and environmental effects. Cinemachine virtual cameras enabled sophisticated camera movements and cinematic techniques like dolly shots and tracking shots. The post-processing stack was utilized to create the atmospheric visual style, including color grading, depth of field, and bloom effects.
                     </p>
                 </div>
                 
                 <div class="project-section">
-                    <h2>Cinematic Techniques</h2>
+                    <h2>Creative Process</h2>
                     <p>
-                        The project explored several established cinematic techniques adapted for real-time rendering in Unity:
+                        The development of this cinematic followed a traditional filmmaking workflow, adapted for real-time rendering in a game engine:
                     </p>
-                    <ul>
-                        <li><strong>Establishing Shots:</strong> Wide angle views that introduce the setting and provide spatial context</li>
-                        <li><strong>Shot-Reverse-Shot:</strong> Alternating views between characters during dialogue or interaction</li>
-                        <li><strong>Rack Focus:</strong> Changing focus between foreground and background elements to direct viewer attention</li>
-                        <li><strong>Dolly Zoom:</strong> Simultaneously adjusting focal length and camera position to create dramatic effects</li>
-                        <li><strong>Dutch Angles:</strong> Tilted camera compositions to create tension or disorientation</li>
-                        <li><strong>Dynamic Lighting:</strong> Using light as a narrative element that changes throughout the sequence</li>
-                    </ul>
                     
-                    <p>
-                        By implementing these techniques in a game engine environment, the project demonstrates how traditional cinematography principles can be effectively applied in real-time 3D contexts.
-                    </p>
+                    <div class="workflow-steps">
+                        <div class="workflow-step">
+                            <div class="step-number">1</div>
+                            <h3>Pre-Production</h3>
+                            <p>Storyboarding, asset selection, and scene planning</p>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number">2</div>
+                            <h3>Scene Setup</h3>
+                            <p>Environment building, lighting, and camera placement</p>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number">3</div>
+                            <h3>Animation</h3>
+                            <p>Character animation and environment dynamics</p>
+                        </div>
+                    </div>
+                    
+                    <div class="workflow-steps">
+                        <div class="workflow-step">
+                            <div class="step-number">4</div>
+                            <h3>Timeline Sequencing</h3>
+                            <p>Arranging shots and transitions</p>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number">5</div>
+                            <h3>Post-Processing</h3>
+                            <p>Visual effects and color grading</p>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number">6</div>
+                            <h3>Rendering</h3>
+                            <p>Final render with audio integration</p>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="project-section">
                     <h2>Learning Outcomes</h2>
                     <p>
-                        This experimental project provided valuable insights into cinematic storytelling within Unity:
+                        This experimental project provided valuable insights into:
                     </p>
                     <ul>
-                        <li>Deeper understanding of how to orchestrate complex sequences using Timeline</li>
-                        <li>Practical experience with camera composition and movement in 3D space</li>
-                        <li>Techniques for creating emotional impact through lighting and visual effects</li>
-                        <li>Efficient workflows for iterating on cinematic sequences</li>
-                        <li>Methods for optimizing real-time rendering for high visual quality</li>
+                        <li>The versatility of game engines for non-game creative applications</li>
+                        <li>Techniques for achieving cinematic quality within real-time rendering constraints</li>
+                        <li>The potential for rapid iteration in digital filmmaking using game development tools</li>
+                        <li>Methods for effective visual storytelling through environment, lighting, and camera work</li>
+                        <li>The workflow pipeline from concept to final rendered output in Unity3D</li>
                     </ul>
                     
                     <p>
-                        The skills developed through this project are directly applicable to game cutscenes, architectural visualizations, virtual production, and other interactive media that require cinematic presentation.
-                    </p>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Future Directions</h2>
-                    <p>
-                        Building on the foundation established in "The Boss," I plan to explore several advanced directions:
-                    </p>
-                    <ul>
-                        <li>Integration with motion capture systems for more nuanced character performances</li>
-                        <li>Experimenting with Unity's VFX Graph for more sophisticated visual effects</li>
-                        <li>Developing interactive cinematic sequences that respond to viewer input</li>
-                        <li>Exploring virtual production techniques inspired by film productions like "The Mandalorian"</li>
-                    </ul>
-                    
-                    <p>
-                        As real-time rendering technology continues to advance, the boundary between game engines and traditional film production tools will become increasingly blurred, opening exciting possibilities for digital storytelling.
+                        The skills developed in this project have applications beyond game development, extending to architectural visualization, virtual production, virtual reality experiences, and interactive storytelling.
                     </p>
                 </div>
             </div>
@@ -465,7 +331,7 @@
     
     <footer>
         <div class="footer-content">
-            <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
+            <i><h6>Copyright © 2024 <em>Royi Rozen</em></h6></i>
             <nav class="social-icons">
                 <i class="fa-brands fa-linkedin" style="scale: 2;"></i>
             </nav>

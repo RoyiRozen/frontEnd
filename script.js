@@ -179,7 +179,52 @@ document.addEventListener('DOMContentLoaded', function() {
     gridItems.forEach(item => {
         item.addEventListener('click', function() {
             const itemId = this.id;
-            window.location.href = `./projects/${itemId}.html`;
+            
+            // Create a temporary element to check if HTML exists
+            const testLink = document.createElement('a');
+            testLink.href = `./projects/${itemId}.html`;
+            
+            // Check if file exists (indirectly) by first showing the "under construction" popup
+            const constructionPopup = document.createElement('div');
+            constructionPopup.className = 'construction-popup';
+            constructionPopup.innerHTML = `
+                <div class="construction-content">
+                    <button class="construction-close">&times;</button>
+                    <h3>Page Under Construction</h3>
+                    <p>This project page is currently being built. Check back soon!</p>
+                    <i class="fas fa-hard-hat" style="font-size: 32px; color: #f39c12; margin-top: 15px;"></i>
+                </div>
+            `;
+            
+            // Append popup to body initially hidden
+            document.body.appendChild(constructionPopup);
+            
+            // Add event listener to close button
+            const closeButton = constructionPopup.querySelector('.construction-close');
+            closeButton.addEventListener('click', function() {
+                constructionPopup.classList.remove('active');
+                setTimeout(() => {
+                    constructionPopup.remove();
+                }, 300);
+            });
+            
+            // Try to fetch the HTML file to check if it exists
+            fetch(`./projects/${itemId}.html`)
+                .then(response => {
+                    if (response.ok) {
+                        // HTML exists, navigate to it
+                        window.location.href = `./projects/${itemId}.html`;
+                        constructionPopup.remove(); // Remove the popup if it was added
+                    } else {
+                        // HTML doesn't exist, show the popup
+                        constructionPopup.classList.add('active');
+                    }
+                })
+                .catch(error => {
+                    // Error occurred, show the popup
+                    constructionPopup.classList.add('active');
+                    console.log('Project page not found:', error);
+                });
         });
     });
 
