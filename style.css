@@ -930,3 +930,21 @@ h5 {
     background-color: #333;
     transform: scale(1.05);
 }
+
+.project-header {
+    margin-top: 80px;  /* Increased from 40px to ensure more space below top bar */
+    margin-bottom: 15px; /* Keep reduced bottom margin to bring metadata closer to title */
+}
+
+.project-meta {
+    margin-top: 5px; /* Keep reduced space between title and metadata */
+    margin-bottom: 30px; /* Add margin below metadata */
+}
+
+.project-section:first-of-type {
+    margin-top: 10px; /* Further reduced to bring project overview higher */
+}
+
+.project-section h2 {
+    margin-bottom: 15px; /* Ensure consistent spacing below section headers */
+}
