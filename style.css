@@ -364,6 +364,23 @@ main {
     transition: transform 0.3s ease;
 }
 
+/* Custom image cropping for specific projects */
+#beestory .grid-item-image-container img {
+    object-position: center 30%; /* Crop higher - showing top portion of bee story image */
+}
+
+#realestate .grid-item-image-container img {
+    object-position: center 25%; /* Crop higher - showing top portion of real estate viz image */
+}
+
+#elephant .grid-item-image-container img {
+    object-position: center 20%; /* Crop higher - showing top portion of great elephant migration image */
+}
+
+#artour .grid-item-image-container img {
+    object-position: center 30%; /* Crop higher - showing top portion of ARTour image */
+}
+
 .grid-item-details {
     padding: 10px; /* Reduced padding */
     display: flex;
