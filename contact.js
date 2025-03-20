@@ -1,80 +1,91 @@
 "use strict";
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Contact button and popup functionality
+document.addEventListener('DOMContentLoaded', () => {
     const contactButton = document.getElementById('contact-button');
     const contactPopup = document.getElementById('contact-popup');
-    const popupClose = document.getElementById('popup-close');
+    const closeButton = document.getElementById('popup-close');
     const contactForm = document.getElementById('contact-form');
-    
-    // Initialize leads array from localStorage or create empty array
-    let leads = JSON.parse(localStorage.getItem('contactLeads')) || [];
-    
-    // Toggle contact popup
-    if (contactButton && contactPopup) {
-        contactButton.addEventListener('click', function() {
-            contactPopup.classList.toggle('active');
-        });
-    }
-    
+
+    // Toggle popup when contact button is clicked
+    contactButton.addEventListener('click', () => {
+        contactPopup.classList.add('active');
+    });
+
     // Close popup when close button is clicked
-    if (popupClose && contactPopup) {
-        popupClose.addEventListener('click', function() {
+    closeButton.addEventListener('click', () => {
+        contactPopup.classList.remove('active');
+    });
+
+    // Close popup when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!contactPopup.contains(e.target) && !contactButton.contains(e.target)) {
             contactPopup.classList.remove('active');
-        });
-    }
-    
-    // Handle contact form submission
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(contactForm);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const message = formData.get('message');
-            
-            // Create lead object with timestamp
-            const lead = {
-                name: name,
-                email: email,
-                message: message,
-                timestamp: new Date().toISOString()
-            };
-            
-            // Add lead to array
-            leads.push(lead);
-            
-            // Save leads to localStorage
-            localStorage.setItem('contactLeads', JSON.stringify(leads));
-            
-            // Log for debugging
-            console.log('Lead saved:', lead);
-            
-            // Email data to send (if you have a backend)
-            const recipientEmail = 'rr789@cornell.edu';
-            const emailData = {
-                to: recipientEmail,
-                from: email,
-                subject: `Portfolio Contact Form: Message from ${name}`,
-                text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
-            };
-            
-            // Show success message
-            const formContent = contactForm.innerHTML;
-            contactForm.innerHTML = '<div class="success-message">Thank you! Your message has been sent.</div>';
-            
-            // Reset form after delay
+        }
+    });
+
+    // Handle form submission
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(contactForm);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const message = formData.get('message');
+        
+        // Store in localStorage with timestamp
+        const timestamp = new Date().toISOString();
+        const lead = {
+            name,
+            email,
+            message,
+            timestamp
+        };
+        
+        // Get existing leads or initialize empty array
+        const existingLeads = JSON.parse(localStorage.getItem('contactLeads') || '[]');
+        existingLeads.push(lead);
+        
+        // Save updated leads
+        localStorage.setItem('contactLeads', JSON.stringify(existingLeads));
+        
+        // Hide form fields and show success message
+        const formFields = contactForm.querySelector('.form-fields');
+        const formDivider = contactForm.querySelector('.form-divider');
+        const formActions = contactForm.querySelector('.form-actions');
+        
+        formFields.style.display = 'none';
+        formDivider.style.display = 'none';
+        formActions.style.display = 'none';
+        
+        // Create and show success message
+        const successMessage = document.createElement('div');
+        successMessage.className = 'success-message';
+        successMessage.innerHTML = `
+            <div class="success-content">
+                <i class="fas fa-check-circle"></i>
+                <h3>Thank you!</h3>
+                <p>Your message has been sent successfully.</p>
+                <p>I will get back to you soon!</p>
+            </div>
+        `;
+        
+        contactForm.appendChild(successMessage);
+        
+        // Close popup after 3 seconds
+        setTimeout(() => {
+            contactPopup.classList.remove('active');
+            // Reset form and remove success message after popup is closed
             setTimeout(() => {
-                contactPopup.classList.remove('active');
-                setTimeout(() => {
-                    contactForm.innerHTML = formContent;
-                }, 500);
-            }, 3000);
-        });
-    }
-    
+                contactForm.reset();
+                successMessage.remove();
+                formFields.style.display = 'block';
+                formDivider.style.display = 'block';
+                formActions.style.display = 'block';
+            }, 500);
+        }, 3000);
+    });
+
     // Add a keyboard shortcut to access the lead sheet (Shift + Alt + L)
     document.addEventListener('keydown', function(e) {
         if (e.shiftKey && e.altKey && e.key === 'L') {
