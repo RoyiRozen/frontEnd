@@ -1164,3 +1164,125 @@ h5 {
         transform: translateY(0);
     }
 }
+
+/* Project Detail Page Styles */
+.project-detail {
+    max-width: 1200px;
+    margin: 120px auto 60px;
+    padding: 0 20px;
+}
+
+.project-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.project-header h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-family: 'Assistant', sans-serif;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.project-tags span {
+    background-color: #f0f0f0;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.project-media {
+    margin-bottom: 40px;
+}
+
+.project-media .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project-media iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.project-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.project-content h2 {
+    font-size: 28px;
+    margin: 40px 0 20px;
+    font-family: 'Assistant', sans-serif;
+}
+
+.project-content h3 {
+    font-size: 22px;
+    margin: 30px 0 15px;
+    font-family: 'Assistant', sans-serif;
+}
+
+.project-content p {
+    margin-bottom: 20px;
+}
+
+.project-content ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.project-content li {
+    margin-bottom: 10px;
+}
+
+.project-links {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project-links .button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #000;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.project-links .button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+.grid-item-link {
+    margin-top: 10px;
+}
+
+.grid-item-link a {
+    color: #9e0000;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.grid-item-link a:hover {
+    text-decoration: underline;
+}

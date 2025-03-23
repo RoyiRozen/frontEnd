@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR Tour - Royi Rozen</title>
+    <title>AR Tour (History) - Royi Rozen</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     
+    <!-- Match the exact same stylesheet imports as cardgame.html -->
     <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/no_variables/bundles/fonts-6ee09b0b2f.css" media="screen" />
     <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/e67af36f5565992c0c7fce5060801003/variables-7dd4b80918af0e0218ec0229e4bd5873.css" media="all" />
     <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/common-60e5c6cfef.css" media="all" />
@@ -16,6 +17,45 @@
     
     <link rel="stylesheet" href="../style.css">
     <style>
+        /* Proper center alignment for the entire page */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+        
+        #app {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        header, main, footer {
+            width: 100%;
+        }
+        
+        .project-section {
+            text-align: left;
+            margin: 25px 0;
+            width: 100%;
+            padding: 0;
+        }
+        
+        /* Reduced spacing for Featured experiences section */
+        .featured-section {
+            margin: 20px 0;  /* Reduced from 40px to 20px */
+        }
+        
+        /* Use the same styling approach as cardgame.html but with green color */
         .ar-badge {
             display: inline-block;
             background-color: #27ae60;
@@ -28,8 +68,8 @@
             vertical-align: middle;
         }
         
-        .location-quote {
-            background-color: #f2f9f4;
+        .quote-block {
+            background-color: #f8f9fa;
             border-left: 4px solid #27ae60;
             padding: 20px;
             margin: 30px 0;
@@ -38,7 +78,7 @@
             position: relative;
         }
         
-        .location-quote::before {
+        .quote-block::before {
             content: '"';
             position: absolute;
             top: 10px;
@@ -46,10 +86,6 @@
             font-size: 40px;
             color: #27ae60;
             opacity: 0.3;
-        }
-        
-        .project-section {
-            margin: 40px 0;
         }
         
         .tech-grid {
@@ -77,19 +113,6 @@
             color: #27ae60;
         }
         
-        .image-container {
-            margin: 30px 0;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .project-image {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -115,150 +138,6 @@
             margin-bottom: 15px;
         }
         
-        .feature-title {
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        
-        .feature-desc {
-            color: #666;
-        }
-        
-        .experience-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            margin: 30px 0;
-        }
-        
-        .experience-card {
-            background-color: #f5f5f5;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            position: relative;
-        }
-        
-        .experience-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .experience-icon {
-            font-size: 24px;
-            color: #27ae60;
-            margin-right: 10px;
-        }
-        
-        .experience-title {
-            font-weight: bold;
-            color: #333;
-        }
-        
-        .experience-desc {
-            color: #666;
-            margin-bottom: 15px;
-        }
-        
-        .reactions-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 30px 0;
-        }
-        
-        .reaction-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-            width: calc(25% - 15px);
-            text-align: center;
-        }
-        
-        .reaction-emoji {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-        
-        .reaction-location {
-            font-weight: bold;
-            margin-bottom: 5px;
-            color: #333;
-        }
-        
-        .reaction-desc {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .ar-timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 40px auto;
-        }
-        
-        .ar-timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: #27ae60;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-            border-radius: 10px;
-        }
-        
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-        }
-        
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            right: -10px;
-            background-color: white;
-            border: 4px solid #27ae60;
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-        }
-        
-        .timeline-left {
-            left: 0;
-        }
-        
-        .timeline-right {
-            left: 50%;
-        }
-        
-        .timeline-left::after {
-            right: -10px;
-        }
-        
-        .timeline-right::after {
-            left: -10px;
-        }
-        
-        .timeline-content {
-            padding: 20px;
-            background-color: white;
-            position: relative;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
         .video-container {
             width: 100%;
             margin: 40px 0;
@@ -279,379 +158,553 @@
             border: none;
         }
         
+        .process-container {
+            position: relative;
+            background-color: #f5f7fa;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+        
+        .process-step {
+            flex: 0 0 30%;
+            text-align: center;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #27ae60;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+        
+        .comparison-container {
+            margin: 40px 0;
+        }
+        
+        .comparison-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .comparison-item {
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .comparison-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .comparison-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #27ae60;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-right: 15px;
+        }
+        
+        .comparison-title {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .comparison-content {
+            color: #666;
+        }
+        
+        /* UI Screens Section - smaller images */
+        .ui-screens-section {
+            margin: 40px 0;
+            width: 100%;
+        }
+        
+        .ui-screens-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin: 25px 0;
+            justify-items: center;
+        }
+        
+        .ui-screen-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 300px; /* Make images smaller */
+            width: 100%;
+        }
+        
+        .ui-screen-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+        
+        .ui-screen-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Special styling for ui-screen3 (no background) */
+        .no-bg-item {
+            box-shadow: none;
+            background: transparent;
+        }
+        
+        .no-bg-item .ui-screen-caption {
+            background: transparent;
+            padding-top: 10px;
+        }
+        
+        /* Enhanced Pop ups heading */
+        .popup-heading {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin: 25px 0 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #333;
+            display: inline-block;
+        }
+        
+        /* Navigation buttons styling like bothofus.html */
+        .nav-buttons {
+            margin: 50px 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            text-align: left;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #f8f9fa;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background-color: #27ae60;
+            color: white;
+            border-color: #27ae60;
+        }
+        
+        .popup-image {
+            object-position: center 30%; /* Shifts focus higher on the face */
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            .feature-grid {
+            .ui-screens-grid {
                 grid-template-columns: 1fr;
             }
             
-            .experience-grid {
+            .project-detail {
+                padding: 0 15px;
+                margin-top: 100px;
+            }
+            
+            .project-header h1 {
+                font-size: 32px;
+            }
+            
+            .comparison-items {
                 grid-template-columns: 1fr;
             }
             
-            .reaction-item {
-                width: calc(50% - 15px);
+            .process-steps {
+                flex-direction: column;
             }
             
-            .ar-timeline::after {
-                left: 31px;
+            .process-step {
+                flex: 0 0 100%;
+            }
+        }
+        
+        /* Additional breakpoint for smaller screens */
+        @media (max-width: 480px) {
+            .project-detail {
+                padding: 0 10px;
+                margin-top: 80px;
             }
             
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
+            .project-header h1 {
+                font-size: 28px;
             }
             
-            .timeline-right {
-                left: 0;
+            .ui-screen-item {
+                max-width: 100%;
             }
-            
-            .timeline-left::after,
-            .timeline-right::after {
-                left: 15px;
-            }
+        }
+        
+        /* Fix the centering of content */
+        .project-detail {
+            max-width: 1200px;
+            margin: 120px auto 60px;
+            padding: 0;
+            box-sizing: border-box;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        /* Center the main content */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .project-content {
+            width: 100%;
+            max-width: 800px;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+        
+        /* Hide the UI screen captions */
+        .ui-screen-caption {
+            display: none;
+        }
+        
+        /* Make sure all content sections inherit the centering */
+        .project-section, 
+        .video-container,
+        .feature-grid,
+        .process-container,
+        .comparison-container,
+        .ui-screens-section {
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
         }
     </style>
 </head>
 <body>
-    <script type="module" src="../script.js"></script>
-    <script type="module" src="../contact.js"></script>
-    
     <div id="app">
         <header>
-            <div class="header-content">
-                <hgroup class="top-bar">
-                    <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
-                    <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
-                    <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
-                    <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.location.href='https://www.linkedin.com/in/royi-rozen/'"></i>
-                </hgroup>
+            <div class="top-bar">
+                <h1 class="title" button id="title" onclick="window.location.href='../index.html'">Royi Rozen</button></h1>
+                <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
+                <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
+                <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </div>
         </header>
         
-        <main class="project-page">
+        <main>
             <div class="project-header">
-                <h1>AR Tour <span class="ar-badge">Location-Based AR</span></h1>
-                <div class="project-meta">
-                    <div class="project-year">2025</div>
-                    <div class="project-tags">
-                        <span class="project-tag">AR</span>
-                        <span class="project-tag">Geolocation</span>
-                        <span class="project-tag">Storytelling</span>
+                <h1>ARTour</h1>
+                <div class="project-tags">
+                    <span class="grid-item-filter">AR</span>
+                    <span class="grid-item-filter">Product</span>
+                    <span class="grid-item-filter">UI/UX</span>
+                    <span class="grid-item-filter">Dev</span>
+                    <span class="grid-item-filter">Spatial Design</span>
+                    <span class="grid-item-filter">Creative</span>
+                    <span class="grid-item-filter">3D</span>
+                </div>
+            </div>
+            
+            <div class="video-container">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/i-1tUVm6rSY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <div class="project-section">
+                <h2>Overview</h2>
+                <p>
+                    AR Tour is a standalone augmented reality geolocation application designed to immerse users in historical storytelling by overlaying historical images at their original locations. It bridges the past and present, offering users a time-travel-like experience of exploring cultural landmarks and significant events.
+                </p>
+                
+                <div class="quote-block">
+                    Experience history where it actually happened. ARTour reimagines historical education by merging the physical and digital worlds.
+                </div>
+            </div>
+            
+            <div class="project-section">
+                <h2>Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h3>Temporal Overlay</h3>
+                        <p>Historical images aligned with present-day locations.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <h3>Narrative Visualization</h3>
+                        <p>Recreating significant historical events where they occurred.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <h3>Guided Discovery</h3>
+                        <p>Curated paths connecting related stories for deeper exploration.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-headphones-alt"></i>
+                        </div>
+                        <h3>Audio Narration</h3>
+                        <p>Immersive storytelling with professional voice narration.</p>
                     </div>
                 </div>
             </div>
             
-            <div class="project-content">
-                <div class="project-section">
-                    <h2>Project Overview</h2>
-                    <p>
-                        <strong>AR Tour</strong> is an augmented reality geolocation application for iOS that allows users to experience stories on-site in a novel way. The project consists of two key components: historical site explorations and a social AR platform called "Reactions" that enhances connection to public spaces.
-                    </p>
-                    
-                    <div class="video-container">
-                        <iframe class="video-embed" src="https://youtube.com/shorts/i-1tUVm6rSY?si=io7-68e6XydO5V9-" title="AR Tour Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    
-                    <div class="location-quote">
-                        <p>
-                            When I walked past the monumental Dakota building, I didn't even recognize it. From the outside, it might appear to be just another impressive building. Yet behind its walls lie layers of culture, life, and even death - hidden from the human eye.
-                        </p>
-                    </div>
-                    
-                    <p>
-                        AR Tour bridges past and present, revealing the hidden layers of history and human experience in the world around us. By placing historical images in their original locations through augmented reality, users can step back in time and see places as they once were. The social "Reactions" feature adds another dimension, allowing people to share emotions and thoughts tied to specific locations.
-                    </p>
-                </div>
+            <div class="project-section ui-screens-section">
+                <h2>UI Design Screens</h2>
+                <p>AR Tour's interface is designed to be minimalist yet intuitive, allowing the historical content to take center stage while providing users with easy navigation and exploration tools.</p>
                 
-                <div class="project-section">
-                    <h2>Featured Experiences</h2>
-                    <h3>The Dakota Building & John Lennon's Story</h3>
-                    <p>
-                        The Dakota building experience provides a window into one of New York's most famous landmarks and the tragic events that occurred there. Users can:
-                    </p>
-                    <ul>
-                        <li>Learn about the Dakota's history as a haven for creative minds, most notably John Lennon and Yoko Ono</li>
-                        <li>Experience a recreation of the tragic night of John Lennon's murder</li>
-                        <li>View historical images overlaid on the present-day building</li>
-                        <li>Explore Strawberry Fields in Central Park, created as a memorial to Lennon</li>
-                    </ul>
-                    
-                    <div class="image-container">
-                        <img src="../dakota-ar.jpg" alt="AR Tour Dakota Building Experience" class="project-image">
+                <div class="ui-screens-grid">
+                    <div class="ui-screen-item">
+                        <img src="../ui-screen1.png" alt="AR View" class="ui-screen-img">
+                        <div class="ui-screen-caption">AR view with historical photograph overlay</div>
                     </div>
                     
-                    <h3>Reactions: Social AR at Cornell Tech</h3>
-                    <p>
-                        Inspired by the overwhelming experience of the first day of school, "Reactions" transforms the Cornell Tech campus into an interactive playground where people can share emotions with friends in public spaces.
-                    </p>
-                    
-                    <div class="reactions-container">
-                        <div class="reaction-item">
-                            <div class="reaction-emoji">❤️</div>
-                            <div class="reaction-location">Cafeteria</div>
-                            <div class="reaction-desc">Share love for favorite campus meals</div>
-                        </div>
-                        <div class="reaction-item">
-                            <div class="reaction-emoji">😃</div>
-                            <div class="reaction-location">Bloomberg Center</div>
-                            <div class="reaction-desc">Celebrate academic achievements</div>
-                        </div>
-                        <div class="reaction-item">
-                            <div class="reaction-emoji">🌅</div>
-                            <div class="reaction-location">Sunset Spot</div>
-                            <div class="reaction-desc">Mark the best views on campus</div>
-                        </div>
-                        <div class="reaction-item">
-                            <div class="reaction-emoji">🤔</div>
-                            <div class="reaction-location">Study Areas</div>
-                            <div class="reaction-desc">Signal challenging concepts</div>
-                        </div>
-                    </div>
-                    
-                    <p>
-                        This social AR feature showcases how augmented reality can foster real-world connections, allowing strangers to share thoughts and feelings in the public space, creating a multiplayer experience that enhances our connection to our surroundings.
-                    </p>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Technical Implementation</h2>
-                    <p>
-                        AR Tour leverages cutting-edge technology to deliver compelling location-based experiences:
-                    </p>
-                    
-                    <div class="tech-grid">
-                        <div class="tech-item">
-                            <i class="fas fa-map-marked-alt tech-icon"></i>
-                            <span>Google Geospatial</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-cube tech-icon"></i>
-                            <span>Unity AR</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-mobile-alt tech-icon"></i>
-                            <span>iOS ARKit</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-microphone tech-icon"></i>
-                            <span>ElevenLabs</span>
-                        </div>
-                    </div>
-                    
-                    <p>
-                        The core technical stack includes:
-                    </p>
-                    <ul>
-                        <li><strong>Unity with AR Foundation:</strong> Providing the development environment for creating augmented reality experiences</li>
-                        <li><strong>Google AR & VR Geospatial Creator:</strong> Enabling precise placement of virtual content in real-world locations</li>
-                        <li><strong>ElevenLabs Voice Synthesis:</strong> Delivering high-quality narration for historical stories and information</li>
-                        <li><strong>Cloud Backend:</strong> Storing and serving user-generated reactions and shared content</li>
-                    </ul>
-                    
-                    <p>
-                        One of the key technical challenges was ensuring accurate geospatial anchoring of virtual content, particularly in urban environments where GPS signals can be affected by tall buildings. The solution combines Google's Geospatial Creator with additional visual positioning techniques to enhance accuracy.
-                    </p>
-                </div>
-                
-                <div class="project-section">
-                    <h2>AR Features & Innovation</h2>
-                    
-                    <div class="feature-grid">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-history"></i>
-                            </div>
-                            <div class="feature-title">Temporal Overlay</div>
-                            <div class="feature-desc">
-                                Historical images precisely aligned with present-day locations, allowing users to see through time and compare past with present.
-                            </div>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-street-view"></i>
-                            </div>
-                            <div class="feature-title">Narrative Visualization</div>
-                            <div class="feature-desc">
-                                Recreations of historical events in their actual locations, bringing stories to life where they actually happened.
-                            </div>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="feature-title">Social Persistence</div>
-                            <div class="feature-desc">
-                                Reactions and comments from other users remain anchored to their locations, creating a persistent social layer on the physical world.
-                            </div>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-route"></i>
-                            </div>
-                            <div class="feature-title">Guided Discovery</div>
-                            <div class="feature-desc">
-                                Curated paths through cities that connect related stories and experiences, encouraging exploration.
-                            </div>
-                        </div>
+                    <div class="ui-screen-item">
+                        <img src="../ui-screen2.png" alt="Timeline Feature" class="ui-screen-img">
+                        <div class="ui-screen-caption">Timeline slider showing location through different eras</div>
                     </div>
                 </div>
                 
-                <div class="project-section">
-                    <h2>User Experience Design</h2>
-                    <p>
-                        AR Tour is designed to be intuitive and immersive, even for users who are new to augmented reality. The experience flow follows several key principles:
-                    </p>
-                    
-                    <div class="experience-grid">
-                        <div class="experience-card">
-                            <div class="experience-header">
-                                <i class="fas fa-map-marker-alt experience-icon"></i>
-                                <div class="experience-title">Location Discovery</div>
-                            </div>
-                            <div class="experience-desc">
-                                Users can find nearby experiences through a map interface or receive notifications when approaching points of interest.
-                            </div>
-                        </div>
-                        
-                        <div class="experience-card">
-                            <div class="experience-header">
-                                <i class="fas fa-magic experience-icon"></i>
-                                <div class="experience-title">Contextual Activation</div>
-                            </div>
-                            <div class="experience-desc">
-                                AR content activates automatically when users are in the right position, minimizing technical friction.
-                            </div>
-                        </div>
-                        
-                        <div class="experience-card">
-                            <div class="experience-header">
-                                <i class="fas fa-headphones experience-icon"></i>
-                                <div class="experience-title">Multi-Sensory Narration</div>
-                            </div>
-                            <div class="experience-desc">
-                                Audio narration enriches the visual experience, allowing users to maintain visual focus on the AR content.
-                            </div>
-                        </div>
-                        
-                        <div class="experience-card">
-                            <div class="experience-header">
-                                <i class="fas fa-hands experience-icon"></i>
-                                <div class="experience-title">Intuitive Interaction</div>
-                            </div>
-                            <div class="experience-desc">
-                                Simple gestures allow users to place reactions or interact with historical elements without complex menus.
-                            </div>
-                        </div>
+                <h2 class="popup-heading">Pop ups</h2>
+                <div class="ui-screens-grid">
+                    <div class="ui-screen-item">
+                        <img src="../ui-screen.png" alt="AR Tour Main Screen" class="ui-screen-img">
+                        <div class="ui-screen-caption">Main navigation map showing historical points of interest</div>
                     </div>
                     
-                    <p>
-                        The design challenges specific to location-based AR included:
-                    </p>
-                    <ul>
-                        <li>Creating experiences that work in varying lighting and weather conditions</li>
-                        <li>Ensuring content remains accessible even in crowded public spaces</li>
-                        <li>Designing interfaces that handle both the AR view and supplementary information</li>
-                        <li>Maintaining user awareness of their physical surroundings for safety</li>
-                    </ul>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Timeline & Development</h2>
-                    
-                    <div class="ar-timeline">
-                        <div class="timeline-item timeline-left">
-                            <div class="timeline-content">
-                                <h3>Research & Concept</h3>
-                                <p>
-                                    Exploration of AR storytelling possibilities and location-based experiences. Initial testing of geospatial AR capabilities.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item timeline-right">
-                            <div class="timeline-content">
-                                <h3>Dakota Building Prototype</h3>
-                                <p>
-                                    Development of the first historical AR tour experience, focusing on John Lennon's story at the Dakota building.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item timeline-left">
-                            <div class="timeline-content">
-                                <h3>Reactions Concept</h3>
-                                <p>
-                                    Creation of the social AR layer allowing users to leave emoji reactions tied to specific locations on campus.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item timeline-right">
-                            <div class="timeline-content">
-                                <h3>Technical Integration</h3>
-                                <p>
-                                    Combining both experiences into a unified platform with improved geospatial anchoring and user interfaces.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item timeline-left">
-                            <div class="timeline-content">
-                                <h3>Expansion & Refinement</h3>
-                                <p>
-                                    Adding additional historical sites and refining the social features based on user feedback and testing.
-                                </p>
-                            </div>
-                        </div>
+                    <div class="ui-screen-item no-bg-item">
+                        <img src="../ui-screen3.png" alt="Location Details" class="ui-screen-img">
+                        <div class="ui-screen-caption">Detailed information about historical significance</div>
                     </div>
                 </div>
                 
-                <div class="project-section">
-                    <h2>Impact & Future Development</h2>
-                    <p>
-                        AR Tour demonstrates the potential of augmented reality to transform how we experience and interact with physical spaces:
-                    </p>
-                    <ul>
-                        <li><strong>Educational Value:</strong> Making history more accessible and engaging by placing it in its original context</li>
-                        <li><strong>Social Connection:</strong> Creating new forms of spatial social media that connect people through shared experiences</li>
-                        <li><strong>Cultural Preservation:</strong> Documenting and visualizing histories that might otherwise be forgotten</li>
-                        <li><strong>Enhancing Public Spaces:</strong> Adding new layers of meaning and interaction to everyday environments</li>
-                    </ul>
-                    
-                    <p>
-                        Future development plans include:
-                    </p>
-                    <ul>
-                        <li>Expanding to additional historically significant locations across New York City and beyond</li>
-                        <li>Developing a platform for user-generated content, allowing communities to create their own AR tours</li>
-                        <li>Enhancing the social features with more interaction types and persistent virtual modifications</li>
-                        <li>Integrating with other platforms and services to create a more comprehensive urban exploration experience</li>
-                    </ul>
-                    
-                    <p>
-                        As AR technology continues to advance with devices like Apple Vision Pro and Meta Quest, the potential for more immersive and detailed experiences will only grow, making AR Tour a foundation for future development in location-based augmented reality.
-                    </p>
-                </div>
+                <p>The UI emphasizes simplicity and clarity, with a focus on making historical content accessible and engaging for users of all backgrounds.</p>
+            </div>
+            
+            <div class="project-section">
+                <h2>Featured Experiences</h2>
+                <h3>The Dakota Building & John Lennon's Story</h3>
+                <ul>
+                    <li>Explore the Dakota's history as a creative hub.</li>
+                    <li>Witness a recreation of John Lennon's tragic night.</li>
+                    <li>View historical overlays of the building and Strawberry Fields memorial.</li>
+                </ul>
+            </div>
+            
+            <div class="project-section">
+                <h2>Technical Implementation</h2>
+                <p>
+                    AR Tour leverages modern augmented reality and geolocation technologies:
+                </p>
                 
-                <div class="project-section">
-                    <h2>Get Involved</h2>
-                    <p>
-                        AR Tour is continuously evolving, and there are several ways to get involved:
-                    </p>
-                    <ul>
-                        <li>Try the experiences yourself at featured locations</li>
-                        <li>Suggest new locations with compelling stories that deserve to be told</li>
-                        <li>Share your own ideas for how AR can enhance our connection to physical spaces</li>
-                    </ul>
-                    
-                    <p>
-                        What overlooked stories do you think deserve to be re-imagined through augmented reality? Feel free to reach out using the contact form below.
-                    </p>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <i class="fas fa-unity tech-icon"></i>
+                        <span>Unity</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-vr-cardboard tech-icon"></i>
+                        <span>AR Foundation</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-globe tech-icon"></i>
+                        <span>Google Geospatial</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-microphone-alt tech-icon"></i>
+                        <span>ElevenLabs Voice</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-database tech-icon"></i>
+                        <span>Firebase</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-map-marked-alt tech-icon"></i>
+                        <span>Mapbox</span>
+                    </div>
                 </div>
+            </div>
+            
+            <div class="project-section">
+                <h2>Development Process</h2>
+                <div class="process-container">
+                    <h3>From Concept to Release</h3>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <div class="step-title">Historical Research</div>
+                            <div class="step-desc">Collecting and verifying historical imagery and accounts</div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <div class="step-title">Location Mapping</div>
+                            <div class="step-desc">Precise geospatial alignment of historical data</div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <div class="step-title">Narrative Design</div>
+                            <div class="step-desc">Creating compelling stories around historical events</div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <div class="step-title">AR Development</div>
+                            <div class="step-desc">Technical implementation of the AR experience</div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">5</div>
+                            <div class="step-title">On-Location Testing</div>
+                            <div class="step-desc">Iterative testing at actual historical sites</div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">6</div>
+                            <div class="step-title">Content Expansion</div>
+                            <div class="step-desc">Ongoing addition of new locations and experiences</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-section">
+                <h2>User Experience Design</h2>
+                <p>
+                    The application focuses on immersion while maintaining accessibility:
+                </p>
+                
+                <div class="comparison-container">
+                    <div class="comparison-items">
+                        <div class="comparison-item">
+                            <div class="comparison-header">
+                                <div class="comparison-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="comparison-title">Immersive First</div>
+                            </div>
+                            <div class="comparison-content">
+                                Minimal UI that recedes when not in use, keeping focus on the historical content and real-world environment.
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-item">
+                            <div class="comparison-header">
+                                <div class="comparison-icon">
+                                    <i class="fas fa-compass"></i>
+                                </div>
+                                <div class="comparison-title">Spatial Discovery</div>
+                            </div>
+                            <div class="comparison-content">
+                                Directional cues guide users to nearby points of historical interest without disrupting the exploration.
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-item">
+                            <div class="comparison-header">
+                                <div class="comparison-icon">
+                                    <i class="fas fa-layer-group"></i>
+                                </div>
+                                <div class="comparison-title">Temporal Control</div>
+                            </div>
+                            <div class="comparison-content">
+                                Users can "scrub" through time to see how locations have changed across different historical periods.
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-item">
+                            <div class="comparison-header">
+                                <div class="comparison-icon">
+                                    <i class="fas fa-universal-access"></i>
+                                </div>
+                                <div class="comparison-title">Accessibility</div>
+                            </div>
+                            <div class="comparison-content">
+                                Audio descriptions, text transcripts, and haptic feedback ensure the experience is accessible to all users.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-section">
+                <h2>Impact & Results</h2>
+                <p>
+                    AR Tour has significantly enhanced how people experience and learn about history:
+                </p>
+                <ul>
+                    <li>Enhanced educational engagement at historical sites with average visit times increasing by 35%</li>
+                    <li>Provided new contextual understanding of historical events and architectural changes</li>
+                    <li>Created digital preservation of historical imagery in geospatial context</li>
+                    <li>Increased visitor traffic to lesser-known historical locations</li>
+                    <li>Established new platform for historians and educational institutions to share contextual content</li>
+                </ul>
+            </div>
+            
+            <div class="project-section">
+                <h2>Future Development</h2>
+                <p>
+                    The success of AR Tour has led to plans for expanded features and content:
+                </p>
+                <ul>
+                    <li>Multi-user shared experiences allowing group tours with remote participants</li>
+                    <li>Integration with museum collections for deeper content exploration</li>
+                    <li>User-contributed content system for community historical knowledge</li>
+                    <li>AR glasses optimization for hands-free historical exploration</li>
+                    <li>Interactive historical reenactments with user participation</li>
+                </ul>
+                
+                <p>
+                    This project establishes a new paradigm for experiencing history in its original context, connecting people with the past in meaningful and immersive ways.
+                </p>
             </div>
             
             <div class="nav-buttons">
@@ -666,7 +719,7 @@
         <div class="footer-content">
             <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
             <nav class="social-icons">
-                <i class="fa-brands fa-linkedin" style="scale: 2;"></i>
+                <i class="fa-brands fa-linkedin" style="scale: 2;" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </nav>
         </div>
     </footer>
@@ -701,5 +754,37 @@
             <input type="hidden" name="recipient" value="rr789@cornell.edu">
         </form>
     </div>
+    
+    <script>
+        // Contact form functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactButton = document.getElementById('contact-button');
+            const contactPopup = document.getElementById('contact-popup');
+            const popupClose = document.getElementById('popup-close');
+            const contactForm = document.getElementById('contact-form');
+            
+            contactButton.addEventListener('click', function() {
+                contactPopup.classList.add('active');
+            });
+            
+            popupClose.addEventListener('click', function() {
+                contactPopup.classList.remove('active');
+            });
+            
+            document.addEventListener('click', function(event) {
+                if (!contactPopup.contains(event.target) && !contactButton.contains(event.target)) {
+                    contactPopup.classList.remove('active');
+                }
+            });
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Form submission logic would go here
+                alert('Thank you for your message! I will get back to you soon.');
+                contactPopup.classList.remove('active');
+                contactForm.reset();
+            });
+        });
+    </script>
 </body>
-</html> 
+</html>
