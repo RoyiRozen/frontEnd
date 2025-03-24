@@ -33,57 +33,78 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = formData.get('email');
         const message = formData.get('message');
         
-        // Store in localStorage with timestamp
-        const timestamp = new Date().toISOString();
-        const lead = {
-            name,
-            email,
-            message,
-            timestamp
-        };
-        
-        // Get existing leads or initialize empty array
-        const existingLeads = JSON.parse(localStorage.getItem('contactLeads') || '[]');
-        existingLeads.push(lead);
-        
-        // Save updated leads
-        localStorage.setItem('contactLeads', JSON.stringify(existingLeads));
-        
-        // Hide form fields and show success message
-        const formFields = contactForm.querySelector('.form-fields');
-        const formDivider = contactForm.querySelector('.form-divider');
-        const formActions = contactForm.querySelector('.form-actions');
-        
-        formFields.style.display = 'none';
-        formDivider.style.display = 'none';
-        formActions.style.display = 'none';
-        
-        // Create and show success message
-        const successMessage = document.createElement('div');
-        successMessage.className = 'success-message';
-        successMessage.innerHTML = `
-            <div class="success-content">
-                <i class="fas fa-check-circle"></i>
-                <h3>Thank you!</h3>
-                <p>Your message has been sent successfully.</p>
-                <p>I will get back to you soon!</p>
-            </div>
-        `;
-        
-        contactForm.appendChild(successMessage);
-        
-        // Close popup after 3 seconds
-        setTimeout(() => {
-            contactPopup.classList.remove('active');
-            // Reset form and remove success message after popup is closed
+        try {
+            // Send email using EmailJS
+            await emailjs.send(
+                'service_xxxxxxx', // Replace with your EmailJS service ID
+                'template_xxxxxxx', // Replace with your EmailJS template ID
+                {
+                    to_email: 'rr789@cornell.edu',
+                    from_name: name,
+                    from_email: email,
+                    message: message,
+                },
+                'public_key_xxxxxxx' // Replace with your EmailJS public key
+            );
+            
+            // Store in localStorage with additional details
+            const timestamp = new Date().toISOString();
+            const lead = {
+                name,
+                email,
+                message,
+                timestamp,
+                status: 'Unread', // Add status tracking
+                notes: '' // Add ability to add notes
+            };
+            
+            // Get existing leads or initialize empty array
+            const existingLeads = JSON.parse(localStorage.getItem('contactLeads') || '[]');
+            existingLeads.push(lead);
+            
+            // Save updated leads
+            localStorage.setItem('contactLeads', JSON.stringify(existingLeads));
+            
+            // Hide form fields and show success message
+            const formFields = contactForm.querySelector('.form-fields');
+            const formDivider = contactForm.querySelector('.form-divider');
+            const formActions = contactForm.querySelector('.form-actions');
+            
+            formFields.style.display = 'none';
+            formDivider.style.display = 'none';
+            formActions.style.display = 'none';
+            
+            // Create and show success message
+            const successMessage = document.createElement('div');
+            successMessage.className = 'success-message';
+            successMessage.innerHTML = `
+                <div class="success-content">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Thank you!</h3>
+                    <p>Your message has been sent successfully.</p>
+                    <p>I will get back to you soon!</p>
+                </div>
+            `;
+            
+            contactForm.appendChild(successMessage);
+            
+            // Close popup after 3 seconds
             setTimeout(() => {
-                contactForm.reset();
-                successMessage.remove();
-                formFields.style.display = 'block';
-                formDivider.style.display = 'block';
-                formActions.style.display = 'block';
-            }, 500);
-        }, 3000);
+                contactPopup.classList.remove('active');
+                // Reset form and remove success message after popup is closed
+                setTimeout(() => {
+                    contactForm.reset();
+                    successMessage.remove();
+                    formFields.style.display = 'block';
+                    formDivider.style.display = 'block';
+                    formActions.style.display = 'block';
+                }, 500);
+            }, 3000);
+
+        } catch (error) {
+            console.error('Failed to send email:', error);
+            alert('Failed to send message. Please try again later.');
+        }
     });
 
     // Add a keyboard shortcut to access the lead sheet (Shift + Alt + L)
@@ -94,180 +115,133 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // Function to display leads in a modal
-    function showLeadSheet() {
-        // Check if admin password is required
-        const password = prompt("Enter admin password to view leads:");
-        if (password !== "RR2025") { // Simple password protection
-            alert("Incorrect password");
-            return;
-        }
-        
-        // Create modal element
-        const modal = document.createElement('div');
-        modal.className = 'lead-sheet-modal';
-        
-        // Get leads from localStorage
-        const leads = JSON.parse(localStorage.getItem('contactLeads')) || [];
-        
-        // Create table to display leads
-        let tableHTML = `
-        <div class="lead-sheet-container">
-            <div class="lead-sheet-header">
-                <h2>Contact Leads</h2>
-                <button id="export-leads" class="export-button">Export CSV</button>
-                <button id="close-leads" class="close-button">&times;</button>
-            </div>
-            <table class="lead-table">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Message</th>
-                    </tr>
-                </thead>
-                <tbody>
-        `;
-        
-        if (leads.length === 0) {
-            tableHTML += `
-                <tr>
-                    <td colspan="4" style="text-align: center;">No leads yet</td>
-                </tr>
-            `;
-        } else {
-            leads.forEach(lead => {
-                const date = new Date(lead.timestamp).toLocaleString();
-                tableHTML += `
-                    <tr>
-                        <td>${date}</td>
-                        <td>${lead.name}</td>
-                        <td>${lead.email}</td>
-                        <td>${lead.message}</td>
-                    </tr>
-                `;
-            });
-        }
-        
-        tableHTML += `
-                </tbody>
-            </table>
-        </div>
-        `;
-        
-        modal.innerHTML = tableHTML;
-        document.body.appendChild(modal);
-        
-        // Add CSS for the modal
-        const style = document.createElement('style');
-        style.textContent = `
-            .lead-sheet-modal {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.8);
-                z-index: 2000;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            
-            .lead-sheet-container {
-                background-color: white;
-                width: 80%;
-                max-width: 1000px;
-                max-height: 80vh;
-                border-radius: 10px;
-                overflow: auto;
-                padding: 20px;
-            }
-            
-            .lead-sheet-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 20px;
-                padding-bottom: 10px;
-                border-bottom: 1px solid #ddd;
-            }
-            
-            .lead-table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-            
-            .lead-table th,
-            .lead-table td {
-                padding: 10px;
-                text-align: left;
-                border-bottom: 1px solid #ddd;
-            }
-            
-            .lead-table th {
-                background-color: #f5f5f5;
-                font-weight: bold;
-            }
-            
-            .export-button {
-                background-color: #2c3e50;
-                color: white;
-                border: none;
-                padding: 8px 15px;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-            
-            .close-button {
-                background: none;
-                border: none;
-                font-size: 24px;
-                cursor: pointer;
-            }
-        `;
-        document.head.appendChild(style);
-        
-        // Add event listeners
-        document.getElementById('close-leads').addEventListener('click', function() {
-            document.body.removeChild(modal);
-        });
-        
-        document.getElementById('export-leads').addEventListener('click', function() {
-            exportLeadsToCSV(leads);
-        });
-    }
-    
-    // Function to export leads to CSV
+    // Enhanced CSV export function
     function exportLeadsToCSV(leads) {
-        // Create CSV content
+        // Create CSV content with more detailed headers
         let csvContent = "data:text/csv;charset=utf-8,";
-        csvContent += "Date,Name,Email,Message\n";
+        csvContent += "Date,Time,Name,Email,Message,Status,Notes\n";
         
         leads.forEach(lead => {
-            const date = new Date(lead.timestamp).toLocaleString();
+            const date = new Date(lead.timestamp);
+            const formattedDate = date.toLocaleDateString();
+            const formattedTime = date.toLocaleTimeString();
+            
             const row = [
-                date,
-                lead.name.replace(/,/g, " "), // Replace commas to avoid CSV formatting issues
+                formattedDate,
+                formattedTime,
+                lead.name.replace(/,/g, " "), // Clean name
                 lead.email,
-                lead.message.replace(/,/g, " ").replace(/\n/g, " ") // Clean message text
+                lead.message.replace(/,/g, " ").replace(/\n/g, " "), // Clean message
+                lead.status || 'Unread',
+                (lead.notes || '').replace(/,/g, " ").replace(/\n/g, " ") // Clean notes
             ].join(",");
             csvContent += row + "\n";
         });
         
-        // Create download link
+        // Create and trigger download
         const encodedUri = encodeURI(csvContent);
         const link = document.createElement("a");
+        const fileName = `contact_leads_${new Date().toISOString().split('T')[0]}.csv`;
+        
         link.setAttribute("href", encodedUri);
-        link.setAttribute("download", "contact_leads.csv");
+        link.setAttribute("download", fileName);
         document.body.appendChild(link);
-        
-        // Trigger download
         link.click();
-        
-        // Clean up
         document.body.removeChild(link);
+    }
+
+    // Enhanced lead sheet display
+    function showLeadSheet() {
+        const password = prompt("Enter admin password to view leads:");
+        if (password !== "RR2025") {
+            alert("Incorrect password");
+            return;
+        }
+        
+        const leads = JSON.parse(localStorage.getItem('contactLeads')) || [];
+        
+        const modal = document.createElement('div');
+        modal.className = 'lead-sheet-modal';
+        
+        const tableHTML = `
+        <div class="lead-sheet-container">
+            <div class="lead-sheet-header">
+                <h2>Contact Messages (${leads.length})</h2>
+                <div class="lead-sheet-actions">
+                    <button id="export-leads" class="export-button">Export CSV</button>
+                    <button id="clear-leads" class="clear-button">Clear All</button>
+                    <button id="close-leads" class="close-button">&times;</button>
+                </div>
+            </div>
+            <div class="lead-table-wrapper">
+                <table class="lead-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                            <th>Status</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${leads.length === 0 ? 
+                            `<tr><td colspan="6" style="text-align: center;">No messages yet</td></tr>` :
+                            leads.map(lead => `
+                                <tr>
+                                    <td>${new Date(lead.timestamp).toLocaleString()}</td>
+                                    <td>${lead.name}</td>
+                                    <td>${lead.email}</td>
+                                    <td>${lead.message}</td>
+                                    <td>
+                                        <select class="status-select" data-timestamp="${lead.timestamp}">
+                                            <option value="Unread" ${lead.status === 'Unread' ? 'selected' : ''}>Unread</option>
+                                            <option value="Read" ${lead.status === 'Read' ? 'selected' : ''}>Read</option>
+                                            <option value="Replied" ${lead.status === 'Replied' ? 'selected' : ''}>Replied</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <textarea class="notes-input" data-timestamp="${lead.timestamp}">${lead.notes || ''}</textarea>
+                                    </td>
+                                </tr>
+                            `).join('')
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>`;
+        
+        modal.innerHTML = tableHTML;
+        document.body.appendChild(modal);
+        
+        // Add event listeners for the new functionality
+        modal.querySelector('#export-leads').addEventListener('click', () => exportLeadsToCSV(leads));
+        modal.querySelector('#clear-leads').addEventListener('click', () => {
+            if (confirm('Are you sure you want to clear all messages? This cannot be undone.')) {
+                localStorage.removeItem('contactLeads');
+                modal.remove();
+            }
+        });
+        modal.querySelector('#close-leads').addEventListener('click', () => modal.remove());
+        
+        // Add event listeners for status and notes updates
+        modal.querySelectorAll('.status-select, .notes-input').forEach(element => {
+            element.addEventListener('change', (e) => {
+                const timestamp = e.target.dataset.timestamp;
+                const leads = JSON.parse(localStorage.getItem('contactLeads')) || [];
+                const leadIndex = leads.findIndex(l => l.timestamp === timestamp);
+                
+                if (leadIndex !== -1) {
+                    if (e.target.classList.contains('status-select')) {
+                        leads[leadIndex].status = e.target.value;
+                    } else {
+                        leads[leadIndex].notes = e.target.value;
+                    }
+                    localStorage.setItem('contactLeads', JSON.stringify(leads));
+                }
+            });
+        });
     }
     
     // Scroll animation functionality
@@ -284,9 +258,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
+    
     // Initial check on page load
+    export async function login(email, password) {
+        const imput = loginSchema.safeParse({
+            email,
+            password,
+        });
+        if (!imput.success) {
+            console.log(imput.error);
+        }
+        return imput.success;
+    }
     checkScroll();
     
+    const loginSchema =  z.object({
+        email: z.string().email(),
+        password: z.string().min(8),
+    });
+    const result = loginSchema.safeParse({
+        email: "test@test.com",
+        password: "test",
+    });
+    if (!result.success) {
+        console.log(result.error);
+    }
+
     // Check on scroll
     window.addEventListener('scroll', checkScroll);
 }); 
