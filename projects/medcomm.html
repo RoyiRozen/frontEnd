@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR Tour (History) - Royi Rozen</title>
+    <title>MedComm - Royi Rozen Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     
@@ -58,7 +58,7 @@
         /* Use the same styling approach as cardgame.html but with green color */
         .ar-badge {
             display: inline-block;
-            background-color: #27ae60;
+            background-color: #4A90E2;
             color: white;
             padding: 5px 10px;
             border-radius: 4px;
@@ -70,7 +70,7 @@
         
         .quote-block {
             background-color: #f8f9fa;
-            border-left: 4px solid #27ae60;
+            border-left: 4px solid #4A90E2;
             padding: 20px;
             margin: 30px 0;
             border-radius: 4px;
@@ -84,7 +84,7 @@
             top: 10px;
             left: 15px;
             font-size: 40px;
-            color: #27ae60;
+            color: #4A90E2;
             opacity: 0.3;
         }
         
@@ -110,7 +110,7 @@
         .tech-icon {
             font-size: 28px;
             margin-bottom: 10px;
-            color: #27ae60;
+            color: #4A90E2;
         }
         
         .feature-grid {
@@ -185,7 +185,7 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background-color: #27ae60;
+            background-color: #4A90E2;
             color: white;
             display: flex;
             align-items: center;
@@ -222,7 +222,7 @@
         .comparison-icon {
             width: 40px;
             height: 40px;
-            background-color: #27ae60;
+            background-color: #4A90E2;
             color: white;
             border-radius: 50%;
             display: flex;
@@ -319,9 +319,9 @@
         }
         
         .back-button:hover {
-            background-color: #27ae60;
+            background-color: #4A90E2;
             color: white;
-            border-color: #27ae60;
+            border-color: #4A90E2;
         }
         
         .popup-image {
@@ -432,247 +432,183 @@
         
         <main>
             <div class="project-header">
-                <h1>ARTour</h1>
+                <h1>MedComm</h1>
                 <div class="project-tags">
-                    <span class="grid-item-filter">AR</span>
-                    <span class="grid-item-filter">Product</span>
-                    <span class="grid-item-filter">UI/UX</span>
-                    <span class="grid-item-filter">Dev</span>
-                    <span class="grid-item-filter">Spatial Design</span>
-                    <span class="grid-item-filter">Creative</span>
-                    <span class="grid-item-filter">3D</span>
+                    <span class="project-tag">AI</span>
+                    <span class="project-tag">Product</span>
+                    <span class="project-tag">UI/UX</span>
+                    <span class="project-tag">Health</span>
+                    <span class="project-tag">Simulation</span>
                 </div>
             </div>
-            
-            <div class="video-container">
-                <iframe class="video-embed" src="https://www.youtube.com/embed/i-1tUVm6rSY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            <div style="margin-top: 20px; margin-bottom: 30px; text-align: center;">
+                <a href="https://medcomm-final-project-bss.vercel.app/auth/signin" target="_blank" class="project-button" style="display: inline-block; padding: 12px 25px; background-color: #4A90E2; color: white; text-decoration: none; border-radius: 5px; font-size: 16px; border: 1px solid #4A90E2;">
+                    Visit MedComm Live <i class="fas fa-external-link-alt" style="margin-left: 8px;"></i>
+                </a>
             </div>
             
             <div class="project-section">
                 <h2>Overview</h2>
                 <p>
-                    AR Tour is a standalone augmented reality geolocation application designed to immerse users in historical storytelling by overlaying historical images at their original locations. It bridges the past and present, offering users a time-travel-like experience of exploring cultural landmarks and significant events.
+                    MEDCOMM (Medical Emergency Department COMmunication and Management) is an integrated training system designed to prepare emergency medicine residents for the 2025 ABEM certification requirements. It addresses the challenge of providing scalable, standardized training in crucial communication skills needed for modern medical practice and certification.
                 </p>
                 
                 <div class="quote-block">
-                    Experience history where it actually happened. ARTour reimagines historical education by merging the physical and digital worlds.
+                    Delivering medical communication training at digital scale to meet the evolving demands of emergency medicine certification.
                 </div>
             </div>
             
             <div class="project-section">
-                <h2>Key Features</h2>
+                <h2>The Problem</h2>
+                <p>
+                    Emergency medicine residents face significant challenges preparing for the revised 2025 ABEM certification examination. With changes in the assessment approach from traditional testing to simulation-based evaluation, Residents must now demonstrate proficiency in both medical knowledge and communication skills within realistic simulated scenarios. Current training programs often lack structured practice opportunities for these communication scenarios, leaving residents underprepared for this critical examination component.
+                </p>
+                <p>
+                    While traditional role-playing offers direct human feedback and can be customized, it is resource-intensive, difficult to standardize, requires scheduling, and is not scalable for large programs.
+                </p>
+            </div>
+
+            <div class="project-section">
+                <h2>Our Solution: MEDCOMM</h2>
+                <p>
+                    The MEDCOMM system represents a significant advancement in emergency medicine resident education. Its core is the Communication Module, an AI-powered chatbot simulation system that generates realistic patient, family, and healthcare provider interactions based on ABEM certification scenarios.
+                </p>
+            </div>
+
+            <div class="project-section">
+                <h2>Key Features of the Communication Module</h2>
                 <div class="feature-grid">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-layer-group"></i>
+                            <i class="fas fa-file-medical-alt"></i>
                         </div>
-                        <h3>Temporal Overlay</h3>
-                        <p>Historical images aligned with present-day locations.</p>
+                        <h3>ABEM-Aligned Scenarios</h3>
+                        <p>100+ unique scenarios focusing on difficult conversations, patient-centered decision-making, and conflict management, directly based on ABEM certification requirements.</p>
                     </div>
                     
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-film"></i>
+                            <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <h3>Narrative Visualization</h3>
-                        <p>Recreating significant historical events where they occurred.</p>
+                        <h3>Methodological Learning Framework</h3>
+                        <p>Structured conversational paths guide residents through establishing rapport, information gathering, shared decision-making, and empathetic communication, with adaptive feedback.</p>
                     </div>
                     
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-route"></i>
+                            <i class="fas fa-comments"></i>
                         </div>
-                        <h3>Guided Discovery</h3>
-                        <p>Curated paths connecting related stories for deeper exploration.</p>
+                        <h3>Realistic Dialogue Engine</h3>
+                        <p>Utilizes advanced NLP and LLMs (GPT-3.5/GPT-4) for dynamic, context-aware conversations. Includes voice input/output and a library of emotional tones.</p>
                     </div>
                     
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-headphones-alt"></i>
+                            <i class="fas fa-chart-line"></i>
                         </div>
-                        <h3>Audio Narration</h3>
-                        <p>Immersive storytelling with professional voice narration.</p>
+                        <h3>Performance Analytics Dashboard</h3>
+                        <p>Tracks resident progress, identifies areas for improvement, and provides insights into communication patterns. Includes A/B testing for scenario effectiveness.</p>
                     </div>
                 </div>
             </div>
-            
+
             <div class="project-section ui-screens-section">
-                <h2>UI Design Screens</h2>
-                <p>AR Tour's interface is designed to be minimalist yet intuitive, allowing the historical content to take center stage while providing users with easy navigation and exploration tools.</p>
-                
+                <h2>System Architecture & UI</h2>
+                <p>MEDCOMM is built with a modular architecture for scalability and maintainability, featuring a user-friendly interface for both residents and administrators.</p>
+                <!-- Placeholder for UI images - User should add these -->
                 <div class="ui-screens-grid">
                     <div class="ui-screen-item">
-                        <img src="../ui-screen1.png" alt="AR View" class="ui-screen-img">
-                        <div class="ui-screen-caption">AR view with historical photograph overlay</div>
+                        <img src="../placeholder-medcomm-ui1.jpg" alt="MedComm Resident Dashboard" class="ui-screen-img">
+                        <!-- <div class="ui-screen-caption">Resident Dashboard Mockup</div> -->
                     </div>
-                    
                     <div class="ui-screen-item">
-                        <img src="../ui-screen2.png" alt="Timeline Feature" class="ui-screen-img">
-                        <div class="ui-screen-caption">Timeline slider showing location through different eras</div>
+                        <img src="../placeholder-medcomm-ui2.jpg" alt="MedComm Simulation Interface" class="ui-screen-img">
+                        <!-- <div class="ui-screen-caption">AI Chat Simulation Mockup</div> -->
+                    </div>
+                    <div class="ui-screen-item">
+                        <img src="../medcomm_ui3.png" alt="MedComm UI Example 3" class="ui-screen-img">
+                        <div class="ui-screen-caption">UI Example 3: Post-simulation feedback</div>
+                    </div>
+                    <div class="ui-screen-item">
+                        <img src="../medcomm.jpeg" alt="MedComm UI Example 1 (additional)" class="ui-screen-img">
+                        <div class="ui-screen-caption">UI Example 1 (additional): Conversation Flow</div>
+                    </div>
+                    <div class="ui-screen-item">
+                        <img src="../medcomm3.jpeg" alt="MedComm UI Example 3 (additional)" class="ui-screen-img">
+                        <div class="ui-screen-caption">UI Example 3 (additional): Patient Chart</div>
+                    </div>
+                    <div class="ui-screen-item">
+                        <img src="../medcomm4.jpeg" alt="MedComm UI Example 4 (additional)" class="ui-screen-img">
+                        <div class="ui-screen-caption">UI Example 4 (additional): Admin Dashboard</div>
+                    </div>
+                    <div class="ui-screen-item">
+                        <img src="../medcomm5.jpeg" alt="MedComm UI Example 5 (additional)" class="ui-screen-img">
+                        <div class="ui-screen-caption">UI Example 5 (additional): Scenario Selection</div>
                     </div>
                 </div>
-                
-                <h2 class="popup-heading">Pop ups</h2>
-                <div class="ui-screens-grid">
-                    <div class="ui-screen-item">
-                        <img src="../ui-screen.png" alt="AR Tour Main Screen" class="ui-screen-img">
-                        <div class="ui-screen-caption">Main navigation map showing historical points of interest</div>
-                    </div>
-                    
-                    <div class="ui-screen-item no-bg-item">
-                        <img src="../ui-screen3.png" alt="Location Details" class="ui-screen-img">
-                        <div class="ui-screen-caption">Detailed information about historical significance</div>
-                    </div>
-                </div>
-                
-                <p>The UI emphasizes simplicity and clarity, with a focus on making historical content accessible and engaging for users of all backgrounds.</p>
+                <p>The user interface is designed to be intuitive, providing clear visual cues and interactive elements that guide the user through the simulation and feedback process. The architecture ensures robust performance and scalability.</p>
             </div>
-            
+
             <div class="project-section">
-                <h2>Featured Experiences</h2>
-                <h3>The Dakota Building & John Lennon's Story</h3>
-                <ul>
-                    <li>Explore the Dakota's history as a creative hub.</li>
-                    <li>Witness a recreation of John Lennon's tragic night.</li>
-                    <li>View historical overlays of the building and Strawberry Fields memorial.</li>
-                </ul>
-            </div>
-            
-            <div class="project-section">
-                <h2>Technical Implementation</h2>
+                <h2>Technical Stack</h2>
                 <p>
-                    AR Tour leverages modern augmented reality and geolocation technologies:
+                    The platform integrates robust technologies for a seamless user experience and powerful AI capabilities:
                 </p>
-                
                 <div class="tech-grid">
                     <div class="tech-item">
-                        <i class="fas fa-unity tech-icon"></i>
-                        <span>Unity</span>
+                        <i class="fab fa-python tech-icon"></i>
+                        <span>Python (Backend)</span>
                     </div>
                     <div class="tech-item">
-                        <i class="fas fa-vr-cardboard tech-icon"></i>
-                        <span>AR Foundation</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fas fa-globe tech-icon"></i>
-                        <span>Google Geospatial</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fas fa-microphone-alt tech-icon"></i>
-                        <span>ElevenLabs Voice</span>
+                        <i class="fab fa-react tech-icon"></i>
+                        <span>React (Frontend)</span>
                     </div>
                     <div class="tech-item">
                         <i class="fas fa-database tech-icon"></i>
-                        <span>Firebase</span>
+                        <span>PostgreSQL</span>
                     </div>
                     <div class="tech-item">
-                        <i class="fas fa-map-marked-alt tech-icon"></i>
-                        <span>Mapbox</span>
+                        <i class="fas fa-brain tech-icon"></i>
+                        <span>OpenAI GPT-3.5/4</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-cloud tech-icon"></i>
+                        <span>AWS/Vercel</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-microphone-alt tech-icon"></i>
+                        <span>Voice Recognition API</span>
                     </div>
                 </div>
             </div>
             
             <div class="project-section">
-                <h2>Development Process</h2>
-                <div class="process-container">
-                    <h3>From Concept to Release</h3>
-                    <div class="process-steps">
-                        <div class="process-step">
-                            <div class="step-number">1</div>
-                            <div class="step-title">Historical Research</div>
-                            <div class="step-desc">Collecting and verifying historical imagery and accounts</div>
-                        </div>
-                        
-                        <div class="process-step">
-                            <div class="step-number">2</div>
-                            <div class="step-title">Location Mapping</div>
-                            <div class="step-desc">Precise geospatial alignment of historical data</div>
-                        </div>
-                        
-                        <div class="process-step">
-                            <div class="step-number">3</div>
-                            <div class="step-title">Narrative Design</div>
-                            <div class="step-desc">Creating compelling stories around historical events</div>
-                        </div>
-                        
-                        <div class="process-step">
-                            <div class="step-number">4</div>
-                            <div class="step-title">AR Development</div>
-                            <div class="step-desc">Technical implementation of the AR experience</div>
-                        </div>
-                        
-                        <div class="process-step">
-                            <div class="step-number">5</div>
-                            <div class="step-title">On-Location Testing</div>
-                            <div class="step-desc">Iterative testing at actual historical sites</div>
-                        </div>
-                        
-                        <div class="process-step">
-                            <div class="step-number">6</div>
-                            <div class="step-title">Content Expansion</div>
-                            <div class="step-desc">Ongoing addition of new locations and experiences</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-section">
-                <h2>User Experience Design</h2>
+                <h2>Project Impact</h2>
                 <p>
-                    The application focuses on immersion while maintaining accessibility:
+                    MEDCOMM aims to revolutionize medical communication training by providing:
                 </p>
-                
-                <div class="comparison-container">
-                    <div class="comparison-items">
-                        <div class="comparison-item">
-                            <div class="comparison-header">
-                                <div class="comparison-icon">
-                                    <i class="fas fa-eye"></i>
-                                </div>
-                                <div class="comparison-title">Immersive First</div>
-                            </div>
-                            <div class="comparison-content">
-                                Minimal UI that recedes when not in use, keeping focus on the historical content and real-world environment.
-                            </div>
-                        </div>
-                        
-                        <div class="comparison-item">
-                            <div class="comparison-header">
-                                <div class="comparison-icon">
-                                    <i class="fas fa-compass"></i>
-                                </div>
-                                <div class="comparison-title">Spatial Discovery</div>
-                            </div>
-                            <div class="comparison-content">
-                                Directional cues guide users to nearby points of historical interest without disrupting the exploration.
-                            </div>
-                        </div>
-                        
-                        <div class="comparison-item">
-                            <div class="comparison-header">
-                                <div class="comparison-icon">
-                                    <i class="fas fa-layer-group"></i>
-                                </div>
-                                <div class="comparison-title">Temporal Control</div>
-                            </div>
-                            <div class="comparison-content">
-                                Users can "scrub" through time to see how locations have changed across different historical periods.
-                            </div>
-                        </div>
-                        
-                        <div class="comparison-item">
-                            <div class="comparison-header">
-                                <div class="comparison-icon">
-                                    <i class="fas fa-universal-access"></i>
-                                </div>
-                                <div class="comparison-title">Accessibility</div>
-                            </div>
-                            <div class="comparison-content">
-                                Audio descriptions, text transcripts, and haptic feedback ensure the experience is accessible to all users.
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <ul>
+                    <li><strong>Scalability:</strong> Train numerous residents simultaneously without a proportional increase in human instructor workload.</li>
+                    <li><strong>Standardization:</strong> Ensure all residents receive consistent, high-quality training on ABEM-specific competencies.</li>
+                    <li><strong>Accessibility:</strong> Offer on-demand practice opportunities, allowing residents to train at their own pace and convenience.</li>
+                    <li><strong>Data-Driven Insights:</strong> Provide educators with comprehensive data on resident performance to tailor feedback and curriculum.</li>
+                    <li><strong>Improved Patient Outcomes:</strong> Enhance communication skills that are critical for patient safety, satisfaction, and shared decision-making.</li>
+                </ul>
+            </div>
+
+            <div class="project-section">
+                <h2>Future Enhancements</h2>
+                <p>
+                    Future development will focus on expanding MEDCOMM's capabilities:
+                </p>
+                <ul>
+                    <li>Integration with existing Learning Management Systems (LMS).</li>
+                    <li>Development of modules for other medical specialties.</li>
+                    <li>Advanced avatar customization and emotional expression.</li>
+                    <li>Gamification elements to enhance engagement.</li>
+                    <li>Peer-to-peer review and feedback mechanisms within the platform.</li>
+                </ul>
             </div>
             
             <div class="nav-buttons">
@@ -755,4 +691,4 @@
         });
     </script>
 </body>
-</html>
+</html> 

@@ -48,58 +48,58 @@ document.addEventListener('DOMContentLoaded', () => {
             );
             
             // Store in localStorage with additional details
-            const timestamp = new Date().toISOString();
-            const lead = {
-                name,
-                email,
-                message,
+        const timestamp = new Date().toISOString();
+        const lead = {
+            name,
+            email,
+            message,
                 timestamp,
                 status: 'Unread', // Add status tracking
                 notes: '' // Add ability to add notes
-            };
-            
-            // Get existing leads or initialize empty array
-            const existingLeads = JSON.parse(localStorage.getItem('contactLeads') || '[]');
-            existingLeads.push(lead);
-            
-            // Save updated leads
-            localStorage.setItem('contactLeads', JSON.stringify(existingLeads));
-            
-            // Hide form fields and show success message
-            const formFields = contactForm.querySelector('.form-fields');
-            const formDivider = contactForm.querySelector('.form-divider');
-            const formActions = contactForm.querySelector('.form-actions');
-            
-            formFields.style.display = 'none';
-            formDivider.style.display = 'none';
-            formActions.style.display = 'none';
-            
-            // Create and show success message
-            const successMessage = document.createElement('div');
-            successMessage.className = 'success-message';
-            successMessage.innerHTML = `
-                <div class="success-content">
-                    <i class="fas fa-check-circle"></i>
-                    <h3>Thank you!</h3>
-                    <p>Your message has been sent successfully.</p>
-                    <p>I will get back to you soon!</p>
-                </div>
-            `;
-            
-            contactForm.appendChild(successMessage);
-            
-            // Close popup after 3 seconds
+        };
+        
+        // Get existing leads or initialize empty array
+        const existingLeads = JSON.parse(localStorage.getItem('contactLeads') || '[]');
+        existingLeads.push(lead);
+        
+        // Save updated leads
+        localStorage.setItem('contactLeads', JSON.stringify(existingLeads));
+        
+        // Hide form fields and show success message
+        const formFields = contactForm.querySelector('.form-fields');
+        const formDivider = contactForm.querySelector('.form-divider');
+        const formActions = contactForm.querySelector('.form-actions');
+        
+        formFields.style.display = 'none';
+        formDivider.style.display = 'none';
+        formActions.style.display = 'none';
+        
+        // Create and show success message
+        const successMessage = document.createElement('div');
+        successMessage.className = 'success-message';
+        successMessage.innerHTML = `
+            <div class="success-content">
+                <i class="fas fa-check-circle"></i>
+                <h3>Thank you!</h3>
+                <p>Your message has been sent successfully.</p>
+                <p>I will get back to you soon!</p>
+            </div>
+        `;
+        
+        contactForm.appendChild(successMessage);
+        
+        // Close popup after 3 seconds
+        setTimeout(() => {
+            contactPopup.classList.remove('active');
+            // Reset form and remove success message after popup is closed
             setTimeout(() => {
-                contactPopup.classList.remove('active');
-                // Reset form and remove success message after popup is closed
-                setTimeout(() => {
-                    contactForm.reset();
-                    successMessage.remove();
-                    formFields.style.display = 'block';
-                    formDivider.style.display = 'block';
-                    formActions.style.display = 'block';
-                }, 500);
-            }, 3000);
+                contactForm.reset();
+                successMessage.remove();
+                formFields.style.display = 'block';
+                formDivider.style.display = 'block';
+                formActions.style.display = 'block';
+            }, 500);
+        }, 3000);
 
         } catch (error) {
             console.error('Failed to send email:', error);
@@ -168,32 +168,32 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="lead-sheet-header">
                 <h2>Contact Messages (${leads.length})</h2>
                 <div class="lead-sheet-actions">
-                    <button id="export-leads" class="export-button">Export CSV</button>
+                <button id="export-leads" class="export-button">Export CSV</button>
                     <button id="clear-leads" class="clear-button">Clear All</button>
-                    <button id="close-leads" class="close-button">&times;</button>
+                <button id="close-leads" class="close-button">&times;</button>
                 </div>
             </div>
             <div class="lead-table-wrapper">
-                <table class="lead-table">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Message</th>
+            <table class="lead-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Message</th>
                             <th>Status</th>
                             <th>Notes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                    </tr>
+                </thead>
+                <tbody>
                         ${leads.length === 0 ? 
                             `<tr><td colspan="6" style="text-align: center;">No messages yet</td></tr>` :
                             leads.map(lead => `
                                 <tr>
                                     <td>${new Date(lead.timestamp).toLocaleString()}</td>
-                                    <td>${lead.name}</td>
-                                    <td>${lead.email}</td>
-                                    <td>${lead.message}</td>
+                        <td>${lead.name}</td>
+                        <td>${lead.email}</td>
+                        <td>${lead.message}</td>
                                     <td>
                                         <select class="status-select" data-timestamp="${lead.timestamp}">
                                             <option value="Unread" ${lead.status === 'Unread' ? 'selected' : ''}>Unread</option>
@@ -204,12 +204,12 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <td>
                                         <textarea class="notes-input" data-timestamp="${lead.timestamp}">${lead.notes || ''}</textarea>
                                     </td>
-                                </tr>
+                    </tr>
                             `).join('')
-                        }
-                    </tbody>
-                </table>
-            </div>
+        }
+                </tbody>
+            </table>
+        </div>
         </div>`;
         
         modal.innerHTML = tableHTML;
@@ -258,31 +258,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    
     // Initial check on page load
-    export async function login(email, password) {
-        const imput = loginSchema.safeParse({
-            email,
-            password,
-        });
-        if (!imput.success) {
-            console.log(imput.error);
-        }
-        return imput.success;
-    }
     checkScroll();
-    
-    const loginSchema =  z.object({
-        email: z.string().email(),
-        password: z.string().min(8),
-    });
-    const result = loginSchema.safeParse({
-        email: "test@test.com",
-        password: "test",
-    });
-    if (!result.success) {
-        console.log(result.error);
-    }
 
     // Check on scroll
     window.addEventListener('scroll', checkScroll);

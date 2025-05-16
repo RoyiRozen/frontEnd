@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: MakAR Lab - Royi Rozen Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/no_variables/bundles/fonts-6ee09b0b2f.css" media="screen" />
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/e67af36f5565992c0c7fce5060801003/variables-7dd4b80918af0e0218ec0229e4bd5873.css" media="all" />
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/common-60e5c6cfef.css" media="all" />
+    
+    <link rel="apple-touch-icon" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/apple-touch-icon-585e5d997d.png" />
+    <link rel="icon" type="image/x-icon" href="https://instructure-uploads.s3.amazonaws.com/account_97130000000000001/attachments/29724/cornellfac.ico" />
+  
+    <link rel="stylesheet" href="../style.css">
+    <style>
+      .animate-on-scroll {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"> </script>
+</head>
+<body>
+    <script type="module" src="../script.js"></script>
+    <script type="module" src="../contact.js"></script>
+
+    <div id="app">
+        <header>
+            <div class="top-bar">
+                <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
+                <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
+                <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
+                <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.location.href='https://www.linkedin.com/in/royi-rozen/'"></i>
+            </div>
+        </header>
+
+        <main style="padding-top: 120px;">
+            <section class="project-detail-container animate-on-scroll" style="padding: 20px; max-width: 900px; margin: 0 auto;">
+                <h1 style="font-size: 36px; margin-bottom: 15px;">MakAR Lab - AR Guidance for Maker Spaces</h1>
+                <p style="font-size: 18px; margin-bottom: 20px;"><strong>Course:</strong> INFO 5358: 3D Interaction Design</p>
+                <hr style="margin-bottom: 20px;">
+                <div class="video-container" style="margin-bottom: 30px; position: relative; padding-bottom: 56.25%; /* 16:9 aspect ratio */ height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                        src="https://www.youtube.com/embed/wn_5_lTQ2rw" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h2 style="font-size: 28px; margin-bottom: 15px;" class="animate-on-scroll">Project Overview</h2>
+                <p style="line-height: 1.8; margin-bottom: 25px; text-align: justify;" class="animate-on-scroll">
+                    MakAR Lab is an augmented reality (AR) system designed for the Cornell Tech MakerLab community, utilizing Meta Orion Smart Glasses. It aims to provide students, especially those new to advanced equipment, with intuitive, real-time, step-by-step guidance. The system also features an admin dashboard, empowering lab managers and "SuperMakers" to easily update instructional protocols, thereby enhancing safety, fostering independent learning, and reducing the support burden on staff.
+                </p>
+                <h2 style="font-size: 28px; margin-bottom: 15px;" class="animate-on-scroll">The Challenge</h2>
+                <p style="line-height: 1.8; margin-bottom: 25px; text-align: justify;" class="animate-on-scroll">
+                    New MakerLab users often struggle to recall detailed operational procedures for complex machinery after initial orientation. This can lead to hesitation, errors, or an over-reliance on staff assistance. The challenge was to create an accessible, hands-free AR solution that offers contextual guidance directly within the user's field of view, alongside a simple content management system for administrators.
+                </p>
+                <h2 style="font-size: 28px; margin-bottom: 15px;" class="animate-on-scroll">Our Solution: Key Features</h2>
+                <p style="line-height: 1.8; margin-bottom: 15px; text-align: justify;" class="animate-on-scroll">
+                    We developed a comprehensive AR experience encompassing three core ideas:
+                </p>
+
+                <h3 style="font-size: 22px; margin-top: 20px; margin-bottom: 10px;" class="animate-on-scroll">Student AR Guide:</h3>
+                <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;" class="animate-on-scroll">
+                    <li><strong>Step-by-Step Tutorials:</strong> Real-time, AR-overlaid instructions for specific equipment (e.g., laser cutter).</li>
+                    <li><strong>Interactive Elements:</strong> Hand-tracking and gaze-based interactions to navigate tutorials and access information.</li>
+                    <li><strong>Contextual Menus:</strong> On-demand access to detailed instructions, video tutorials, and a community feed for inspiration and sharing work.</li>
+                    <li><strong>Intuitive Interface:</strong> Designed to minimize visual obstruction and cognitive load, adhering to Hick-Hyman's Law.</li>
+                </ul>
+
+                <h3 style="font-size: 22px; margin-top: 20px; margin-bottom: 10px;" class="animate-on-scroll">Collaborative AR Design Space:</h3>
+                <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;" class="animate-on-scroll">
+                    <li>A shared AR environment allowing multiple users (in-person or remote) to collaboratively view and interact with 3D models and share design files.</li>
+                </ul>
+
+                <h3 style="font-size: 22px; margin-top: 20px; margin-bottom: 10px;" class="animate-on-scroll">Admin Dashboard:</h3>
+                <ul style="line-height: 1.8; margin-bottom: 25px; padding-left: 20px;" class="animate-on-scroll">
+                    <li><strong>Easy Content Management:</strong> An intuitive interface for non-technical admins to upload and update instructional materials (text, videos, PDFs).</li>
+                    <li><strong>AI Machine Detection:</strong> Automatically identifies lab equipment to simplify the process of anchoring AR instructions in the 3D space.</li>
+                    <li><strong>Instruction Grouping:</strong> Allows admins to link instructions for multi-step tasks involving different machines.</li>
+                </ul>
+                <h2 style="font-size: 28px; margin-bottom: 15px;" class="animate-on-scroll">Design & Prototyping Process</h2>
+
+                <h3 style="font-size: 22px; margin-top: 20px; margin-bottom: 10px;" class="animate-on-scroll">Requirements Extraction (Part 1):</h3>
+                <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;" class="animate-on-scroll">
+                    <li>Conducted contextual inquiries, including interviews with the MakerLab Director and students, to understand user needs, pain points, and existing workflows.</li>
+                    <li>Developed user personas and problem scenarios.</li>
+                    <li>Defined functional, performance, and interface requirements for the system.</li>
+                </ul>
+
+                <h3 style="font-size: 22px; margin-top: 20px; margin-bottom: 10px;" class="animate-on-scroll">Ideation & Design (Part 2):</h3>
+                <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;" class="animate-on-scroll">
+                    <li>Brainstormed design alternatives based on abstracted requirements for functionality, performance, and interface.</li>
+                    <li>Created annotated storyboards to visualize key user scenarios:
+                        <ul style="padding-left: 20px; margin-top: 5px;">
+                            <li>User entering the lab and selecting equipment via an AR menu.</li>
+                            <li>Step-by-step AR tutorial for using the laser cutter.</li>
+                            <li>Multi-user collaborative AR design.</li>
+                            <li>Admin updating tutorials via the dashboard.</li>
+                        </ul>
+                    </li>
+                    <li>(Note: Visual material for storyboards was permitted to use Generative AI, clearly noted.)</li>
+                </ul>
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-around; margin-top: 15px; margin-bottom: 20px;">
+                    <div style="flex: 1; min-width: 250px; margin: 10px;">
+                        <img src="../storyboardMAR.jpeg" alt="MakAR Lab Storyboard - AR User Flow" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        <p style="text-align: center; font-size: 0.9em; color: #555; margin-top: 5px;">Storyboard: AR User Flow</p>
+                    </div>
+                    <div style="flex: 1; min-width: 250px; margin: 10px;">
+                        <img src="../storyboardM2.jpeg" alt="MakAR Lab Storyboard - Admin Dashboard Flow" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        <p style="text-align: center; font-size: 0.9em; color: #555; margin-top: 5px;">Storyboard: Admin Dashboard Flow</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size: 22px; margin-top: 20px; margin-bottom: 10px;" class="animate-on-scroll">Interaction Techniques:</h3>
+                <ul style="line-height: 1.8; margin-bottom: 25px; padding-left: 20px;" class="animate-on-scroll">
+                    <li>Focused on hands-free interaction using gaze-tracking, grab-and-pinch, and pointing gestures (Meta Orion compatible).</li>
+                    <li>Incorporated bimanual interactions for collaborative tasks.</li>
+                    <li>Emphasized multimodal feedback (visual cues, voice narration) and context-sensitive, translucent AR overlays to maintain situational awareness and minimize cognitive load.</li>
+                </ul>
+                <h2 style="font-size: 28px; margin-bottom: 15px;" class="animate-on-scroll">Prototyping (ShapesXR)</h2>
+                <p style="line-height: 1.8; margin-bottom: 15px; text-align: justify;" class="animate-on-scroll">
+                    Developed a mid-fidelity, interactive prototype for both the user-facing AR application and the admin dashboard.
+                </p>
+
+                <h3 style="font-size: 22px; margin-top: 20px; margin-bottom: 10px;" class="animate-on-scroll">User App Prototype:</h3>
+                <p style="line-height: 1.8; margin-bottom: 20px; text-align: justify;" class="animate-on-scroll">
+                    Demonstrated procedure selection, step-by-step guidance with hand-tracking triggers, interactive information tabs (instructions, tutorials, community feed), and a collaboration mode.
+                </p>
+
+                <h3 style="font-size: 22px; margin-top: 20px; margin-bottom: 10px;" class="animate-on-scroll">Admin Dashboard Prototype:</h3>
+                <p style="line-height: 1.8; margin-bottom: 25px; text-align: justify;" class="animate-on-scroll">
+                    Showcased AI machine detection visualization, instruction input panels (keyboard/voice), and instruction grouping features.
+                </p>
+                <h2 style="font-size: 28px; margin-bottom: 15px;" class="animate-on-scroll">Evaluation & Iteration</h2>
+
+                <h3 style="font-size: 22px; margin-top: 20px; margin-bottom: 10px;" class="animate-on-scroll">Method:</h3>
+                <p style="line-height: 1.8; margin-bottom: 20px; text-align: justify;" class="animate-on-scroll">
+                    Conducted a Cognitive Walkthrough due to time constraints and the prototype's fidelity.
+                </p>
+
+                <h3 style="font-size: 22px; margin-top: 20px; margin-bottom: 10px;" class="animate-on-scroll">Key Findings (User App):</h3>
+                <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;" class="animate-on-scroll">
+                    <li><strong>Strengths:</strong> Liked the equipment selection menu, clear numbered steps hovering over focus areas, and the community project feed.</li>
+                    <li><strong>Improvements:</strong> Clarify roles in multiplayer view; enhance remote user interaction with real-world models.</li>
+                </ul>
+
+                <h3 style="font-size: 22px; margin-top: 20px; margin-bottom: 10px;" class="animate-on-scroll">Key Findings (Admin Dashboard):</h3>
+                <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;" class="animate-on-scroll">
+                    <li><strong>Strengths:</strong> Appreciated the ability for admins to easily upload new tutorials.</li>
+                    <li><strong>Improvements:</strong> Suggested a hybrid PC/VR input for extensive typing/content sourcing, with VR for placement.</li>
+                </ul>
+
+                <h2 style="font-size: 28px; margin-bottom: 15px;" class="animate-on-scroll">Learning & Outcomes</h2>
+                <p style="line-height: 1.8; margin-bottom: 25px; text-align: justify;" class="animate-on-scroll">
+                    This project provided valuable experience in the end-to-end design process for 3D User Interfaces, from contextual inquiry and requirements gathering to iterative prototyping and evaluation. We successfully demonstrated a feasible AR solution that addresses real-world challenges in a MakerLab environment, focusing on user-centric design and intuitive interaction.
+                </p>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="footer-content">
+                <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
+                <nav class="social-icons">
+                    <i class="fa-brands fa-linkedin" style="scale: 2;"></i>
+                </nav>
+            </div>
+        </footer>
+        
+        <!-- Contact Button and Popup -->
+        <div class="contact-button" id="contact-button">
+            <i class="fas fa-comment"></i>
+        </div>
+        
+        <div class="contact-popup" id="contact-popup">
+            <div class="popup-header">
+                <h3>Get in Touch</h3>
+                <button class="popup-close" id="popup-close">&times;</button>
+            </div>
+            <div class="popup-content">
+                <img src="../image.jpg" alt="Royi Rozen" class="popup-image">
+                <div class="popup-text">
+                    <p>Send me a message</p>
+                </div>
+            </div>
+            <form class="contact-form" id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Type your message..." required></textarea>
+                <div class="form-divider"></div>
+                <button type="submit" class="send-button">Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html> 
