@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>H-Prototyping - ObjectXR - Royi Rozen Portfolio</title>
+    <title>ObjectXR - Royi Rozen</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-
+    
     <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/no_variables/bundles/fonts-6ee09b0b2f.css" media="screen" />
     <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/e67af36f5565992c0c7fce5060801003/variables-7dd4b80918af0e0218ec0229e4bd5873.css" media="all" />
     <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/common-60e5c6cfef.css" media="all" />
-
+    
     <link rel="apple-touch-icon" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/apple-touch-icon-585e5d997d.png" />
     <link rel="icon" type="image/x-icon" href="https://instructure-uploads.s3.amazonaws.com/account_97130000000000001/attachments/29724/cornellfac.ico" />
-
+    
     <link rel="stylesheet" href="../style.css">
     <style>
+        :root {
+            --project-color: #007bff; /* ObjectXR Blue Theme */
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -25,7 +29,7 @@
             width: 100%;
             overflow-x: hidden;
         }
-
+        
         #app {
             width: 100%;
             max-width: 1200px;
@@ -36,102 +40,111 @@
             flex-direction: column;
             align-items: center;
         }
-
+        
         header, main, footer {
             width: 100%;
         }
-
+        
         .project-section {
             text-align: left;
             margin: 25px 0;
             width: 100%;
             padding: 0;
         }
-        .project-section h2 {
-            color: #1abc9c; /* Teal accent for headings */
-            border-bottom: 2px solid #1abc9c;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-        }
-        .project-section h3 {
-            color: #17a589; /* Slightly darker teal for sub-headings */
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        .tag-badge {
-            display: inline-block;
-            background-color: #1abc9c; /* Teal accent */
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-weight: bold;
-            margin-left: 10px;
-            font-size: 0.8em;
-            vertical-align: middle;
-        }
 
         .quote-block {
             background-color: #f8f9fa;
-            border-left: 4px solid #1abc9c; /* Teal accent */
+            border-left: 4px solid var(--project-color);
             padding: 20px;
-            margin: 20px 0;
+            margin: 30px 0;
             border-radius: 4px;
             font-style: italic;
             position: relative;
         }
-
+        
         .quote-block::before {
-            content: '\''\'; /* Escaped quote for CSS */
+            content: '"';
             position: absolute;
             top: 10px;
             left: 15px;
             font-size: 40px;
-            color: #1abc9c; /* Teal accent */
+            color: var(--project-color);
             opacity: 0.3;
         }
         
-        .links-section ul, .writeup-section ul, .improvements-list ul {
-            list-style-type: none;
-            padding-left: 0;
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
         }
-        .links-section li, .writeup-section li, .improvements-list li {
-            background-color: #f9f9f9;
-            border: 1px solid #eee;
-            padding: 10px 15px;
-            margin-bottom: 8px;
-            border-radius: 5px;
+        
+        .tech-item {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
         }
-        .links-section li strong, .writeup-section li strong {
-            color: #1abc9c;
+        
+        .tech-icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: var(--project-color);
         }
-        .video-note {
-            font-size: 0.9em;
-            color: #777;
-            margin-left: 5px;
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjusted for potentially longer text */
+            gap: 25px;
+            margin: 30px 0;
         }
-        .shapes-link {
-            display: inline-block;
-            background-color: #1abc9c;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 4px;
-            text-decoration: none;
-            margin-top: 5px;
+        
+        .feature-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 32px;
+            color: var(--project-color);
+            margin-bottom: 15px;
+        }
+         .feature-card h3 {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+            text-align: center;
+        }
+        .feature-card p {
+            color: #666;
+            text-align: center;
             font-size: 0.95em;
         }
-        .shapes-link:hover {
-            background-color: #17a589;
-        }
-
+        
         .video-container {
             width: 100%;
-            margin: 30px 0;
+            margin: 40px 0;
             overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             position: relative;
-            padding-bottom: 56.25%; 
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
             height: 0;
         }
         
@@ -143,6 +156,117 @@
             height: 100%;
             border: none;
         }
+        
+        .process-container {
+            position: relative;
+            background-color: #f5f7fa;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+        
+        .process-step {
+            flex: 0 0 30%; /* Adjust for 3 items per row approx */
+            text-align: center;
+            position: relative;
+            margin-bottom: 30px;
+            padding: 15px;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--project-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+        .step-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .step-desc {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .comparison-container { /* Renamed for clarity, used for Challenges & Future Vision */
+            margin: 40px 0;
+        }
+        
+        .comparison-items {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column for these sections */
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .comparison-item { /* Styling for individual challenge/vision points */
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .comparison-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .comparison-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--project-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-right: 15px;
+        }
+        
+        .comparison-title {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1em;
+        }
+        
+        .comparison-content {
+            color: #666;
+        }
+        .comparison-content ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        .comparison-content ul li {
+            margin-bottom: 8px;
+        }
+
+        .prototyping-section .feature-card { /* Re-use feature-card for ShapesXR points */
+             align-items: flex-start; /* Align left for more text */
+        }
+        .prototyping-section .feature-card h3 {
+            text-align: left;
+        }
+         .prototyping-section .feature-card p {
+            text-align: left;
+        }
 
         .nav-buttons {
             margin: 50px 0;
@@ -151,7 +275,7 @@
             justify-content: center;
             text-align: left;
         }
-
+        
         .back-button {
             display: inline-block;
             padding: 12px 24px;
@@ -163,18 +287,19 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-
+        
         .back-button:hover {
-            background-color: #1abc9c; /* Teal accent */
+            background-color: var(--project-color);
             color: white;
-            border-color: #1abc9c; /* Teal accent */
+            border-color: var(--project-color);
         }
-
+        
         .popup-image {
-            object-position: center 30%; 
+            object-position: center 30%;
             object-fit: cover;
             border-radius: 50%;
         }
+        
         .project-detail {
             max-width: 1200px;
             margin: 120px auto 60px;
@@ -200,166 +325,204 @@
             box-sizing: border-box;
         }
 
-        .project-section {
-            width: 100%;
-            max-width: 100%; 
-            box-sizing: border-box;
-        }
-        
         @media (max-width: 768px) {
             .project-detail {
                 padding: 0 15px;
                 margin-top: 100px;
             }
-            .project-header h1 {
-                font-size: 32px;
-            }
+            .project-header h1 { font-size: 32px; }
+            .feature-grid { grid-template-columns: 1fr; }
+            .process-steps { flex-direction: column; }
+            .process-step { flex: 0 0 100%; }
         }
         @media (max-width: 480px) {
-            .project-detail {
-                padding: 0 10px;
-                margin-top: 80px;
-            }
-            .project-header h1 {
-                font-size: 28px;
-            }
+            .project-detail { padding: 0 10px; margin-top: 80px; }
+            .project-header h1 { font-size: 28px; }
         }
     </style>
 </head>
 <body>
+    <script type="module" src="../script.js"></script>
+    <script type="module" src="../contact.js"></script>
+
     <div id="app">
         <header>
-            <div class="top-bar">
-                <h1 class="title" button id="title" onclick="window.location.href='../index.html'">Royi Rozen</button></h1>
-                <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
-                <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
-                <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
+            <div class="header-content"> <!-- Added to match other pages if needed, or remove if artour.html is simpler -->
+                <hgroup class="top-bar">
+                    <h1 class="title" button id="title" onclick="window.location.href='../index.html'">Royi Rozen</button></h1>
+                    <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
+                    <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
+                    <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
+                </hgroup>
             </div>
         </header>
-
-        <main>
-            <div class="project-header">
-                <h1>H-Prototyping: ObjectXR <span class="tag-badge">3D Interaction Design</span></h1>
-                <div class="project-tags">
-                    <span class="grid-item-filter">XR</span>
-                    <span class="grid-item-filter">3D</span>
-                    <span class="grid-item-filter">UI/UX</span>
-                    <span class="grid-item-filter">Dev</span>
-                    <span class="grid-item-filter">Prototyping</span>
+        
+        <main class="project-detail"> <!-- Changed from project-page to project-detail like artour.html -->
+            <div class="project-content"> <!-- Added to contain text content within max-width -->
+                <div class="project-header">
+                    <h1>ObjectXR</h1>
+                    <div class="project-tags">
+                        <span class="grid-item-filter">XR</span>
+                        <span class="grid-item-filter">3D</span>
+                        <span class="grid-item-filter">UI/UX</span>
+                        <span class="grid-item-filter">Dev</span>
+                    </div>
                 </div>
-            </div>
-
-            <div class="project-section">
-                <p><strong>Course:</strong> INFO 5358: 3D Interaction Design, Cornell Tech</p>
-                <p><strong>Author:</strong> Royi Rozen (rr789)</p>
-            </div>
-
-            <div class="project-section links-section">
-                <h2>Project Links & Demo</h2>
-                <ul>
-                    <li><strong>Task 1 Video (Original Interface):</strong> hw_prototyping_rr789.mov <span class="video-note">(Local .mov file)</span></li>
-                    <li><strong>Task 2 Video (Improvements):</strong> Task2_RoyiRozen_rr789.mov <span class="video-note">(Local .mov file)</span></li>
-                    <li>
-                        <strong>Task 2 ShapesXR Space:</strong> 
-                        <a href="https://shapes.app/space/view/c6aca91d-5fef-4e00-8f7c-9b4e963d8995/86136e2a" target="_blank" class="shapes-link">View Space (Code: 86136e2a)</a>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="video-container">
-                <iframe class="video-embed" src="https://www.youtube.com/embed/l-CH-2rCfP0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-
-            <div class="project-section writeup-section">
-                <h2>Writeup Questions</h2>
-
-                <h3>Task 1: Original interface</h3>
-                <h4>What were your main challenges when implementing this prototype?</h4>
-                <p>My main challenges in implementing the initial prototype involved several aspects:</p>
-                <ul>
-                    <li><strong>Tool Familiarity:</strong> Adjusting to ShapeXR as a new prototyping platform was a significant hurdle. Learning its specific mechanics, control systems, and operational workflow took time and effort before I could effectively translate the paper's concepts into a functional prototype.</li>
-                    <li><strong>Technical Limitations & Bugs:</strong> I encountered several bugs within ShapeXR, such as objects remaining visible or locked even after being deselected or unlocked. These technical issues limited the fidelity I could achieve, making the prototype appear less polished than intended.</li>
-                    <li><strong>Conceptualizing XR-OBJECTS:</strong> Grasping the core idea of the XR-OBJECTS paper, making potentially any real-world object interactable, was a thought-provoking process. The challenge was deciding how these interactions should function simply and effectively, determining which features from the paper were most crucial, and ensuring they would flow seamlessly within a practical user task like cooking.</li>
-                </ul>
-
-                <h3>Task 2: Improved interface</h3>
-                <h4>Write as if you are presenting to your management team. In a paragraph, explain how you improved upon the design in the paper?</h4>
-                <div class="quote-block">
-                    <p>Team, We've significantly enhanced the original XR-OBJECTS concept outlined in the paper to create a more intuitive, capable, and user-friendly experience for head-mounted displays. We focused on improving clarity and interaction fluency by first boosting the visual fidelity with richer colors, icons, and clearer button designs. Functionality has been expanded by integrating more features directly accessible to the user, including leveraging generative AI for dynamic content like recipe variations. Critically, we've introduced more interaction modalities, particularly voice input, for faster and more natural commands. We also redesigned the object detection feedback for better elegance and confirmation, and implemented a novel hand-anchored menu system, making powerful tools readily available without obstructing the user's view. These improvements aim to make the system not just a proof-of-concept, but a genuinely useful tool that feels seamless and integrated into the user's tasks.</p>
+                
+                <div class="video-container">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/mM1IiqDuHW4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
+                <div class="project-section">
+                    <h2>Overview</h2>
+                    <p>
+                        ObjectXR is an innovative XR platform dedicated to revolutionizing how users interact with and manipulate 3D objects in virtual and augmented environments. It aims to provide an intuitive, powerful, and versatile toolset for designers, educators, and collaborators working with 3D content.
+                    </p>
+                    <div class="quote-block">
+                        ObjectXR empowers users to sculpt, assemble, and explore 3D models with natural gestures, bridging the gap between digital content and physical intuition.
+                    </div>
+                </div>
+                
+                <div class="project-section">
+                    <h2>Key Features</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-hand-paper"></i></div>
+                            <h3>Intuitive Gesture Control</h3>
+                            <p>Manipulate objects using natural hand movements for seamless interaction.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-cogs"></i></div>
+                            <h3>Realistic Physics Engine</h3>
+                            <p>Experience true-to-life object behavior and dynamic physical interactions.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-users"></i></div>
+                            <h3>Collaborative Workspaces</h3>
+                            <p>Share, co-create, and interact with 3D models in real-time persistent XR environments.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div> <!-- Simplified icon -->
+                            <h3>Cross-Platform Support</h3>
+                            <p>Access ObjectXR across various VR headsets and AR-capable devices.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-section prototyping-section">
+                    <h2>Prototyping with ShapesXR</h2>
+                    <p>
+                        The development of ObjectXR heavily relied on rapid prototyping to refine core interactions and user interface elements. Tools like ShapesXR proved invaluable in this iterative process, allowing for quick design and testing cycles directly within a 3D environment.
+                    </p>
+                    <div class="feature-grid">
+                         <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-drafting-compass"></i></div>
+                            <h3>Rapid Interaction Modeling</h3>
+                            <p>ShapesXR enabled us to quickly build and test various interaction models for object manipulation, significantly speeding up the design cycle for core mechanics.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-object-group"></i></div>
+                            <h3>Spatial UI Design</h3>
+                            <p>Visualizing and iterating on UI elements directly in 3D space within ShapesXR was crucial for creating an intuitive and spatially aware user experience.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-user-check"></i></div>
+                            <h3>Early User Feedback</h3>
+                            <p>We used ShapesXR prototypes to gather early feedback on core mechanics and usability, allowing us to make informed design decisions from the outset.</p>
+                        </div>
+                    </div>
+                     <p style="text-align: center; margin-top: 20px;">
+                        Explore an early prototype: <a href="https://shapesxr.space/your-objectxr-space" target="_blank" rel="noopener noreferrer" style="color: var(--project-color);">ObjectXR ShapesXR Space</a>
+                    </p>
                 </div>
 
-                <h4>Now list out the exact improvements you made to your design from Task 1 and justify your design decisions. Refer to the concepts in the textbook/class slides to explain your design rationale.</h4>
-                <p>Here are the specific improvements made, justified with 3DUI principles:</p>
-                <ul class="improvements-list">
-                    <li>
-                        <strong>Enhanced Object Recognition Feedback & Interaction:</strong>
-                        <br><em>Improvement:</em> Replaced the paper's semi-transparent bubble hint with a clearer visual indicator that labels the recognized object upon confirmation. This indicator then functions as a button.
-                        <br><em>Justification:</em> This provides clearer <strong>Feedback</strong> to the user, confirming successful recognition and reducing ambiguity. Making the indicator a button offers a clear <strong>Affordance</strong> for interaction, signaling that further actions are possible. Labeling improves <strong>Recognition over Recall</strong>.
-                    </li>
-                    <li>
-                        <strong>Object Specific Contextual Menu:</strong>
-                        <br><em>Improvement:</em> Introduced an expandable menu system anchored above the object, triggered by a simple button toggle. This menu contains extra tools and capabilities, such as an interactive AI chat (voice), and task-specific tools such as timers, To-Do lists or voice playback, with the idea that each object would have its own unique set of options, based on a pre-learned system that recognizes and adjusts.
-                        <br><em>Justification:</em> Anchoring the menu provides easy accessibility while minimizing visual clutter in the central field of view. Offering multiple interaction methods (voice, touch) supports <strong>Flexibility</strong> and <strong>User Control</strong>. Providing context-specific information and tools increases task efficiency and relevance.
-                    </li>
-                    <li>
-                        <strong>Persistent Palm Toolbar:</strong>
-                        <br><em>Improvement:</em> Added a small, constant toolbar on the user's left palm providing access to global actions: general voice input/commands, initiating calls, and a camera/snapshot function.
-                        <br><em>Justification:</em> This ensures persistent system control and quick access to frequently needed functions, improving efficiency. Placing it on the palm leverages ergonomics and keeps core tools readily available.
-                    </li>
-                    <li>
-                        <strong>Multimodal Input Integration:</strong>
-                        <br><em>Improvement:</em> Fully integrated voice commands alongside direct hand interaction (tapping buttons, pinch-and-hold manipulation).
-                        <br><em>Justification:</em> Supports <strong>flexibility</strong> by allowing users to choose their preferred input method based on context or preference.
-                    </li>
-                    <li>
-                        <strong>Direct Manipulation & Real-World Metaphors:</strong>
-                        <br><em>Improvement:</em> Ensured UI interactions map closely to real-world actions (tapping virtual buttons like physical ones, pinch-to-hold for moving items). The UI overlay maintains a 1:1 spatial relationship with the user's environment.
-                        <br><em>Justification:</em> This follows principles of <strong>natural mapping</strong> and leverages users' existing mental models, reducing cognitive load and making the system easier to learn and use.
-                    </li>
-                </ul>
-
-                <h3>Prototyping Tool - ShapesXR</h3>
-                <h4>When completing this assignment, did you use the VR editor, the web-based editor, or both? What do you think were the advantages and disadvantages of using VR vs 2D UI browser for arranging your scenes and creating your prototype? What would you change when it comes to this 3D design tool, ShapesXR, when using it for 3DUI prototyping purposes?</h4>
-                <p>I used both the VR editor and the web-based editor in ShapesXR for this assignment.</p>
-                <p><strong>VR Editor:</strong></p>
-                <ul>
-                    <li><em>Advantages:</em> Its primary advantage was spatial intuition. Being in the 3D space allowed me to immediately grasp scale, positioning, and reachability, helping identify what felt natural or awkward. Prototyping interactions directly felt more intuitive, and object selection using the controllers was generally fast and responsive. It was invaluable for assessing the overall feel and flow.</li>
-                    <li><em>Disadvantages:</em> Fine-grained UI work was challenging. Precisely positioning elements, rotating them accurately, and especially handling text input and formatting felt challenging and limited compared to 2D tools. The interaction for deleting objects (throwing them away) felt somewhat unintuitive compared to a simple button press.</li>
-                </ul>
-                <p><strong>Web-Based Editor:</strong></p>
-                <ul>
-                    <li><em>Advantages:</em> It excelled where the VR editor struggled - precision UI work. Arranging elements evenly, fine-tuning positions, and managing text was significantly easier and more efficient.</li>
-                    <li><em>Disadvantages:</em> Navigation within the 3D scene felt less intuitive and sometimes awkward compared to being immersed in VR. It lacked the immediate spatial feedback crucial for judging ergonomics and interaction flow.</li>
-                </ul>
-                <p><strong>Suggested Changes for ShapesXR:</strong> For 3DUI prototyping, I would suggest enhancing the precision controls and text editing capabilities within the VR editor. While maintaining its spatial strengths, allowing for easier alignment, distribution, and detailed text manipulation in VR would significantly streamline the workflow. Additionally, offering alternative, perhaps more conventional, interaction methods for basic functions like deleting objects could be beneficial.</p>
-
-                <h3>XR and AI</h3>
-                <h4>We have discussed in class how interactions with AI assistants could possibly be implemented in future head-mounted displays. Briefly describe your views on this topic, what are some of the challenges?</h4>
-                <p>The integration of AI assistants into future head-mounted displays holds immense potential but also presents significant challenges:</p>
-                <ul>
-                    <li><strong>Interaction Modality:</strong> Voice interaction, while powerful, isn't always the most efficient or intuitive method for every task. It requires users to formulate commands clearly, which can take time, and might be slower than direct manipulation for simple actions.</li>
-                    <li><strong>Social Acceptance:</strong> Relying heavily on voice commands raises social concerns. Constantly talking aloud to an HMD in public spaces could feel awkward or disruptive, hindering widespread adoption if it's the primary interaction method.</li>
-                    <li><strong>AI's World Understanding:</strong> For AI assistants to be truly effective in XR, they need a deep, real-time visual comprehension of the user's physical environment, including object recognition, spatial relationships, and context. Bridging this gap between the AI's digital knowledge and the dynamic physical world is a major technical hurdle.</li>
-                    <li><strong>Interaction Design:</strong> We yet to design interactions that seamlessly blend AI capabilities with the XR experience, requires significant iteration and rethinking of current paradigms.</li>
-                </ul>
-
-                <h4>Did the work involved in this assignment open up new ideas or perspectives on the topic of XR and AI?</h4>
-                <p>Yes, absolutely. Working on this assignment, particularly engaging with the XR-OBJECTS paper and prototyping its concepts, significantly broadened my perspective on the synergy between XR and AI:</p>
-                <ul>
-                    <li><strong>The Power of a Queryable World:</strong> The core idea of making everyday physical objects interactable surfaces for information retrieval and action is incredibly powerful. It opened my eyes to vast potential applications beyond cooking, such as interactive education (learning about anything you see), healthcare (accessing medical patient info), and manufacturing (getting real-time instructions on parts). It suggests a future where knowledge is contextually embedded in our surroundings.</li>
-                    <li><strong>Importance of On-Device AI:</strong> It pushed me to consider the practicalities and challenges of running AI models directly on edge devices like HMDs. While challenging, achieving efficient local processing is crucial for privacy, low latency, and offline functionality.</li>
-                    <li><strong>AI as an XR Enabler:</strong> I increasingly see AI not just as an add-on feature for XR, but as a fundamental enabling technology. AI can provide the contextual understanding, dynamic content generation, and intelligent assistance that could make XR interfaces truly seamless and powerful, potentially giving users "superpowers" of contextual knowledge and capability. This intersection feels like the key to unlocking XR's mainstream potential, and we're just on the verge of it.</li>
-                </ul>
-            </div>
-
-            <div class="nav-buttons">
-                <button onclick="window.location.href='../basic.html'" class="back-button">
-                    <i class="fas fa-arrow-left"></i> Back to Portfolio
-                </button>
-            </div>
+                <div class="project-section">
+                    <h2>Technical Implementation</h2>
+                    <div class="tech-grid">
+                        <div class="tech-item"><i class="fab fa-unity tech-icon"></i><span>Unity Engine</span></div>
+                        <div class="tech-item"><i class="fas fa-code tech-icon"></i><span>C# Programming</span></div>
+                        <div class="tech-item"><i class="fas fa-hand-rock tech-icon"></i><span>XR Interaction Toolkit</span></div>
+                        <div class="tech-item"><i class="fas fa-network-wired tech-icon"></i><span>Photon Engine</span></div>
+                        <div class="tech-item"><i class="fas fa-image tech-icon"></i><span>Universal Render Pipeline (URP)</span></div>
+                        <div class="tech-item"><i class="fas fa-shapes tech-icon"></i><span>ShapesXR (Prototyping)</span></div>
+                    </div>
+                </div>
+                
+                <div class="project-section">
+                    <h2>Development Process</h2>
+                    <div class="process-container">
+                        <h3>From Concept to XR Platform</h3>
+                        <div class="process-steps">
+                            <div class="process-step">
+                                <div class="step-number">1</div><div class="step-title">Conceptualization</div>
+                                <div class="step-desc">Defining core goals for intuitive object interaction in XR.</div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">2</div><div class="step-title">Rapid Prototyping</div>
+                                <div class="step-desc">Iteratively designing manipulation schemes & UI with ShapesXR.</div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">3</div><div class="step-title">Core Development</div>
+                                <div class="step-desc">Building physics, gesture recognition, and collaboration backend.</div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">4</div><div class="step-title">Alpha Testing</div>
+                                <div class="step-desc">Internal testing and gathering feedback on usability & performance.</div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">5</div><div class="step-title">Feature Expansion</div>
+                                <div class="step-desc">Adding multi-format support and advanced interaction tools.</div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">6</div><div class="step-title">Beta & Iteration</div>
+                                <div class="step-desc">Wider testing and ongoing refinement based on community input.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-section">
+                    <h2>Challenges & Future Vision</h2>
+                    <div class="comparison-container">
+                        <div class="comparison-items">
+                            <div class="comparison-item">
+                                <div class="comparison-header">
+                                    <div class="comparison-icon"><i class="fas fa-puzzle-piece"></i></div>
+                                    <h3 class="comparison-title">Addressing Core Challenges</h3>
+                                </div>
+                                <div class="comparison-content">
+                                    <ul>
+                                        <li><strong>Intuitive Manipulation:</strong> Creating a universally intuitive system for 3D object manipulation that feels natural across different XR hardware.</li>
+                                        <li><strong>Performance at Scale:</strong> Ensuring smooth performance with complex 3D models, especially in collaborative sessions, required significant optimization.</li>
+                                        <li><strong>Cross-Platform Consistency:</strong> Delivering a consistent and high-quality user experience across a diverse range of XR devices.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="comparison-item">
+                                <div class="comparison-header">
+                                    <div class="comparison-icon"><i class="fas fa-brain"></i></div>
+                                    <h3 class="comparison-title">Future Vision: XR and AI Synergy</h3>
+                                </div>
+                                <div class="comparison-content">
+                                    <ul>
+                                        <li>ObjectXR aims to integrate AI to enhance object recognition, provide contextual interaction suggestions, and power intelligent in-world assistants.</li>
+                                        <li>The fusion of XR's immersive presence with AI's cognitive capabilities will unlock transformative applications in design, education, and remote problem-solving.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-buttons">
+                    <button onclick="window.location.href='../index.html'" class="back-button"> <!-- Corrected path for main portfolio -->
+                        <i class="fas fa-arrow-left"></i> Back to Portfolio
+                    </button>
+                </div>
+            </div> <!-- End .project-content -->
         </main>
-    </div>
-
+    </div> <!-- End #app -->
+    
     <footer>
         <div class="footer-content">
             <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
@@ -368,11 +531,8 @@
             </nav>
         </div>
     </footer>
-
-    <div class="contact-button" id="contact-button">
-        <i class="fas fa-comment"></i>
-    </div>
-
+    
+    <div class="contact-button" id="contact-button"><i class="fas fa-comment"></i></div>
     <div class="contact-popup" id="contact-popup">
         <div class="popup-header">
             <h3>Get in Touch</h3>
@@ -380,9 +540,7 @@
         </div>
         <div class="popup-content">
             <img src="../image.jpg" alt="Royi Rozen" class="popup-image">
-            <div class="popup-text">
-                <p>Send me a message</p>
-            </div>
+            <div class="popup-text"><p>Send me a message</p></div>
         </div>
         <form class="contact-form" id="contact-form">
             <div class="form-fields">
@@ -398,7 +556,5 @@
             <input type="hidden" name="recipient" value="rr789@cornell.edu">
         </form>
     </div>
-    <script type="module" src="../script.js"></script>
-    <script type="module" src="../contact.js"></script>
 </body>
 </html> 
