@@ -144,8 +144,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Make grid items clickable
     gridItems.forEach(item => {
-        item.addEventListener('click', function() {
+        item.addEventListener('click', function(event) {
             const itemId = this.id;
+            
+            // Specifically target the Bee Story link by its class
+            if (this.querySelector('.beestory-link')) {
+                event.preventDefault(); // Prevent default navigation
+                showConstructionPopup();
+                return; // Stop further execution for Bee Story
+            }
             
             // Create a temporary element to check if HTML exists
             const testLink = document.createElement('a');
@@ -363,6 +370,29 @@ function sendEmail(emailData) {
             // Optionally, you can make this more realistic by occasionally rejecting:
             // Math.random() > 0.9 ? reject(new Error('Random error')) : resolve({ status: 'success' });
         }, 1500);
+    });
+}
+
+// Function to show the construction popup (newly created)
+function showConstructionPopup() {
+    const constructionPopup = document.createElement('div');
+    constructionPopup.className = 'construction-popup active'; // Ensure it's active
+    constructionPopup.innerHTML = `
+        <div class="construction-content">
+            <button class="construction-close">&times;</button>
+            <h3>Page Under Construction</h3>
+            <p>This project page is currently being built. Check back soon!</p>
+            <i class="fas fa-hard-hat" style="font-size: 32px; color: #f39c12; margin-top: 15px;"></i>
+        </div>
+    `;
+    document.body.appendChild(constructionPopup);
+
+    const closeButton = constructionPopup.querySelector('.construction-close');
+    closeButton.addEventListener('click', function() {
+        constructionPopup.classList.remove('active');
+        setTimeout(() => {
+            constructionPopup.remove();
+        }, 300);
     });
 }
 

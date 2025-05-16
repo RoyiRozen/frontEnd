@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feature Detection - Royi Rozen</title>
+    <title>Hybrid Image + Feature Detection - Royi Rozen</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     
@@ -34,9 +34,9 @@
         
         <main class="project-page">
             <div class="project-header">
-                <h1>Feature Detection</h1>
+                <h1>Hybrid Image + Feature Detection</h1>
                 <div class="project-meta">
-                    <div class="project-year">2019</div>
+                    <div class="project-year">2025</div>
                     <div class="project-tags">
                         <span class="project-tag">AI</span>
                         <span class="project-tag">Computer Vision</span>
@@ -46,12 +46,23 @@
             </div>
             
             <div class="project-content">
-                <div class="project-gallery">
-                    <img src="../placeholder.jpg" alt="Feature Detection Image 1" class="project-image">
+                <div class="project-gallery" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                    <img src="../feature.jpeg" alt="Feature Detection Example" class="project-image" style="max-width: 48%; flex-basis: 48%;">
+                    <img src="../hybrid_image_example.jpg" alt="Hybrid Image Example" class="project-image" style="max-width: 48%; flex-basis: 48%;">
                 </div>
                 
                 <div class="project-description">
                     <h2>Project Overview</h2>
+                    <p>
+                        This project explores two fascinating areas of computer vision: <strong>Hybrid Images</strong> and <strong>Feature Detection</strong>. Hybrid images are a visual phenomenon where an image can be interpreted in two different ways depending on the viewing distance, typically by blending a low-frequency image with a high-frequency one. Feature Detection involves identifying and tracking key points and features within images and video streams in real-time, a cornerstone for applications like facial recognition, object tracking, and augmented reality.
+                    </p>
+
+                    <h2>Hybrid Images</h2>
+                    <p>
+                        Hybrid images demonstrate the scale-dependent nature of human visual perception. By combining the low spatial frequencies of one image with the high spatial frequencies of another, we create a composite image that reveals different details at different viewing distances. Close up, the high-frequency details (e.g., fine textures, sharp edges from one source image) dominate, while from afar, the low-frequency components (e.g., the general shape and shading from another source image) become more apparent. This project involved implementing algorithms to create such images, typically using Gaussian filters to separate and then merge the frequency components.
+                    </p>
+                    
+                    <h2>Feature Detection</h2>
                     <p>
                         Feature Detection is a computer vision system developed to identify and track key points and features within images and video streams in real-time. This technology enables a wide range of applications from facial recognition to object tracking and augmented reality experiences.
                     </p>
