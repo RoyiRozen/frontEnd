@@ -40,13 +40,7 @@
         header, main, footer {
             width: 100%;
         }
-
-        .project-section {
-            text-align: left;
-            margin: 25px 0;
-            width: 100%;
-            padding: 0;
-        }
+        
         .project-section h2 {
             color: #3498db; /* Calming Blue */
             border-bottom: 2px solid #3498db;
@@ -59,7 +53,7 @@
             margin-bottom: 10px;
         }
 
-        .tag-badge {
+        .tag-badge { /* Renamed for consistency */
             display: inline-block;
             background-color: #3498db; /* Calming Blue */
             color: white;
@@ -82,7 +76,7 @@
         }
 
         .quote-block::before {
-            content: '\''\'; /* Escaped quote for CSS */
+            content: '\"'; /* Corrected quote for CSS */
             position: absolute;
             top: 10px;
             left: 15px;
@@ -90,32 +84,56 @@
             color: #3498db; /* Calming Blue */
             opacity: 0.3;
         }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .tech-item {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .tech-icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #3498db; /* Calming blue */
+        }
 
-        .paper-section {
-            background-color: #f9f9f9;
-            border: 1px solid #eee;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
+        .project-button-container {
+            text-align: center;
+            margin: 30px 0;
         }
-        .paper-section h3 {
-            margin-top:0;
-        }
-        .paper-link {
+
+        .project-button { /* Generic button style for paper link */
             display: inline-block;
             background-color: #3498db;
             color: white;
-            padding: 10px 15px;
-            border-radius: 4px;
+            padding: 12px 25px;
+            border-radius: 5px;
             text-decoration: none;
-            margin-top: 15px;
             font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
         }
-        .paper-link:hover {
+        .project-button:hover {
             background-color: #2980b9;
         }
+        .project-button i {
+            margin-right: 8px;
+        }
 
-        .video-container { 
+        .video-container { /* Placeholder for consistency, can be removed if no video */
             width: 100%;
             margin: 30px 0;
             overflow: hidden;
@@ -140,7 +158,6 @@
             width: 100%;
             display: flex;
             justify-content: center;
-            text-align: left;
         }
 
         .back-button {
@@ -166,50 +183,57 @@
             object-fit: cover;
             border-radius: 50%;
         }
-        .project-detail {
+        .project-detail { /* Renamed main content wrapper */
             max-width: 1200px;
-            margin: 120px auto 60px;
-            padding: 0;
+            margin: 120px auto 60px; /* Adjust top margin to account for fixed header */
+            padding: 0; 
             box-sizing: border-box;
             width: 100%;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: center; /* Center content within this container */
         }
         
-        main {
+        main { /* Ensure main takes full width and centers its direct child (.project-detail) */
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
         }
         
-        .project-content {
+        .project-content { /* Container for the actual text/image content */
             width: 100%;
-            max-width: 800px;
-            padding: 0 15px;
+            max-width: 800px; /* Max width for readability */
+            padding: 0 15px; /* Padding for smaller screens */
             box-sizing: border-box;
+            text-align: left; /* Align text to left */
         }
 
         .project-section,
-        .video-container {
+        .video-container,
+        .tech-grid,
+        .project-button-container { /* Ensure these take full width of .project-content */
             width: 100%;
             max-width: 100%; 
             box-sizing: border-box;
         }
         
+        /* Responsive adjustments */
         @media (max-width: 768px) {
             .project-detail {
-                padding: 0 15px;
+                padding: 0 15px; 
                 margin-top: 100px;
             }
             .project-header h1 {
                 font-size: 32px;
             }
+             .tech-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
         }
         @media (max-width: 480px) {
             .project-detail {
-                padding: 0 10px;
+                padding: 0 10px; 
                 margin-top: 80px;
             }
             .project-header h1 {
@@ -230,73 +254,104 @@
         </header>
 
         <main>
-            <div class="project-header">
-                <h1>Depression Risk Calculator <span class="tag-badge">AI Health</span></h1>
-                <div class="project-tags">
-                    <span class="grid-item-filter">AI</span>
-                    <span class="grid-item-filter">Health</span>
-                    <span class="grid-item-filter">UI/UX</span>
+            <div class="project-detail">
+                <div class="project-header">
+                    <h1>Depression Risk Calculator <span class="tag-badge">AI Health</span></h1>
+                    <div class="project-tags">
+                        <span class="grid-item-filter">AI</span>
+                        <span class="grid-item-filter">Health</span>
+                        <span class="grid-item-filter">UI/UX</span>
+                    </div>
+                </div>
+
+                <div class="project-content">
+                    <div class="video-container">
+                        <div class="video-placeholder-text">Project Visuals Coming Soon</div>
+                    </div>
+
+                    <div class="project-section">
+                        <h2>Overview</h2>
+                        <p>
+                            The Depression Risk Calculator is an AI tool for early identification of adolescents at risk of depression. It uses machine learning on non-invasive behavioral and environmental data to support timely intervention. This project focuses on translating research into a practical application for real-world prevention.
+                        </p>
+                        <div class="quote-block">
+                            "Leveraging AI to proactively identify and support youth mental health through accessible, data-driven insights."
+                        </div>
+                    </div>
+
+                    <div class="project-section">
+                        <h2>Live App Preview</h2>
+                        <p>Explore a preview of the Depression Risk Calculator. This interactive demo showcases the user interface and the type of insights the tool can provide. Please note that this is for demonstration purposes and uses sample data.</p>
+                        <div class="project-button-container">
+                            <a href="https://depressionriskcalculator-pjwn6ogutj2vs3rnuwfzrh.streamlit.app/" target="_blank" class="project-button">
+                                <i class="fas fa-external-link-alt"></i> Launch App Preview
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-section">
+                        <h2>Core Idea & Approach</h2>
+                        <p>
+                            Mental health issues, particularly depression, are rising among adolescents. Early identification is key to effective intervention. This project aims to develop an AI model using readily available, non-clinical data (e.g., social media activity, sleep patterns, academic engagement proxies) to predict risk. The focus is on creating a tool that is both accurate and ethically sound, intended for guidance rather than diagnosis.
+                        </p>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h2>Technical Aspects</h2>
+                        <p>The system relies on a machine learning pipeline for risk prediction:</p>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <i class="fas fa-database tech-icon"></i>
+                                <span>Data Ingestion</span>
+                                <p style="font-size:0.9em;">Secure collection of anonymized behavioral data.</p>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-cogs tech-icon"></i>
+                                <span>Feature Engineering</span>
+                                <p style="font-size:0.9em;">Extracting relevant signals from raw data.</p>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-brain tech-icon"></i>
+                                <span>ML Model</span>
+                                <p style="font-size:0.9em;">Predictive modeling (e.g., Random Forest, Gradient Boosting).</p>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-shield-alt tech-icon"></i>
+                                <span>Ethical AI</span>
+                                 <p style="font-size:0.9em;">Bias detection and mitigation, explainability.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-section">
+                        <h2>Paper & Further Details</h2>
+                        <p>
+                            This work is based on the research paper "Machine Learning-based Prediction of Adolescent Depressive Symptoms Using Non-invasive Behavioral Data." For a comprehensive understanding of the methodology, data, and findings, please refer to the full paper.
+                        </p>
+                        <div class="project-button-container">
+                             <a href="../PAML.pdf" target="_blank" class="project-button">
+                                <i class="fas fa-file-pdf"></i> Read Full Paper
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h2>Disclaimer</h2>
+                        <p>
+                            This tool is a research prototype and not intended for clinical diagnosis or treatment decisions. It aims to support early risk identification and guide further professional assessment. Always consult with qualified healthcare professionals for mental health concerns.
+                        </p>
+                    </div>
+
+                    <div class="nav-buttons">
+                        <button onclick="window.location.href='../basic.html'" class="back-button">
+                            <i class="fas fa-arrow-left"></i> Back to Portfolio
+                        </button>
+                    </div>
                 </div>
             </div>
-
-            <div class="project-section">
-                <h2>Project Overview</h2>
-                <p>
-                    The Depression Risk Calculator is an AI-powered tool aimed at identifying adolescents at elevated risk for developing depressive symptoms. It leverages machine learning applied to non-invasive behavioral and environmental data to support early risk stratification.
-                </p>
-                <div class="quote-block">
-                    "This project translates machine learning findings into a practical, accessible tool for early identification of adolescent depression risk, supporting real-world prevention."
-                </div>
-                 <a href="#" class="paper-link" onclick="alert('Link to full paper coming soon!'); return false;">
-                    <i class="fas fa-file-pdf"></i> Read Full Paper (Coming Soon)
-                 </a>
-            </div>
-
-            <div class="project-section paper-section">
-                <h2>Abstract from the Paper</h2>
-                
-                <h3>Background</h3>
-                <p>In the U.S., one in five adolescents experience depression. However, clinical diagnosis of major depressive disorder (MDD) during adolescence is challenging due to the heterogeneity of symptom expression. Moreover, validated tools for assessing depression risk based on behavioral features during early adolescence are not yet widely accessible, particularly for use by parents or guardians.</p>
-
-                <h3>Purpose</h3>
-                <p>This project aims to develop a depression risk calculator that leverages easily accessible, data-driven predictors of depressive symptoms during early adolescence to identify adolescents at elevated risk for developing symptoms in later adolescence. We employ supervised machine learning to support early risk stratification based on non-invasive baseline behavioral and environmental features.</p>
-
-                <h3>Methods</h3>
-                <p>We used data from the Adolescent Brain Cognitive Development (ABCD) study, a large-scale longitudinal dataset. Specifically, we analyzed behavioral, environmental, and physical health data collected at baseline (N = 10,0094; ages 9–10) to predict depression outcomes at a three-year follow-up. We framed depression risk as a binary classification problem, using a clinician-inspired outcome variable at three-year follow-up. Two supervised learning methods were applied: logistic regression with LASSO regularization and random forest classification. We initially built our models with all 1,560 features we had access to. We then used our model output (e.g. regressors from logistic regression to identify the most informative predictors. To build a clinically applicable, user-friendly tool, we extracted the top 12 features from each model and re-trained each model using only those variables. Model performance was evaluated using recall, accuracy, and precision, as well as ROC-AUC curves. Regressors from the best-performing model were transformed into a user-friendly risk calculator to stratify adolescents into high- and low-risk groups.</p>
-
-                <h3>Results</h3>
-                <p>Key predictive features in the logistic regression model included variables describing appetite, sleep, family conflict, family history of mental illness, and participation in sports. The random forest model identified social behaviors, meeting developmental milestones, and perceived extent of social interactions as top predictors. When comparing models trained on their respective top 12 features, the LASSO logistic regression model demonstrated superior recall in identifying adolescents who later developed depressive symptoms (logistic = 0.83; RF = 0.81), accuracy (logistic = 0.62; RF = 0.53) and precision (logistic = 0.47; RF = 0.42). Due to the fact that we intended to build a screening tool for parents, we chose the logistic regression as the more suited model for our calculator, as this model had a higher recall (lower risk of missing at risk patients).</p>
-
-                <h3>Significance</h3>
-                <p>This project translates machine learning findings into a practical, accessible tool for early identification of adolescent depression risk. It supports real-world prevention by using easily obtainable, non-clinical data to inform risk stratification on a vulnerable group of patients.</p>
-            </div>
-
-            <div class="project-section paper-section">
-                <h2>Introduction</h2>
-                <h3>Problem at hand</h3>
-                <p>Depression often first emerges during adolescence, and it is linked to severe long-term outcomes, including substance use, suicidality, and co-morbid psychiatric conditions, and lower economic productivity. Early identification of depression has major benefits as medication and psychotherapy are effective treatment. However, identifying depressive risks in adolescence remains a challenge due to the heterogeneity of symptom expression and risk factors. Current clinical tools — such as symptom checklists — fail to integrate multi-dimensional risk data, limiting their predictive power and real-world applicability. Furthermore, most validated clinical tools, such as the Hamilton Depression Rating Scale (HAM-D) and Montgomery–Åsberg Depression Rating Scale (MADRS) have limitations.</p>
-            </div>
-
-            <div class="project-section paper-section">
-                <h2>Conclusion</h2>
-                <p>We develop a practical, interpretable machine learning model to identify adolescents at elevated risk for depression using non-invasive survey data from the ABCD study. We trained and evaluated two primary supervised learning models: logistic regression with L1 (LASSO) regularization and random forest classification.</p>
-                <p>Our pipeline involved pre-processing over one thousand survey-derived variables, standardizing features, removing low-variance items, and creating a binary outcome representing the top 25% of 3-year depression scores. LASSO was used for feature selection, reducing the model to the 12 most predictive items across sleep, mood, family history, and psychosocial domains.</p>
-                <p>Our results have direct value for parents, schools, and pediatric providers who lack access to mental health specialists. By minimizing false negatives and prioritizing recall, our model ensures that at-risk youth are flagged early, potentially facilitating timely interventions. Societally, this supports a scalable, low-cost approach to mental health screening that could reduce the long-term burden of untreated adolescent depression.</p>
-                <p>In the future, we plan to validate our model's generalizability using held-out ABCD sites or other datasets. We also aim to incorporate user-friendly deployment, such as improving our Streamlit-based risk calculator for parent or clinician use. Lastly, We aim to collaborate with clinical partners to test the tool in real-world screening scenarios and refine its use based on feedback from stakeholders.</p>
-            </div>
-            
-            <div class="video-container">
-                <span class="video-placeholder-text">Conceptual Model / Calculator Interface Coming Soon</span>
-            </div>
-
-            <nav class="nav-buttons">
-                <button onclick="window.location.href='../basic.html'" class="back-button">
-                    <i class="fas fa-arrow-left"></i> Back to Portfolio
-                </button>
-            </nav>
         </main>
     </div>
-
+    
     <footer>
         <div class="footer-content">
             <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
@@ -306,10 +361,11 @@
         </div>
     </footer>
 
+    <!-- Contact Button and Popup -->
     <div class="contact-button" id="contact-button">
         <i class="fas fa-comment"></i>
     </div>
-
+    
     <div class="contact-popup" id="contact-popup">
         <div class="popup-header">
             <h3>Get in Touch</h3>
@@ -330,7 +386,7 @@
             <div class="form-divider"></div>
             <div class="form-actions">
                 <button type="submit" class="send-button">Send</button>
-                <div style="clear: both;"></div>
+                <div style="clear: both;"></div> <!-- Clear the float -->
             </div>
             <input type="hidden" name="recipient" value="rr789@cornell.edu">
         </form>

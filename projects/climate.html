@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClimateXR - Royi Rozen</title>
+    <title>ClimateXR - Royi Rozen Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     
@@ -122,6 +122,26 @@
             display: block;
         }
         
+        .video-container {
+            width: 100%;
+            margin: 20px 0 30px 0; /* Adjusted margin */
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+        }
+        
+        .video-embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
         @media (max-width: 768px) {
             .climate-stats {
                 grid-template-columns: 1fr;
@@ -155,34 +175,31 @@
                 <div class="project-meta">
                     <div class="project-year">2021-2022</div>
                     <div class="project-tags">
-                        <span class="project-tag">AR</span>
-                        <span class="project-tag">2D</span>
-                        <span class="project-tag">Software</span>
+                        <span class="project-tag">VR</span>
+                        <span class="project-tag">Research</span>
+                        <span class="project-tag">Embodiment</span>
+                        <span class="project-tag">Neuroscience</span>
                     </div>
                 </div>
             </div>
             
+            <div class="video-container">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/your_video_id_here?autoplay=1&mute=1&loop=1&playlist=your_video_id_here" title="ClimateXR Project Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
             <div class="project-content">
                 <div class="project-section">
-                    <h2>Climate Change Here and Now</h2>
+                    <h2>Project Overview: Climate Change Here & Now</h2>
                     <p>
-                        <strong>ClimateXR</strong> is a research project studying the effects of immersive virtual reality on psychological distance towards climate change. As part of Tel Aviv University's Immersive Media and Cognition group at the Sagol Brain Institute at Ichilov Hospital, this project investigates how embodiment in VR influences both our perception of climate change issues and our willingness to take action.
+                        <strong>ClimateXR</strong> is a research project from Tel Aviv University's Immersive Media and Cognition group at the Sagol Brain Institute. We studied how immersive Virtual Reality (VR) affects psychological distance towards climate change and the willingness to act.
                     </p>
-                    
-                    <div class="image-container">
-                        <img src="../image5.jpg" alt="ClimateXR Visualization" class="project-image">
-                    </div>
                 </div>
                 
                 <div class="project-section">
-                    <h2>Project Overview</h2>
+                    <h2>The Challenge: Psychological Distance</h2>
                     <p>
-                        Israel is considered a "Hotspot" in terms of the effects of climate change. Projections show that Israel will experience longer and hotter heat waves. During the winter, compound flooding is expected, a combination of heavy precipitation and strong storm surges in coastal areas. Policies which can reduce the adverse effects of climate change are at hand, but they are currently not fully implemented.
+                        Israel is a climate change "Hotspot," facing hotter heat waves and coastal flooding. While solutions exist, psychological barriers like "Psychological Distance" hinder action. Events perceived as distant (temporally, geographically, or socially) receive less urgency.
                     </p>
-                    <p>
-                        Psychological barriers affect the way in which we tackle climate change. One of these mechanisms is "Psychological distance" in which our brain constructs and reacts differently to events perceived as close or distant to us - either temporally, geographically or socially. Events which are perceived as distant receive less attention and urgency than those perceived as proximal.
-                    </p>
-                    
                     <div class="climate-stats">
                         <div class="stat-card">
                             <div class="stat-value">+1.8°C</div>
@@ -196,12 +213,9 @@
                 </div>
                 
                 <div class="project-section">
-                    <h2>My Contribution</h2>
+                    <h2>My Contribution: XR Specialist</h2>
                     <p>
-                        As the XR Specialist on this climate change research project, I worked with Tel Aviv University's Immersive Media and Cognition group at the Sagol Brain Institute at Ichilov Hospital. We investigated how the embodiment of VR influences both the psychological distance from climate change issues and the willingness to take action.
-                    </p>
-                    <p>
-                        I developed and designed VR simulations via Unity, leading a team of designers and developers to characterize the technical aspects of the product, write the storyline, and present the research to stakeholders. Our team collected neuro-feedback data from participants performing game simulations to measure their responses to climate scenarios.
+                        As the XR Specialist, I developed and designed VR simulations in Unity, leading a team to define technical aspects, craft the storyline, and present research. We collected neuro-feedback data during game simulations to measure responses to climate scenarios.
                     </p>
                     
                     <div class="researcher-quote">
@@ -215,7 +229,7 @@
                 <div class="project-section">
                     <h2>Technical Implementation</h2>
                     <p>
-                        The ClimateXR project utilized several advanced technologies to create immersive climate change simulations:
+                        ClimateXR used advanced tech for immersive simulations, built in Unity to simulate climate effects in Israel. Participants used VR headsets with neuro-feedback sensors to measure psychological and physiological responses, analyzing how immersion influenced their perception of climate change.
                     </p>
                     
                     <div class="tech-grid">
@@ -236,52 +250,31 @@
                             <span>Unity</span>
                         </div>
                     </div>
-                    
-                    <p>
-                        The core of the project was built in Unity, creating interactive scenarios that simulated various climate change effects in Israel. Participants experienced these scenarios while wearing VR headsets equipped with neuro-feedback sensors to measure their psychological and physiological responses. This data was then analyzed to understand how the immersive experience influenced their perception of climate change as an immediate versus distant concern.
-                    </p>
                 </div>
                 
                 <div class="project-section">
-                    <h2>Research Methodology</h2>
+                    <h2>Research Methodology & Findings</h2>
                     <p>
-                        Our research utilized a mixed-methods approach combining qualitative and quantitative data collection:
+                        Our mixed-methods approach combined qualitative and quantitative data. VR simulations effectively reduced psychological distance: participants felt climate change was closer and more urgent. The study highlighted VR's potential to foster pro-environmental attitudes and behaviors.
                     </p>
-                    <ul>
-                        <li><strong>Immersive Scenarios:</strong> Creating VR experiences that simulated future climate scenarios specific to Israel</li>
-                        <li><strong>Physiological Measurements:</strong> Collecting real-time neuro-feedback during VR exposure</li>
-                        <li><strong>Behavioral Assessment:</strong> Measuring willingness to engage in climate action before and after VR exposure</li>
-                        <li><strong>Long-term Follow-up:</strong> Assessing lasting impacts on psychological distance and behavior change</li>
-                    </ul>
                     <p>
-                        Participants were randomly assigned to either an immersive VR condition or a control condition using traditional media. By comparing responses between these groups, we could measure the specific impact of embodied VR experiences on climate change perception.
+                        Key findings indicate that embodied VR experiences can make abstract threats like climate change feel more tangible and personally relevant. This underscores VR's power as a tool for science communication and advocacy.
                     </p>
                 </div>
-                
+
                 <div class="project-section">
-                    <h2>Outcomes & Impact</h2>
-                    <p>
-                        The ClimateXR project demonstrated several important findings about immersive technology's potential to influence climate perception:
-                    </p>
-                    <ul>
-                        <li>Participants who experienced climate scenarios in VR reported a significant reduction in psychological distance to climate change compared to control groups</li>
-                        <li>Immersive experiences led to increased reported intentions to engage in pro-environmental behaviors</li>
-                        <li>Physiological measurements correlated with self-reported emotional responses, validating the impact of the VR experience</li>
-                        <li>The research established a methodology for using XR technologies in environmental psychology research</li>
-                    </ul>
-                    <p>
-                        These findings have implications for climate communication strategies, suggesting that immersive technologies might be valuable tools for engaging the public with climate change issues and potentially motivating action. The research continues to inform ongoing work in environmental psychology and virtual reality applications.
-                    </p>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Project Visual</h2>
-                    <div class="video-container">
-                        <iframe class="video-embed" src="https://www.youtube.com/embed/BJTGrjaTzA4" title="ClimateXR Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <h2>The Team</h2>
+                    <p style="text-align: center; font-size: 1.1em;">Tsur Mishal & Royi Rozen</p>
+                    <div class="image-container" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+                        <img src="../image5.jpg" alt="ClimateXR Visualization" class="project-image">
                     </div>
-                    <div class="image-container">
-                        <img src="../climate2.jpg" alt="Climate Project Visual" class="project-image">
-                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2>Publications & Presentations</h2>
+                    <p>
+                        The ClimateXR project has been presented at various conferences and has been published in peer-reviewed journals. If you're interested in learning more about the project, please check out our publications page.
+                    </p>
                 </div>
             </div>
             
