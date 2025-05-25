@@ -193,143 +193,56 @@
             </div>
         </header>
         
-        <main class="project-page">
-            <div class="project-header">
+        <main class="project-page" style="display: flex; flex-direction: column; align-items: center; padding: 0 15px;">
+            <div class="project-header" style="width: 100%; max-width: 800px; text-align:center; margin-top: 20px;">
                 <h1>Be the Witness <span class="documentary-badge">VR Documentary</span></h1>
-                <div class="project-meta">
-                    <div class="project-year">2023</div>
-                    <div class="project-tags">
-                        <span class="project-tag">VR</span>
-                        <span class="project-tag">3D</span>
-                        <span class="project-tag">Video</span>
+                <div class="project-meta" style="margin-top:10px;">
+                    <div class="project-year" style="display:inline-block; margin-right:10px;">2023</div>
+                    <div class="project-tags" style="display:inline-block;">
+                        <span class="project-tag grid-item-filter">VR</span>
+                        <span class="project-tag grid-item-filter">3D</span>
+                        <span class="project-tag grid-item-filter">Video</span>
+                        <span class="project-tag grid-item-filter">Documentary</span>
                     </div>
                 </div>
             </div>
-            
-            <div class="project-content">
-                <div class="project-section">
-                    <h2>Project Overview</h2>
-                    <p>
-                        <strong>Be the Witness</strong> is a Virtual Reality documentary project that shares the stories of October 7th, 2023, when Hamas attacked Israel. This immersive experience was led by the Steven Spielberg Foundation, with my contribution focused on UX/UI spatial design for the virtual environment.
-                    </p>
-                    
-                    <div class="video-container">
-                        <!-- Trailer placeholder - update with actual embed code when available -->
-                        <iframe class="video-embed" 
-                                src="https://www.youtube.com/embed/placeholder" 
-                                title="Be the Witness - Trailer" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                allowfullscreen></iframe>
-                    </div>
+
+            <div class="video-container" style="width: 100%; max-width: 800px; margin: 30px auto; aspect-ratio: 16/9; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                <iframe class="video-embed" 
+                        src="https://www.youtube.com/embed/placeholder" 
+                        title="Be the Witness - Trailer" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen></iframe>
+            </div>
+
+            <div class="project-section" style="max-width: 800px; margin: 30px auto; width:100%;">
+                <h2>Project Brief</h2>
+                <p><strong>Be the Witness</strong> is a Virtual Reality documentary sharing stories from October 7th, 2023, when Hamas attacked Israel. Led by the Steven Spielberg Foundation, my role focused on UX/UI spatial design for the virtual environment. The core challenge was to balance immersive storytelling with the ethical need for a safe viewing experience when confronting traumatic narratives, giving the viewer control and agency.</p>
+                <!-- <img src="../image20.jpg" alt="Be The Witness conceptual image" style="width:100%; max-width:600px; display:block; margin:20px auto 0 auto; border-radius:8px;"> -->
+            </div>
+
+            <div class="project-section" style="max-width: 800px; margin: 30px auto; width:100%;">
+                <h2>Design Philosophy & Approach</h2>
+                <p>My design approach centered on creating a virtual environment that honors powerful testimonies while giving viewers agency. This involved an abstract representation of actual environments using Gaussian splat rendering, balancing the reality of events with an aesthetic distance to prevent overwhelming the viewer. The initial concept presentation was crucial for aligning stakeholders.</p>
+                <div class="concept-highlight" style="margin-top:15px; margin-bottom:15px;">
+                     <p>The testimonies shared in this documentary are powerful and deeply personal. My design approach centered on creating a virtual environment that honors these stories while giving viewers agency over their experience.</p>
                 </div>
-                
-                <div class="project-section">
-                    <h2>Abstract</h2>
-                    <p>
-                        Being present for horrific stories is an intensive experience that must be dealt with care. I envisioned a place that gives control to the viewer - a safe space is needed when confronting traumatic narratives. This project balances the power of immersive storytelling with the ethical responsibility to protect viewers from potential retraumatization.
-                    </p>
-                    
-                    <div class="concept-highlight">
-                        <p>
-                            The testimonies shared in this documentary are powerful and deeply personal. My design approach centered on creating a virtual environment that honors these stories while giving viewers agency over their experience.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Design Approach</h2>
-                    <p>
-                        This presentation was the first step of my design process on this project, ensuring concept alignment between all of the numerous stakeholders involved. My approach focused on creating an abstract representation of the actual environment rather than a realistic recreation of traumatic scenes.
-                    </p>
-                    
-                    <p>
-                        I knew I wanted to use an abstract representation of the actual environment, hence I rendered a complete 360-degree environment as a Gaussian splat, helping to create this unique look and feel. This technique allowed us to present the reality of events while maintaining a necessary aesthetic distance that prevents overwhelming the viewer.
-                    </p>
-                    
-                    <a href="#" class="presentation-link">
-                        <i class="fas fa-external-link-alt"></i> View Presentation
-                    </a>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Technical Implementation</h2>
-                    <p>
-                        The project utilized several advanced technologies to create an immersive yet emotionally safe documentary experience:
-                    </p>
-                    
-                    <div class="tech-grid">
-                        <div class="tech-item">
-                            <i class="fas fa-vr-cardboard tech-icon"></i>
-                            <span>VR Development</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-cube tech-icon"></i>
-                            <span>Gaussian Splat</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-user-shield tech-icon"></i>
-                            <span>UX/UI Design</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-film tech-icon"></i>
-                            <span>Documentary</span>
-                        </div>
-                    </div>
-                    
-                    <p>
-                        The implementation featured a carefully designed spatial interface that allows viewers to navigate through testimonies at their own pace. The Gaussian splat rendering technique created a visual abstraction that balances documentary authenticity with emotional safety, presenting environments and events without graphic realism.
-                    </p>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Design Process</h2>
-                    <div class="process-steps">
-                        <div class="process-step">
-                            <div class="step-number">1</div>
-                            <div class="step-content">
-                                <div class="step-title">Stakeholder Alignment</div>
-                                <p>Created preliminary concepts and presentations to align vision across multiple stakeholders, including the Steven Spielberg Foundation representatives.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="process-step">
-                            <div class="step-number">2</div>
-                            <div class="step-content">
-                                <div class="step-title">Spatial UX Design</div>
-                                <p>Developed spatial interfaces that give viewers control over their experience, creating a safe environment for engaging with difficult testimonies.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="process-step">
-                            <div class="step-number">3</div>
-                            <div class="step-content">
-                                <div class="step-title">Environment Rendering</div>
-                                <p>Utilized Gaussian splat techniques to create abstract representations of environments, balancing visual context with ethical considerations.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="process-step">
-                            <div class="step-number">4</div>
-                            <div class="step-content">
-                                <div class="step-title">User Testing & Refinement</div>
-                                <p>Conducted iterative testing to ensure the experience was both impactful and respectful, with a focus on giving viewers agency within the documentary format.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Impact & Significance</h2>
-                    <p>
-                        "Be the Witness" represents an innovative approach to documentary storytelling in virtual reality, particularly for sensitive subject matter. The project demonstrates how immersive technologies can be used responsibly to share important testimonies while respecting both the subjects and viewers.
-                    </p>
-                    <p>
-                        By creating a spatially designed environment that gives viewers control over their experience, the project establishes new possibilities for ethical immersive journalism and documentary filmmaking. The abstract visual approach using Gaussian splat techniques also points toward new aesthetic directions for documentary VR that balance authenticity with viewer well-being.
-                    </p>
-                </div>
+                <img src="../bethewitnessui.png" alt="Design Concept - UI Sketch" style="width:100%; max-width:600px; display:block; margin:20px auto 0 auto; border-radius:8px;">
+                <p style="text-align:center; margin-top:10px;"><a href="#" class="presentation-link"><i class="fas fa-external-link-alt"></i> View Presentation</a></p>
+            </div>
+
+            <div class="project-section" style="max-width: 800px; margin: 30px auto; width:100%;">
+                <h2>Technical & Process Highlights</h2>
+                <p>Key technologies included VR development (Unity), Gaussian Splat rendering for environmental abstraction, and careful UX/UI design for emotional safety. The process involved stakeholder alignment, iterative spatial UX design focusing on viewer control, environment rendering, and user testing to ensure an impactful yet respectful experience.</p>
+            </div>
+
+            <div class="project-section" style="max-width: 800px; margin: 30px auto; width:100%;">
+                <h2>Impact & Significance</h2>
+                <p>"Be the Witness" pioneers a responsible approach to VR documentary for sensitive topics. It shows how immersive tech can share vital testimonies while respecting subjects and viewers, establishing new paths for ethical immersive journalism. The abstract visuals also suggest new aesthetic directions for VR documentaries that balance authenticity with viewer well-being.</p>
+                <img src="../image20.jpg" alt="Impact conceptual image" style="width:100%; max-width:600px; display:block; margin:20px auto 0 auto; border-radius:8px;">
             </div>
             
-            <div class="nav-buttons">
+            <div class="nav-buttons" style="width: 100%; max-width: 800px; display: flex; justify-content: center; margin-top: 20px; margin-bottom: 40px;">
                 <button onclick="window.location.href='../basic.html'" class="back-button">
                     <i class="fas fa-arrow-left"></i> Back to Portfolio
                 </button>
