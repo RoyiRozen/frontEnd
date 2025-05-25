@@ -32,46 +32,49 @@
             </div>
         </header>
 
-        <main class="project-page" style="padding-top: 120px;">
-            <h1 class="animate-on-scroll">BestMap NYC</h1>
+        <main class="project-page" style="padding-top: 120px; display: flex; flex-direction: column; align-items: center;">
+            <h1 class="animate-on-scroll" style="text-align: center;">BestMap NYC</h1>
+            <div class="project-tags" style="text-align: center; margin-bottom: 20px;">
+                <span class="grid-item-filter">AR</span>
+                <span class="grid-item-filter">Spatial Computing</span>
+                <span class="grid-item-filter">Navigation</span>
+                <span class="grid-item-filter">UI/UX</span>
+            </div>
+
+            <div class="video-container" style="width: 100%; max-width: 800px; margin: 0 auto 30px auto; aspect-ratio: 16/9; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                <p style="color: #555;">[Video Placeholder: User to embed project video here, e.g., YouTube iframe]</p>
+            </div>
+
+            <div class="project-section" style="max-width: 800px; margin: 0 auto 30px auto; width: 100%; padding: 0 15px; box-sizing: border-box;">
+                <h2>Project Brief</h2>
+                <p>BestMap NYC is an augmented reality application that transforms how tourists and locals navigate New York City. Utilizing spatial mapping and computer vision technologies, the app overlays relevant information, historical context, and personalized recommendations onto the physical landscape of the city. My role involved [User to specify role, e.g., concept design, lead development, and UI/UX].</p>
+            </div>
+
+            <div class="project-section" style="max-width: 800px; margin: 0 auto 30px auto; width: 100%; padding: 0 15px; box-sizing: border-box;">
+                <h2>The Challenge & Our Solution</h2>
+                <p>Traditional maps often lack context, reducing cities to simple grids. BestMap NYC bridges this gap by creating an immersive navigation experience. Users can see historical overlays, discover local recommendations via AR cues, learn about architecture, and access crowd-sourced stories.</p>
+                <img src="../image3.jpg" alt="BestMap NYC AR View" style="width: 100%; max-width: 600px; display: block; margin: 20px auto 0 auto; border-radius: 8px;">
+            </div>
+
+            <div class="project-section" style="max-width: 800px; margin: 0 auto 30px auto; width: 100%; padding: 0 15px; box-sizing: border-box;">
+                <h2>Key Features</h2>
+                <ul style="padding-left: 20px;">
+                    <li>Historical overlays showing neighborhood changes.</li>
+                    <li>Personalized local recommendations via AR.</li>
+                    <li>Visual AR navigation cues.</li>
+                    <li>Information on architectural and historical building significance.</li>
+                    <li>Crowd-sourced stories and memories for locations.</li>
+                </ul>
+                <img src="../demoMakAR.jpeg" alt="BestMap Feature Example" style="width: 100%; max-width: 600px; display: block; margin: 20px auto 0 auto; border-radius: 8px;">
+            </div>
+
+            <div class="project-section" style="max-width: 800px; margin: 0 auto 30px auto; width: 100%; padding: 0 15px; box-sizing: border-box;">
+                <h2>Technology Insights</h2>
+                <p>BestMap NYC was built using Unity for AR development, ARKit/ARCore for spatial mapping, custom computer vision algorithms for landmark recognition, Firebase for backend services, and integrated historical GIS data from NYC archives.</p>
+                <img src="../image4.jpg" alt="Tech Stack Visualization (Conceptual)" style="width: 100%; max-width: 600px; display: block; margin: 20px auto 0 auto; border-radius: 8px;">
+            </div>
             
-            <img src="../image1.png" alt="BestMap NYC" style="width: 100%; max-width: 800px; display: block; margin: 0 auto 40px auto;" class="animate-on-scroll">
-            
-            <h2 class="animate-on-scroll">Project Overview</h2>
-            <p class="animate-on-scroll">
-                BestMap NYC is an augmented reality application that transforms how tourists and locals navigate New York City. Utilizing spatial mapping and computer vision technologies, the app overlays relevant information, historical context, and personalized recommendations onto the physical landscape of the city.
-            </p>
-            
-            <h2 class="animate-on-scroll">The Challenge</h2>
-            <p class="animate-on-scroll">
-                Traditional maps and navigation apps often lack context and personalization, reducing cities to simple grid systems. This creates a disconnect between the rich cultural history of urban spaces and how people experience them. BestMap NYC was designed to bridge this gap by creating a more immersive and contextualized navigation experience.
-            </p>
-            
-            <h2 class="animate-on-scroll">Solution</h2>
-            <p class="animate-on-scroll">
-                By combining AR, machine learning, and user-generated content, BestMap NYC allows users to:
-            </p>
-            <ul style="margin-bottom: 30px; line-height: 1.6;" class="animate-on-scroll">
-                <li>See historical overlays showing how neighborhoods have changed over time</li>
-                <li>Discover hidden gems and local recommendations based on their interests</li>
-                <li>Navigate using visual AR cues rather than traditional map interfaces</li>
-                <li>Learn about architectural features and historical significance of buildings</li>
-                <li>Access crowd-sourced stories and memories associated with specific locations</li>
-            </ul>
-            
-            <h2 class="animate-on-scroll">Technology Stack</h2>
-            <p class="animate-on-scroll">
-                BestMap NYC was built using:
-            </p>
-            <ul style="margin-bottom: 30px; line-height: 1.6;" class="animate-on-scroll">
-                <li>Unity for AR development</li>
-                <li>ARKit and ARCore for spatial mapping</li>
-                <li>Custom computer vision algorithms for landmark recognition</li>
-                <li>Firebase for backend services and user-generated content</li>
-                <li>Historical GIS data integration from NYC archives</li>
-            </ul>
-            
-            <div class="nav-buttons">
+            <div class="nav-buttons" style="width: 100%; max-width: 800px; display: flex; justify-content: center; margin-top: 20px; padding: 0 15px; box-sizing: border-box;">
                 <button onclick="window.location.href='../basic.html'" style="padding: 10px 20px; background: #000; color: white; border: none; border-radius: 5px; cursor: pointer;">Back to Portfolio</button>
             </div>
         </main>
