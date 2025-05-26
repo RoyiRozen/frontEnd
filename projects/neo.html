@@ -16,342 +16,272 @@
     
     <link rel="stylesheet" href="../style.css">
     <style>
-        .ui-badge {
-            display: inline-block;
-            background-color: #3498db;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-weight: bold;
-            margin-left: 10px;
-            font-size: 0.8em;
-            vertical-align: middle;
-        }
-        
-        .book-quote {
-            background-color: #f8f9fa;
-            border-left: 4px solid #3498db;
-            padding: 20px;
-            margin: 30px 0;
-            border-radius: 4px;
-            font-style: italic;
-            position: relative;
-        }
-        
-        .book-quote::before {
-            content: '"';
-            position: absolute;
-            top: 10px;
-            left: 15px;
-            font-size: 40px;
-            color: #3498db;
-            opacity: 0.3;
-        }
-        
-        .project-section {
-            margin: 40px 0;
-        }
-        
-        .technique-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 25px 0;
-        }
-        
-        .technique-item {
-            background-color: #f5f5f5;
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
+        /* Clean, centered layout */
+        body {
+            margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            width: 100%;
+            overflow-x: hidden;
         }
         
-        .technique-icon {
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: #3498db;
+        #app {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 30px 0;
+        header, main, footer {
+            width: 100%;
         }
         
-        .process-step {
-            background-color: #f5f5f5;
-            border-radius: 10px;
-            padding: 20px;
+        /* Project header styling */
+        .project-header {
+            margin-top: 120px;
+            margin-bottom: 30px;
             text-align: center;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-            position: relative;
         }
         
-        .process-step::after {
-            content: "→";
-            position: absolute;
-            right: -15px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 24px;
-            color: #3498db;
-        }
-        
-        .process-step:last-child::after {
-            display: none;
-        }
-        
-        .step-number {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: #3498db;
-            color: white;
-            border-radius: 50%;
-            line-height: 40px;
+        .project-header h1 {
+            font-size: 48px;
+            font-weight: 700;
             margin-bottom: 15px;
-            font-weight: bold;
+            color: #333;
         }
         
-        .image-container {
-            margin: 30px 0;
-            border-radius: 10px;
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .grid-item-filter {
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Hero image container */
+        .hero-image-container {
+            width: 100%;
+            margin: 40px 0;
             overflow: hidden;
+            border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
-        .project-image {
+        .hero-image {
             width: 100%;
             height: auto;
             display: block;
         }
         
+        /* Main content styling */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .project-content {
+            width: 100%;
+            max-width: 800px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        
+        /* Project sections */
+        .project-section {
+            margin: 40px 0;
+            text-align: left;
+        }
+        
+        .project-section h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .project-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Section images */
+        .section-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            display: block;
+        }
+        
+        /* Overview section styling */
+        .overview-section {
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        .overview-section p {
+            margin-bottom: 0;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+        
+        /* Navigation buttons */
+        .nav-buttons {
+            margin: 60px 0 40px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .back-button:hover {
+            background-color: #34495e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .back-button i {
+            margin-right: 8px;
+        }
+        
+        /* Responsive design */
         @media (max-width: 768px) {
-            .process-steps {
-                grid-template-columns: 1fr;
+            .project-header {
+                margin-top: 100px;
+                padding: 0 15px;
             }
             
-            .process-step::after {
-                content: "↓";
-                right: 50%;
-                top: auto;
-                bottom: -20px;
-                transform: translateX(50%);
+            .project-header h1 {
+                font-size: 36px;
+            }
+            
+            .project-content {
+                padding: 0 15px;
+            }
+            
+            .project-section h2 {
+                font-size: 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .project-header h1 {
+                font-size: 28px;
+            }
+            
+            .project-tags {
+                justify-content: center;
+            }
+            
+            .grid-item-filter {
+                font-size: 12px;
+                padding: 4px 8px;
             }
         }
     </style>
 </head>
 <body>
-    <script type="module" src="../script.js"></script>
-    <script type="module" src="../contact.js"></script>
-    
     <div id="app">
         <header>
-            <div class="header-content">
-                <hgroup class="top-bar">
-                    <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
-                    <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
-                    <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
-                    <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.location.href='https://www.linkedin.com/in/royi-rozen/'"></i>
-                </hgroup>
+            <div class="top-bar">
+                <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
+                <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
+                <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
+                <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </div>
         </header>
         
-        <main class="project-page">
+        <main>
+            <!-- PROJECT HEADER -->
             <div class="project-header">
-                <h1>3D User Interface Replication <span class="ui-badge">Spatial Computing</span></h1>
-                <div class="project-meta">
-                    <div class="project-year">2025</div>
-                    <div class="project-tags">
-                        <span class="project-tag">3D</span>
-                        <span class="project-tag">Design</span>
-                        <span class="project-tag">Spatial</span>
-                    </div>
+                <h1>3D UI Replication</h1>
+                <div class="project-tags">
+                    <span class="grid-item-filter">3D</span>
+                    <span class="grid-item-filter">Design</span>
+                    <span class="grid-item-filter">Spatial</span>
+                    <span class="grid-item-filter">Theory</span>
                 </div>
+            </div>
+            
+            <!-- HERO IMAGE -->
+            <div class="hero-image-container">
+                <img src="../neo.png" alt="3D UI Replication Visualization" class="hero-image">
             </div>
             
             <div class="project-content">
-                <div class="project-section">
-                    <h2>Project Overview</h2>
+                <!-- BRIEF OVERVIEW -->
+                <div class="overview-section">
                     <p>
-                        This project involved replicating and visualizing selection and manipulation techniques from the seminal book <strong>"3D User Interfaces: Theory and Practice (Second Edition)"</strong> by Joseph J. LaViola Jr., Ernst Kruijff, Ryan P. McMahan, Doug A. Bowman, and Ivan Poupyrev. By transforming theoretical concepts into sketches and 3D illustrative forms, I created a visual guide that brings these interaction techniques to life.
-                    </p>
-                    
-                    <div class="book-quote">
-                        <p>"An essential guide for anyone developing interfaces for Virtual and Augmented Reality gaming experiences."</p>
-                        <p>—Richard Marks, Director of Magic Lab, Sony PlayStation</p>
-                    </div>
-                    
-                    <div class="image-container">
-                        <img src="../image-placeholder.jpg" alt="3D User Interface Visualization" class="project-image">
-                    </div>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Transforming Theory Into Visual Form</h2>
-                    <p>
-                        The primary goal of this project was to take selection and manipulation techniques described in the book and transform them into visual representations that illustrate how these methods function in three-dimensional space. This process involved:
-                    </p>
-                    
-                    <ul>
-                        <li>Carefully analyzing the theoretical frameworks presented in the book</li>
-                        <li>Identifying key interaction methods suitable for visualization</li>
-                        <li>Creating sketches that capture the essence of each technique</li>
-                        <li>Developing 3D models that demonstrate the spatial relationships and movements</li>
-                        <li>Documenting the process to create a comprehensive visual guide</li>
-                    </ul>
-                    
-                    <p>
-                        By transforming these concepts from text to visual form, I was able to engage with the material on a deeper level and create resources that help others understand these complex spatial interactions.
+                        This project involved replicating and visualizing selection and manipulation techniques from "3D User Interfaces: Theory and Practice" by transforming theoretical concepts into sketches and 3D illustrative forms. Created for Cornell Tech's 3D Interaction Design course, this visual guide brings complex spatial interaction techniques to life through practical implementation.
                     </p>
                 </div>
                 
+                <!-- 3D INTERACTION THEORY -->
                 <div class="project-section">
-                    <h2>Featured Techniques</h2>
+                    <h2>3D Interaction Theory</h2>
                     <p>
-                        The project focused on several key selection and manipulation techniques from the book, including:
+                        The project focused on foundational selection and manipulation techniques including Ray Casting for virtual pointing, Go-Go Technique for non-linear arm extension, HOMER for hand-centered object manipulation, and World-in-Miniature for environment-scale interactions. By carefully analyzing the theoretical frameworks presented in the seminal text, I identified key interaction methods suitable for visualization and created comprehensive visual representations that capture the essence of each technique's spatial relationships and movements.
                     </p>
-                    
-                    <div class="technique-grid">
-                        <div class="technique-item">
-                            <i class="fas fa-hand-pointer technique-icon"></i>
-                            <h3>Ray Casting</h3>
-                            <p>Virtual pointing for distant object selection</p>
-                        </div>
-                        <div class="technique-item">
-                            <i class="fas fa-cube technique-icon"></i>
-                            <h3>Go-Go Technique</h3>
-                            <p>Non-linear arm extension for reaching</p>
-                        </div>
-                        <div class="technique-item">
-                            <i class="fas fa-expand-arrows-alt technique-icon"></i>
-                            <h3>HOMER</h3>
-                            <p>Hand-centered object manipulation</p>
-                        </div>
-                        <div class="technique-item">
-                            <i class="fas fa-hands technique-icon"></i>
-                            <h3>World-in-Miniature</h3>
-                            <p>Manipulating small-scale copy of the environment</p>
-                        </div>
-                    </div>
-                    
-                    <p>
-                        Each technique was analyzed for its strengths, limitations, and optimal use cases within virtual and augmented reality applications.
-                    </p>
+                    <img src="../image17.png" alt="3D Interaction Techniques Diagram" class="section-image">
                 </div>
                 
+                <!-- IMPLEMENTATION -->
                 <div class="project-section">
-                    <h2>Design Process</h2>
+                    <h2>Implementation</h2>
                     <p>
-                        The process of transforming these techniques from theoretical concepts to visual models followed these key steps:
+                        The transformation process involved deep research into existing implementations, creating initial 2D sketches of interaction flows, developing 3D models that demonstrate spatial relationships, and adding animations to show dynamic interactions. Each technique was analyzed for its strengths, limitations, and optimal use cases within virtual and augmented reality applications. The process required translating complex theoretical concepts into visual models that revealed nuances and considerations that might be overlooked when simply reading about these techniques.
                     </p>
-                    
-                    <div class="process-steps">
-                        <div class="process-step">
-                            <div class="step-number">1</div>
-                            <h3>Research</h3>
-                            <p>Deep dive into the literature and existing implementations</p>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-number">2</div>
-                            <h3>Sketching</h3>
-                            <p>Creating initial 2D sketches of interaction flows</p>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-number">3</div>
-                            <h3>Modeling</h3>
-                            <p>Developing 3D representations of each technique</p>
-                        </div>
-                    </div>
-                    
-                    <div class="process-steps">
-                        <div class="process-step">
-                            <div class="step-number">4</div>
-                            <h3>Animation</h3>
-                            <p>Adding motion to demonstrate dynamic interactions</p>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-number">5</div>
-                            <h3>Documentation</h3>
-                            <p>Creating comprehensive visual guides with annotations</p>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-number">6</div>
-                            <h3>Analysis</h3>
-                            <p>Evaluating effectiveness and potential improvements</p>
-                        </div>
-                    </div>
+                    <img src="../image18.png" alt="3D Implementation Process" class="section-image">
                 </div>
                 
+                <!-- LEARNING OUTCOMES -->
                 <div class="project-section">
-                    <h2>Academic Context</h2>
+                    <h2>Learning Outcomes</h2>
                     <p>
-                        This project was developed as a deliverable for the "3D Interaction Design" course at Cornell Tech. The assignment challenged students to engage deeply with foundational literature in the field of 3D user interfaces and to demonstrate understanding through creative visualization.
+                        Replicating these models provided significant value beyond academic completion, offering deeper understanding of theoretical foundations, practical insight into how abstract concepts translate to actual interactions, and experience in communicating complex spatial concepts through visual means. The project serves as a practical reference for designing new spatial interactions and has direct applications to VR application design, AR interaction patterns, spatial computing interfaces, and interactive installation design. This foundation enables better-equipped design of intuitive and effective interfaces for complex spatial applications.
                     </p>
-                    
-                    <p>
-                        By replicating and illustrating these interaction models, I gained:
-                    </p>
-                    
-                    <ul>
-                        <li>A deeper understanding of the theoretical foundations of 3D interaction design</li>
-                        <li>Practical insight into how abstract concepts translate to actual interactions</li>
-                        <li>Experience in communicating complex spatial concepts through visual means</li>
-                        <li>A stronger foundation for designing my own 3D interfaces for future projects</li>
-                    </ul>
-                    
-                    <p>
-                        The project served not only as an academic exercise but also as a practical reference that I continue to use when designing new spatial interactions.
-                    </p>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Value of Replication</h2>
-                    <p>
-                        Replicating models from the book provided significant value beyond simply completing a course assignment:
-                    </p>
-                    
-                    <div class="book-quote">
-                        <p>
-                            Replicating the models from the book really helped as a guideline for the 3D design and allowed me to engage with the material on another level.
-                        </p>
-                    </div>
-                    
-                    <p>
-                        The process of translating complex theoretical concepts into visual models required a deep understanding of both the technical aspects and the user experience implications. This translation process revealed nuances and considerations that might be overlooked when simply reading about these techniques.
-                    </p>
-                    
-                    <p>
-                        Additionally, creating these visual models provides a valuable resource for others learning about 3D interaction design, making abstract concepts more accessible and easier to understand.
-                    </p>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Future Applications</h2>
-                    <p>
-                        The insights gained from this project have direct applications to future work in:
-                    </p>
-                    
-                    <ul>
-                        <li>Virtual reality application design</li>
-                        <li>Augmented reality interaction patterns</li>
-                        <li>Spatial computing interfaces</li>
-                        <li>3D modeling and CAD software interfaces</li>
-                        <li>Interactive installation design</li>
-                    </ul>
-                    
-                    <p>
-                        By thoroughly understanding these foundational interaction techniques, I'm better equipped to design intuitive and effective interfaces for complex spatial applications, potentially combining or extending these methods to create novel interaction paradigms.
-                    </p>
+                    <img src="../image19.png" alt="Learning Outcomes Visualization" class="section-image">
                 </div>
             </div>
             
+            <!-- NAVIGATION -->
             <div class="nav-buttons">
                 <button onclick="window.location.href='../basic.html'" class="back-button">
                     <i class="fas fa-arrow-left"></i> Back to Portfolio
@@ -362,9 +292,9 @@
     
     <footer>
         <div class="footer-content">
-            <i><h6>Copyright © 2024 <em>Royi Rozen</em></h6></i>
+            <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
             <nav class="social-icons">
-                <i class="fa-brands fa-linkedin" style="scale: 2;"></i>
+                <i class="fa-brands fa-linkedin" style="scale: 2;" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </nav>
         </div>
     </footer>
@@ -394,10 +324,41 @@
             <div class="form-divider"></div>
             <div class="form-actions">
                 <button type="submit" class="send-button">Send</button>
-                <div style="clear: both;"></div> <!-- Clear the float -->
+                <div style="clear: both;"></div>
             </div>
             <input type="hidden" name="recipient" value="rr789@cornell.edu">
         </form>
     </div>
+    
+    <script>
+        // Contact form functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactButton = document.getElementById('contact-button');
+            const contactPopup = document.getElementById('contact-popup');
+            const popupClose = document.getElementById('popup-close');
+            const contactForm = document.getElementById('contact-form');
+            
+            contactButton.addEventListener('click', function() {
+                contactPopup.classList.add('active');
+            });
+            
+            popupClose.addEventListener('click', function() {
+                contactPopup.classList.remove('active');
+            });
+            
+            document.addEventListener('click', function(event) {
+                if (!contactPopup.contains(event.target) && !contactButton.contains(event.target)) {
+                    contactPopup.classList.remove('active');
+                }
+            });
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                contactPopup.classList.remove('active');
+                contactForm.reset();
+            });
+        });
+    </script>
 </body>
 </html> 

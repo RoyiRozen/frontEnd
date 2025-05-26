@@ -15,87 +15,280 @@
     <link rel="icon" type="image/x-icon" href="https://instructure-uploads.s3.amazonaws.com/account_97130000000000001/attachments/29724/cornellfac.ico" />
     
     <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Clean, centered layout */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        #app {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        header, main, footer {
+            width: 100%;
+        }
+        
+        /* Project header styling */
+        .project-header {
+            margin-top: 120px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .project-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .grid-item-filter {
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Hero video container */
+        .video-container {
+            width: 100%;
+            margin: 40px 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+        }
+        
+        .video-embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Main content styling */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .project-content {
+            width: 100%;
+            max-width: 800px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        
+        /* Project sections */
+        .project-section {
+            margin: 40px 0;
+            text-align: left;
+        }
+        
+        .project-section h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .project-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Section images */
+        .section-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            display: block;
+        }
+        
+        /* Overview section styling */
+        .overview-section {
+            background-color: #f8f9fa;
+            border-left: 4px solid #e74c3c;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        .overview-section p {
+            margin-bottom: 0;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+        
+        /* Navigation buttons */
+        .nav-buttons {
+            margin: 60px 0 40px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .back-button:hover {
+            background-color: #34495e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .back-button i {
+            margin-right: 8px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .project-header {
+                margin-top: 100px;
+                padding: 0 15px;
+            }
+            
+            .project-header h1 {
+                font-size: 36px;
+            }
+            
+            .project-content {
+                padding: 0 15px;
+            }
+            
+            .project-section h2 {
+                font-size: 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .project-header h1 {
+                font-size: 28px;
+            }
+            
+            .project-tags {
+                justify-content: center;
+            }
+            
+            .grid-item-filter {
+                font-size: 12px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <script type="module" src="../script.js"></script>
-    <script type="module" src="../contact.js"></script>
-    
     <div id="app">
         <header>
-            <div class="header-content">
-                <hgroup class="top-bar">
-                    <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
-                    <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
-                    <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
-                    <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.location.href='https://www.linkedin.com/in/royi-rozen/'"></i>
-                </hgroup>
+            <div class="top-bar">
+                <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
+                <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
+                <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
+                <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </div>
         </header>
         
-        <main class="project-page">
+        <main>
+            <!-- PROJECT HEADER -->
             <div class="project-header">
                 <h1>Hybrid Image + Feature Detection</h1>
-                <div class="project-meta">
-                    <div class="project-year">2025</div>
-                    <div class="project-tags">
-                        <span class="project-tag">AI</span>
-                        <span class="project-tag">Computer Vision</span>
-                        <span class="project-tag">Development</span>
-                    </div>
+                <div class="project-tags">
+                    <span class="grid-item-filter">AI</span>
+                    <span class="grid-item-filter">CV</span>
+                    <span class="grid-item-filter">Development</span>
+                    <span class="grid-item-filter">2D</span>
+                    <span class="grid-item-filter">Creative</span>
                 </div>
+            </div>
+            
+            <!-- HERO VIDEO -->
+            <div class="video-container">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             
             <div class="project-content">
-                <div class="project-gallery" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-                    <img src="../feature.jpeg" alt="Feature Detection Example" class="project-image" style="max-width: 48%; flex-basis: 48%;">
-                    <img src="../hybrid_image_example.jpg" alt="Hybrid Image Example" class="project-image" style="max-width: 48%; flex-basis: 48%;">
+                <!-- BRIEF OVERVIEW -->
+                <div class="overview-section">
+                    <p>
+                        This computer vision project explores two fascinating areas: Hybrid Images that reveal different content based on viewing distance, and real-time Feature Detection for tracking key points in images and video streams. Built with Python, OpenCV, and TensorFlow, it demonstrates advanced algorithms for visual perception experiments and practical AR applications.
+                    </p>
                 </div>
                 
-                <div class="project-description">
-                    <h2>Project Overview</h2>
+                <!-- HYBRID IMAGE TECHNOLOGY -->
+                <div class="project-section">
+                    <h2>Hybrid Image Technology</h2>
                     <p>
-                        This project explores two fascinating areas of computer vision: <strong>Hybrid Images</strong> and <strong>Feature Detection</strong>. Hybrid images are a visual phenomenon where an image can be interpreted in two different ways depending on the viewing distance, typically by blending a low-frequency image with a high-frequency one. Feature Detection involves identifying and tracking key points and features within images and video streams in real-time, a cornerstone for applications like facial recognition, object tracking, and augmented reality.
+                        Hybrid images demonstrate the scale-dependent nature of human visual perception by combining low spatial frequencies of one image with high spatial frequencies of another. Using Gaussian filters to separate and merge frequency components, the system creates composite images that reveal different details at different viewing distances. Close up, high-frequency details dominate, while from afar, low-frequency components become apparent, creating a fascinating visual illusion that showcases the complexity of human perception.
                     </p>
-
-                    <h2>Hybrid Images</h2>
+                    <img src="../feature.jpeg" alt="Hybrid Image Example" class="section-image">
+                </div>
+                
+                <!-- REAL-TIME FEATURE DETECTION -->
+                <div class="project-section">
+                    <h2>Real-Time Feature Detection</h2>
                     <p>
-                        Hybrid images demonstrate the scale-dependent nature of human visual perception. By combining the low spatial frequencies of one image with the high spatial frequencies of another, we create a composite image that reveals different details at different viewing distances. Close up, the high-frequency details (e.g., fine textures, sharp edges from one source image) dominate, while from afar, the low-frequency components (e.g., the general shape and shading from another source image) become more apparent. This project involved implementing algorithms to create such images, typically using Gaussian filters to separate and then merge the frequency components.
+                        The feature detection system employs multiple computer vision algorithms including SIFT, SURF, and modern deep learning approaches to identify stable key points in real-time video streams. The pipeline includes pre-processing for noise reduction, feature extraction using both classical CV algorithms and neural networks, feature matching across frames, and pose estimation for AR applications. This technology enables applications from facial recognition to object tracking and augmented reality marker detection with minimal latency.
                     </p>
-                    
-                    <h2>Feature Detection</h2>
+                    <img src="../image2.png" alt="Feature Detection Process" class="section-image">
+                </div>
+                
+                <!-- PRACTICAL APPLICATIONS -->
+                <div class="project-section">
+                    <h2>Practical Applications</h2>
                     <p>
-                        Feature Detection is a computer vision system developed to identify and track key points and features within images and video streams in real-time. This technology enables a wide range of applications from facial recognition to object tracking and augmented reality experiences.
+                        The combined technologies have been successfully applied across multiple domains including augmented reality marker tracking, object recognition in industrial settings, medical imaging analysis, and motion tracking for interactive installations. The robust feature detection enables accurate pose estimation and object recognition regardless of scaling, rotation, or lighting changes, while hybrid images provide unique opportunities for creating engaging visual experiences that challenge perception and demonstrate the sophisticated nature of human visual processing.
                     </p>
-                    
-                    <h2>Technical Details</h2>
-                    <p>
-                        The system employs multiple computer vision algorithms including SIFT (Scale-Invariant Feature Transform), SURF (Speeded-Up Robust Features), and modern deep learning approaches to detect stable key points that can be recognized regardless of scaling, rotation, or lighting changes.
-                    </p>
-                    
-                    <h2>Implementation</h2>
-                    <p>
-                        Built using Python with OpenCV and TensorFlow, the system processes both static images and live video streams with minimal latency. The feature detection pipeline includes:
-                    </p>
-                    <ul>
-                        <li>Pre-processing for noise reduction and normalization</li>
-                        <li>Feature extraction using both classical CV algorithms and neural networks</li>
-                        <li>Feature matching and tracking across frames</li>
-                        <li>Pose estimation for AR applications</li>
-                    </ul>
-                    
-                    <h2>Applications</h2>
-                    <p>
-                        This technology has been applied in several domains:
-                    </p>
-                    <ul>
-                        <li>Augmented reality marker tracking</li>
-                        <li>Object recognition in industrial settings</li>
-                        <li>Medical imaging analysis</li>
-                        <li>Motion tracking for interactive installations</li>
-                    </ul>
+                    <img src="../image1.png" alt="Computer Vision Applications" class="section-image">
                 </div>
             </div>
             
+            <!-- NAVIGATION -->
             <div class="nav-buttons">
                 <button onclick="window.location.href='../basic.html'" class="back-button">
                     <i class="fas fa-arrow-left"></i> Back to Portfolio
@@ -108,7 +301,7 @@
         <div class="footer-content">
             <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
             <nav class="social-icons">
-                <i class="fa-brands fa-linkedin" style="scale: 2;"></i>
+                <i class="fa-brands fa-linkedin" style="scale: 2;" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </nav>
         </div>
     </footer>
@@ -138,10 +331,41 @@
             <div class="form-divider"></div>
             <div class="form-actions">
                 <button type="submit" class="send-button">Send</button>
-                <div style="clear: both;"></div> <!-- Clear the float -->
+                <div style="clear: both;"></div>
             </div>
             <input type="hidden" name="recipient" value="rr789@cornell.edu">
         </form>
     </div>
+    
+    <script>
+        // Contact form functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactButton = document.getElementById('contact-button');
+            const contactPopup = document.getElementById('contact-popup');
+            const popupClose = document.getElementById('popup-close');
+            const contactForm = document.getElementById('contact-form');
+            
+            contactButton.addEventListener('click', function() {
+                contactPopup.classList.add('active');
+            });
+            
+            popupClose.addEventListener('click', function() {
+                contactPopup.classList.remove('active');
+            });
+            
+            document.addEventListener('click', function(event) {
+                if (!contactPopup.contains(event.target) && !contactButton.contains(event.target)) {
+                    contactPopup.classList.remove('active');
+                }
+            });
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                contactPopup.classList.remove('active');
+                contactForm.reset();
+            });
+        });
+    </script>
 </body>
 </html> 

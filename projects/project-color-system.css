@@ -1,0 +1,41 @@
+/* PROJECT COLOR SYSTEM - Consistent border colors for overview sections */
+
+/* AR Projects - Green */
+.ar-project .overview-section {
+    border-left: 4px solid #27ae60;
+}
+
+/* VR Projects - Blue */
+.vr-project .overview-section {
+    border-left: 4px solid #3498db;
+}
+
+/* AI Projects - Purple */
+.ai-project .overview-section {
+    border-left: 4px solid #8e44ad;
+}
+
+/* Creative Projects - Orange */
+.creative-project .overview-section {
+    border-left: 4px solid #e67e22;
+}
+
+/* Development/Technical Projects - Red */
+.dev-project .overview-section {
+    border-left: 4px solid #e74c3c;
+}
+
+/* Health/Medical Projects - Teal */
+.health-project .overview-section {
+    border-left: 4px solid #16a085;
+}
+
+/* Data/Research Projects - Dark Blue */
+.data-project .overview-section {
+    border-left: 4px solid #2c3e50;
+}
+
+/* Default fallback */
+.overview-section {
+    border-left: 4px solid #34495e;
+} 

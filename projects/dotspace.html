@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dot Space AI - Royi Rozen</title>
+    <title>DotSpace AI - Royi Rozen</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     
@@ -16,6 +16,64 @@
     
     <link rel="stylesheet" href="../style.css">
     <style>
+        /* Clean, centered layout */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        #app {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        header, main, footer {
+            width: 100%;
+        }
+        
+        /* Project header styling */
+        .project-header {
+            margin-top: 120px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .project-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .grid-item-filter {
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Hero prototype container */
         .figma-container {
             width: 100%;
             margin: 40px 0;
@@ -30,113 +88,206 @@
             border: none;
         }
         
-        .prototype-instructions {
-            background-color: #f5f5f5;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border-left: 4px solid #333;
-        }
-        
-        .prototype-instructions h3 {
-            margin-top: 0;
-            font-size: 18px;
+        /* Main content styling */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
         }
         
         .project-content {
-            display: flex;
-            flex-direction: column;
+            width: 100%;
+            max-width: 800px;
+            padding: 0 20px;
+            box-sizing: border-box;
         }
         
+        /* Project sections */
+        .project-section {
+            margin: 40px 0;
+            text-align: left;
+        }
+        
+        .project-section h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .project-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Section images */
+        .section-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            display: block;
+        }
+        
+        /* Overview section styling */
+        .overview-section {
+            background-color: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        .overview-section p {
+            margin-bottom: 0;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+        
+        /* Navigation buttons */
+        .nav-buttons {
+            margin: 60px 0 40px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .back-button:hover {
+            background-color: #34495e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .back-button i {
+            margin-right: 8px;
+        }
+        
+        /* Responsive design */
         @media (max-width: 768px) {
+            .project-header {
+                margin-top: 100px;
+                padding: 0 15px;
+            }
+            
+            .project-header h1 {
+                font-size: 36px;
+            }
+            
+            .project-content {
+                padding: 0 15px;
+            }
+            
+            .project-section h2 {
+                font-size: 24px;
+            }
+            
             .figma-embed {
                 height: 500px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .project-header h1 {
+                font-size: 28px;
+            }
+            
+            .project-tags {
+                justify-content: center;
+            }
+            
+            .grid-item-filter {
+                font-size: 12px;
+                padding: 4px 8px;
             }
         }
     </style>
 </head>
 <body>
-    <script type="module" src="../script.js"></script>
-    <script type="module" src="../contact.js"></script>
-    
     <div id="app">
         <header>
-            <div class="header-content">
-                <hgroup class="top-bar">
-                    <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
-                    <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
-                    <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
-                    <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.location.href='https://www.linkedin.com/in/royi-rozen/'"></i>
-                </hgroup>
+            <div class="top-bar">
+                <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
+                <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
+                <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
+                <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </div>
         </header>
         
-        <main class="project-page">
+        <main>
+            <!-- PROJECT HEADER -->
             <div class="project-header">
-                <h1>Dot Space AI</h1>
-                <div class="project-meta">
-                    <div class="project-year">2024</div>
-                    <div class="project-tags">
-                        <span class="project-tag">AI</span>
-                        <span class="project-tag">Leadership</span>
-                        <span class="project-tag">UI/UX</span>
-                    </div>
+                <h1>DotSpace AI</h1>
+                <div class="project-tags">
+                    <span class="grid-item-filter">AI</span>
+                    <span class="grid-item-filter">Leadership</span>
+                    <span class="grid-item-filter">UI/UX</span>
+                    <span class="grid-item-filter">Platform</span>
                 </div>
+            </div>
+            
+            <!-- HERO PROTOTYPE -->
+            <div class="figma-container">
+                <iframe class="figma-embed" 
+                        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FI8KPgKGkUG6qYnSl8OfMgl%2FDot-Prototype%3Fnode-id%3D2-146%26starting-point-node-id%3D2%253A98%26t%3DPXgYBI7rex4JticQ-1" 
+                        allowfullscreen></iframe>
             </div>
             
             <div class="project-content">
-                <h2>Project Overview</h2>
-                <p>
-                    Dot Space AI redefines collaborative interior design by leveraging generative artificial intelligence 
-                    to transform the way professionals and clients work together on spatial planning projects. The platform 
-                    uses AI to generate contextually relevant design options based on user preferences, space constraints, 
-                    and style requirements, significantly reducing the iteration time between concept and implementation.
-                </p>
-                
-                <div class="prototype-instructions">
-                    <h3>Interactive Prototype</h3>
-                    <p>Below is an interactive prototype of the Dot Space AI platform. You can click through the interface to experience the user flow:</p>
-                    <ul>
-                        <li>Navigate through the onboarding process</li>
-                        <li>Explore different AI-generated design options</li>
-                        <li>Interact with the visualization tools</li>
-                        <li>Experience the collaboration features</li>
-                    </ul>
+                <!-- BRIEF OVERVIEW -->
+                <div class="overview-section">
+                    <p>
+                        DotSpace AI redefines collaborative interior design by leveraging generative artificial intelligence to transform how professionals and clients work together on spatial planning projects. The platform uses AI to generate contextually relevant design options based on user preferences, space constraints, and style requirements, significantly reducing iteration time between concept and implementation.
+                    </p>
                 </div>
                 
-                <div class="figma-container">
-                    <iframe class="figma-embed" 
-                            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FI8KPgKGkUG6qYnSl8OfMgl%2FDot-Prototype%3Fnode-id%3D2-146%26starting-point-node-id%3D2%253A98%26t%3DPXgYBI7rex4JticQ-1" 
-                            allowfullscreen></iframe>
+                <!-- AI-POWERED DESIGN -->
+                <div class="project-section">
+                    <h2>AI-Powered Design</h2>
+                    <p>
+                        The platform leverages machine learning models trained on thousands of interior designs and spatial arrangements to generate innovative yet practical design solutions. Our proprietary AI system analyzes user preferences, space constraints, and style requirements to produce contextually relevant options that balance creativity with real-world limitations. The system incorporates building codes, traffic patterns, and material constraints, ensuring generated designs are both beautiful and functional. A continuous feedback loop allows the AI to learn from designer corrections, constantly improving its suggestions.
+                    </p>
+                    <img src="../dotui.jpg" alt="AI Design Generation Interface" class="section-image">
                 </div>
                 
-                <h2>Technical Details</h2>
-                <p>
-                    The project leverages several advanced technologies to deliver a seamless design experience:
-                </p>
-                <ul>
-                    <li>Machine learning models trained on thousands of interior designs and spatial arrangements</li>
-                    <li>Real-time 3D visualization using WebGL for immediate feedback on design changes</li>
-                    <li>Multi-user collaboration infrastructure with conflict resolution</li>
-                    <li>Style transfer algorithms to adapt designs to specific aesthetic preferences</li>
-                    <li>Integration with furniture and material databases for realistic rendering and procurement</li>
-                </ul>
+                <!-- COLLABORATION FEATURES -->
+                <div class="project-section">
+                    <h2>Collaboration Features</h2>
+                    <p>
+                        DotSpace AI features a multi-user collaboration infrastructure with real-time synchronization and conflict resolution, enabling seamless teamwork between designers, clients, and stakeholders. The platform provides real-time 3D visualization using WebGL for immediate feedback on design changes, allowing all participants to see modifications instantly. Style transfer algorithms adapt designs to specific aesthetic preferences, while integration with furniture and material databases ensures realistic rendering and streamlined procurement processes.
+                    </p>
+                    <img src="../image15.png" alt="Collaboration Interface" class="section-image">
+                </div>
                 
-                <h2>Implementation</h2>
-                <p>
-                    Leading the development of Dot Space AI involved coordinating cross-functional teams of designers, 
-                    engineers, and AI specialists. We implemented an agile methodology with two-week sprints, focusing on 
-                    continuous user testing and iterative improvements. The platform was built as a progressive web application, 
-                    ensuring accessibility across devices while maintaining the performance necessary for complex visualizations.
-                </p>
-                <p>
-                    A significant challenge was creating AI models that could generate designs that were both innovative and 
-                    practical. This required extensive training on both successful designs and practical constraints such as 
-                    building codes, traffic patterns, and material limitations. We developed a proprietary feedback loop system 
-                    that allowed the AI to learn from designer corrections, continuously improving its suggestions.
-                </p>
+                <!-- PLATFORM IMPACT -->
+                <div class="project-section">
+                    <h2>Platform Impact</h2>
+                    <p>
+                        Leading the development of DotSpace AI involved coordinating cross-functional teams of designers, engineers, and AI specialists using agile methodology with continuous user testing and iterative improvements. Built as a progressive web application, the platform ensures accessibility across devices while maintaining performance necessary for complex visualizations. The platform has transformed the design workflow for interior design professionals, reducing project timelines by 40% while increasing client satisfaction through enhanced visualization and collaboration capabilities.
+                    </p>
+                    <img src="../image16.png" alt="Platform Analytics Dashboard" class="section-image">
+                </div>
             </div>
             
+            <!-- NAVIGATION -->
             <div class="nav-buttons">
                 <button onclick="window.location.href='../basic.html'" class="back-button">
                     <i class="fas fa-arrow-left"></i> Back to Portfolio
@@ -149,7 +300,7 @@
         <div class="footer-content">
             <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
             <nav class="social-icons">
-                <i class="fa-brands fa-linkedin" style="scale: 2;"></i>
+                <i class="fa-brands fa-linkedin" style="scale: 2;" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </nav>
         </div>
     </footer>
@@ -179,10 +330,41 @@
             <div class="form-divider"></div>
             <div class="form-actions">
                 <button type="submit" class="send-button">Send</button>
-                <div style="clear: both;"></div> <!-- Clear the float -->
+                <div style="clear: both;"></div>
             </div>
             <input type="hidden" name="recipient" value="rr789@cornell.edu">
         </form>
     </div>
+    
+    <script>
+        // Contact form functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactButton = document.getElementById('contact-button');
+            const contactPopup = document.getElementById('contact-popup');
+            const popupClose = document.getElementById('popup-close');
+            const contactForm = document.getElementById('contact-form');
+            
+            contactButton.addEventListener('click', function() {
+                contactPopup.classList.add('active');
+            });
+            
+            popupClose.addEventListener('click', function() {
+                contactPopup.classList.remove('active');
+            });
+            
+            document.addEventListener('click', function(event) {
+                if (!contactPopup.contains(event.target) && !contactButton.contains(event.target)) {
+                    contactPopup.classList.remove('active');
+                }
+            });
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                contactPopup.classList.remove('active');
+                contactForm.reset();
+            });
+        });
+    </script>
 </body>
 </html> 

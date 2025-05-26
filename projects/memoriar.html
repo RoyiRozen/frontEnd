@@ -16,6 +16,64 @@
     
     <link rel="stylesheet" href="../style.css">
     <style>
+        /* Clean, centered layout */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        #app {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        header, main, footer {
+            width: 100%;
+        }
+        
+        /* Project header styling */
+        .project-header {
+            margin-top: 120px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .project-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .grid-item-filter {
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Hero video container */
         .video-container {
             width: 100%;
             margin: 40px 0;
@@ -36,190 +94,199 @@
             border: none;
         }
         
-        .memorial-badge {
-            display: inline-block;
-            background-color: #333;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-weight: bold;
-            margin-left: 10px;
-            font-size: 0.8em;
-            vertical-align: middle;
-        }
-        
-        .memorial-highlight {
-            background-color: #f8f9fa;
-            border-left: 4px solid #7030a0;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-        
-        .project-section {
-            margin: 30px 0;
-        }
-        
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }
-        
-        .tech-item {
-            background-color: #f5f5f5;
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
+        /* Main content styling */
+        main {
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: 100%;
+        }
+        
+        .project-content {
+            width: 100%;
+            max-width: 800px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        
+        /* Project sections */
+        .project-section {
+            margin: 40px 0;
+            text-align: left;
+        }
+        
+        .project-section h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .project-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Section images */
+        .section-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            display: block;
+        }
+        
+        /* Overview section styling */
+        .overview-section {
+            background-color: #f8f9fa;
+            border-left: 4px solid #7030a0;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        .overview-section p {
+            margin-bottom: 0;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+        
+        /* Navigation buttons */
+        .nav-buttons {
+            margin: 60px 0 40px;
+            width: 100%;
+            display: flex;
             justify-content: center;
         }
         
-        .tech-icon {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #555;
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
+        .back-button:hover {
+            background-color: #34495e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .back-button i {
+            margin-right: 8px;
+        }
+        
+        /* Responsive design */
         @media (max-width: 768px) {
-            .tech-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .project-header {
+                margin-top: 100px;
+                padding: 0 15px;
+            }
+            
+            .project-header h1 {
+                font-size: 36px;
+            }
+            
+            .project-content {
+                padding: 0 15px;
+            }
+            
+            .project-section h2 {
+                font-size: 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .project-header h1 {
+                font-size: 28px;
+            }
+            
+            .project-tags {
+                justify-content: center;
+            }
+            
+            .grid-item-filter {
+                font-size: 12px;
+                padding: 4px 8px;
             }
         }
     </style>
 </head>
 <body>
-    <script type="module" src="../script.js"></script>
-    <script type="module" src="../contact.js"></script>
-    
     <div id="app">
         <header>
-            <div class="header-content">
-                <hgroup class="top-bar">
-                    <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
-                    <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
-                    <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
-                    <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.location.href='https://www.linkedin.com/in/royi-rozen/'"></i>
-                </hgroup>
+            <div class="top-bar">
+                <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
+                <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
+                <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
+                <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </div>
         </header>
         
-        <main class="project-page">
+        <main>
+            <!-- PROJECT HEADER -->
             <div class="project-header">
-                <h1>MemoriAR <span class="memorial-badge">Memorial Platform</span></h1>
-                <div class="project-meta">
-                    <div class="project-year">2023</div>
-                    <div class="project-tags">
-                        <span class="project-tag">AR</span>
-                        <span class="project-tag">Creative</span>
-                        <span class="project-tag">Unity</span>
-                    </div>
+                <h1>MemoriAR</h1>
+                <div class="project-tags">
+                    <span class="grid-item-filter">AR</span>
+                    <span class="grid-item-filter">Creative</span>
+                    <span class="grid-item-filter">Product</span>
                 </div>
+            </div>
+            
+            <!-- HERO VIDEO -->
+            <div class="video-container">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/pjVrcV7dmxI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             
             <div class="project-content">
-                <div class="project-section">
-                    <h2>Project Overview</h2>
+                <!-- BRIEF OVERVIEW -->
+                <div class="overview-section">
                     <p>
-                        MemoriAR is a response to the Hamas attack on Israel on October 7th, 2023. In the face of tragedy, 
-                        we harnessed our technical expertise to create something meaningful—a memorial platform that enables 
-                        family members to cherish and preserve the memories of their loved ones through augmented reality.
-                    </p>
-                    
-                    <div class="memorial-highlight">
-                        <p>
-                            <strong>A New Way to Keep Memories Alive:</strong> MemoriAR represents a profound reimagining of how we 
-                            preserve and honor memories, allowing families to create persistent, location-based augmented reality 
-                            memorials that can be visited and experienced by anyone with a mobile device.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="video-container">
-                    <iframe class="video-embed" src="https://www.youtube.com/embed/pjVrcV7dmxI" title="MemoriAR Demo Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Technical Implementation</h2>
-                    <p>
-                        The MemoriAR platform was built using Unity as our primary development environment. To create 
-                        compelling and respectful memorial experiences, we combined several technologies:
-                    </p>
-                    
-                    <div class="tech-grid">
-                        <div class="tech-item">
-                            <i class="fab fa-unity tech-icon"></i>
-                            <span>Unity</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-cube tech-icon"></i>
-                            <span>Blender</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-map-marker-alt tech-icon"></i>
-                            <span>ARCore</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-globe tech-icon"></i>
-                            <span>Geospatial API</span>
-                        </div>
-                    </div>
-                    
-                    <p>
-                        We used Blender for creating 3D assets and animations that represented memories in a tasteful and 
-                        meaningful way. These assets were then integrated into Unity to create the augmented reality experience. 
-                        The Google Geospatial API enabled us to accurately place memorials in specific locations, allowing 
-                        visitors to experience them exactly where they were intended to be.
-                    </p>
-                    <p>
-                        This proof of concept demonstrates how AR can be used not just for entertainment or commercial 
-                        purposes, but as a powerful medium for remembrance and healing.
+                        MemoriAR is a location-based augmented reality memorial platform created in response to the October 7th, 2023 tragedy. This meaningful application enables families to preserve and honor memories of loved ones through persistent AR experiences, allowing visitors to encounter digital memorials at specific physical locations using mobile devices.
                     </p>
                 </div>
                 
+                <!-- DIGITAL MEMORIAL CONCEPT -->
                 <div class="project-section">
-                    <h2>Features</h2>
-                    <ul>
-                        <li><strong>Location-Based Memorials:</strong> Place digital memorials at meaningful physical locations</li>
-                        <li><strong>Memory Artifacts:</strong> Upload photos, videos, and 3D objects that represent the person's life</li>
-                        <li><strong>Personal Stories:</strong> Record and share stories and memories that visitors can experience</li>
-                        <li><strong>Collective Remembrance:</strong> Allow visitors to leave messages or tokens of remembrance</li>
-                        <li><strong>Persistent Experience:</strong> Memorials remain accessible indefinitely, creating a lasting tribute</li>
-                    </ul>
+                    <h2>Digital Memorial Concept</h2>
+                    <p>
+                        Traditional memorials are limited by physical space and accessibility, often requiring visitors to travel to specific locations that may not hold personal significance. MemoriAR reimagines memorial experiences by allowing families to create persistent, location-based augmented reality tributes that can be placed at meaningful locations - a favorite park, family home, or place of significance. These digital memorials include photos, videos, 3D objects, recorded stories, and interactive elements that preserve not just memories but the essence of a person's life, creating lasting connections between physical spaces and cherished memories.
+                    </p>
+                    <img src="../memorial.jpg" alt="AR Memorial Experience" class="section-image">
                 </div>
                 
+                <!-- COMMUNITY HEALING -->
                 <div class="project-section">
-                    <h2>Impact & Recognition</h2>
+                    <h2>Community Healing</h2>
                     <p>
-                        MemoriAR was presented at the Google Geospatial Creator Hackathon, where it was recognized for 
-                        its innovative approach to memory preservation and its sensitive response to a real-world tragedy. 
-                        The project received significant interest from community organizations and memorial foundations.
+                        MemoriAR serves as both a personal healing tool and a community platform for collective remembrance. Visitors can leave messages, virtual flowers, or tokens of remembrance that become part of the memorial experience, creating a shared space for grief and healing. The platform enables families to invite others to contribute memories and stories, building comprehensive digital archives that capture the full impact of a person's life. This collaborative approach transforms individual loss into community support, providing comfort through shared remembrance and ensuring that important stories are preserved for future generations.
                     </p>
-                    <p>
-                        While initially conceived as a response to the October 7th attacks, the platform has the potential 
-                        to serve as a universal tool for remembrance, applicable to various contexts where preserving 
-                        personal and collective memory is important.
-                    </p>
+                    <img src="../image20.jpg" alt="Community Memorial Features" class="section-image">
                 </div>
                 
+                <!-- TECHNICAL INNOVATION -->
                 <div class="project-section">
-                    <h2>Future Development</h2>
+                    <h2>Technical Innovation</h2>
                     <p>
-                        Moving forward, we are exploring partnerships with memorial institutions and community organizations 
-                        to expand the reach and impact of MemoriAR. Key areas of development include:
+                        Built using Unity with Google Geospatial API for precise location anchoring, MemoriAR ensures memorial experiences remain exactly where families place them, accessible to anyone with the application. The platform uses advanced AR tracking to maintain stable placement of digital content in real-world environments, while cloud-based storage ensures memorials persist indefinitely. The application was recognized at the Google Geospatial Creator Hackathon for its innovative approach to memory preservation and sensitive response to real-world tragedy, demonstrating how AR technology can serve meaningful purposes beyond entertainment and commerce.
                     </p>
-                    <ul>
-                        <li>Enhanced content creation tools for families with limited technical expertise</li>
-                        <li>Integration with historical archives and databases</li>
-                        <li>Multilingual support to serve diverse communities</li>
-                        <li>Accessibility features to ensure everyone can experience the memorials</li>
-                    </ul>
+                    <img src="../image15.png" alt="Technical Implementation" class="section-image">
                 </div>
             </div>
             
+            <!-- NAVIGATION -->
             <div class="nav-buttons">
                 <button onclick="window.location.href='../basic.html'" class="back-button">
                     <i class="fas fa-arrow-left"></i> Back to Portfolio
@@ -232,7 +299,7 @@
         <div class="footer-content">
             <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
             <nav class="social-icons">
-                <i class="fa-brands fa-linkedin" style="scale: 2;"></i>
+                <i class="fa-brands fa-linkedin" style="scale: 2;" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </nav>
         </div>
     </footer>
@@ -262,10 +329,41 @@
             <div class="form-divider"></div>
             <div class="form-actions">
                 <button type="submit" class="send-button">Send</button>
-                <div style="clear: both;"></div> <!-- Clear the float -->
+                <div style="clear: both;"></div>
             </div>
             <input type="hidden" name="recipient" value="rr789@cornell.edu">
         </form>
     </div>
+    
+    <script>
+        // Contact form functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactButton = document.getElementById('contact-button');
+            const contactPopup = document.getElementById('contact-popup');
+            const popupClose = document.getElementById('popup-close');
+            const contactForm = document.getElementById('contact-form');
+            
+            contactButton.addEventListener('click', function() {
+                contactPopup.classList.add('active');
+            });
+            
+            popupClose.addEventListener('click', function() {
+                contactPopup.classList.remove('active');
+            });
+            
+            document.addEventListener('click', function(event) {
+                if (!contactPopup.contains(event.target) && !contactButton.contains(event.target)) {
+                    contactPopup.classList.remove('active');
+                }
+            });
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                contactPopup.classList.remove('active');
+                contactForm.reset();
+            });
+        });
+    </script>
 </body>
 </html> 

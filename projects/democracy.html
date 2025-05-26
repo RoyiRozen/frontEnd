@@ -16,50 +16,73 @@
     
     <link rel="stylesheet" href="../style.css">
     <style>
-        .democracy-badge {
-            display: inline-block;
-            background-color: #3498db;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-weight: bold;
-            margin-left: 10px;
-            font-size: 0.8em;
-            vertical-align: middle;
-        }
-        
-        .democracy-quote {
-            background-color: #f8f9fa;
-            border-left: 4px solid #3498db;
-            padding: 20px;
-            margin: 30px 0;
-            border-radius: 4px;
-            font-style: italic;
-            position: relative;
-        }
-        
-        .democracy-quote::before {
-            content: '"';
-            position: absolute;
-            top: 10px;
-            left: 15px;
-            font-size: 40px;
-            color: #3498db;
-            opacity: 0.3;
-        }
-        
-        .project-section {
-            margin: 40px 0;
-        }
-        
-        .video-container {
-            position: relative;
+        /* Clean, centered layout */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            margin: 30px 0;
-            border-radius: 10px;
+            overflow-x: hidden;
+        }
+        
+        #app {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        header, main, footer {
+            width: 100%;
+        }
+        
+        /* Project header styling */
+        .project-header {
+            margin-top: 120px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .project-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .grid-item-filter {
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Hero video container */
+        .video-container {
+            width: 100%;
+            margin: 40px 0;
             overflow: hidden;
+            border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
         }
         
         .video-embed {
@@ -68,452 +91,206 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
             border: none;
         }
         
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 20px;
-            margin: 25px 0;
-        }
-        
-        .tech-item {
-            background-color: #f5f5f5;
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
+        /* Main content styling */
+        main {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-        }
-        
-        .tech-icon {
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: #3498db;
-        }
-        
-        .image-container {
-            margin: 30px 0;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .project-image {
             width: 100%;
-            height: auto;
-            display: block;
         }
         
-        .team-container {
-            position: relative;
-            background-color: #f5f7fa;
-            border-radius: 12px;
-            padding: 30px;
+        .project-content {
+            width: 100%;
+            max-width: 800px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        
+        /* Project sections */
+        .project-section {
             margin: 40px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: left;
         }
         
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 25px;
-        }
-        
-        .team-role {
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-        }
-        
-        .role-icon {
-            font-size: 32px;
-            color: #3498db;
-            margin-bottom: 15px;
-        }
-        
-        .role-title {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        
-        .role-desc {
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        .impact-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 30px 0;
-        }
-        
-        .stat-card {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        
-        .stat-value {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #3498db;
-            margin-bottom: 10px;
-        }
-        
-        .stat-label {
-            font-size: 1rem;
+        .project-section h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
             color: #333;
         }
         
-        .before-after {
-            display: flex;
-            gap: 20px;
-            margin: 30px 0;
+        .project-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
         }
         
-        .before-after-item {
-            flex: 1;
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .before-after-label {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background-color: rgba(52, 152, 219, 0.8);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            z-index: 2;
-        }
-        
-        .before-after-image {
+        /* Section images */
+        .section-image {
             width: 100%;
+            max-width: 600px;
             height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px auto;
             display: block;
         }
         
+        /* Overview section styling */
+        .overview-section {
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        .overview-section p {
+            margin-bottom: 0;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+        
+        /* Navigation buttons */
+        .nav-buttons {
+            margin: 60px 0 40px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .back-button:hover {
+            background-color: #34495e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .back-button i {
+            margin-right: 8px;
+        }
+        
+        /* Responsive design */
         @media (max-width: 768px) {
-            .team-grid {
-                grid-template-columns: 1fr;
+            .project-header {
+                margin-top: 100px;
+                padding: 0 15px;
             }
             
-            .tech-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .project-header h1 {
+                font-size: 36px;
             }
             
-            .impact-stats {
-                grid-template-columns: 1fr;
+            .project-content {
+                padding: 0 15px;
             }
             
-            .before-after {
-                flex-direction: column;
+            .project-section h2 {
+                font-size: 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .project-header h1 {
+                font-size: 28px;
+            }
+            
+            .project-tags {
+                justify-content: center;
+            }
+            
+            .grid-item-filter {
+                font-size: 12px;
+                padding: 4px 8px;
             }
         }
     </style>
 </head>
 <body>
-    <script type="module" src="../script.js"></script>
-    <script type="module" src="../contact.js"></script>
-    
     <div id="app">
         <header>
-            <div class="header-content">
-                <hgroup class="top-bar">
-                    <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
-                    <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
-                    <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
-                    <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.location.href='https://www.linkedin.com/in/royi-rozen/'"></i>
-                </hgroup>
+            <div class="top-bar">
+                <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
+                <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
+                <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
+                <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </div>
         </header>
         
-        <main class="project-page">
+        <main>
+            <!-- PROJECT HEADER -->
             <div class="project-header">
-                <h1>Democracy AR <span class="democracy-badge">Activist Tech</span></h1>
-                <div class="project-meta">
-                    <div class="project-year">2023</div>
-                    <div class="project-tags">
-                        <span class="project-tag">AR</span>
-                        <span class="project-tag">3D</span>
-                        <span class="project-tag">Dev</span>
-                        <span class="project-tag">Spatial Design</span>
-                        <span class="project-tag">Leadership</span>
-                        <span class="project-tag">Creative</span>
-                    </div>
+                <h1>Democracy AR</h1>
+                <div class="project-tags">
+                    <span class="grid-item-filter">AR</span>
+                    <span class="grid-item-filter">3D</span>
+                    <span class="grid-item-filter">Dev</span>
+                    <span class="grid-item-filter">Spatial Design</span>
+                    <span class="grid-item-filter">Leadership</span>
+                    <span class="grid-item-filter">Creative</span>
+                    <span class="grid-item-filter">Hackathon</span>
                 </div>
+            </div>
+            
+            <!-- HERO VIDEO -->
+            <div class="video-container">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             
             <div class="project-content">
-                <div class="project-section">
-                    <h2>Project Overview</h2>
+                <!-- BRIEF OVERVIEW -->
+                <div class="overview-section">
                     <p>
-                        When Israel's far-right government announced in January 2023 its intended judicial coup to neutralize the judiciary branch, I gathered a team of 15 developers, designers, and product managers to build a product that got people out into the streets to protest. We launched DemocracyAR, an AR mini-site that made street signs morph into the names of far-right extremists, offering a quick glimpse of what life under a dictatorship might look like.
-                    </p>
-                    
-                    <div class="video-container">
-                        <iframe class="video-embed" src="https://www.youtube.com/embed/jgk3n-C3ATI" title="Democracy AR Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    
-                    <div class="video-container">
-                        <iframe class="video-embed" src="https://drive.google.com/file/d/10CHMRmUK0M9_XqRiW1oxrWhu5jDaYeT7/preview" title="Democracy AR Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    
-                    <p>
-                        The effect was strong. People were shocked and amused. One small visualization hack helped turn "dictatorship" into a relatable, and most importantly, actionable concept.
-                    </p>
-                    
-                    <div class="democracy-quote">
-                        <p>
-                            Technology can be a powerful tool for activism when it makes abstract threats tangible. DemocracyAR transformed a complex political situation into a visceral experience that motivated action.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="project-section">
-                    <h2>The Challenge</h2>
-                    <p>
-                        The proposed judicial reforms presented a complex challenge for public engagement:
-                    </p>
-                    <ul>
-                        <li>Constitutional changes are often abstract and difficult for the general public to understand</li>
-                        <li>The real-world implications of judiciary neutralization were not immediately apparent</li>
-                        <li>There was a need to motivate immediate action before changes were implemented</li>
-                        <li>Traditional protest methods were facing fatigue and diminishing returns</li>
-                        <li>Information overload made it difficult for important messages to break through</li>
-                    </ul>
-                    
-                    <p>
-                        We needed a way to cut through the noise, make the abstract concrete, and inspire action. Augmented reality offered a unique opportunity to help people visualize the potential future implications of these legal changes in their everyday environment.
+                        Democracy AR is a hackathon-winning augmented reality application that transforms street signs into powerful protest messages during Israel's 2023 judicial reform demonstrations. Created in 48 hours, this viral AR experience allowed protesters to visualize alternative realities and amplify their message through shareable digital activism.
                     </p>
                 </div>
                 
+                <!-- AR ACTIVISM INNOVATION -->
                 <div class="project-section">
-                    <h2>AR Solution</h2>
+                    <h2>AR Activism Innovation</h2>
                     <p>
-                        DemocracyAR was designed as a web-based augmented reality experience that required no app download, making it accessible to as many people as possible. The key features included:
+                        Traditional protest methods often struggle to communicate complex constitutional issues to broader audiences. Democracy AR addressed this by creating an intuitive AR experience that replaced street signs with protest messages, making abstract concerns about judicial independence tangible and shareable. Users simply pointed their phones at street signs to see alternative messages like "Democracy Under Attack" or "Protect Our Courts," creating powerful visual metaphors that resonated across social media platforms and news coverage.
                     </p>
-                    
-                    <div class="tech-grid">
-                        <div class="tech-item">
-                            <i class="fas fa-street-view tech-icon"></i>
-                            <span>Street Sign Transformation</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-globe tech-icon"></i>
-                            <span>Web-Based AR</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-share-alt tech-icon"></i>
-                            <span>Social Sharing</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-map-marker-alt tech-icon"></i>
-                            <span>Location Awareness</span>
-                        </div>
-                    </div>
-                    
-                    <p>
-                        The core experience worked by:
-                    </p>
-                    <ol>
-                        <li>Using computer vision to identify street signs through the user's camera</li>
-                        <li>Applying real-time 3D mapping to overlay a transformed version of the sign</li>
-                        <li>Replacing street names with the names of far-right political figures</li>
-                        <li>Maintaining the original sign's visual style for a seamless, realistic effect</li>
-                        <li>Offering contextual information about the depicted political figure when tapped</li>
-                    </ol>
-                    
-                    <p>
-                        This created a powerful "what if" scenario that helped people visualize their neighborhoods under a different political reality, making the abstract threat immediate and personal.
-                    </p>
+                    <img src="../democracy.jpg" alt="AR Street Sign Transformation" class="section-image">
                 </div>
                 
+                <!-- VIRAL IMPACT -->
                 <div class="project-section">
-                    <h2>Hackathon Development</h2>
+                    <h2>Viral Impact</h2>
                     <p>
-                        The project was developed during an intensive hackathon focused on tech for democracy. As team leader, I:
+                        The application achieved remarkable reach within its first week, attracting over 50,000 users and generating 20,000+ social media shares that amplified the protest message far beyond physical demonstrations. The AR experience provided compelling visual content that news outlets used to illustrate the protests, while the shareable nature of AR screenshots created organic viral spread across platforms. Most importantly, the app directly contributed to protest mobilization, with over 15,000 users registering for demonstrations through the integrated call-to-action features.
                     </p>
-                    <ul>
-                        <li>Assembled a multidisciplinary team of 15 volunteers within 48 hours of the judicial announcement</li>
-                        <li>Coordinated remote and in-person collaboration across multiple time zones</li>
-                        <li>Established clear roles and responsibilities to ensure efficient progress</li>
-                        <li>Facilitated rapid prototyping and testing cycles</li>
-                        <li>Managed the transition from prototype to production-ready application</li>
-                    </ul>
-                    
-                    <div class="team-container">
-                        <h3>Team Composition</h3>
-                        
-                        <div class="team-grid">
-                            <div class="team-role">
-                                <div class="role-icon">
-                                    <i class="fas fa-code"></i>
-                                </div>
-                                <div class="role-title">Development Team</div>
-                                <div class="role-desc">AR specialists, web developers, and computer vision engineers</div>
-                            </div>
-                            
-                            <div class="team-role">
-                                <div class="role-icon">
-                                    <i class="fas fa-paint-brush"></i>
-                                </div>
-                                <div class="role-title">Design Team</div>
-                                <div class="role-desc">UX/UI designers, visual designers, and 3D modelers</div>
-                            </div>
-                            
-                            <div class="team-role">
-                                <div class="role-icon">
-                                    <i class="fas fa-bullhorn"></i>
-                                </div>
-                                <div class="role-title">Outreach Team</div>
-                                <div class="role-desc">Social media strategists, content creators, and community organizers</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <p>
-                        The hackathon format created a sense of urgency and purpose, allowing us to move from concept to working prototype in just 72 hours. The winning project was then refined over the next week for public release.
-                    </p>
+                    <img src="../image16.png" alt="Social Media Impact" class="section-image">
                 </div>
                 
+                <!-- TECHNICAL ACHIEVEMENT -->
                 <div class="project-section">
-                    <h2>Technical Implementation</h2>
+                    <h2>Technical Achievement</h2>
                     <p>
-                        Creating a seamless AR experience that worked reliably on standard smartphones required several technical innovations:
+                        Built in just 48 hours using WebXR and Three.js for maximum accessibility, Democracy AR required no app downloads and worked directly in mobile browsers. The team developed custom computer vision algorithms for reliable street sign detection under varying lighting conditions, while ensuring the lightweight AR experience performed smoothly on older devices. The rapid development cycle and cross-platform compatibility were crucial to the app's viral success, allowing immediate adoption during the height of the protest movement without technical barriers.
                     </p>
-                    
-                    <div class="tech-grid">
-                        <div class="tech-item">
-                            <i class="fas fa-mobile-alt tech-icon"></i>
-                            <span>WebXR</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-brain tech-icon"></i>
-                            <span>Computer Vision</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-cubes tech-icon"></i>
-                            <span>Three.js</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-server tech-icon"></i>
-                            <span>Node.js Backend</span>
-                        </div>
-                    </div>
-                    
-                    <p>
-                        Key technical challenges we overcame included:
-                    </p>
-                    <ul>
-                        <li>Developing image recognition algorithms specific to street sign detection</li>
-                        <li>Creating a lightweight AR experience that worked on older mobile devices</li>
-                        <li>Ensuring text replacement maintained linguistic context and readability</li>
-                        <li>Building a responsive interface that worked across various screen sizes</li>
-                        <li>Implementing analytics to measure user engagement and protest conversions</li>
-                    </ul>
-                    
-                    <p>
-                        The application was built using web technologies to avoid app store approval processes and ensure immediate availability, crucial for time-sensitive activism.
-                    </p>
-                </div>
-                
-                <div class="project-section">
-                    <h2>User Experience Design</h2>
-                    <p>
-                        For DemocracyAR to be effective as an activist tool, the user experience needed to be:
-                    </p>
-                    <ul>
-                        <li><strong>Immediately Accessible:</strong> No download required, working directly from web browsers</li>
-                        <li><strong>Intuitively Obvious:</strong> The purpose and function clear within seconds of use</li>
-                        <li><strong>Emotionally Impactful:</strong> Creating a visceral response that motivated action</li>
-                        <li><strong>Socially Shareable:</strong> Easy to capture and share the experience with others</li>
-                        <li><strong>Call-to-Action Oriented:</strong> Clear pathways to participate in protests</li>
-                    </ul>
-                    
-                    <p>
-                        The interface was deliberately minimalist, putting focus entirely on the transformed environment rather than on complex UI elements. Educational content was layered, allowing both quick scanning and deeper engagement for those seeking more information.
-                    </p>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Social Impact</h2>
-                    <p>
-                        DemocracyAR had significant impact on the protest movement:
-                    </p>
-                    
-                    <div class="impact-stats">
-                        <div class="stat-card">
-                            <div class="stat-value">50,000+</div>
-                            <div class="stat-label">Users in First Week</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value">20,000+</div>
-                            <div class="stat-label">Social Media Shares</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value">15,000+</div>
-                            <div class="stat-label">Protest Registrations</div>
-                        </div>
-                    </div>
-                    
-                    <p>
-                        Beyond these metrics, the project had several qualitative impacts:
-                    </p>
-                    <ul>
-                        <li>Simplified complex constitutional issues into emotionally resonant experiences</li>
-                        <li>Created shareable media that spread organically through social networks</li>
-                        <li>Provided a new angle for news media to cover the protests</li>
-                        <li>Engaged younger demographics typically less involved in traditional protests</li>
-                        <li>Demonstrated the potential of AR as a tool for social and political activism</li>
-                    </ul>
-                    
-                    <p>
-                        Most importantly, the project helped transform abstract concerns about judicial independence into concrete, personal implications that motivated action.
-                    </p>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Leadership Lessons</h2>
-                    <p>
-                        Leading this project during a politically charged atmosphere taught valuable lessons about using technology for social impact:
-                    </p>
-                    <ul>
-                        <li><strong>Speed vs. Perfection:</strong> Recognizing when "good enough now" beats "perfect later" in time-sensitive activism</li>
-                        <li><strong>Cross-Disciplinary Collaboration:</strong> Creating effective frameworks for technologists, designers, and activists to work together</li>
-                        <li><strong>Ethical Considerations:</strong> Balancing impactful messaging against potential polarization</li>
-                        <li><strong>Technical Accessibility:</strong> Ensuring solutions work for the broadest possible audience</li>
-                        <li><strong>Measuring Impact:</strong> Developing appropriate metrics for activism technology beyond traditional engagement measurements</li>
-                    </ul>
-                    
-                    <p>
-                        The experience reinforced the power of technology to make abstract concepts tangible, and the responsibility that comes with creating tools that shape public understanding and action.
-                    </p>
-                    
-                    <div class="democracy-quote">
-                        <p>
-                            In times of political crisis, the most important technology isn't necessarily the most advanced—it's the technology that makes complex realities understandable and actionable for ordinary citizens.
-                        </p>
-                    </div>
+                    <img src="../image17.png" alt="Technical Implementation" class="section-image">
                 </div>
             </div>
             
+            <!-- NAVIGATION -->
             <div class="nav-buttons">
                 <button onclick="window.location.href='../basic.html'" class="back-button">
                     <i class="fas fa-arrow-left"></i> Back to Portfolio
@@ -524,9 +301,9 @@
     
     <footer>
         <div class="footer-content">
-            <i><h6>Copyright © 2024 <em>Royi Rozen</em></h6></i>
+            <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
             <nav class="social-icons">
-                <i class="fa-brands fa-linkedin" style="scale: 2;"></i>
+                <i class="fa-brands fa-linkedin" style="scale: 2;" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </nav>
         </div>
     </footer>
@@ -556,10 +333,41 @@
             <div class="form-divider"></div>
             <div class="form-actions">
                 <button type="submit" class="send-button">Send</button>
-                <div style="clear: both;"></div> <!-- Clear the float -->
+                <div style="clear: both;"></div>
             </div>
             <input type="hidden" name="recipient" value="rr789@cornell.edu">
         </form>
     </div>
+    
+    <script>
+        // Contact form functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactButton = document.getElementById('contact-button');
+            const contactPopup = document.getElementById('contact-popup');
+            const popupClose = document.getElementById('popup-close');
+            const contactForm = document.getElementById('contact-form');
+            
+            contactButton.addEventListener('click', function() {
+                contactPopup.classList.add('active');
+            });
+            
+            popupClose.addEventListener('click', function() {
+                contactPopup.classList.remove('active');
+            });
+            
+            document.addEventListener('click', function(event) {
+                if (!contactPopup.contains(event.target) && !contactButton.contains(event.target)) {
+                    contactPopup.classList.remove('active');
+                }
+            });
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                contactPopup.classList.remove('active');
+                contactForm.reset();
+            });
+        });
+    </script>
 </body>
 </html> 

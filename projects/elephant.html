@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Big Elephant Migration - Royi Rozen</title>
+    <title>The Great Elephant Migration - Royi Rozen</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     
@@ -16,413 +16,279 @@
     
     <link rel="stylesheet" href="../style.css">
     <style>
-        .art-badge {
-            display: inline-block;
-            background-color: #8e44ad;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-weight: bold;
-            margin-left: 10px;
-            font-size: 0.8em;
-            vertical-align: middle;
+        /* Clean, centered layout */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            overflow-x: hidden;
         }
         
-        .conservation-quote {
-            background-color: #f5f8f5;
-            border-left: 4px solid #8e44ad;
-            padding: 20px;
-            margin: 30px 0;
-            border-radius: 4px;
-            font-style: italic;
-            position: relative;
-        }
-        
-        .conservation-quote::before {
-            content: '"';
-            position: absolute;
-            top: 10px;
-            left: 15px;
-            font-size: 40px;
-            color: #8e44ad;
-            opacity: 0.3;
-        }
-        
-        .project-section {
-            margin: 40px 0;
-        }
-        
-        .fact-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 30px 0;
-        }
-        
-        .fact-card {
-            background-color: #f8f4fc;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 3px 8px rgba(142, 68, 173, 0.1);
+        #app {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
         
-        .fact-number {
-            font-size: 32px;
-            font-weight: bold;
-            color: #8e44ad;
-            margin-bottom: 10px;
+        header, main, footer {
+            width: 100%;
         }
         
-        .fact-text {
-            font-size: 14px;
-            color: #555;
-        }
-        
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 25px 0;
-        }
-        
-        .tech-item {
-            background-color: #f8f4fc;
-            border-radius: 8px;
-            padding: 15px;
+        /* Project header styling */
+        .project-header {
+            margin-top: 120px;
+            margin-bottom: 30px;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
         }
         
-        .tech-icon {
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: #8e44ad;
-        }
-        
-        .image-container {
-            margin: 30px 0;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .project-image {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin: 30px 0;
-        }
-        
-        .gallery-item {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.03);
-        }
-        
-        .gallery-image {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            margin: 30px 0;
-        }
-        
-        .feature-card {
-            background: linear-gradient(135deg, #f8f4fc 0%, #f1e5fa 100%);
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-icon {
-            font-size: 32px;
-            color: #8e44ad;
+        .project-header h1 {
+            font-size: 48px;
+            font-weight: 700;
             margin-bottom: 15px;
-        }
-        
-        .feature-title {
-            font-weight: bold;
-            margin-bottom: 10px;
             color: #333;
         }
         
-        .feature-desc {
-            color: #666;
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
         }
         
+        .grid-item-filter {
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Hero video container */
+        .video-container {
+            width: 100%;
+            margin: 40px 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+        }
+        
+        .video-embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Main content styling */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .project-content {
+            width: 100%;
+            max-width: 800px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        
+        /* Project sections */
+        .project-section {
+            margin: 40px 0;
+            text-align: left;
+        }
+        
+        .project-section h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .project-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Section images */
+        .section-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            display: block;
+        }
+        
+        /* Overview section styling */
+        .overview-section {
+            background-color: #f8f9fa;
+            border-left: 4px solid #8e44ad;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        .overview-section p {
+            margin-bottom: 0;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+        
+        /* Navigation buttons */
+        .nav-buttons {
+            margin: 60px 0 40px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .back-button:hover {
+            background-color: #34495e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .back-button i {
+            margin-right: 8px;
+        }
+        
+        /* Responsive design */
         @media (max-width: 768px) {
-            .fact-grid {
-                grid-template-columns: 1fr;
+            .project-header {
+                margin-top: 100px;
+                padding: 0 15px;
             }
             
-            .gallery {
-                grid-template-columns: 1fr;
+            .project-header h1 {
+                font-size: 36px;
             }
             
-            .feature-grid {
-                grid-template-columns: 1fr;
+            .project-content {
+                padding: 0 15px;
+            }
+            
+            .project-section h2 {
+                font-size: 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .project-header h1 {
+                font-size: 28px;
+            }
+            
+            .project-tags {
+                justify-content: center;
+            }
+            
+            .grid-item-filter {
+                font-size: 12px;
+                padding: 4px 8px;
             }
         }
     </style>
 </head>
 <body>
-    <script type="module" src="../script.js"></script>
-    <script type="module" src="../contact.js"></script>
-    
     <div id="app">
         <header>
-            <div class="header-content">
-                <hgroup class="top-bar">
-                    <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
-                    <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
-                    <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
-                    <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.location.href='https://www.linkedin.com/in/royi-rozen/'"></i>
-                </hgroup>
+            <div class="top-bar">
+                <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
+                <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
+                <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
+                <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </div>
         </header>
         
-        <main class="project-page">
+        <main>
+            <!-- PROJECT HEADER -->
             <div class="project-header">
-                <h1>The Big Elephant Migration <span class="art-badge">AR Art Exhibition</span></h1>
-                <div class="project-meta">
-                    <div class="project-year">2022</div>
-                    <div class="project-tags">
-                        <span class="project-tag">AR</span>
-                        <span class="project-tag">Conservation</span>
-                        <span class="project-tag">Public Art</span>
-                    </div>
+                <h1>The Great Elephant Migration</h1>
+                <div class="project-tags">
+                    <span class="grid-item-filter">AR</span>
+                    <span class="grid-item-filter">3D</span>
+                    <span class="grid-item-filter">Creative</span>
+                    <span class="grid-item-filter">Dev</span>
+                    <span class="grid-item-filter">Art</span>
                 </div>
+            </div>
+            
+            <!-- HERO VIDEO -->
+            <div class="video-container">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             
             <div class="project-content">
-                <div class="project-section">
-                    <h2>Project Overview</h2>
+                <!-- BRIEF OVERVIEW -->
+                <div class="overview-section">
                     <p>
-                        <strong>The Big Elephant Migration</strong> is an augmented reality art exhibition that brings the wonder and plight of African elephants to urban environments around the world. Using AR technology, this installation creates a virtual migration of elephants through city streets and public spaces, allowing viewers to encounter these magnificent creatures in unexpected contexts while raising awareness about elephant conservation.
-                    </p>
-                    
-                    <div class="image-container">
-                        <img src="../elephant.jpg" alt="AR Elephant in Urban Setting" class="project-image">
-                    </div>
-                    
-                    <div class="conservation-quote">
-                        <p>
-                            By bringing elephants into urban spaces where they don't belong, we create a powerful metaphor for displacement and habitat loss. The stark juxtaposition of these majestic wild animals against concrete and glass provokes questions about our relationship with the natural world.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Concept and Vision</h2>
-                    <p>
-                        The exhibition emerged from two parallel concerns: the ongoing decline of elephant populations across Africa and the growing disconnection between urban populations and wildlife. By using augmented reality to create a virtual migration through urban environments, the project aims to:
-                    </p>
-                    <ul>
-                        <li>Create emotional connections between city dwellers and elephants</li>
-                        <li>Educate the public about elephant migration patterns and the threats they face</li>
-                        <li>Demonstrate how technology can be used for conservation awareness</li>
-                        <li>Challenge the separation between "human spaces" and "animal spaces"</li>
-                    </ul>
-                    
-                    <p>
-                        Rather than presenting elephants as static displays in a traditional gallery, the AR format allows viewers to experience the dynamics of elephant family groups, their social behaviors, and their movement through space. The virtual elephants respond to their environment - navigating around real obstacles, interacting with each other, and even acknowledging the human viewers.
+                        The Great Elephant Migration is an augmented reality art installation that brings virtual elephant herds into urban public spaces, creating powerful connections between city dwellers and wildlife conservation. This immersive experience transforms everyday environments into migration corridors, raising awareness about elephant conservation through emotional storytelling and cutting-edge AR technology.
                     </p>
                 </div>
                 
+                <!-- CONSERVATION THROUGH AR -->
                 <div class="project-section">
-                    <h2>Educational Component</h2>
+                    <h2>Conservation Through AR</h2>
                     <p>
-                        At its core, this project is as much about education as it is about art. The exhibition incorporates several key facts about elephant conservation:
+                        Traditional wildlife conservation messaging often fails to create emotional connections between urban populations and distant animal habitats. The Great Elephant Migration addresses this disconnect by bringing realistic elephant families directly into city environments, allowing viewers to witness migration behaviors, family dynamics, and social interactions up close. The AR experience demonstrates how technology can bridge the gap between human and animal spaces, fostering empathy and understanding that motivates conservation action through direct emotional engagement rather than abstract statistics.
                     </p>
-                    
-                    <div class="fact-grid">
-                        <div class="fact-card">
-                            <div class="fact-number">50%</div>
-                            <div class="fact-text">Decline in elephant populations across Africa over the past 70 years</div>
-                        </div>
-                        <div class="fact-card">
-                            <div class="fact-number">16,000</div>
-                            <div class="fact-text">Kilometers traveled annually by some elephant herds during migration</div>
-                        </div>
-                        <div class="fact-card">
-                            <div class="fact-number">70</div>
-                            <div class="fact-text">Years that elephants can live in the wild, developing complex social structures</div>
-                        </div>
-                    </div>
-                    
-                    <p>
-                        The app that accompanies the exhibition provides additional information about elephant conservation, explaining the impact of habitat loss, poaching, and human-elephant conflict. It also highlights conservation success stories and directs viewers to reputable organizations working on elephant protection.
-                    </p>
+                    <img src="../elephants.jpg" alt="AR Elephant Herd in Urban Space" class="section-image">
                 </div>
                 
+                <!-- IMMERSIVE STORYTELLING -->
                 <div class="project-section">
-                    <h2>Technical Implementation</h2>
+                    <h2>Immersive Storytelling</h2>
                     <p>
-                        Creating a convincing augmented reality experience of elephants in urban spaces required sophisticated technical solutions:
+                        The installation features multiple elephant scenarios that unfold as visitors move through designated routes: family groups with protective mothers and playful calves, elderly matriarchs leading migrations, and dramatic moments of herd decision-making at crossroads. Each elephant has unique characteristics and behaviors powered by custom AI systems that respond to environmental factors and viewer presence. The experience includes ambient soundscapes of African savannas, educational overlays about migration patterns, and interactive elements that reveal the threats elephants face in the wild.
                     </p>
-                    
-                    <div class="tech-grid">
-                        <div class="tech-item">
-                            <i class="fas fa-mobile-alt tech-icon"></i>
-                            <span>ARKit & ARCore</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-cube tech-icon"></i>
-                            <span>3D Modeling</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-street-view tech-icon"></i>
-                            <span>Spatial Mapping</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-running tech-icon"></i>
-                            <span>Animation</span>
-                        </div>
-                    </div>
-                    
-                    <p>
-                        The project was built in Unity using AR Foundation to ensure cross-platform compatibility between iOS and Android devices. We conducted extensive research on elephant movement and behavior, working with wildlife experts to create realistic animations and behaviors. Each elephant in the herd has unique characteristics and behaviors, powered by a custom AI system that directs their interactions with the environment and each other.
-                    </p>
-                    
-                    <p>
-                        One of the biggest technical challenges was developing accurate occlusion - ensuring that the virtual elephants correctly pass behind real-world objects like trees or buildings. We implemented depth-sensing algorithms that allow the app to construct a 3D understanding of the physical space and properly layer the digital elephants within it.
-                    </p>
+                    <img src="../image8.jpg" alt="Interactive Elephant Behaviors" class="section-image">
                 </div>
                 
+                <!-- TECHNICAL INNOVATION -->
                 <div class="project-section">
-                    <h2>The AR Experience</h2>
+                    <h2>Technical Innovation</h2>
                     <p>
-                        Visitors experience the exhibition by downloading a dedicated mobile application and following a predetermined route through public spaces. As they walk, they encounter different elephant scenarios:
+                        Built using Unity with AR Foundation for cross-platform compatibility, the project required sophisticated solutions for realistic animal behavior and environmental integration. Advanced occlusion algorithms ensure elephants correctly interact with real-world objects, while custom animation systems based on wildlife research create authentic movement patterns and social behaviors. The application uses spatial mapping to adapt elephant paths to different urban environments, and cloud-based content delivery allows for regular updates with new scenarios and educational content, ensuring the experience remains fresh and impactful for repeat visitors.
                     </p>
-                    
-                    <div class="feature-grid">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-baby"></i>
-                            </div>
-                            <div class="feature-title">Family Groups</div>
-                            <div class="feature-desc">
-                                Matriarch-led family units with calves protected by the group, demonstrating elephant social structure and care behaviors
-                            </div>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-glass-water"></i>
-                            </div>
-                            <div class="feature-title">Water Holes</div>
-                            <div class="feature-desc">
-                                Elephants gathering at virtual water sources (often placed in fountains or reflecting pools), showing their dependency on these critical resources
-                            </div>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-road"></i>
-                            </div>
-                            <div class="feature-title">Migration Corridors</div>
-                            <div class="feature-desc">
-                                Long lines of elephants moving through urban streets, illustrating migration patterns and the challenges of fragmented habitats
-                            </div>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-tree"></i>
-                            </div>
-                            <div class="feature-title">Feeding Grounds</div>
-                            <div class="feature-desc">
-                                Elephants interacting with trees and vegetation in urban parks, demonstrating their role as ecosystem engineers
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <p>
-                        The AR experience is designed to be both educational and emotional. When visitors approach the virtual elephants, the animals acknowledge their presence - sometimes with curiosity, sometimes with wariness. This interactive element helps create a sense of connection between the viewer and the digital wildlife.
-                    </p>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Exhibition Design</h2>
-                    <p>
-                        While the primary exhibition exists in augmented reality, the physical components of the installation are equally important:
-                    </p>
-                    
-                    <ul>
-                        <li><strong>Way-finding System:</strong> Physical markers throughout the exhibition route help guide visitors and provide clear locations for AR triggers</li>
-                        <li><strong>Information Panels:</strong> Traditional information displays that provide context and encourage app downloads</li>
-                        <li><strong>Sound Design:</strong> Location-specific audio played through visitors' devices enhances the immersive experience</li>
-                        <li><strong>Community Engagement:</strong> Interactive elements that allow visitors to "leave their mark" by contributing to a collective digital artwork</li>
-                    </ul>
-                    
-                    <p>
-                        The exhibition is designed to be adaptable to different urban environments. It has been installed in public parks, along commercial streets, and in urban squares, with each location offering a unique context for the elephant migration narrative.
-                    </p>
-                    
-                    <div class="gallery">
-                        <div class="gallery-item">
-                            <img src="../elephant1.jpg" alt="Elephant AR Installation View 1" class="gallery-image">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="../elephant2.jpg" alt="Elephant AR Installation View 2" class="gallery-image">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="../elephant3.jpg" alt="Elephant AR Installation View 3" class="gallery-image">
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Impact and Future Development</h2>
-                    <p>
-                        Since its initial launch, The Big Elephant Migration has been exhibited in several cities worldwide, reaching thousands of visitors. Feedback has indicated that the exhibition creates meaningful emotional responses and increased interest in elephant conservation among participants.
-                    </p>
-                    
-                    <p>
-                        The project continues to evolve with planned expansions including:
-                    </p>
-                    <ul>
-                        <li>Additional species of endangered wildlife to highlight broader conservation issues</li>
-                        <li>Collaborative features allowing multiple visitors to share the same AR experience simultaneously</li>
-                        <li>Integration with conservation donation platforms to convert engagement into direct action</li>
-                        <li>Educational curriculum development for school groups visiting the exhibition</li>
-                    </ul>
-                    
-                    <p>
-                        The Big Elephant Migration demonstrates how augmented reality can bridge the gap between art, education, and conservation, creating immersive experiences that inspire action and awareness.
-                    </p>
+                    <img src="../image11.jpg" alt="AR Technical Implementation" class="section-image">
                 </div>
             </div>
             
+            <!-- NAVIGATION -->
             <div class="nav-buttons">
                 <button onclick="window.location.href='../basic.html'" class="back-button">
                     <i class="fas fa-arrow-left"></i> Back to Portfolio
@@ -435,7 +301,7 @@
         <div class="footer-content">
             <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
             <nav class="social-icons">
-                <i class="fa-brands fa-linkedin" style="scale: 2;"></i>
+                <i class="fa-brands fa-linkedin" style="scale: 2;" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </nav>
         </div>
     </footer>
@@ -465,10 +331,41 @@
             <div class="form-divider"></div>
             <div class="form-actions">
                 <button type="submit" class="send-button">Send</button>
-                <div style="clear: both;"></div> <!-- Clear the float -->
+                <div style="clear: both;"></div>
             </div>
             <input type="hidden" name="recipient" value="rr789@cornell.edu">
         </form>
     </div>
+    
+    <script>
+        // Contact form functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactButton = document.getElementById('contact-button');
+            const contactPopup = document.getElementById('contact-popup');
+            const popupClose = document.getElementById('popup-close');
+            const contactForm = document.getElementById('contact-form');
+            
+            contactButton.addEventListener('click', function() {
+                contactPopup.classList.add('active');
+            });
+            
+            popupClose.addEventListener('click', function() {
+                contactPopup.classList.remove('active');
+            });
+            
+            document.addEventListener('click', function(event) {
+                if (!contactPopup.contains(event.target) && !contactButton.contains(event.target)) {
+                    contactPopup.classList.remove('active');
+                }
+            });
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                contactPopup.classList.remove('active');
+                contactForm.reset();
+            });
+        });
+    </script>
 </body>
 </html> 

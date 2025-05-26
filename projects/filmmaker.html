@@ -16,50 +16,73 @@
     
     <link rel="stylesheet" href="../style.css">
     <style>
-        .film-badge {
-            display: inline-block;
-            background-color: #e74c3c;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-weight: bold;
-            margin-left: 10px;
-            font-size: 0.8em;
-            vertical-align: middle;
-        }
-        
-        .film-quote {
-            background-color: #f8f9fa;
-            border-left: 4px solid #e74c3c;
-            padding: 20px;
-            margin: 30px 0;
-            border-radius: 4px;
-            font-style: italic;
-            position: relative;
-        }
-        
-        .film-quote::before {
-            content: '"';
-            position: absolute;
-            top: 10px;
-            left: 15px;
-            font-size: 40px;
-            color: #e74c3c;
-            opacity: 0.3;
-        }
-        
-        .project-section {
-            margin: 40px 0;
-        }
-        
-        .video-container {
-            position: relative;
+        /* Clean, centered layout */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            margin: 30px 0;
-            border-radius: 10px;
+            overflow-x: hidden;
+        }
+        
+        #app {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        header, main, footer {
+            width: 100%;
+        }
+        
+        /* Project header styling */
+        .project-header {
+            margin-top: 120px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .project-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .grid-item-filter {
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Hero video container */
+        .video-container {
+            width: 100%;
+            margin: 40px 0;
             overflow: hidden;
+            border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
         }
         
         .video-embed {
@@ -68,364 +91,203 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
             border: none;
         }
         
-        .skill-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin: 25px 0;
-        }
-        
-        .skill-item {
-            background-color: #f5f5f5;
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
+        /* Main content styling */
+        main {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-        }
-        
-        .skill-icon {
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: #e74c3c;
-        }
-        
-        .image-container {
-            margin: 30px 0;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .project-image {
             width: 100%;
-            height: auto;
-            display: block;
         }
         
-        .production-flow {
-            position: relative;
-            background-color: #f5f7fa;
-            border-radius: 12px;
-            padding: 30px;
+        .project-content {
+            width: 100%;
+            max-width: 800px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        
+        /* Project sections */
+        .project-section {
             margin: 40px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: left;
         }
         
-        .flow-steps {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-top: 25px;
+        .project-section h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
         }
         
-        .flow-step {
-            flex: 1 1 200px;
-            margin: 10px;
-            text-align: center;
-            position: relative;
-        }
-        
-        .flow-step::after {
-            content: "→";
-            position: absolute;
-            top: 50%;
-            right: -15px;
-            transform: translateY(-50%);
-            font-size: 24px;
-            color: #e74c3c;
-        }
-        
-        .flow-step:last-child::after {
-            content: none;
-        }
-        
-        .step-number {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: #e74c3c;
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        
-        .step-name {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        
-        .step-desc {
-            font-size: 0.9rem;
+        .project-section p {
+            font-size: 16px;
+            line-height: 1.6;
             color: #666;
+            margin-bottom: 20px;
         }
         
-        .project-gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 30px 0;
-        }
-        
-        .gallery-item {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .gallery-image {
+        /* Section images */
+        .section-image {
             width: 100%;
+            max-width: 600px;
             height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px auto;
             display: block;
-            transition: transform 0.3s ease;
         }
         
-        .gallery-item:hover .gallery-image {
-            transform: scale(1.05);
+        /* Overview section styling */
+        .overview-section {
+            background-color: #f8f9fa;
+            border-left: 4px solid #e74c3c;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 4px;
         }
         
+        .overview-section p {
+            margin-bottom: 0;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+        
+        /* Navigation buttons */
+        .nav-buttons {
+            margin: 60px 0 40px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .back-button:hover {
+            background-color: #34495e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .back-button i {
+            margin-right: 8px;
+        }
+        
+        /* Responsive design */
         @media (max-width: 768px) {
-            .skill-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .project-header {
+                margin-top: 100px;
+                padding: 0 15px;
             }
             
-            .project-gallery {
-                grid-template-columns: 1fr;
+            .project-header h1 {
+                font-size: 36px;
             }
             
-            .flow-step::after {
-                display: none;
+            .project-content {
+                padding: 0 15px;
+            }
+            
+            .project-section h2 {
+                font-size: 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .project-header h1 {
+                font-size: 28px;
+            }
+            
+            .project-tags {
+                justify-content: center;
+            }
+            
+            .grid-item-filter {
+                font-size: 12px;
+                padding: 4px 8px;
             }
         }
     </style>
 </head>
 <body>
-    <script type="module" src="../script.js"></script>
-    <script type="module" src="../contact.js"></script>
-    
     <div id="app">
         <header>
-            <div class="header-content">
-                <hgroup class="top-bar">
-                    <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
-                    <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
-                    <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
-                    <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.location.href='https://www.linkedin.com/in/royi-rozen/'"></i>
-                </hgroup>
+            <div class="top-bar">
+                <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
+                <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
+                <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
+                <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </div>
         </header>
         
-        <main class="project-page">
+        <main>
+            <!-- PROJECT HEADER -->
             <div class="project-header">
-                <h1>Filmmaker <span class="film-badge">Video Production</span></h1>
-                <div class="project-meta">
-                    <div class="project-year">2018</div>
-                    <div class="project-tags">
-                        <span class="project-tag">Creative</span>
-                        <span class="project-tag">Leadership</span>
-                        <span class="project-tag">Video</span>
-                        <span class="project-tag">Storytelling</span>
-                    </div>
+                <h1>Filmmaker</h1>
+                <div class="project-tags">
+                    <span class="grid-item-filter">Creative</span>
+                    <span class="grid-item-filter">Leadership</span>
+                    <span class="grid-item-filter">Video</span>
+                    <span class="grid-item-filter">Storytelling</span>
                 </div>
+            </div>
+            
+            <!-- HERO VIDEO -->
+            <div class="video-container">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             
             <div class="project-content">
-                <div class="project-section">
-                    <h2>Project Overview</h2>
+                <!-- BRIEF OVERVIEW -->
+                <div class="overview-section">
                     <p>
-                        As a filmmaker, I've directed, filmed, edited, and produced high-end video productions, leading teams in the creation of engaging content and storytelling reaching millions of people across the world. My work focuses on crafting visually compelling narratives that connect with audiences on an emotional level while delivering impactful messages.
-                    </p>
-                    
-                    <div class="video-container">
-                        <iframe class="video-embed" src="https://drive.google.com/file/d/1l0Lig3-1Cv72m-j5D_CLSdCPWDUzPOFI/preview" title="Filmmaker Showreel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    
-                    <div class="film-quote">
-                        <p>
-                            The power of visual storytelling lies in its ability to transcend language barriers and cultural differences, creating universal emotional connections that can inspire, educate, and move people to action.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Directorial Approach</h2>
-                    <p>
-                        My approach to filmmaking combines technical precision with creative vision. I believe in creating an environment where creative teams can thrive while maintaining a clear focus on the story we're trying to tell and the audience we're trying to reach. Each project begins with a deep understanding of the message, which informs every decision from visual style to pacing and sound design.
-                    </p>
-                    <p>
-                        Whether working on commercial content, documentaries, or narrative pieces, I prioritize authentic storytelling that resonates with viewers. This approach has allowed me to create content that not only meets client objectives but also creates meaningful connections with audiences.
+                        As a filmmaker and creative director, I've produced high-end video content that has reached millions of viewers across digital platforms. My work spans narrative storytelling, commercial production, and documentary filmmaking, combining technical expertise with compelling visual narratives that engage audiences and drive meaningful impact for brands and causes.
                     </p>
                 </div>
                 
+                <!-- VISUAL STORYTELLING -->
                 <div class="project-section">
-                    <h2>Core Filmmaking Skills</h2>
-                    
-                    <div class="skill-grid">
-                        <div class="skill-item">
-                            <i class="fas fa-video skill-icon"></i>
-                            <span>Direction</span>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <i class="fas fa-camera skill-icon"></i>
-                            <span>Cinematography</span>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <i class="fas fa-cut skill-icon"></i>
-                            <span>Editing</span>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <i class="fas fa-comments skill-icon"></i>
-                            <span>Storytelling</span>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <i class="fas fa-users skill-icon"></i>
-                            <span>Team Leadership</span>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <i class="fas fa-tasks skill-icon"></i>
-                            <span>Production</span>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <i class="fas fa-paint-brush skill-icon"></i>
-                            <span>Visual Design</span>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <i class="fas fa-lightbulb skill-icon"></i>
-                            <span>Concept Development</span>
-                        </div>
-                    </div>
+                    <h2>Visual Storytelling</h2>
+                    <p>
+                        My approach to filmmaking centers on crafting compelling narratives that resonate with diverse audiences through powerful visual language. I specialize in developing concepts from initial ideation through final delivery, working closely with clients to translate their vision into engaging video content. The process involves extensive pre-production planning, creative direction during filming, and meticulous post-production work to ensure every frame serves the story's purpose and emotional impact.
+                    </p>
+                    <img src="../image17.png" alt="Film Production Setup" class="section-image">
                 </div>
                 
+                <!-- PRODUCTION EXCELLENCE -->
                 <div class="project-section">
-                    <h2>Production Process</h2>
-                    
-                    <div class="production-flow">
-                        <h3>From Concept to Delivery</h3>
-                        
-                        <div class="flow-steps">
-                            <div class="flow-step">
-                                <div class="step-number">1</div>
-                                <div class="step-name">Concept Development</div>
-                                <div class="step-desc">Crafting the core idea and narrative structure</div>
-                            </div>
-                            
-                            <div class="flow-step">
-                                <div class="step-number">2</div>
-                                <div class="step-name">Pre-Production</div>
-                                <div class="step-desc">Planning, storyboarding, and scheduling</div>
-                            </div>
-                            
-                            <div class="flow-step">
-                                <div class="step-number">3</div>
-                                <div class="step-name">Production</div>
-                                <div class="step-desc">On-location filming with cast and crew</div>
-                            </div>
-                            
-                            <div class="flow-step">
-                                <div class="step-number">4</div>
-                                <div class="step-name">Post-Production</div>
-                                <div class="step-desc">Editing, sound design, and visual effects</div>
-                            </div>
-                            
-                            <div class="flow-step">
-                                <div class="step-number">5</div>
-                                <div class="step-name">Distribution</div>
-                                <div class="step-desc">Delivering content to target audiences</div>
-                            </div>
-                        </div>
-                    </div>
-                    
+                    <h2>Production Excellence</h2>
                     <p>
-                        Each phase requires different leadership skills and creative input. As a director and producer, I maintain oversight throughout the entire process, ensuring that the original vision comes through in the final product while adapting to challenges that arise during production.
+                        Leading production teams across multiple projects, I've developed expertise in managing complex shoots while maintaining creative vision and technical quality. My experience includes directing talent, coordinating with cinematographers and sound engineers, and overseeing all aspects of production workflow. From intimate documentary interviews to large-scale commercial productions, I ensure seamless execution while fostering collaborative environments that bring out the best in every team member.
                     </p>
+                    <img src="../image18.png" alt="Production Team" class="section-image">
                 </div>
                 
+                <!-- IMPACT AND REACH -->
                 <div class="project-section">
-                    <h2>Leadership Approach</h2>
+                    <h2>Impact and Reach</h2>
                     <p>
-                        Leading production teams requires a balance of creative direction and practical management. My leadership style emphasizes:
+                        The films and video content I've created have achieved significant reach and engagement, with several projects garnering millions of views and driving measurable impact for clients and causes. My work has been featured across major digital platforms and has contributed to successful marketing campaigns, awareness initiatives, and brand storytelling efforts. This success stems from understanding audience psychology, platform-specific optimization, and the power of authentic storytelling to create lasting connections between content and viewers.
                     </p>
-                    <ul>
-                        <li><strong>Clear Communication:</strong> Articulating the vision in a way that empowers each team member to contribute their best work</li>
-                        <li><strong>Collaborative Environment:</strong> Creating space for creative input while maintaining overall direction</li>
-                        <li><strong>Problem Solving:</strong> Quickly addressing challenges that inevitably arise during production</li>
-                        <li><strong>Talent Development:</strong> Identifying and nurturing the strengths of team members</li>
-                        <li><strong>Technical Knowledge:</strong> Understanding the capabilities and limitations of equipment and techniques</li>
-                    </ul>
-                    
-                    <p>
-                        This approach has allowed me to build cohesive teams that consistently deliver high-quality content, often under tight deadlines and challenging conditions.
-                    </p>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Global Reach</h2>
-                    <p>
-                        My work has reached millions of viewers across different platforms, cultures, and demographics. This global audience has provided valuable insights into creating content that resonates across cultural boundaries while remaining authentic and impactful.
-                    </p>
-                    <p>
-                        Working with diverse teams and subjects has enhanced my ability to tell stories that capture universal human experiences while respecting cultural nuances and perspectives. This cross-cultural understanding has been invaluable in creating content that truly connects with global audiences.
-                    </p>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Technical Expertise</h2>
-                    <p>
-                        High-end video production requires mastery of various technical elements:
-                    </p>
-                    <ul>
-                        <li><strong>Camera Systems:</strong> Experience with a wide range of professional camera systems and associated equipment</li>
-                        <li><strong>Lighting Techniques:</strong> Creating mood and atmosphere through thoughtful lighting design</li>
-                        <li><strong>Sound Recording:</strong> Ensuring clear, high-quality audio capture in various environments</li>
-                        <li><strong>Post-Production Software:</strong> Proficiency in industry-standard editing, color grading, and effects software</li>
-                        <li><strong>Delivery Formats:</strong> Understanding the technical requirements for various distribution platforms</li>
-                    </ul>
-                    <p>
-                        This technical foundation allows for creative freedom, ensuring that the vision can be realized without technical limitations.
-                    </p>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Impact and Results</h2>
-                    <p>
-                        The ultimate measure of a film's success is its impact on the audience. My productions have achieved:
-                    </p>
-                    <ul>
-                        <li>Millions of views across various platforms</li>
-                        <li>Successful communication of complex messages in accessible formats</li>
-                        <li>Emotional engagement that drives audience action</li>
-                        <li>Recognition in film festivals and industry competitions</li>
-                        <li>Measurable results for commercial and marketing clients</li>
-                    </ul>
-                    <p>
-                        Beyond metrics, the most rewarding aspect is creating content that moves people, changes perspectives, and contributes to meaningful conversations.
-                    </p>
-                    
-                    <div class="film-quote">
-                        <p>
-                            The true power of filmmaking lies not in the equipment or techniques, but in the story being told and the emotions it evokes. Technology serves the story, never the other way around.
-                        </p>
-                    </div>
+                    <img src="../image19.png" alt="Video Analytics Dashboard" class="section-image">
                 </div>
             </div>
             
+            <!-- NAVIGATION -->
             <div class="nav-buttons">
                 <button onclick="window.location.href='../basic.html'" class="back-button">
                     <i class="fas fa-arrow-left"></i> Back to Portfolio
@@ -436,9 +298,9 @@
     
     <footer>
         <div class="footer-content">
-            <i><h6>Copyright © 2024 <em>Royi Rozen</em></h6></i>
+            <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
             <nav class="social-icons">
-                <i class="fa-brands fa-linkedin" style="scale: 2;"></i>
+                <i class="fa-brands fa-linkedin" style="scale: 2;" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </nav>
         </div>
     </footer>
@@ -468,10 +330,41 @@
             <div class="form-divider"></div>
             <div class="form-actions">
                 <button type="submit" class="send-button">Send</button>
-                <div style="clear: both;"></div> <!-- Clear the float -->
+                <div style="clear: both;"></div>
             </div>
             <input type="hidden" name="recipient" value="rr789@cornell.edu">
         </form>
     </div>
+    
+    <script>
+        // Contact form functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactButton = document.getElementById('contact-button');
+            const contactPopup = document.getElementById('contact-popup');
+            const popupClose = document.getElementById('popup-close');
+            const contactForm = document.getElementById('contact-form');
+            
+            contactButton.addEventListener('click', function() {
+                contactPopup.classList.add('active');
+            });
+            
+            popupClose.addEventListener('click', function() {
+                contactPopup.classList.remove('active');
+            });
+            
+            document.addEventListener('click', function(event) {
+                if (!contactPopup.contains(event.target) && !contactButton.contains(event.target)) {
+                    contactPopup.classList.remove('active');
+                }
+            });
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                contactPopup.classList.remove('active');
+                contactForm.reset();
+            });
+        });
+    </script>
 </body>
 </html> 

@@ -423,7 +423,7 @@
     <div id="app">
         <header>
             <div class="top-bar">
-                <h1 class="title" button id="title" onclick="window.location.href='../index.html'">Royi Rozen</button></h1>
+                <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
                 <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
                 <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
                 <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
@@ -431,6 +431,7 @@
         </header>
         
         <main>
+            <!-- PROJECT HEADER -->
             <div class="project-header">
                 <h1>ARTour</h1>
                 <div class="project-tags">
@@ -444,56 +445,27 @@
                 </div>
             </div>
             
+            <!-- HERO VIDEO -->
             <div class="video-container">
                 <iframe class="video-embed" src="https://www.youtube.com/embed/i-1tUVm6rSY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             
-            <div class="project-section">
-                <h2>Overview</h2>
-                <p>
-                    AR Tour is a standalone augmented reality geolocation application designed to immerse users in historical storytelling by overlaying historical images at their original locations. It bridges the past and present, offering users a time-travel-like experience of exploring cultural landmarks and significant events.
-                </p>
-                
-                <div class="quote-block">
-                    Experience history where it actually happened. ARTour reimagines historical education by merging the physical and digital worlds.
-                </div>
-            </div>
+            <div class="project-content">
+                <!-- BRIEF OVERVIEW -->
+                <div class="overview-section">
+                    <p>
+                        AR Tour is a standalone augmented reality geolocation application designed to immerse users in historical storytelling by overlaying historical images at their original locations. It bridges the past and present, offering users a time-travel-like experience of exploring cultural landmarks and significant events.
+                    </p>
+                    </div>
             
             <div class="project-section">
                 <h2>Key Features</h2>
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-layer-group"></i>
-                        </div>
-                        <h3>Temporal Overlay</h3>
-                        <p>Historical images aligned with present-day locations.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-film"></i>
-                        </div>
-                        <h3>Narrative Visualization</h3>
-                        <p>Recreating significant historical events where they occurred.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-route"></i>
-                        </div>
-                        <h3>Guided Discovery</h3>
-                        <p>Curated paths connecting related stories for deeper exploration.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-headphones-alt"></i>
-                        </div>
-                        <h3>Audio Narration</h3>
-                        <p>Immersive storytelling with professional voice narration.</p>
-                    </div>
-                </div>
+                <ul>
+                    <li><strong>Temporal Overlay:</strong> Historical images aligned with present-day locations</li>
+                    <li><strong>Narrative Visualization:</strong> Recreating significant historical events where they occurred</li>
+                    <li><strong>Guided Discovery:</strong> Curated paths connecting related stories for deeper exploration</li>
+                    <li><strong>Audio Narration:</strong> Immersive storytelling with professional voice narration</li>
+                </ul>
             </div>
             
             <div class="project-section ui-screens-section">
@@ -529,150 +501,10 @@
             </div>
             
             <div class="project-section">
-                <h2>Featured Experiences</h2>
-                <h3>The Dakota Building & John Lennon's Story</h3>
-                <ul>
-                    <li>Explore the Dakota's history as a creative hub.</li>
-                    <li>Witness a recreation of John Lennon's tragic night.</li>
-                    <li>View historical overlays of the building and Strawberry Fields memorial.</li>
-                </ul>
-            </div>
-            
-            <div class="project-section">
-                <h2>Technical Implementation</h2>
+                <h2>Technical Approach</h2>
                 <p>
-                    AR Tour leverages modern augmented reality and geolocation technologies:
+                    ARTour leverages Unity and AR Foundation for cross-platform development, integrating Google Geospatial API for precise location tracking and historical image alignment. The development process involved extensive historical research, geospatial data mapping, and iterative on-location testing to ensure accurate overlay positioning. Firebase handles user data and content management, while ElevenLabs provides AI-generated voice narration for immersive storytelling experiences.
                 </p>
-                
-                <div class="tech-grid">
-                    <div class="tech-item">
-                        <i class="fas fa-unity tech-icon"></i>
-                        <span>Unity</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fas fa-vr-cardboard tech-icon"></i>
-                        <span>AR Foundation</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fas fa-globe tech-icon"></i>
-                        <span>Google Geospatial</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fas fa-microphone-alt tech-icon"></i>
-                        <span>ElevenLabs Voice</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fas fa-database tech-icon"></i>
-                        <span>Firebase</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fas fa-map-marked-alt tech-icon"></i>
-                        <span>Mapbox</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-section">
-                <h2>Development Process</h2>
-                <div class="process-container">
-                    <h3>From Concept to Release</h3>
-                    <div class="process-steps">
-                        <div class="process-step">
-                            <div class="step-number">1</div>
-                            <div class="step-title">Historical Research</div>
-                            <div class="step-desc">Collecting and verifying historical imagery and accounts</div>
-                        </div>
-                        
-                        <div class="process-step">
-                            <div class="step-number">2</div>
-                            <div class="step-title">Location Mapping</div>
-                            <div class="step-desc">Precise geospatial alignment of historical data</div>
-                        </div>
-                        
-                        <div class="process-step">
-                            <div class="step-number">3</div>
-                            <div class="step-title">Narrative Design</div>
-                            <div class="step-desc">Creating compelling stories around historical events</div>
-                        </div>
-                        
-                        <div class="process-step">
-                            <div class="step-number">4</div>
-                            <div class="step-title">AR Development</div>
-                            <div class="step-desc">Technical implementation of the AR experience</div>
-                        </div>
-                        
-                        <div class="process-step">
-                            <div class="step-number">5</div>
-                            <div class="step-title">On-Location Testing</div>
-                            <div class="step-desc">Iterative testing at actual historical sites</div>
-                        </div>
-                        
-                        <div class="process-step">
-                            <div class="step-number">6</div>
-                            <div class="step-title">Content Expansion</div>
-                            <div class="step-desc">Ongoing addition of new locations and experiences</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-section">
-                <h2>User Experience Design</h2>
-                <p>
-                    The application focuses on immersion while maintaining accessibility:
-                </p>
-                
-                <div class="comparison-container">
-                    <div class="comparison-items">
-                        <div class="comparison-item">
-                            <div class="comparison-header">
-                                <div class="comparison-icon">
-                                    <i class="fas fa-eye"></i>
-                                </div>
-                                <div class="comparison-title">Immersive First</div>
-                            </div>
-                            <div class="comparison-content">
-                                Minimal UI that recedes when not in use, keeping focus on the historical content and real-world environment.
-                            </div>
-                        </div>
-                        
-                        <div class="comparison-item">
-                            <div class="comparison-header">
-                                <div class="comparison-icon">
-                                    <i class="fas fa-compass"></i>
-                                </div>
-                                <div class="comparison-title">Spatial Discovery</div>
-                            </div>
-                            <div class="comparison-content">
-                                Directional cues guide users to nearby points of historical interest without disrupting the exploration.
-                            </div>
-                        </div>
-                        
-                        <div class="comparison-item">
-                            <div class="comparison-header">
-                                <div class="comparison-icon">
-                                    <i class="fas fa-layer-group"></i>
-                                </div>
-                                <div class="comparison-title">Temporal Control</div>
-                            </div>
-                            <div class="comparison-content">
-                                Users can "scrub" through time to see how locations have changed across different historical periods.
-                            </div>
-                        </div>
-                        
-                        <div class="comparison-item">
-                            <div class="comparison-header">
-                                <div class="comparison-icon">
-                                    <i class="fas fa-universal-access"></i>
-                                </div>
-                                <div class="comparison-title">Accessibility</div>
-                            </div>
-                            <div class="comparison-content">
-                                Audio descriptions, text transcripts, and haptic feedback ensure the experience is accessible to all users.
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             
             <div class="nav-buttons">

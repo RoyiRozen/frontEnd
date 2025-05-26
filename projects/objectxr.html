@@ -349,7 +349,7 @@
         <header>
             <div class="header-content"> <!-- Added to match other pages if needed, or remove if artour.html is simpler -->
                 <hgroup class="top-bar">
-                    <h1 class="title" button id="title" onclick="window.location.href='../index.html'">Royi Rozen</button></h1>
+                    <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
                     <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
                     <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
                     <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
@@ -385,28 +385,12 @@
                 
                 <div class="project-section">
                     <h2>Key Features</h2>
-                    <div class="feature-grid">
-                        <div class="feature-card">
-                            <div class="feature-icon"><i class="fas fa-hand-paper"></i></div>
-                            <h3>Intuitive Gesture Control</h3>
-                            <p>Manipulate objects using natural hand movements for seamless interaction.</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon"><i class="fas fa-cogs"></i></div>
-                            <h3>Realistic Physics Engine</h3>
-                            <p>Experience true-to-life object behavior and dynamic physical interactions.</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon"><i class="fas fa-users"></i></div>
-                            <h3>Collaborative Workspaces</h3>
-                            <p>Share, co-create, and interact with 3D models in real-time persistent XR environments.</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div> <!-- Simplified icon -->
-                            <h3>Cross-Platform Support</h3>
-                            <p>Access ObjectXR across various VR headsets and AR-capable devices.</p>
-                        </div>
-                    </div>
+                    <ul>
+                        <li><strong>Intuitive Gesture Control:</strong> Manipulate objects using natural hand movements for seamless interaction</li>
+                        <li><strong>Realistic Physics Engine:</strong> Experience true-to-life object behavior and dynamic physical interactions</li>
+                        <li><strong>Collaborative Workspaces:</strong> Share, co-create, and interact with 3D models in real-time persistent XR environments</li>
+                        <li><strong>Cross-Platform Support:</strong> Access ObjectXR across various VR headsets and AR-capable devices</li>
+                    </ul>
                 </div>
                 
                 <div class="project-section prototyping-section">
@@ -414,23 +398,11 @@
                     <p>
                         The development of ObjectXR heavily relied on rapid prototyping to refine core interactions and user interface elements. Tools like ShapesXR proved invaluable in this iterative process, allowing for quick design and testing cycles directly within a 3D environment.
                     </p>
-                    <div class="feature-grid">
-                         <div class="feature-card">
-                            <div class="feature-icon"><i class="fas fa-drafting-compass"></i></div>
-                            <h3>Rapid Interaction Modeling</h3>
-                            <p>ShapesXR enabled us to quickly build and test various interaction models for object manipulation, significantly speeding up the design cycle for core mechanics.</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon"><i class="fas fa-object-group"></i></div>
-                            <h3>Spatial UI Design</h3>
-                            <p>Visualizing and iterating on UI elements directly in 3D space within ShapesXR was crucial for creating an intuitive and spatially aware user experience.</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon"><i class="fas fa-user-check"></i></div>
-                            <h3>Early User Feedback</h3>
-                            <p>We used ShapesXR prototypes to gather early feedback on core mechanics and usability, allowing us to make informed design decisions from the outset.</p>
-                        </div>
-                    </div>
+                    <ul>
+                        <li><strong>Rapid Interaction Modeling:</strong> ShapesXR enabled us to quickly build and test various interaction models for object manipulation, significantly speeding up the design cycle for core mechanics</li>
+                        <li><strong>Spatial UI Design:</strong> Visualizing and iterating on UI elements directly in 3D space within ShapesXR was crucial for creating an intuitive and spatially aware user experience</li>
+                        <li><strong>Early User Feedback:</strong> We used ShapesXR prototypes to gather early feedback on core mechanics and usability, allowing us to make informed design decisions from the outset</li>
+                    </ul>
                      <p style="text-align: center; margin-top: 20px;">
                         Explore an early prototype: <a href="https://shapesxr.space/your-objectxr-space" target="_blank" rel="noopener noreferrer" style="color: var(--project-color);">ObjectXR ShapesXR Space</a>
                     </p>
@@ -438,14 +410,15 @@
 
                 <div class="project-section">
                     <h2>Technical Implementation</h2>
-                    <div class="tech-grid">
-                        <div class="tech-item"><i class="fab fa-unity tech-icon"></i><span>Unity Engine</span></div>
-                        <div class="tech-item"><i class="fas fa-code tech-icon"></i><span>C# Programming</span></div>
-                        <div class="tech-item"><i class="fas fa-hand-rock tech-icon"></i><span>XR Interaction Toolkit</span></div>
-                        <div class="tech-item"><i class="fas fa-network-wired tech-icon"></i><span>Photon Engine</span></div>
-                        <div class="tech-item"><i class="fas fa-image tech-icon"></i><span>Universal Render Pipeline (URP)</span></div>
-                        <div class="tech-item"><i class="fas fa-shapes tech-icon"></i><span>ShapesXR (Prototyping)</span></div>
-                    </div>
+                    <p>ObjectXR leverages several cutting-edge technologies to create its immersive XR experience:</p>
+                    <ul>
+                        <li><strong>Unity Engine:</strong> Core development platform for cross-platform XR applications</li>
+                        <li><strong>C# Programming:</strong> Primary programming language for application logic and interactions</li>
+                        <li><strong>XR Interaction Toolkit:</strong> Framework for implementing natural gesture-based interactions</li>
+                        <li><strong>Photon Engine:</strong> Real-time networking for collaborative multi-user experiences</li>
+                        <li><strong>Universal Render Pipeline (URP):</strong> Optimized rendering for high-quality visuals across devices</li>
+                        <li><strong>ShapesXR (Prototyping):</strong> Rapid prototyping tool for testing interaction concepts</li>
+                    </ul>
                 </div>
                 
                 <div class="project-section">
@@ -515,7 +488,7 @@
                 </div>
                 
                 <div class="nav-buttons">
-                    <button onclick="window.location.href='../index.html'" class="back-button"> <!-- Corrected path for main portfolio -->
+                    <button onclick="window.location.href='../basic.html'" class="back-button"> <!-- Corrected path for main portfolio -->
                         <i class="fas fa-arrow-left"></i> Back to Portfolio
                     </button>
                 </div>

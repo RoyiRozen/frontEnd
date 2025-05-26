@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Estate Viz - Royi Rozen</title>
+    <title>RealEstate - Royi Rozen</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     
@@ -16,521 +16,278 @@
     
     <link rel="stylesheet" href="../style.css">
     <style>
-        .realestate-badge {
-            display: inline-block;
-            background-color: #34495e;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-weight: bold;
-            margin-left: 10px;
-            font-size: 0.8em;
-            vertical-align: middle;
-        }
-        
-        .realestate-quote {
-            background-color: #f8fafb;
-            border-left: 4px solid #34495e;
-            padding: 20px;
-            margin: 30px 0;
-            border-radius: 4px;
-            font-style: italic;
-            position: relative;
-        }
-        
-        .realestate-quote::before {
-            content: '"';
-            position: absolute;
-            top: 10px;
-            left: 15px;
-            font-size: 40px;
-            color: #34495e;
-            opacity: 0.3;
-        }
-        
-        .project-section {
-            margin: 40px 0;
-        }
-        
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 20px;
-            margin: 25px 0;
-        }
-        
-        .tech-item {
-            background-color: #f5f5f5;
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
+        /* Clean, centered layout */
+        body {
+            margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-        }
-        
-        .tech-icon {
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: #34495e;
-        }
-        
-        .image-container {
-            margin: 30px 0;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .project-image {
             width: 100%;
-            height: auto;
-            display: block;
+            overflow-x: hidden;
         }
         
-        .video-container {
-            position: relative;
-            width: 70%;
-            max-width: 800px;
-            height: auto;
-            margin: 30px auto;
-            aspect-ratio: 16/9;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .video-embed {
+        #app {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin: 30px 0;
+        header, main, footer {
+            width: 100%;
         }
         
-        .feature-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        /* Project header styling */
+        .project-header {
+            margin-top: 120px;
+            margin-bottom: 30px;
             text-align: center;
-            transition: transform 0.3s ease;
         }
         
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-icon {
-            font-size: 32px;
-            color: #34495e;
+        .project-header h1 {
+            font-size: 48px;
+            font-weight: 700;
             margin-bottom: 15px;
-        }
-        
-        .feature-title {
-            font-weight: bold;
-            margin-bottom: 10px;
             color: #333;
         }
         
-        .feature-desc {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .comparison-container {
+        .project-tags {
             display: flex;
-            margin: 30px 0;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .comparison-before,
-        .comparison-after {
-            flex: 1;
-            position: relative;
-        }
-        
-        .comparison-image {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .comparison-label {
-            position: absolute;
-            top: 20px;
-            color: white;
-            background-color: rgba(52, 73, 94, 0.8);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-        
-        .comparison-before .comparison-label {
-            left: 20px;
-        }
-        
-        .comparison-after .comparison-label {
-            right: 20px;
-        }
-        
-        .benefits-list {
-            margin: 30px 0;
-            padding: 0;
-            list-style-type: none;
-        }
-        
-        .benefit-item {
-            display: flex;
-            align-items: flex-start;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
             margin-bottom: 20px;
         }
         
-        .benefit-icon {
-            flex-shrink: 0;
-            width: 40px;
-            height: 40px;
-            background-color: #f5f5f5;
-            border-radius: 50%;
+        .grid-item-filter {
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Hero video container */
+        .video-container {
+            width: 100%;
+            margin: 40px 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+        }
+        
+        .video-embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Main content styling */
+        main {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            color: #34495e;
-            font-size: 18px;
+            width: 100%;
         }
         
-        .benefit-content {
-            flex-grow: 1;
+        .project-content {
+            width: 100%;
+            max-width: 800px;
+            padding: 0 20px;
+            box-sizing: border-box;
         }
         
-        .benefit-title {
-            font-weight: bold;
-            margin-bottom: 5px;
+        /* Project sections */
+        .project-section {
+            margin: 40px 0;
+            text-align: left;
+        }
+        
+        .project-section h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
             color: #333;
         }
         
-        .benefit-desc {
+        .project-section p {
+            font-size: 16px;
+            line-height: 1.6;
             color: #666;
-            line-height: 1.5;
+            margin-bottom: 20px;
         }
         
+        /* Section images */
+        .section-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            display: block;
+        }
+        
+        /* Overview section styling */
+        .overview-section {
+            background-color: #f8f9fa;
+            border-left: 4px solid #34495e;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        .overview-section p {
+            margin-bottom: 0;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+        
+        /* Navigation buttons */
+        .nav-buttons {
+            margin: 60px 0 40px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .back-button:hover {
+            background-color: #34495e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .back-button i {
+            margin-right: 8px;
+        }
+        
+        /* Responsive design */
         @media (max-width: 768px) {
-            .feature-grid {
-                grid-template-columns: 1fr;
+            .project-header {
+                margin-top: 100px;
+                padding: 0 15px;
             }
             
-            .tech-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .project-header h1 {
+                font-size: 36px;
             }
             
-            .comparison-container {
-                flex-direction: column;
+            .project-content {
+                padding: 0 15px;
             }
             
-            .comparison-before,
-            .comparison-after {
-                width: 100%;
+            .project-section h2 {
+                font-size: 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .project-header h1 {
+                font-size: 28px;
+            }
+            
+            .project-tags {
+                justify-content: center;
+            }
+            
+            .grid-item-filter {
+                font-size: 12px;
+                padding: 4px 8px;
             }
         }
     </style>
 </head>
 <body>
-    <script type="module" src="../script.js"></script>
-    <script type="module" src="../contact.js"></script>
-    
     <div id="app">
         <header>
-            <div class="header-content">
-                <hgroup class="top-bar">
-                    <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
-                    <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
-                    <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
-                    <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.location.href='https://www.linkedin.com/in/royi-rozen/'"></i>
-                </hgroup>
+            <div class="top-bar">
+                <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
+                <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
+                <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
+                <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </div>
         </header>
         
-        <main class="project-page">
+        <main>
+            <!-- PROJECT HEADER -->
             <div class="project-header">
-                <h1>Real Estate Viz <span class="realestate-badge">AR Experience</span></h1>
-                <div class="project-meta">
-                    <div class="project-year">2022</div>
-                    <div class="project-tags">
-                        <span class="project-tag">Augmented Reality</span>
-                        <span class="project-tag">Creative</span>
-                        <span class="project-tag">3D</span>
-                    </div>
+                <h1>RealEstate</h1>
+                <div class="project-tags">
+                    <span class="grid-item-filter">3D</span>
+                    <span class="grid-item-filter">Design</span>
+                    <span class="grid-item-filter">Creative</span>
+                    <span class="grid-item-filter">Product</span>
                 </div>
+            </div>
+            
+            <!-- HERO VIDEO -->
+            <div class="video-container">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             
             <div class="project-content">
-                <div class="project-section">
-                    <h2>Project Overview</h2>
+                <!-- BRIEF OVERVIEW -->
+                <div class="overview-section">
                     <p>
-                        <strong>Real Estate Viz</strong> is a geolocation-based augmented reality experience that envisions a future where AR serves as a powerful tool for visualizing real estate development projects on-site. The application aims to streamline communication between developers and the public, providing an intuitive way to experience proposed buildings in their actual planned location before construction begins.
-                    </p>
-                    
-                    <div class="image-container">
-                        <img src="../realestate.jpg" alt="Real Estate Viz AR Experience" class="project-image">
-                    </div>
-                    
-                    <div class="realestate-quote">
-                        <p>
-                            The gap between architectural renderings and the public's understanding of new developments has always been problematic. By bringing proposed buildings into the real world through AR, we can democratize the visualization process and foster more meaningful dialogue about urban development.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="project-section">
-                    <h2>The Problem</h2>
-                    <p>
-                        Urban development projects often face challenges in effectively communicating their vision to various stakeholders:
-                    </p>
-                    <ul>
-                        <li>Traditional architectural renderings can be misleading or difficult for non-professionals to interpret</li>
-                        <li>Community members struggle to visualize how new developments will impact their neighborhoods</li>
-                        <li>Planning boards and city officials need accurate context for decision-making</li>
-                        <li>Physical models are expensive and can't be easily transported or viewed in-context</li>
-                        <li>Development sites often sit empty for months or years, creating information gaps about future plans</li>
-                    </ul>
-                    
-                    <p>
-                        These communication barriers can lead to misinformation, community opposition, and prolonged approval processes that increase costs and delays for developers.
+                        RealEstate is an interactive 3D visualization platform that transforms property marketing through immersive digital experiences. This comprehensive solution enables real estate professionals to showcase properties with photorealistic 3D environments, virtual tours, and interactive design tools that help clients visualize spaces before construction or renovation, revolutionizing the property sales and design process.
                     </p>
                 </div>
                 
+                <!-- IMMERSIVE VISUALIZATION -->
                 <div class="project-section">
-                    <h2>AR Solution</h2>
+                    <h2>Immersive Visualization</h2>
                     <p>
-                        Real Estate Viz addresses these challenges by leveraging cutting-edge AR technology to place accurate 3D models of proposed buildings directly on their future construction sites. This creates a shared visual language that bridges the gap between developers and the community.
+                        The platform leverages advanced 3D rendering technology to create photorealistic property visualizations that allow potential buyers to explore spaces in unprecedented detail. Using high-quality textures, accurate lighting simulations, and realistic material properties, the system generates immersive environments that feel authentic and engaging. Clients can navigate through properties at their own pace, examining architectural details, spatial relationships, and design elements that traditional photography and floor plans cannot effectively communicate.
                     </p>
-                    
-                    <div class="feature-grid">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="feature-title">Precise Geolocation</div>
-                            <div class="feature-desc">
-                                GPS and visual positioning technology ensures buildings appear exactly where they will be constructed.
-                            </div>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-sun"></i>
-                            </div>
-                            <div class="feature-title">Realistic Lighting</div>
-                            <div class="feature-desc">
-                                Real-time lighting simulation shows how buildings will cast shadows at different times of day and seasons.
-                            </div>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                            <div class="feature-title">Multiple Perspectives</div>
-                            <div class="feature-desc">
-                                View projects from the street, adjacent buildings, or other key vantage points to assess visual impact.
-                            </div>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-paint-brush"></i>
-                            </div>
-                            <div class="feature-title">Design Variations</div>
-                            <div class="feature-desc">
-                                Toggle between different design options to compare alternatives for the same site.
-                            </div>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-comment-alt"></i>
-                            </div>
-                            <div class="feature-title">Feedback System</div>
-                            <div class="feature-desc">
-                                Leave location-specific comments and feedback that developers can review and address.
-                            </div>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-info-circle"></i>
-                            </div>
-                            <div class="feature-title">Project Information</div>
-                            <div class="feature-desc">
-                                Access detailed information about timeline, amenities, sustainability features, and community benefits.
-                            </div>
-                        </div>
-                    </div>
+                    <img src="../realestate.jpg" alt="3D Property Visualization" class="section-image">
                 </div>
                 
+                <!-- INTERACTIVE DESIGN TOOLS -->
                 <div class="project-section">
-                    <h2>Technical Implementation</h2>
+                    <h2>Interactive Design Tools</h2>
                     <p>
-                        Creating an accurate AR visualization for real estate required sophisticated technical solutions:
+                        Beyond static visualization, the platform includes powerful interactive tools that enable real-time customization and design exploration. Users can modify materials, furniture arrangements, color schemes, and lighting conditions instantly, seeing changes reflected immediately in the 3D environment. This functionality empowers both real estate professionals and clients to experiment with different design options, facilitating informed decision-making and reducing the uncertainty often associated with property purchases or renovations.
                     </p>
-                    
-                    <div class="tech-grid">
-                        <div class="tech-item">
-                            <i class="fas fa-globe tech-icon"></i>
-                            <span>Geospatial AR</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-street-view tech-icon"></i>
-                            <span>Visual Positioning</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-cubes tech-icon"></i>
-                            <span>BIM Integration</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-mobile-alt tech-icon"></i>
-                            <span>AR Foundation</span>
-                        </div>
-                    </div>
-                    
-                    <p>
-                        The application was built using Unity with AR Foundation to ensure cross-platform compatibility. It incorporates several specialized technologies:
-                    </p>
-                    <ul>
-                        <li><strong>Hybrid Positioning System:</strong> Combines GPS data with visual positioning anchors for centimeter-level accuracy even in urban environments with GPS challenges</li>
-                        <li><strong>BIM Model Optimization:</strong> Custom pipeline that converts detailed architectural models (BIM) into optimized AR-ready assets that can run smoothly on mobile devices</li>
-                        <li><strong>Real-time Occlusion:</strong> Advanced depth sensing to ensure virtual buildings properly interact with existing structures and terrain</li>
-                        <li><strong>Environment-Aware Rendering:</strong> Lighting system that samples real-world conditions to create realistic shadows and reflections</li>
-                    </ul>
+                    <img src="../image22.png" alt="Interactive Design Interface" class="section-image">
                 </div>
                 
+                <!-- MARKET TRANSFORMATION -->
                 <div class="project-section">
-                    <h2>Before & After Visualization</h2>
+                    <h2>Market Transformation</h2>
                     <p>
-                        One of the most powerful features of Real Estate Viz is the ability to instantly toggle between current and future views:
+                        RealEstate represents a significant advancement in property marketing technology, addressing key challenges in the real estate industry including remote viewing limitations, design uncertainty, and inefficient sales processes. The platform has demonstrated measurable improvements in client engagement, reduced time-to-sale, and increased customer satisfaction by providing comprehensive digital experiences that bridge the gap between imagination and reality. This technology positions real estate professionals at the forefront of digital innovation while delivering tangible value to property buyers and investors.
                     </p>
-                    
-                    <div class="comparison-container">
-                        <div class="comparison-before">
-                            <span class="comparison-label">Before</span>
-                            <img src="../realestate-before.jpg" alt="Empty Lot Before Development" class="comparison-image">
-                        </div>
-                        <div class="comparison-after">
-                            <span class="comparison-label">After</span>
-                            <img src="../realestate-after.jpg" alt="AR Visualization of Proposed Building" class="comparison-image">
-                        </div>
-                    </div>
-                    
-                    <p>
-                        This direct comparison helps stakeholders understand exactly how a development will transform its surroundings, promoting informed discussion about urban change.
-                    </p>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Key Benefits</h2>
-                    <p>
-                        The Real Estate Viz platform offers significant advantages to multiple stakeholders:
-                    </p>
-                    
-                    <ul class="benefits-list">
-                        <li class="benefit-item">
-                            <div class="benefit-icon">
-                                <i class="fas fa-hard-hat"></i>
-                            </div>
-                            <div class="benefit-content">
-                                <div class="benefit-title">For Developers</div>
-                                <div class="benefit-desc">
-                                    Improve community relations, streamline approval processes, and market properties more effectively with immersive visualizations that can be experienced on-site.
-                                </div>
-                            </div>
-                        </li>
-                        
-                        <li class="benefit-item">
-                            <div class="benefit-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="benefit-content">
-                                <div class="benefit-title">For Community Members</div>
-                                <div class="benefit-desc">
-                                    Gain a clear understanding of how new developments will impact neighborhood aesthetics, views, sunlight, and overall character before construction begins.
-                                </div>
-                            </div>
-                        </li>
-                        
-                        <li class="benefit-item">
-                            <div class="benefit-icon">
-                                <i class="fas fa-city"></i>
-                            </div>
-                            <div class="benefit-content">
-                                <div class="benefit-title">For City Planners</div>
-                                <div class="benefit-desc">
-                                    Make more informed decisions by seeing proposed buildings in context, evaluating their relationship to existing urban fabric and master plans.
-                                </div>
-                            </div>
-                        </li>
-                        
-                        <li class="benefit-item">
-                            <div class="benefit-icon">
-                                <i class="fas fa-home"></i>
-                            </div>
-                            <div class="benefit-content">
-                                <div class="benefit-title">For Potential Buyers/Tenants</div>
-                                <div class="benefit-desc">
-                                    Experience future properties in their actual location, understanding views, surroundings, and neighborhood context before making purchasing decisions.
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="project-section">
-                    <h2>User Experience Design</h2>
-                    <p>
-                        The application was designed with accessibility and ease-of-use as primary considerations, making architectural visualization available to everyone regardless of technical background:
-                    </p>
-                    <ul>
-                        <li><strong>Intuitive Interface:</strong> Simple controls for navigating 3D space and accessing information about the development</li>
-                        <li><strong>Multi-Modal Interaction:</strong> Options for touch controls, voice commands, and gesture recognition</li>
-                        <li><strong>Progressive Disclosure:</strong> Information presented in layers, from basic overview to detailed specifications</li>
-                        <li><strong>Guided Tours:</strong> Pre-programmed viewpoints highlighting key features and perspectives</li>
-                        <li><strong>Accessible Design:</strong> High-contrast modes, screen reader compatibility, and other accessibility features</li>
-                    </ul>
-                    
-                    <p>
-                        The experience is designed to work equally well for individual users exploring on their own and for guided group presentations led by developers or planners.
-                    </p>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Future Development</h2>
-                    <p>
-                        As Real Estate Viz evolves, several exciting enhancements are planned:
-                    </p>
-                    <ul>
-                        <li>Integration with city-wide digital twins for broader urban context visualization</li>
-                        <li>Simulation of traffic patterns and pedestrian flows around proposed developments</li>
-                        <li>Environmental impact analysis showing factors like solar gain, wind patterns, and stormwater management</li>
-                        <li>AR collaboration tools allowing multiple stakeholders to view and discuss projects simultaneously</li>
-                        <li>Integration with VR to allow remote viewing of projects for those who cannot visit the physical site</li>
-                    </ul>
-                    
-                    <p>
-                        The ultimate vision is to create a comprehensive platform that transforms how urban development is communicated, evaluated, and experienced by all stakeholders, leading to better-designed buildings and more inclusive decision-making processes.
-                    </p>
+                    <img src="../image23.png" alt="Real Estate Technology Impact" class="section-image">
                 </div>
             </div>
             
+            <!-- NAVIGATION -->
             <div class="nav-buttons">
                 <button onclick="window.location.href='../basic.html'" class="back-button">
                     <i class="fas fa-arrow-left"></i> Back to Portfolio
@@ -543,7 +300,7 @@
         <div class="footer-content">
             <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
             <nav class="social-icons">
-                <i class="fa-brands fa-linkedin" style="scale: 2;"></i>
+                <i class="fa-brands fa-linkedin" style="scale: 2;" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </nav>
         </div>
     </footer>
@@ -573,10 +330,41 @@
             <div class="form-divider"></div>
             <div class="form-actions">
                 <button type="submit" class="send-button">Send</button>
-                <div style="clear: both;"></div> <!-- Clear the float -->
+                <div style="clear: both;"></div>
             </div>
             <input type="hidden" name="recipient" value="rr789@cornell.edu">
         </form>
     </div>
+    
+    <script>
+        // Contact form functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactButton = document.getElementById('contact-button');
+            const contactPopup = document.getElementById('contact-popup');
+            const popupClose = document.getElementById('popup-close');
+            const contactForm = document.getElementById('contact-form');
+            
+            contactButton.addEventListener('click', function() {
+                contactPopup.classList.add('active');
+            });
+            
+            popupClose.addEventListener('click', function() {
+                contactPopup.classList.remove('active');
+            });
+            
+            document.addEventListener('click', function(event) {
+                if (!contactPopup.contains(event.target) && !contactButton.contains(event.target)) {
+                    contactPopup.classList.remove('active');
+                }
+            });
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                contactPopup.classList.remove('active');
+                contactForm.reset();
+            });
+        });
+    </script>
 </body>
 </html> 

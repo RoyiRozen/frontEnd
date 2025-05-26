@@ -16,124 +16,73 @@
     
     <link rel="stylesheet" href="../style.css">
     <style>
-        .ar-badge {
-            display: inline-block;
-            background-color: #ff7e5f;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-weight: bold;
-            margin-left: 10px;
-            font-size: 0.8em;
-            vertical-align: middle;
-        }
-        
-        .campus-quote {
-            background-color: #f8f9fa;
-            border-left: 4px solid #ff7e5f;
-            padding: 20px;
-            margin: 30px 0;
-            border-radius: 4px;
-            font-style: italic;
-            position: relative;
-        }
-        
-        .campus-quote::before {
-            content: '"';
-            position: absolute;
-            top: 10px;
-            left: 15px;
-            font-size: 40px;
-            color: #ff7e5f;
-            opacity: 0.3;
-        }
-        
-        .project-section {
-            margin: 40px 0;
-        }
-        
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 20px;
-            margin: 25px 0;
-        }
-        
-        .tech-item {
-            background-color: #f5f5f5;
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
+        /* Clean, centered layout */
+        body {
+            margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            width: 100%;
+            overflow-x: hidden;
         }
         
-        .tech-icon {
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: #ff7e5f;
+        #app {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
-        .emoji-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin: 30px 0;
+        header, main, footer {
+            width: 100%;
         }
         
-        .emoji-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        /* Project header styling */
+        .project-header {
+            margin-top: 120px;
+            margin-bottom: 30px;
             text-align: center;
-            transition: transform 0.3s ease;
         }
         
-        .emoji-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .emoji-icon {
+        .project-header h1 {
             font-size: 48px;
+            font-weight: 700;
             margin-bottom: 15px;
-        }
-        
-        .emoji-location {
-            font-weight: bold;
-            margin-bottom: 10px;
             color: #333;
         }
         
-        .emoji-desc {
-            color: #666;
-            font-size: 0.9rem;
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
         }
         
-        .image-container {
-            margin: 30px 0;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .grid-item-filter {
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
         }
         
-        .project-image {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
+        /* Hero video container */
         .video-container {
-            position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            margin: 30px 0;
-            border-radius: 10px;
+            margin: 40px 0;
             overflow: hidden;
+            border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
         }
         
         .video-embed {
@@ -142,281 +91,221 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
             border: none;
         }
         
-        .campus-map {
-            position: relative;
-            background-color: #f5f7fa;
-            border-radius: 12px;
-            padding: 30px;
-            margin: 40px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .map-markers {
+        /* Main content styling */
+        main {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-top: 25px;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
         }
         
-        .map-marker {
-            flex: 1 1 200px;
-            margin: 10px;
-            text-align: center;
-            position: relative;
+        .project-content {
+            width: 100%;
+            max-width: 800px;
+            padding: 0 20px;
+            box-sizing: border-box;
         }
         
-        .marker-emoji {
-            font-size: 36px;
-            margin-bottom: 10px;
+        /* Project sections */
+        .project-section {
+            margin: 40px 0;
+            text-align: left;
         }
         
-        .marker-location {
-            font-weight: bold;
-            margin-bottom: 5px;
+        .project-section h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
         }
         
-        .marker-desc {
-            font-size: 0.9rem;
+        .project-section p {
+            font-size: 16px;
+            line-height: 1.6;
             color: #666;
+            margin-bottom: 20px;
         }
         
+        .project-section ul {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .project-section li {
+            margin-bottom: 8px;
+        }
+        
+        /* Section images */
+        .section-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            display: block;
+        }
+        
+        /* Overview section styling */
+        .overview-section {
+            background-color: #f8f9fa;
+            border-left: 4px solid #ff7e5f;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        .overview-section p {
+            margin-bottom: 0;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+        
+        /* Navigation buttons */
+        .nav-buttons {
+            margin: 60px 0 40px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .back-button:hover {
+            background-color: #34495e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .back-button i {
+            margin-right: 8px;
+        }
+        
+        /* Responsive design */
         @media (max-width: 768px) {
-            .emoji-grid {
-                grid-template-columns: 1fr;
+            .project-header {
+                margin-top: 100px;
+                padding: 0 15px;
             }
             
-            .tech-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .project-header h1 {
+                font-size: 36px;
+            }
+            
+            .project-content {
+                padding: 0 15px;
+            }
+            
+            .project-section h2 {
+                font-size: 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .project-header h1 {
+                font-size: 28px;
+            }
+            
+            .project-tags {
+                justify-content: center;
+            }
+            
+            .grid-item-filter {
+                font-size: 12px;
+                padding: 4px 8px;
             }
         }
     </style>
 </head>
 <body>
-    <script type="module" src="../script.js"></script>
-    <script type="module" src="../contact.js"></script>
-    
     <div id="app">
         <header>
-            <div class="header-content">
-                <hgroup class="top-bar">
-                    <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
-                    <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
-                    <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
-                    <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.location.href='https://www.linkedin.com/in/royi-rozen/'"></i>
-                </hgroup>
+            <div class="top-bar">
+                <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
+                <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
+                <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
+                <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </div>
         </header>
         
-        <main class="project-page">
+        <main>
+            <!-- PROJECT HEADER -->
             <div class="project-header">
-                <h1>Reactions <span class="ar-badge">AR Experience</span></h1>
-                <div class="project-meta">
-                    <div class="project-year">2024</div>
-                    <div class="project-tags">
-                        <span class="project-tag">AR</span>
-                        <span class="project-tag">Geospatial</span>
-                        <span class="project-tag">Social</span>
-                        <span class="project-tag">Unity</span>
-                        <span class="project-tag">Creative</span>
-                    </div>
+                <h1>Reactions</h1>
+                <div class="project-tags">
+                    <span class="grid-item-filter">AR</span>
+                    <span class="grid-item-filter">Product</span>
+                    <span class="grid-item-filter">UI/UX</span>
+                    <span class="grid-item-filter">Dev</span>
+                    <span class="grid-item-filter">Spatial Design</span>
+                    <span class="grid-item-filter">Creative</span>
+                    <span class="grid-item-filter">3D</span>
                 </div>
+            </div>
+            
+            <!-- HERO VIDEO -->
+            <div class="video-container">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/8Uq9feaMjAE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             
             <div class="project-content">
-                <div class="video-container">
-                    <iframe class="video-embed" src="https://www.youtube.com/embed/8Uq9feaMjAE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-
-                <div class="project-section">
-                    <h2>Project Overview</h2>
+                <!-- BRIEF OVERVIEW -->
+                <div class="overview-section">
                     <p>
-                        <strong>Reactions</strong> is an augmented reality experience that transforms the Cornell Tech campus into an interactive social playground. Inspired by the overwhelming feeling of the first day of school, the project allows students and visitors to share emotions through AR emojis placed at specific locations around campus.
-                    </p>
-                    
-                    <div class="image-container">
-                        <img src="../reaction.jpg" alt="Reactions AR App" class="project-image">
-                    </div>
-                    
-                    <div class="campus-quote">
-                        <p>
-                            The first day of school can be overwhelming. Exploring campus for the first time and meeting a bunch of new people. Being passionate about AR, it felt like an opportunity to connect through shared emotions in physical spaces.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="project-section">
-                    <h2>The Inspiration</h2>
-                    <p>
-                        Starting at a new school can be both exciting and intimidating. As new students explore the Cornell Tech campus, they encounter numerous locations, each with its own purpose and atmosphere. This sparked the idea for Reactions - a way to bridge the gap between physical spaces and emotional responses using augmented reality.
-                    </p>
-                    <p>
-                        By placing virtual emoji reactions at specific locations, the project creates a shared emotional map of campus. New students can see how others have responded to different spaces, creating an instant connection through shared experiences. It's a digital layer of emotional context on top of the physical environment.
+                        Reactions is an augmented reality experience that transforms the Cornell Tech campus into an interactive social playground. Inspired by the overwhelming feeling of the first day of school, the project allows students and visitors to share emotions through AR emojis placed at specific locations around campus, creating a shared emotional map of physical spaces.
                     </p>
                 </div>
                 
+                <!-- SOCIAL AR CONCEPT -->
                 <div class="project-section">
-                    <h2>Emotional Landmarks</h2>
-                    
-                    <div class="emoji-grid">
-                        <div class="emoji-card">
-                            <div class="emoji-icon">❤️</div>
-                            <div class="emoji-location">Outside the Cafeteria</div>
-                            <div class="emoji-desc">
-                                Expressing appreciation for the social hub and culinary center of campus life
-                            </div>
-                        </div>
-                        
-                        <div class="emoji-card">
-                            <div class="emoji-icon">😃</div>
-                            <div class="emoji-location">Near Bloomberg Center</div>
-                            <div class="emoji-desc">
-                                Highlighting the excitement and positivity around the academic heart of campus
-                            </div>
-                        </div>
-                        
-                        <div class="emoji-card">
-                            <div class="emoji-icon">🌅</div>
-                            <div class="emoji-location">Best Sunset Viewing Spot</div>
-                            <div class="emoji-desc">
-                                Marking the ideal location to experience the breathtaking Roosevelt Island sunsets
-                            </div>
-                        </div>
-                    </div>
-                    
+                    <h2>Social AR Concept</h2>
                     <p>
-                        These are just a few examples of the emotional landmarks created through the Reactions project. Users can discover these AR emojis as they explore campus, and they can also add their own reactions to create a continuously evolving emotional map of shared experiences.
+                        Starting at a new school can be both exciting and intimidating. As new students explore campus, they encounter numerous locations, each with its own purpose and atmosphere. Reactions bridges the gap between physical spaces and emotional responses using augmented reality. By placing virtual emoji reactions at specific locations, the project creates a shared emotional map where new students can see how others have responded to different spaces, creating instant connections through shared experiences. Unlike many AR experiences that isolate users, Reactions is designed to complement and enhance real-world social interactions.
                     </p>
+                    <img src="../reactions.jpg" alt="Reactions AR Campus Experience" class="section-image">
                 </div>
                 
+                <!-- KEY FEATURES -->
+                <div class="project-section">
+                    <h2>Key Features</h2>
+                    <ul>
+                        <li><strong>Emotional Landmarks:</strong> AR emojis placed at meaningful campus locations like the cafeteria (❤️), Bloomberg Center (😃), and sunset viewing spots (🌅)</li>
+                        <li><strong>Shared Experience:</strong> Creates community through collectively mapped emotional responses visible to all users</li>
+                        <li><strong>Campus Discovery:</strong> Encourages exploration of the entire campus through distributed emoji locations</li>
+                        <li><strong>Social Icebreaker:</strong> Provides conversation starters for new students exploring campus together</li>
+                        <li><strong>Evolving Map:</strong> Continuously growing emotional landscape as more users add their own reactions</li>
+                    </ul>
+                    <img src="../image3.jpg" alt="AR Emoji Interactions" class="section-image">
+                </div>
+                
+                <!-- TECHNICAL IMPLEMENTATION -->
                 <div class="project-section">
                     <h2>Technical Implementation</h2>
                     <p>
-                        Reactions leverages cutting-edge AR technology to create a seamless experience:
+                        Reactions is built using Unity AR Foundation with Google Geospatial API for precise real-world positioning. The system uses persistent cloud anchors to ensure emoji reactions remain accurately placed at their designated campus locations across multiple user sessions. Real-time synchronization through Firebase enables shared experiences, while location-based triggers notify users when they approach areas with existing reactions. The app features cross-platform compatibility for iOS and Android, with optimized rendering for smooth AR performance on mobile devices.
                     </p>
-                    
-                    <div class="tech-grid">
-                        <div class="tech-item">
-                            <i class="fas fa-globe tech-icon"></i>
-                            <span>Google AR & VR Geospatial Creator</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-cubes tech-icon"></i>
-                            <span>Unity AR Foundation</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-map-marker-alt tech-icon"></i>
-                            <span>GPS Integration</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-code tech-icon"></i>
-                            <span>C# Programming</span>
-                        </div>
-                    </div>
-                    
-                    <p>
-                        The project uses Google AR & VR Geospatial Creator to precisely position virtual content in real-world coordinates. This allows emoji reactions to remain persistently in their designated locations, visible to all users of the application. Unity's AR Foundation framework provides the cross-platform development environment, ensuring compatibility with both iOS and Android devices.
-                    </p>
-                    
-                    <p>
-                        Key technical features include:
-                    </p>
-                    <ul>
-                        <li>Accurate geospatial positioning to anchor virtual content to real-world locations</li>
-                        <li>Cloud-based persistence of emoji placements for shared experiences</li>
-                        <li>User-friendly interface for viewing and placing reactions</li>
-                        <li>Optimization for mobile devices to ensure smooth performance</li>
-                        <li>Location-based notifications to alert users of nearby reactions</li>
-                    </ul>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Campus Mapping</h2>
-                    
-                    <div class="campus-map">
-                        <h3>Interactive Campus Experience</h3>
-                        <p>
-                            Reactions transforms Cornell Tech campus into a layer of shared emotional responses, creating new meanings for familiar spaces.
-                        </p>
-                        
-                        <div class="map-markers">
-                            <div class="map-marker">
-                                <div class="marker-emoji">❤️</div>
-                                <div class="marker-location">Cafeteria</div>
-                                <div class="marker-desc">Social hub and community gathering space</div>
-                            </div>
-                            
-                            <div class="map-marker">
-                                <div class="marker-emoji">😃</div>
-                                <div class="marker-location">Bloomberg Center</div>
-                                <div class="marker-desc">Academic heart filled with innovation</div>
-                            </div>
-                            
-                            <div class="map-marker">
-                                <div class="marker-emoji">🌅</div>
-                                <div class="marker-location">Sunset Spot</div>
-                                <div class="marker-desc">Perfect viewpoint for evening reflection</div>
-                            </div>
-                            
-                            <div class="map-marker">
-                                <div class="marker-emoji">🎉</div>
-                                <div class="marker-location">The House</div>
-                                <div class="marker-desc">Residential community and social events</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <p>
-                        This emotional mapping of campus helps new students discover meaningful locations while creating a sense of shared experience. As more users add their own reactions, the map becomes richer and more diverse, reflecting the collective emotional response to different campus spaces.
-                    </p>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Social Impact</h2>
-                    <p>
-                        Reactions showcases AR's potential to foster real-world social connections in several ways:
-                    </p>
-                    <ul>
-                        <li><strong>Breaking the Ice:</strong> Provides an easy conversation starter for new students exploring campus</li>
-                        <li><strong>Shared Experience:</strong> Creates a sense of community through collectively mapped emotional responses</li>
-                        <li><strong>Campus Discovery:</strong> Encourages exploration of the entire campus through distributed emoji locations</li>
-                        <li><strong>Digital Expression:</strong> Allows for emotional expression in physical spaces without permanent alteration</li>
-                        <li><strong>Evolving History:</strong> Creates a living record of how spaces make people feel over time</li>
-                    </ul>
-                    
-                    <p>
-                        Unlike many AR experiences that isolate users in their own digital world, Reactions is designed to complement and enhance real-world social interactions. The AR layer serves as a conversation starter and shared reference point, encouraging face-to-face discussions about campus experiences.
-                    </p>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Future Directions</h2>
-                    <p>
-                        While currently implemented on Cornell Tech's campus, Reactions has potential applications in many other contexts:
-                    </p>
-                    <ul>
-                        <li>Other university and school campuses to help new students navigate social and academic spaces</li>
-                        <li>Tourist destinations to share visitor experiences and highlight points of interest</li>
-                        <li>Urban neighborhoods to create community-driven emotional maps of public spaces</li>
-                        <li>Corporate campuses to improve employee orientation and workplace satisfaction</li>
-                        <li>Museums and cultural institutions to capture visitor responses to exhibits and artworks</li>
-                    </ul>
-                    
-                    <p>
-                        Future development will focus on expanding the range of possible reactions, improving the social sharing capabilities, and creating more robust analytics to understand how people emotionally respond to different spaces. The ultimate goal is to create a platform that helps build stronger connections between people and the places they inhabit.
-                    </p>
-                    
-                    <div class="campus-quote">
-                        <p>
-                            Share your thoughts if you can think of other places where Reactions could work! Stay tuned for more updates on this ongoing project. 😉
-                        </p>
-                    </div>
                 </div>
             </div>
             
+            <!-- NAVIGATION -->
             <div class="nav-buttons">
                 <button onclick="window.location.href='../basic.html'" class="back-button">
                     <i class="fas fa-arrow-left"></i> Back to Portfolio
@@ -427,9 +316,9 @@
     
     <footer>
         <div class="footer-content">
-            <i><h6>Copyright © 2024 <em>Royi Rozen</em></h6></i>
+            <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
             <nav class="social-icons">
-                <i class="fa-brands fa-linkedin" style="scale: 2;"></i>
+                <i class="fa-brands fa-linkedin" style="scale: 2;" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </nav>
         </div>
     </footer>
@@ -459,10 +348,41 @@
             <div class="form-divider"></div>
             <div class="form-actions">
                 <button type="submit" class="send-button">Send</button>
-                <div style="clear: both;"></div> <!-- Clear the float -->
+                <div style="clear: both;"></div>
             </div>
             <input type="hidden" name="recipient" value="rr789@cornell.edu">
         </form>
     </div>
+    
+    <script>
+        // Contact form functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactButton = document.getElementById('contact-button');
+            const contactPopup = document.getElementById('contact-popup');
+            const popupClose = document.getElementById('popup-close');
+            const contactForm = document.getElementById('contact-form');
+            
+            contactButton.addEventListener('click', function() {
+                contactPopup.classList.add('active');
+            });
+            
+            popupClose.addEventListener('click', function() {
+                contactPopup.classList.remove('active');
+            });
+            
+            document.addEventListener('click', function(event) {
+                if (!contactPopup.contains(event.target) && !contactButton.contains(event.target)) {
+                    contactPopup.classList.remove('active');
+                }
+            });
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                contactPopup.classList.remove('active');
+                contactForm.reset();
+            });
+        });
+    </script>
 </body>
 </html> 

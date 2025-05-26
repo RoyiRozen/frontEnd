@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HiStory Map - Royi Rozen</title>
+    <title>HistoryMap - Royi Rozen</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     
@@ -16,133 +16,76 @@
     
     <link rel="stylesheet" href="../style.css">
     <style>
-        .history-badge {
-            display: inline-block;
-            background-color: #e74c3c;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-weight: bold;
-            margin-left: 10px;
-            font-size: 0.8em;
-            vertical-align: middle;
-        }
-        
-        .project-quote {
-            background-color: #f8f9fa;
-            border-left: 4px solid #e74c3c;
-            padding: 20px;
-            margin: 30px 0;
-            border-radius: 4px;
-            font-style: italic;
-            position: relative;
-        }
-        
-        .project-quote::before {
-            content: '"';
-            position: absolute;
-            top: 10px;
-            left: 15px;
-            font-size: 40px;
-            color: #e74c3c;
-            opacity: 0.3;
-        }
-        
-        .project-section {
-            margin: 40px 0;
-        }
-        
-        .component-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 25px 0;
-        }
-        
-        .component-item {
-            background-color: #f5f5f5;
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
+        /* Clean, centered layout */
+        body {
+            margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            width: 100%;
+            overflow-x: hidden;
         }
         
-        .component-icon {
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: #e74c3c;
+        #app {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 30px 0;
+        header, main, footer {
+            width: 100%;
         }
         
-        .process-step {
-            background-color: #f5f5f5;
-            border-radius: 10px;
-            padding: 20px;
+        /* Project header styling */
+        .project-header {
+            margin-top: 120px;
+            margin-bottom: 30px;
             text-align: center;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-            position: relative;
         }
         
-        .process-step::after {
-            content: "→";
-            position: absolute;
-            right: -15px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 24px;
-            color: #e74c3c;
-        }
-        
-        .process-step:last-child::after {
-            display: none;
-        }
-        
-        .step-number {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: #e74c3c;
-            color: white;
-            border-radius: 50%;
-            line-height: 40px;
+        .project-header h1 {
+            font-size: 48px;
+            font-weight: 700;
             margin-bottom: 15px;
-            font-weight: bold;
+            color: #333;
         }
         
-        .image-container {
-            margin: 30px 0;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
         }
         
-        .project-image {
+        .grid-item-filter {
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Hero video container */
+        .video-container {
             width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .iframe-container {
+            margin: 40px 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            margin: 30px 0;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
         }
         
-        .iframe-container iframe {
+        .video-embed {
             position: absolute;
             top: 0;
             left: 0;
@@ -151,171 +94,200 @@
             border: none;
         }
         
+        /* Main content styling */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .project-content {
+            width: 100%;
+            max-width: 800px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        
+        /* Project sections */
+        .project-section {
+            margin: 40px 0;
+            text-align: left;
+        }
+        
+        .project-section h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .project-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Section images */
+        .section-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            display: block;
+        }
+        
+        /* Overview section styling */
+        .overview-section {
+            background-color: #f8f9fa;
+            border-left: 4px solid #e74c3c;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        .overview-section p {
+            margin-bottom: 0;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+        
+        /* Navigation buttons */
+        .nav-buttons {
+            margin: 60px 0 40px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .back-button:hover {
+            background-color: #34495e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .back-button i {
+            margin-right: 8px;
+        }
+        
+        /* Responsive design */
         @media (max-width: 768px) {
-            .process-steps {
-                grid-template-columns: 1fr;
+            .project-header {
+                margin-top: 100px;
+                padding: 0 15px;
             }
             
-            .process-step::after {
-                content: "↓";
-                right: 50%;
-                top: auto;
-                bottom: -20px;
-                transform: translateX(50%);
+            .project-header h1 {
+                font-size: 36px;
+            }
+            
+            .project-content {
+                padding: 0 15px;
+            }
+            
+            .project-section h2 {
+                font-size: 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .project-header h1 {
+                font-size: 28px;
+            }
+            
+            .project-tags {
+                justify-content: center;
+            }
+            
+            .grid-item-filter {
+                font-size: 12px;
+                padding: 4px 8px;
             }
         }
     </style>
 </head>
 <body>
-    <script type="module" src="../script.js"></script>
-    <script type="module" src="../contact.js"></script>
-    
     <div id="app">
         <header>
-            <div class="header-content">
-                <hgroup class="top-bar">
-                    <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
-                    <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
-                    <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
-                    <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.location.href='https://www.linkedin.com/in/royi-rozen/'"></i>
-                </hgroup>
+            <div class="top-bar">
+                <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
+                <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
+                <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
+                <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </div>
         </header>
         
-        <main class="project-page">
+        <main>
+            <!-- PROJECT HEADER -->
             <div class="project-header">
-                <h1>HiStory Map <span class="history-badge">Temporal Exploration</span></h1>
-                <div class="project-meta">
-                    <div class="project-year">2024</div>
-                    <div class="project-tags">
-                        <span class="project-tag">Creative</span>
-                        <span class="project-tag">Dev</span>
-                    </div>
+                <h1>HistoryMap</h1>
+                <div class="project-tags">
+                    <span class="grid-item-filter">Creative</span>
+                    <span class="grid-item-filter">Dev</span>
+                    <span class="grid-item-filter">GIS</span>
+                    <span class="grid-item-filter">DataViz</span>
                 </div>
+            </div>
+            
+            <!-- HERO VIDEO -->
+            <div class="video-container">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             
             <div class="project-content">
-                <div class="project-section">
-                    <h2>Project Overview</h2>
+                <!-- BRIEF OVERVIEW -->
+                <div class="overview-section">
                     <p>
-                        HiStory Map is a combination of soft and hard systems, exploring the connections between places and the histories they hold. By leveraging tens of thousands of images from the past 200 years and mapping them to the locations where they were taken, this project reveals the intricate relationship between historical records and physical spaces.
-                    </p>
-                    
-                    <div class="project-quote">
-                        <p>"A city's history is a system made out of countless moments of people's lives."</p>
-                        <p>—September 13, 2024</p>
-                    </div>
-                    
-                    <div class="iframe-container">
-                        <iframe src="https://storymaps.arcgis.com/stories/3fdb7906669d45c89a637af87b0cc344/print" title="HiStory Map Demo"></iframe>
-                    </div>
-                </div>
-                
-                <div class="project-section">
-                    <h2>The Abstract Nature of History</h2>
-                    <p>
-                        A city's history is an abstract representation of countless memories and moments. As cities constantly evolve, those memories become subjective recollections, yet they hold great power in shaping one's perception of a place and self-actualization within it. In this project, these abstract shapes are captured through images with geolocation properties, offering a step forward into representing nostalgia.
-                    </p>
-                    
-                    <p>
-                        Organizations like the New York Public Library (NYPL) archive data that tap into this amorphous space, having collected tens of thousands of images spanning over 200 years. Using this rich dataset, HiStory Map proposes a constructive way to take a nostalgic tour between time and space.
+                        HistoryMap is an innovative geospatial platform that connects places with their 200-year historical timeline through curated images and interactive mapping technology. This data visualization project transforms how we explore urban evolution by overlaying historical photographs, documents, and stories onto modern geographic interfaces, creating immersive journeys through time and space.
                     </p>
                 </div>
                 
+                <!-- TEMPORAL DATA VISUALIZATION -->
                 <div class="project-section">
-                    <h2>System Components</h2>
+                    <h2>Temporal Data Visualization</h2>
                     <p>
-                        The project is structured around several key components that work together to create a meaningful historical exploration experience:
+                        The platform employs advanced data visualization techniques to represent historical information across both spatial and temporal dimensions, allowing users to explore how locations have transformed over two centuries. Using interactive timelines, heat maps, and layered geographic data, the system reveals patterns of urban development, demographic changes, and cultural evolution. The visualization framework processes thousands of historical records, photographs, and documents to create coherent narratives that span decades and centuries of change.
                     </p>
-                    
-                    <div class="component-grid">
-                        <div class="component-item">
-                            <i class="fas fa-users component-icon"></i>
-                            <h3>Agents</h3>
-                            <p>Historical images as points of view from specific moments</p>
-                        </div>
-                        <div class="component-item">
-                            <i class="fas fa-crosshairs component-icon"></i>
-                            <h3>Nodes</h3>
-                            <p>Street intersections as natural congregations of meaning</p>
-                        </div>
-                        <div class="component-item">
-                            <i class="fas fa-exchange-alt component-icon"></i>
-                            <h3>Flow</h3>
-                            <p>Heat maps showing density of historical documentation</p>
-                        </div>
-                        <div class="component-item">
-                            <i class="fas fa-network-wired component-icon"></i>
-                            <h3>Network</h3>
-                            <p>Interconnected historical landmarks and stories</p>
-                        </div>
-                    </div>
+                    <img src="../points.jpeg" alt="Temporal Data Visualization" class="section-image">
                 </div>
                 
+                <!-- GEOSPATIAL STORYTELLING -->
                 <div class="project-section">
-                    <h2>Agents: Images as Historical Witnesses</h2>
+                    <h2>Geospatial Storytelling</h2>
                     <p>
-                        In this system, images represent agents—each treated as the point of view (POV) of one person, holding a camera at a specific time and place. This documentation serves as an agent in the historical network of a city, bringing context into the obscure system of collective memory.
+                        HistoryMap transforms traditional historical research by embedding stories directly into geographic contexts, enabling users to discover narratives by exploring specific locations rather than following linear timelines. The platform curates historical images, newspaper clippings, personal accounts, and official records, then geographically anchors them to create location-based storytelling experiences. This approach reveals hidden connections between places and events, allowing users to understand how historical forces shaped specific neighborhoods, buildings, and landscapes over time.
                     </p>
-                    
-                    <p>
-                        Each photograph captures not just a scene, but a moment in time through the eyes of someone who deemed it worthy of documentation. These collected viewpoints create a mosaic of perspectives that, when assembled, offer a more complete picture of a place's evolution over time.
-                    </p>
+                    <img src="../image24.png" alt="Geospatial Storytelling Interface" class="section-image">
                 </div>
                 
+                <!-- RESEARCH AND DISCOVERY -->
                 <div class="project-section">
-                    <h2>Nodes: Intersections of Space and Memory</h2>
+                    <h2>Research and Discovery</h2>
                     <p>
-                        The data is anchored to street intersections, which serve as nodes in the case study, as they are natural congregations of both people and meaning. For example, "113th and Amsterdam" or "North 7th and Bedford" represent central locations, subway entrances, and commercial hubs, mostly situated at street corners.
+                        The platform serves as both a research tool for historians and an accessible discovery platform for the general public, democratizing access to historical information through intuitive geographic interfaces. Advanced search capabilities allow users to filter by time periods, themes, or geographic areas, while machine learning algorithms suggest related content and identify patterns across large datasets. The system has facilitated new historical research by revealing previously unknown connections between events and locations, while also engaging broader audiences in local history through interactive exploration.
                     </p>
-                    
-                    <p>
-                        These intersections are the aggregators of street images in this work and serve as a grid of intersections with associated historical imagery. By organizing the data this way, users can explore history through the familiar framework of city navigation.
-                    </p>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Flow: Patterns of Historical Documentation</h2>
-                    <p>
-                        For comparison, a heat map layer is included to understand the flow of the network, comparing it with a dataset of historical landmarks. Places which are "hot" are locations with more images collected over time, while yellow outlines indicate the landmarks themselves.
-                    </p>
-                    
-                    <p>
-                        The analysis reveals a strong correlation between recognized landmarks and areas with higher volumes of historical documentation. This pattern suggests that certain places naturally attract more attention and documentation, creating nodes of historical significance within the urban fabric.
-                    </p>
-                </div>
-                
-                <div class="project-section">
-                    <h2>The Significance of Connection</h2>
-                    <p>
-                        Historical sites are all around us, from famous statues to politically significant cafés. These intertwined stories contribute to the higher-level identity of the city—its character and value. By connecting to the past, people may feel more aligned and connected, and this connection is what truly makes a city.
-                    </p>
-                    
-                    <p>
-                        The HiStory Map project serves as a bridge between past and present, allowing users to experience the layered nature of urban spaces and understand how history continues to shape our relationship with the places we inhabit.
-                    </p>
-                </div>
-                
-                <div class="project-section">
-                    <h2>Technical Implementation</h2>
-                    <p>
-                        The project combines several technical components to create an interactive historical exploration experience:
-                    </p>
-                    
-                    <ul>
-                        <li>Geospatial data processing to accurately place historical images on modern maps</li>
-                        <li>Heat map visualization techniques to show the density of historical documentation</li>
-                        <li>Interactive web mapping using ArcGIS StoryMaps platform</li>
-                        <li>Database integration with the New York Public Library's digital archives</li>
-                        <li>User interface design focused on seamless navigation through both space and time</li>
-                    </ul>
-                    
-                    <p>
-                        This technical framework supports the conceptual goals of the project, creating an intuitive interface for exploring the complex relationships between physical locations and their historical significance.
-                    </p>
+                    <img src="../image25.png" alt="Historical Research Dashboard" class="section-image">
                 </div>
             </div>
             
+            <!-- NAVIGATION -->
             <div class="nav-buttons">
                 <button onclick="window.location.href='../basic.html'" class="back-button">
                     <i class="fas fa-arrow-left"></i> Back to Portfolio
@@ -326,9 +298,9 @@
     
     <footer>
         <div class="footer-content">
-            <i><h6>Copyright © 2024 <em>Royi Rozen</em></h6></i>
+            <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
             <nav class="social-icons">
-                <i class="fa-brands fa-linkedin" style="scale: 2;"></i>
+                <i class="fa-brands fa-linkedin" style="scale: 2;" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </nav>
         </div>
     </footer>
@@ -358,10 +330,41 @@
             <div class="form-divider"></div>
             <div class="form-actions">
                 <button type="submit" class="send-button">Send</button>
-                <div style="clear: both;"></div> <!-- Clear the float -->
+                <div style="clear: both;"></div>
             </div>
             <input type="hidden" name="recipient" value="rr789@cornell.edu">
         </form>
     </div>
+    
+    <script>
+        // Contact form functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactButton = document.getElementById('contact-button');
+            const contactPopup = document.getElementById('contact-popup');
+            const popupClose = document.getElementById('popup-close');
+            const contactForm = document.getElementById('contact-form');
+            
+            contactButton.addEventListener('click', function() {
+                contactPopup.classList.add('active');
+            });
+            
+            popupClose.addEventListener('click', function() {
+                contactPopup.classList.remove('active');
+            });
+            
+            document.addEventListener('click', function(event) {
+                if (!contactPopup.contains(event.target) && !contactButton.contains(event.target)) {
+                    contactPopup.classList.remove('active');
+                }
+            });
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                contactPopup.classList.remove('active');
+                contactForm.reset();
+            });
+        });
+    </script>
 </body>
 </html> 

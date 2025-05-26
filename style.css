@@ -326,10 +326,13 @@ main {
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; /* Changed to 3 equal columns by default */
-    gap: 40px; /* Increased gap between grid items */
-    padding: 30px;
-    margin-bottom: 60px; /* Add margin after grid container */
+    gap: 30px; /* Optimized gap between grid items */
+    padding: 20px;
+    margin-bottom: 50px; /* Optimized margin after grid container */
     transition: all 0.5s ease-in-out; /* Smooth transition for column changes */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .grid-container.two-columns {
@@ -480,7 +483,7 @@ main {
 }
 
 #artour .grid-item-image-container img {
-    object-position: center 50%; /* Crops the image to show more of the lower part */
+    object-position: center 0%; /* Offset image up to show more of the upper part */
 }
 
 .grid-item:hover {
@@ -1365,4 +1368,8 @@ h5 {
 .clear-button {
     background-color: #f44336;
     color: white;
+}
+
+.hidden-project {
+    display: none !important;
 }
