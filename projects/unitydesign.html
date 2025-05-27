@@ -1,11 +1,423 @@
-            <div class="project-header">
-                <h1>Unity Design Tool <span class="tool-badge">Development Tool</span></h1>
-                <div class="project-meta">
-                    <div class="project-year">2024</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unity Design Tool - Royi Rozen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/no_variables/bundles/fonts-6ee09b0b2f.css" media="screen" />
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/e67af36f5565992c0c7fce5060801003/variables-7dd4b80918af0e0218ec0229e4bd5873.css" media="all" />
+    <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/common-60e5c6cfef.css" media="all" />
+    
+    <link rel="apple-touch-icon" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/apple-touch-icon-585e5d997d.png" />
+    <link rel="icon" type="image/x-icon" href="https://instructure-uploads.s3.amazonaws.com/account_97130000000000001/attachments/29724/cornellfac.ico" />
+    
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Clean, centered layout */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        #app {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        header, main, footer {
+            width: 100%;
+        }
+        
+        /* Project header styling */
+        .project-header {
+            margin-top: 120px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .project-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .grid-item-filter {
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Video container */
+        .video-container {
+            width: 100%;
+            margin: 40px 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+        }
+        
+        .video-embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Main content styling */
+        .project-content {
+            width: 100%;
+            max-width: 800px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        
+        /* Project sections */
+        .project-section {
+            margin: 40px 0;
+            text-align: left;
+        }
+        
+        .project-section h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .project-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .quote-block {
+            background-color: #f8f9fa;
+            border-left: 4px solid #4a86e8;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        /* Feature list styling */
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 20px 0;
+        }
+        
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-list li i {
+            color: #4a86e8;
+            margin-right: 15px;
+            font-size: 18px;
+        }
+        
+        /* Team section styling */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .team-member {
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .team-member h4 {
+            margin: 10px 0 5px;
+            color: #333;
+        }
+        
+        .team-member p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* Links styling */
+        .links-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .link-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: #4a86e8;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .link-button:hover {
+            background-color: #3a76d8;
+            transform: translateY(-2px);
+        }
+        
+        .link-button i {
+            margin-right: 8px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .project-header {
+                margin-top: 100px;
+                padding: 0 15px;
+            }
+            
+            .project-header h1 {
+                font-size: 36px;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .links-list {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .project-header h1 {
+                font-size: 28px;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="header-content">
+                <hgroup class="top-bar">
+                    <h1 class="title" button id="title" onclick="window.location.href='../basic.html'">Royi Rozen</button></h1>
+                    <h1 class="about" button id="resume" onclick="window.open('../rr-cv.pdf', '_blank')">Résumé</button></h1>
+                    <h1 class="about" button id="about" onclick="window.location.href='../about.html'">About</button></h1>
+                    <i class="fa-brands fa-linkedin" id="linkedin" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
+                </hgroup>
+            </div>
+        </header>
+        
+        <main class="project-detail">
+            <div class="project-content">
+                <div class="project-header">
+                    <h1>Unity Design Tool</h1>
                     <div class="project-tags">
-                        <span class="project-tag">Unity</span>
-                        <span class="project-tag">XR</span>
-                        <span class="project-tag">Design</span>
+                        <span class="grid-item-filter">Development</span>
+                        <span class="grid-item-filter">UI/UX</span>
+                        <span class="grid-item-filter">Software</span>
+                        <span class="grid-item-filter">XR</span>
+                        <span class="grid-item-filter">Unity</span>
+                        <span class="grid-item-filter">3D</span>
                     </div>
                 </div>
-            </div> 
+                
+                <div class="video-container">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/F1qjW_qHS5o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
+                <div class="project-section">
+                    <h2>Project Overview</h2>
+                    <p>
+Unity Design Tool is a VR application for Meta Quest that enables intuitive 3D shape creation and manipulation. Developed as part of Cornell Tech's CS 5650 course, this tool offers a powerful creative experience for designing in virtual space.
+                    </p>
+                </div>
+                
+                <div class="project-section">
+                    <h2>Key Features</h2>
+                    <p>Key object manipulation features include:</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-hand-pointer"></i><strong>Object Creation & Selection:</strong> Create new shapes and select single or multiple objects</li>
+                        <li><i class="fas fa-arrows-alt"></i><strong>Transformation:</strong> Move, rotate, and scale objects individually or in groups</li>
+                        <li><i class="fas fa-palette"></i><strong>Customization:</strong> Change object shapes and colors with intuitive controls</li>
+                        <li><i class="fas fa-copy"></i><strong>Management:</strong> Duplicate and delete objects individually or in groups</li>
+                        <li><i class="fas fa-hand-rock"></i><strong>Grab Move:</strong> Powerful feature to resize and reorient all objects in the scene</li>
+                        <li><i class="fas fa-question-circle"></i><strong>Help System:</strong> Built-in documentation to guide users through controls</li>
+                    </ul>
+                </div>
+                
+                <div class="project-section">
+                    <h2>Technical Implementation</h2>
+                    <p>
+Built in Unity for Meta Quest, this application features a universal helper system to prevent interaction conflicts and ensure smooth operation. Haptic feedback and custom controller visualization enhance the user experience with tactile responses and clear state indicators.
+                    </p>
+                    <div class="links-list">
+                        <a href="https://github.com/cs5650-2024fa/p-project-g-02/" target="_blank" class="link-button">
+                            <i class="fab fa-github"></i> GitHub Repository
+                        </a>
+                        <a href="https://drive.google.com/file/d/1g4o6z6Fjlp0XkfP4x4C5x509mN78Q2u5/view" target="_blank" class="link-button">
+                            <i class="fas fa-play-circle"></i> App Demo Video
+                        </a>
+                        <a href="https://drive.google.com/file/d/1SiBwMccWQVai_S5AKy7qSExI_SSnzdlc/view" target="_blank" class="link-button">
+                            <i class="fas fa-film"></i> Feature Video
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-section">
+                    <h2>Team Contributions</h2>
+                    <p>Developed by a team of four students with specialized roles:</p>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <h4>Royi Rozen</h4>
+                            <p>Implemented shapes menu, help documentation, and contributed to object scaling</p>
+                        </div>
+                        <div class="team-member">
+                            <h4>Kamron Vaswani</h4>
+                            <p>Implemented object resizing, duplication, and controller state visualization</p>
+                        </div>
+                        <div class="team-member">
+                            <h4>Kevin Hass</h4>
+                            <p>Implemented haptic feedback and object scaling features</p>
+                        </div>
+                        <div class="team-member">
+                            <h4>Sebastian Jay</h4>
+                            <p>Implemented color picker and grab move translate functionality</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-section">
+                    <h2>User Interaction</h2>
+                    <p>Intuitive Meta Quest controller mapping:</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-hand-paper"></i><strong>Right Trigger:</strong> Create new shapes</li>
+                        <li><i class="fas fa-expand-arrows-alt"></i><strong>Right Thumbstick:</strong> Resize selection sphere</li>
+                        <li><i class="fas fa-hand-rock"></i><strong>Right Bumper:</strong> Grab objects</li>
+                        <li><i class="fas fa-palette"></i><strong>A Button:</strong> Open shape menu (left) or color picker (right)</li>
+                        <li><i class="fas fa-trash"></i><strong>B Button:</strong> Delete selected objects (right) or open help (left)</li>
+                    </ul>
+                </div>
+                
+                <div class="nav-buttons">
+                    <button onclick="window.location.href='../basic.html'" class="back-button">
+                        <i class="fas fa-arrow-left"></i> Back to Portfolio
+                    </button>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="footer-content">
+                <i><h6>Copyright 2025 <em>Royi Rozen</em></h6></i>
+                <nav class="social-icons">
+                    <i class="fa-brands fa-linkedin" style="scale: 2;" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
+                </nav>
+            </div>
+        </footer>
+        
+        <!-- Contact Form Popup -->
+        <div class="contact-button" id="contact-button"><i class="fas fa-comment"></i></div>
+        <div class="contact-popup" id="contact-popup">
+            <div class="popup-header">
+                <h3>Get in Touch</h3>
+                <button class="popup-close" id="popup-close">&times;</button>
+            </div>
+            <div class="popup-content">
+                <img src="../image.jpg" alt="Royi Rozen" class="popup-image">
+                <div class="popup-text"><p>Send me a message</p></div>
+            </div>
+            <form class="contact-form" id="contact-form">
+                <div class="form-fields">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Type your message..." required></textarea>
+                </div>
+                <div class="form-divider"></div>
+                <div class="form-actions">
+                    <button type="submit" class="send-button">Send</button>
+                    <div style="clear: both;"></div>
+                </div>
+                <input type="hidden" name="recipient" value="rr789@cornell.edu">
+            </form>
+        </div>
+        
+        <script>
+            // Contact form functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                const contactButton = document.getElementById('contact-button');
+                const contactPopup = document.getElementById('contact-popup');
+                const popupClose = document.getElementById('popup-close');
+                const contactForm = document.getElementById('contact-form');
+                
+                contactButton.addEventListener('click', function() {
+                    contactPopup.classList.add('active');
+                });
+                
+                popupClose.addEventListener('click', function() {
+                    contactPopup.classList.remove('active');
+                });
+                
+                document.addEventListener('click', function(event) {
+                    if (!contactPopup.contains(event.target) && !contactButton.contains(event.target)) {
+                        contactPopup.classList.remove('active');
+                    }
+                });
+                
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your message! I will get back to you soon.');
+                    contactPopup.classList.remove('active');
+                    contactForm.reset();
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>
