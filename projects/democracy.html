@@ -16,6 +16,27 @@
     
     <link rel="stylesheet" href="../style.css">
     <style>
+        /* Image grid for side-by-side images */
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
         /* Clean, centered layout */
         body {
             margin: 0;
@@ -251,42 +272,43 @@
             
             <!-- HERO VIDEO -->
             <div class="video-container">
-                <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class="video-embed" src="https://www.youtube.com/embed/l44YjGd_Ya8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             
             <div class="project-content">
                 <!-- BRIEF OVERVIEW -->
                 <div class="overview-section">
-                    <p>
-                        Democracy AR is a hackathon-winning augmented reality application that transforms street signs into powerful protest messages during Israel's 2023 judicial reform demonstrations. Created in 48 hours, this viral AR experience allowed protesters to visualize alternative realities and amplify their message through shareable digital activism.
-                    </p>
-                </div>
+    <p>
+        Democracy AR is an award-winning AR app created in response to Israel's 2023 judicial reform crisis. When the government announced plans to neutralize the judiciary branch, the tech industry mobilized with initiatives to protect democracy. DemocracyAR emerged from this movement, winning two hackathons and uniting concerned activists determined to defend democratic values.
+    </p>
+</div>
                 
                 <!-- AR ACTIVISM INNOVATION -->
                 <div class="project-section">
-                    <h2>AR Activism Innovation</h2>
-                    <p>
-                        Traditional protest methods often struggle to communicate complex constitutional issues to broader audiences. Democracy AR addressed this by creating an intuitive AR experience that replaced street signs with protest messages, making abstract concerns about judicial independence tangible and shareable. Users simply pointed their phones at street signs to see alternative messages like "Democracy Under Attack" or "Protect Our Courts," creating powerful visual metaphors that resonated across social media platforms and news coverage.
-                    </p>
-                    <img src="../democracy.jpg" alt="AR Street Sign Transformation" class="section-image">
+    <h2>AR Activism Innovation</h2>
+    <p>
+        Led by Royi Rozen and Yotam Katz, a team of 15 developers, designers, and product managers created an AR experience that transformed street signs into names of far-right extremists. This simple visualization helped turn abstract concerns about "dictatorship" into something relatable and actionable, shocking and amusing viewers while conveying a powerful message.
+    </p>
                 </div>
                 
                 <!-- VIRAL IMPACT -->
                 <div class="project-section">
-                    <h2>Viral Impact</h2>
-                    <p>
-                        The application achieved remarkable reach within its first week, attracting over 50,000 users and generating 20,000+ social media shares that amplified the protest message far beyond physical demonstrations. The AR experience provided compelling visual content that news outlets used to illustrate the protests, while the shareable nature of AR screenshots created organic viral spread across platforms. Most importantly, the app directly contributed to protest mobilization, with over 15,000 users registering for demonstrations through the integrated call-to-action features.
-                    </p>
-                    <img src="../image16.png" alt="Social Media Impact" class="section-image">
+    <h2>Viral Impact</h2>
+    <p>
+        Throughout the nine-month protest period, DemocracyAR built, collaborated on, and prototyped AR projects with one goal: mobilizing people to take to the streets. The app reached 50,000 users and generated 20,000 shares in its first week alone, directly contributing to increased protest participation.
+    </p>
+                    <div class="image-grid">
+                        <img src="../Democracy.jpg" alt="Team collaboration and project development">
+                        <img src="../MePitching.jpg" alt="Presenting Democracy AR at the hackathon">
+                    </div>
                 </div>
                 
                 <!-- TECHNICAL ACHIEVEMENT -->
                 <div class="project-section">
-                    <h2>Technical Achievement</h2>
-                    <p>
-                        Built in just 48 hours using WebXR and Three.js for maximum accessibility, Democracy AR required no app downloads and worked directly in mobile browsers. The team developed custom computer vision algorithms for reliable street sign detection under varying lighting conditions, while ensuring the lightweight AR experience performed smoothly on older devices. The rapid development cycle and cross-platform compatibility were crucial to the app's viral success, allowing immediate adoption during the height of the protest movement without technical barriers.
-                    </p>
-                    <img src="../image17.png" alt="Technical Implementation" class="section-image">
+    <h2>Technical Achievement</h2>
+    <p>
+        Built with WebXR and Three.js, Democracy AR worked in any mobile browser—no downloads needed. Custom computer vision made it fast and reliable for everyone.
+    </p>
                 </div>
             </div>
             
@@ -301,7 +323,7 @@
     
     <footer>
         <div class="footer-content">
-            <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
+            <i><h6>Copyright 2025 <em>Royi Rozen</em></h6></i>
             <nav class="social-icons">
                 <i class="fa-brands fa-linkedin" style="scale: 2;" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
             </nav>
@@ -370,4 +392,4 @@
         });
     </script>
 </body>
-</html> 
+</html>

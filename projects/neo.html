@@ -73,19 +73,25 @@
             font-weight: 500;
         }
         
-        /* Hero image container */
-        .hero-image-container {
+        /* Hero video container */
+        .video-container {
             width: 100%;
             margin: 40px 0;
             overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
         }
         
-        .hero-image {
+        .video-embed {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: auto;
-            display: block;
+            height: 100%;
+            border: none;
         }
         
         /* Main content styling */
@@ -240,16 +246,16 @@
                 </div>
             </div>
             
-            <!-- HERO IMAGE -->
-            <div class="hero-image-container">
-                <img src="../neo.png" alt="3D UI Replication Visualization" class="hero-image">
+            <!-- HERO VIDEO -->
+            <div class="video-container">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/xh1by3SSSRk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             
             <div class="project-content">
                 <!-- BRIEF OVERVIEW -->
                 <div class="overview-section">
                     <p>
-                        This project involved replicating and visualizing selection and manipulation techniques from "3D User Interfaces: Theory and Practice" by transforming theoretical concepts into sketches and 3D illustrative forms. Created for Cornell Tech's 3D Interaction Design course, this visual guide brings complex spatial interaction techniques to life through practical implementation.
+                        Visual replication of 3D interaction techniques from "3D User Interfaces: Theory and Practice." Created for Cornell Tech's 3D Interaction Design course, transforming theoretical concepts into practical 3D visualizations and sketches.
                     </p>
                 </div>
                 
@@ -257,27 +263,25 @@
                 <div class="project-section">
                     <h2>3D Interaction Theory</h2>
                     <p>
-                        The project focused on foundational selection and manipulation techniques including Ray Casting for virtual pointing, Go-Go Technique for non-linear arm extension, HOMER for hand-centered object manipulation, and World-in-Miniature for environment-scale interactions. By carefully analyzing the theoretical frameworks presented in the seminal text, I identified key interaction methods suitable for visualization and created comprehensive visual representations that capture the essence of each technique's spatial relationships and movements.
+                        Focused on key techniques: Ray Casting for virtual pointing, Go-Go for arm extension, HOMER for object manipulation, and World-in-Miniature for environment interactions. Created visual representations that capture spatial relationships and interaction flows from the theoretical framework.
                     </p>
-                    <img src="../image17.png" alt="3D Interaction Techniques Diagram" class="section-image">
+                    <img src="../neo.png" alt="3D UI Replication Visualization" class="section-image">
                 </div>
                 
                 <!-- IMPLEMENTATION -->
                 <div class="project-section">
                     <h2>Implementation</h2>
                     <p>
-                        The transformation process involved deep research into existing implementations, creating initial 2D sketches of interaction flows, developing 3D models that demonstrate spatial relationships, and adding animations to show dynamic interactions. Each technique was analyzed for its strengths, limitations, and optimal use cases within virtual and augmented reality applications. The process required translating complex theoretical concepts into visual models that revealed nuances and considerations that might be overlooked when simply reading about these techniques.
+                        Process included 2D sketches, 3D models, and animations to demonstrate spatial interactions. Analyzed each technique's strengths and limitations for VR/AR applications. Translated theoretical concepts into visual models that reveal practical implementation considerations.
                     </p>
-                    <img src="../image18.png" alt="3D Implementation Process" class="section-image">
                 </div>
                 
                 <!-- LEARNING OUTCOMES -->
                 <div class="project-section">
                     <h2>Learning Outcomes</h2>
                     <p>
-                        Replicating these models provided significant value beyond academic completion, offering deeper understanding of theoretical foundations, practical insight into how abstract concepts translate to actual interactions, and experience in communicating complex spatial concepts through visual means. The project serves as a practical reference for designing new spatial interactions and has direct applications to VR application design, AR interaction patterns, spatial computing interfaces, and interactive installation design. This foundation enables better-equipped design of intuitive and effective interfaces for complex spatial applications.
+                        Gained deeper understanding of 3D interaction theory and practical implementation. Experience translating abstract concepts into visual models. Direct applications include VR/AR interface design, spatial computing, and interactive installations.
                     </p>
-                    <img src="../image19.png" alt="Learning Outcomes Visualization" class="section-image">
                 </div>
             </div>
             

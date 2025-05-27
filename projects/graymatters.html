@@ -221,6 +221,31 @@
                 padding: 4px 8px;
             }
         }
+        
+        .testimonial-section {
+            margin-top: 60px;
+        }
+        
+        .testimonial-quote {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #666;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f8f9fa;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-quote p {
+            margin-bottom: 10px;
+        }
+        
+        .testimonial-quote cite {
+            font-size: 16px;
+            color: #333;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -234,138 +259,134 @@
             </div>
         </header>
         
-        <main>
-            <!-- PROJECT HEADER -->
-            <div class="project-header">
-                <h1>Grey Matters</h1>
-                <div class="project-tags">
-                    <span class="grid-item-filter">UI/UX</span>
-                    <span class="grid-item-filter">Spatial Design</span>
-                    <span class="grid-item-filter">2D</span>
-                    <span class="grid-item-filter">Creative</span>
-                    <span class="grid-item-filter">Health</span>
-                </div>
-            </div>
-            
-            <!-- HERO VIDEO -->
-            <div class="video-container">
-                <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            
+        <main class="project-detail">
             <div class="project-content">
-                <!-- BRIEF OVERVIEW -->
-                <div class="overview-section">
-                    <p>
-                        Grey Matters is a brain-computer interface experience designed specifically for PTSD treatment, combining neurofeedback technology with intuitive spatial design. This innovative health technology project explores how direct neural interfaces can provide therapeutic benefits while maintaining user comfort and accessibility through thoughtful UX design and visual feedback systems.
-                    </p>
+                <div class="project-header">
+                    <h1>GrayMatters Health</h1>
+                    <div class="project-tags">
+                        <span class="grid-item-filter">Digital Health</span>
+                        <span class="grid-item-filter">EEG</span>
+                        <span class="grid-item-filter">3D Visualization</span>
+                        <span class="grid-item-filter">Unity</span>
+                    </div>
                 </div>
-                
-                <!-- BRAIN-COMPUTER INTERFACE DESIGN -->
+
+                <div class="video-container">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/MIXH3qODe6k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div class="project-section testimonial-section">
+                    <h2>Testimonial</h2>
+                    <blockquote class="testimonial-quote">
+                        <p>"Royi's work on the 3D brain visualization tool was exceptional. His ability to translate complex EEG data into an intuitive and interactive experience has been invaluable for our clinicians. The tool has significantly enhanced our ability to understand and utilize brain activity patterns for patient care."
+                        </p>
+                        <cite>– Rani Cohen, CEO, GrayMatters Health</cite>
+                    </blockquote>
+                </div>
+
                 <div class="project-section">
-                    <h2>Brain-Computer Interface Design</h2>
-                    <p>
-                        The core of Grey Matters lies in translating complex neural signals into meaningful, therapeutic interactions through carefully designed interface elements. The system captures brainwave patterns associated with stress and anxiety, then provides real-time visual and spatial feedback to help users develop better emotional regulation. The interface design prioritizes clarity and calm, using soft color palettes and gentle animations that respond to neural activity without overwhelming users during vulnerable therapeutic moments.
-                    </p>
-                    <img src="../grey.jpg" alt="Brain-Computer Interface Design" class="section-image">
+                    <h2>Project Overview: Interactive 3D Brain Visualization</h2>
+                    <p>This project involved the development of an advanced interactive 3D brain visualization tool for GrayMatters Health, a company at the forefront of clinical neuroscience. The primary objective was to create a system that could take complex electroencephalography (EEG) data and render it as dynamic, understandable 3D visualizations of brain activity. This tool empowers clinicians and researchers by providing a more intuitive way to analyze brain patterns, identify anomalies, and track changes over time, ultimately aiding in diagnosis and treatment planning for various neurological conditions.</p>
+                    <p>The system was designed with a user-centric approach, ensuring that clinicians could easily navigate the 3D brain models, customize data displays, and interact with the visualizations to gain deeper insights. The integration of real-time EEG data streams was a key component, allowing for live monitoring and analysis.</p>
                 </div>
-                
-                <!-- THERAPEUTIC USER EXPERIENCE -->
+
                 <div class="project-section">
-                    <h2>Therapeutic User Experience</h2>
-                    <p>
-                        Creating an effective therapeutic experience required extensive research into PTSD symptoms and treatment methodologies, informing every aspect of the user journey from initial setup to ongoing therapy sessions. The spatial design incorporates principles of trauma-informed care, ensuring that users feel safe and in control throughout their interaction with the technology. Visual elements are designed to promote relaxation and focus, while the interface provides clear progress indicators and gentle guidance without creating additional stress or pressure.
-                    </p>
-                    <img src="../image20.jpg" alt="Therapeutic Interface Elements" class="section-image">
+                    <h2>Key Features & Technologies</h2>
+                    <p>The 3D brain visualization tool boasts several key features designed to enhance clinical utility and research capabilities:</p>
+                    <ul>
+                        <li><strong>Real-time 3D Brain Visualization:</strong> Dynamic rendering of brain activity based on live or recorded EEG data, presented on an anatomically accurate 3D brain model.</li>
+                        <li><strong>EEG Data Integration & Mapping:</strong> Sophisticated algorithms to process and map multi-channel EEG signals onto the cortical surface, highlighting areas of interest.</li>
+                        <li><strong>Interactive User Interface:</strong> Clinicians can rotate, zoom, and section the 3D brain model, select specific EEG channels or brain regions, and adjust visualization parameters (e.g., color maps, activity thresholds).</li>
+                        <li><strong>Temporal Analysis Tools:</strong> Features to play back EEG activity over time, compare different time segments, and identify event-related potentials or abnormalities.</li>
+                        <li><strong>Cross-Platform Compatibility:</strong> Developed using Unity, allowing for deployment on various platforms accessible to clinicians.</li>
+                        <li><strong>Data Export & Reporting:</strong> Capabilities to export snapshots, video recordings of brain activity, or summary data for reports and presentations.</li>
+                    </ul>
+                    <p>The core technology stack included Unity3D for the rendering and interaction engine, C# for programming the application logic and data processing pipelines, and specialized libraries for handling EEG data formats and neuroimaging standards.</p>
                 </div>
-                
-                <!-- HEALTH TECHNOLOGY INNOVATION -->
+
                 <div class="project-section">
-                    <h2>Health Technology Innovation</h2>
-                    <p>
-                        Grey Matters represents a significant advancement in accessible mental health technology, demonstrating how thoughtful design can make cutting-edge neurofeedback therapy more approachable and effective. The project addresses critical gaps in PTSD treatment accessibility by creating technology that can be used in various settings while maintaining clinical effectiveness. The design framework developed for this project has implications for broader health technology applications, showing how user-centered design principles can enhance therapeutic outcomes in digital health interventions.
-                    </p>
-                    <img src="../image21.png" alt="Health Technology Innovation" class="section-image">
+                    <h2>Impact & Contribution</h2>
+                    <p>The interactive 3D brain visualization tool has provided GrayMatters Health with a powerful new way to engage with complex neurological data. It has streamlined the process of interpreting EEG results, facilitating better communication between clinicians and patients, and supporting ongoing research efforts. My role encompassed the full development lifecycle, from conceptualization and UI/UX design to programming the core visualization and interaction features, and integrating the EEG data processing modules.</p>
                 </div>
-            </div>
-            
-            <!-- NAVIGATION -->
-            <div class="nav-buttons">
-                <button onclick="window.location.href='../basic.html'" class="back-button">
-                    <i class="fas fa-arrow-left"></i> Back to Portfolio
-                </button>
+
+                <div class="nav-buttons">
+                    <button onclick="window.location.href='../basic.html'" class="back-button">
+                        <i class="fas fa-arrow-left"></i> Back to Portfolio
+                    </button>
+                </div>
             </div>
         </main>
-    </div>
-    
-    <footer>
-        <div class="footer-content">
-            <i><h6>Copyright © 2025 <em>Royi Rozen</em></h6></i>
-            <nav class="social-icons">
-                <i class="fa-brands fa-linkedin" style="scale: 2;" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
-            </nav>
-        </div>
-    </footer>
-    
-    <!-- Contact Button and Popup -->
-    <div class="contact-button" id="contact-button">
-        <i class="fas fa-comment"></i>
-    </div>
-    
-    <div class="contact-popup" id="contact-popup">
-        <div class="popup-header">
-            <h3>Get in Touch</h3>
-            <button class="popup-close" id="popup-close">&times;</button>
-        </div>
-        <div class="popup-content">
-            <img src="../image.jpg" alt="Royi Rozen" class="popup-image">
-            <div class="popup-text">
-                <p>Send me a message</p>
+        
+        <footer>
+            <div class="footer-content">
+                <i><h6>Copyright 2025 <em>Royi Rozen</em></h6></i>
+                <nav class="social-icons">
+                    <i class="fa-brands fa-linkedin" style="scale: 2;" onclick="window.open('https://www.linkedin.com/in/royi-rozen/', '_blank')"></i>
+                </nav>
             </div>
+        </footer>
+        
+        <!-- Contact Button and Popup -->
+        <div class="contact-button" id="contact-button">
+            <i class="fas fa-comment"></i>
         </div>
-        <form class="contact-form" id="contact-form">
-            <div class="form-fields">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Type your message..." required></textarea>
+        
+        <div class="contact-popup" id="contact-popup">
+            <div class="popup-header">
+                <h3>Get in Touch</h3>
+                <button class="popup-close" id="popup-close">&times;</button>
             </div>
-            <div class="form-divider"></div>
-            <div class="form-actions">
-                <button type="submit" class="send-button">Send</button>
-                <div style="clear: both;"></div>
+            <div class="popup-content">
+                <img src="../image.jpg" alt="Royi Rozen" class="popup-image">
+                <div class="popup-text">
+                    <p>Send me a message</p>
+                </div>
             </div>
-            <input type="hidden" name="recipient" value="rr789@cornell.edu">
-        </form>
-    </div>
-    
-    <script>
-        // Contact form functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const contactButton = document.getElementById('contact-button');
-            const contactPopup = document.getElementById('contact-popup');
-            const popupClose = document.getElementById('popup-close');
-            const contactForm = document.getElementById('contact-form');
-            
-            contactButton.addEventListener('click', function() {
-                contactPopup.classList.add('active');
-            });
-            
-            popupClose.addEventListener('click', function() {
-                contactPopup.classList.remove('active');
-            });
-            
-            document.addEventListener('click', function(event) {
-                if (!contactPopup.contains(event.target) && !contactButton.contains(event.target)) {
+            <form class="contact-form" id="contact-form">
+                <div class="form-fields">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Type your message..." required></textarea>
+                </div>
+                <div class="form-divider"></div>
+                <div class="form-actions">
+                    <button type="submit" class="send-button">Send</button>
+                    <div style="clear: both;"></div>
+                </div>
+                <input type="hidden" name="recipient" value="rr789@cornell.edu">
+            </form>
+        </div>
+        
+        <script>
+            // Contact form functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                const contactButton = document.getElementById('contact-button');
+                const contactPopup = document.getElementById('contact-popup');
+                const popupClose = document.getElementById('popup-close');
+                const contactForm = document.getElementById('contact-form');
+                
+                contactButton.addEventListener('click', function() {
+                    contactPopup.classList.add('active');
+                });
+                
+                popupClose.addEventListener('click', function() {
                     contactPopup.classList.remove('active');
-                }
+                });
+                
+                document.addEventListener('click', function(event) {
+                    if (!contactPopup.contains(event.target) && !contactButton.contains(event.target)) {
+                        contactPopup.classList.remove('active');
+                    }
+                });
+                
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your message! I will get back to you soon.');
+                    contactPopup.classList.remove('active');
+                    contactForm.reset();
+                });
             });
-            
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Thank you for your message! I will get back to you soon.');
-                contactPopup.classList.remove('active');
-                contactForm.reset();
-            });
-        });
-    </script>
+        </script>
+    </div>
 </body>
-</html> 
+</html>
