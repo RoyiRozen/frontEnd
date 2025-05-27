@@ -16,25 +16,19 @@
     
     <link rel="stylesheet" href="../style.css">
     <style>
-        /* Image grid for side-by-side images */
+        /* Image grid for project images */
         .image-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            display: flex;
+            justify-content: center;
             margin: 20px 0;
         }
         
         .image-grid img {
-            width: 100%;
+            max-width: 100%;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        @media (max-width: 768px) {
-            .image-grid {
-                grid-template-columns: 1fr;
-            }
+            max-height: 500px;
         }
         
         /* Clean, centered layout */
@@ -298,7 +292,6 @@
         Throughout the nine-month protest period, DemocracyAR built, collaborated on, and prototyped AR projects with one goal: mobilizing people to take to the streets. The app reached 50,000 users and generated 20,000 shares in its first week alone, directly contributing to increased protest participation.
     </p>
                     <div class="image-grid">
-                        <img src="../Democracy.jpg" alt="Team collaboration and project development">
                         <img src="../MePitching.jpg" alt="Presenting Democracy AR at the hackathon">
                     </div>
                 </div>
